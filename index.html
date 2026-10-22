@@ -1,0 +1,31 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1e3a8a"><title>Học Từ Vựng – Oxford 3000</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>📚 Học Từ Vựng</h1><button id="theme" class="icon" aria-label="Đổi giao diện">🌙</button></header>
+<section id="filters">
+ <select id="fPage"></select><select id="fDay"><option value="">Tất cả ngày</option></select>
+ <select id="fCefr"><option value="">Mọi cấp độ</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select>
+ <label class="chk"><input type="checkbox" id="fTask1"> IELTS Task 1</label>
+</section>
+<nav id="tabs"><button data-v="study" class="on">Học</button><button data-v="quiz">Kiểm tra</button><button data-v="list">Danh sách</button><button data-v="stats">Thống kê</button></nav>
+<main>
+<section id="v-study" class="view">
+ <div class="row"><select id="mode"><option value="due">Ôn theo lịch (SRS)</option><option value="all">Học hết toàn bộ</option></select>
+ <select id="dir"><option value="en">Anh → Việt</option><option value="vi">Việt → Anh</option><option value="mix">Trộn</option></select></div>
+ <div id="prog" class="muted"></div>
+ <div id="card" class="card"></div>
+ <div id="grade" class="grades hidden">
+  <button data-q="0" class="g0">Quên<small id="i0"></small></button><button data-q="3" class="g1">Khó<small id="i3"></small></button>
+  <button data-q="4" class="g2">Nhớ<small id="i4"></small></button><button data-q="5" class="g3">Dễ<small id="i5"></small></button></div>
+ <button id="flip" class="big">Lật thẻ</button>
+</section>
+<section id="v-quiz" class="view hidden">
+ <div class="row"><select id="qtype"><option value="mc">Trắc nghiệm</option><option value="type">Gõ từ</option></select><button id="qstart" class="big2">Bắt đầu 10 câu</button></div>
+ <div id="quiz"></div></section>
+<section id="v-list" class="view hidden"><input id="search" placeholder="Tìm từ…" type="search"><div id="list"></div></section>
+<section id="v-stats" class="view hidden"><div id="stats"></div><button id="reset" class="danger">Xoá tiến độ</button></section>
+</main>
+<script src="app.js"></script></body></html>
