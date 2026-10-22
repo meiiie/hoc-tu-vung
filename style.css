@@ -86,7 +86,7 @@ h2{font-size:var(--fs-xl);font-weight:700;letter-spacing:-.02em;margin:0}
 .prog{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s3);font-weight:650;font-size:var(--fs-s);font-variant-numeric:tabular-nums}.prog .bar{flex:1}
 .count{display:inline-flex;align-items:center;gap:4px;min-width:40px;height:28px;padding:0 10px;border-radius:var(--r-pill);font-weight:700;font-size:var(--fs-s);justify-content:center}
 .count.l{background:var(--danger-soft);color:var(--danger)}.count.k{background:var(--success-soft);color:var(--success)}
-.stage{position:relative;height:min(54vh,440px);perspective:1200px;touch-action:pan-y}
+.stage{position:relative;height:min(54vh,440px);perspective:1200px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .fc{position:absolute;inset:0;cursor:grab;will-change:transform;border-radius:var(--r-l);outline-offset:4px}
 .inner{position:absolute;inset:0;transition:transform 520ms var(--ease);transform-style:preserve-3d}.fc.flip .inner{transform:rotateY(180deg)}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border-radius:var(--r-l);box-shadow:var(--shadow-2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:var(--s6) var(--s5);text-align:center;overflow:auto}
@@ -167,3 +167,15 @@ h2{font-size:var(--fs-xl);font-weight:700;letter-spacing:-.02em;margin:0}
 .view{animation:in var(--t-med) var(--ease)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media (min-width:600px){.mgrid{grid-template-columns:repeat(4,1fr)}}
+
+/* v5 gesture + micro-interactions */
+.fc{touch-action:pan-y;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;transition:transform 480ms var(--ease-spring)}
+.fc .inner{transition:transform 520ms var(--ease),scale 160ms var(--ease)}.fc.pressed .inner{scale:.985}.fc.dragging{cursor:grabbing}
+.face{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+.fc .ib{position:relative;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.fc .ib::after{content:"";position:absolute;inset:-6px;border-radius:inherit}
+.ib.sm{min-width:36px;min-height:36px}.ib.sm::after{inset:-8px}
+.ib:active{transform:scale(.88);background:var(--surface-2)}
+.ib.playing{animation:auPulse 1.1s var(--ease) infinite}
+@keyframes auPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--primary) 40%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+.lbl{pointer-events:none}

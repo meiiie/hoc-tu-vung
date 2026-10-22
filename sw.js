@@ -1,4 +1,4 @@
-const V='htv-v4',AUDIO='htv-audio-v1';
+const V='htv-v5',AUDIO='htv-audio-v1';
 const SHELL=['./','index.html','style.css','app.js','mascot.js','manifest.webmanifest','data/pages.json','data/p1.json','icons/icon-192.png','icons/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V&&x!==AUDIO).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});

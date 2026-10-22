@@ -57,13 +57,13 @@ function backFace(w){return `<div class="corner l">${starBtn(w)}</div><div class
  <div class="w">${esc(w.w)}</div><div class="ipa">${esc(w.ipa)}</div>
  <div class="tags"><span class="tag">${esc(w.pos)}</span><span class="tag lv">${esc(w.lv)}</span>${w.tags.includes('ielts-task1')?'<span class="tag">IELTS Task 1</span>':''}</div>
  <div class="vi" style="margin-top:12px">${esc(w.vi)}</div>
- <div class="sec"><div class="lab">Ví dụ <button class="ib" style="min-height:32px;min-width:32px" data-au="${w.id}" data-k="ex" aria-label="Nghe câu ví dụ">${I('play','s')}</button></div><i>${esc(w.ex)}</i><br><span class="muted">${esc(w.exvi)}</span></div>
+ <div class="sec"><div class="lab">Ví dụ <button class="ib sm" data-au="${w.id}" data-k="ex" aria-label="Nghe câu ví dụ">${I('play','s')}</button></div><i>${esc(w.ex)}</i><br><span class="muted">${esc(w.exvi)}</span></div>
  <div class="sec"><div class="lab">Cụm từ · họ từ</div>${esc(w.col)}</div>${w.tip?`<div class="sec tip">${I('lightbulb','s')}<div>${esc(w.tip)}</div></div>`:''}`}
 function frontFace(w,dir){return `<div class="corner l">${starBtn(w)}</div>`+(dir=='en'?`<div class="corner r"><button class="ib" data-au="${w.id}" data-k="w" aria-label="Nghe phát âm">${I('volume-2')}</button></div><div class="w">${esc(w.w)}</div><div class="ipa">${esc(w.ipa)}</div><div class="tags"><span class="tag">${esc(w.pos)}</span></div>`
  :`<div class="vi">${esc(w.vi)}</div><div class="tags"><span class="tag">${esc(w.pos)}</span></div><p class="muted">Từ tiếng Anh là gì?</p>`)}
 document.addEventListener('click',e=>{const a=e.target.closest('[data-au]');if(a){e.stopPropagation();play(byId(a.dataset.au),a.dataset.k||'w',{slow:a.dataset.slow?true:undefined,btn:a});return}
  const s=e.target.closest('[data-star]');if(s){e.stopPropagation();const id=s.dataset.star;S.star[id]=!S.star[id];if(!S.star[id])delete S.star[id];save();$$(`[data-star="${id}"]`).forEach(b=>{b.classList.toggle('on',!!S.star[id]);b.setAttribute('aria-pressed',!!S.star[id])});buzz(10);toast(S.star[id]?'Đã gắn sao':'Đã bỏ sao','star')}},true);
-['pointerdown'].forEach(ev=>document.addEventListener(ev,e=>{if(e.target.closest('[data-au],[data-star]'))e.stopPropagation()},true));
+['pointerdown','pointerup','touchstart','touchend','mousedown'].forEach(ev=>document.addEventListener(ev,e=>{if(e.target.closest&&e.target.closest('.fc [data-au],.fc [data-star],.fc button'))e.stopPropagation()},true));
 
 /* ---------- confetti ---------- */
 function confetti(){if(reduce)return;const c=$('#confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const cs=getComputedStyle(document.body);
@@ -156,16 +156,29 @@ function home(){const d=deck(),now=Date.now(),learned=d.filter(w=>S.srs[w.id]&&S
 /* ---------- swipeable card ---------- */
 function makeCard(stage,w,dir,onSwipe){const el=document.createElement('div');el.className='fc';el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','Thẻ '+(dir=='en'?w.w:w.vi)+'. Chạm để lật');
  el.innerHTML=`<div class="inner"><div class="face f">${frontFace(w,dir)}</div><div class="face b">${backFace(w)}</div></div><span class="lbl L">${I('x','s')}Đang học</span><span class="lbl K">${I('check','s')}Đã biết</span>`;
- stage.appendChild(el);let sx=0,sy=0,dx=0,t0=0,drag=false,moved=false;const L=$('.lbl.L',el),K=$('.lbl.K',el);
- const flip=()=>{el.classList.toggle('flip');buzz(6);if(el.classList.contains('flip')&&dir=='vi'&&S.set.autoplay)play(w);if(el._onflip)el._onflip()};
- el.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;drag=true;moved=false;sx=e.clientX;sy=e.clientY;dx=0;t0=performance.now();el.style.transition='none';el.setPointerCapture(e.pointerId)});
- el.addEventListener('pointermove',e=>{if(!drag)return;dx=e.clientX-sx;const dy=e.clientY-sy;if(Math.abs(dx)>8)moved=true;if(!moved)return;
-  el.style.transform=`translate3d(${dx}px,${dy*.12}px,0) rotate(${dx/20}deg)`;const o=Math.min(1,Math.abs(dx)/100);L.style.opacity=dx<0?o:0;K.style.opacity=dx>0?o:0});
- const end=()=>{if(!drag)return;drag=false;if(!moved){flip();return}const v=Math.abs(dx)/(performance.now()-t0);
-  if(Math.abs(dx)>100||v>.6)fling(dx>0);else{el.style.transition='transform 480ms var(--ease-spring)';el.style.transform='';L.style.opacity=K.style.opacity=0}};
- el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
- function fling(right){buzz(12);el.style.transition='transform 320ms var(--ease),opacity 320ms';el.style.transform=`translate3d(${(right?1:-1)*innerWidth*1.2}px,30px,0) rotate(${right?22:-22}deg)`;el.style.opacity=0;(right?K:L).style.opacity=1;setTimeout(()=>{el.remove();onSwipe(right)},reduce?0:240)}
- el.addEventListener('keydown',e=>{if(e.key==' '||e.key=='Enter'){e.preventDefault();flip()}});return {el,flip,fling}}
+ stage.appendChild(el);const L=$('.lbl.L',el),K=$('.lbl.K',el);
+ /* Gesture state machine: idle -> pending -> (tap | swipe | scroll). Only a clean tap flips. */
+ const TAP_SLOP=10,TAP_MS=450,FLIP_LOCK=reduce?60:540;let st='idle',pid=null,sx=0,sy=0,dx=0,t0=0,lastFlip=0,lastSwipeEnd=0,busy=false;
+ const INTERACTIVE='button,a,input,textarea,select,label,[data-au],[data-star],[data-noflip]';
+ const flip=()=>{const n=performance.now();if(busy||n-lastFlip<FLIP_LOCK)return;lastFlip=n;el.classList.toggle('flip');el.classList.remove('hint');buzz(6);if(el.classList.contains('flip')&&dir=='vi'&&S.set.autoplay)play(w);if(el._onflip)el._onflip()};
+ const reset=()=>{el.style.transition=reduce?'none':'transform 480ms var(--ease-spring)';el.style.transform='';L.style.opacity=K.style.opacity=0;el.classList.remove('dragging')};
+ el.addEventListener('pointerdown',e=>{if(busy||e.target.closest(INTERACTIVE)||(e.pointerType=='mouse'&&e.button!==0)){st='idle';return}
+  st='pending';pid=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;t0=performance.now();el.classList.add('pressed')});
+ el.addEventListener('pointermove',e=>{if(e.pointerId!==pid||st=='idle'||st=='scroll')return;const mx=e.clientX-sx,my=e.clientY-sy;
+  if(st=='pending'){if(Math.hypot(mx,my)<TAP_SLOP)return;el.classList.remove('pressed');
+   if(Math.abs(mx)>Math.abs(my)*1.2){st='swipe';el.classList.add('dragging');el.style.transition='none';try{el.setPointerCapture(pid)}catch(_){}}else{st='scroll';return}}
+  if(st=='swipe'){dx=mx;const lim=innerWidth*.9,rx=Math.abs(dx)>lim?Math.sign(dx)*(lim+(Math.abs(dx)-lim)*.25):dx;
+   el.style.transform=`translate3d(${rx}px,0,0) rotate(${rx/24}deg)`;const o=Math.min(1,Math.abs(dx)/100);L.style.opacity=dx<0?o:0;K.style.opacity=dx>0?o:0}});
+ el.addEventListener('pointerup',e=>{if(e.pointerId!==pid)return;el.classList.remove('pressed');const s0=st;st='idle';pid=null;
+  if(s0=='pending'){const sel=getSelection&&String(getSelection()).length>0;if(performance.now()-t0<=TAP_MS&&!sel&&performance.now()-lastSwipeEnd>300)flip();return}
+  if(s0=='swipe'){lastSwipeEnd=performance.now();const v=Math.abs(dx)/(performance.now()-t0);if(Math.abs(dx)>100||(v>.5&&Math.abs(dx)>40))fling(dx>0);else reset()}});
+ el.addEventListener('pointercancel',()=>{el.classList.remove('pressed');if(st=='swipe')reset();st='idle';pid=null});
+ el.addEventListener('lostpointercapture',e=>{if(e.target===el&&st=='swipe'){st='idle';reset()}});
+ el.addEventListener('click',e=>{if(!e.target.closest(INTERACTIVE)){e.preventDefault()}});
+ el.addEventListener('contextmenu',e=>{if(e.pointerType!='mouse')e.preventDefault()});
+ function fling(right){if(busy)return;busy=true;buzz(12);el.classList.remove('dragging');if(reduce){el.remove();onSwipe(right);return}
+  el.style.transition='transform 300ms var(--ease),opacity 300ms';el.style.transform=`translate3d(${(right?1:-1)*innerWidth*1.2}px,24px,0) rotate(${right?18:-18}deg)`;el.style.opacity=0;(right?K:L).style.opacity=1;setTimeout(()=>{el.remove();onSwipe(right)},240)}
+ el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==' '||e.key=='Enter'){e.preventDefault();e.stopPropagation();flip()}});return {el,flip,fling}}
 
 /* ---------- flashcards ---------- */
 let FC=null,keys=null;document.addEventListener('keydown',e=>keys&&keys(e));
