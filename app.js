@@ -1,7 +1,9 @@
 'use strict';
 /* Học Từ Vựng – Oxford 3000. Static PWA, no backend. Progress stays in this device's localStorage. */
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const DAY=864e5,NEW_PER_DAY=25,KEY='htv2';
+const DAY=864e5,KEY='htv2';
+const newPerDay=()=>S.user&&S.user.goal=='all'?1e9:+((S.user&&S.user.goal)||25);
+const uname=()=>S.user&&S.user.name?S.user.name:'bạn';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const ymd=d=>d.toLocaleDateString('sv');const today=()=>ymd(new Date());
@@ -55,7 +57,7 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-au]');if(a
 
 /* ---------- confetti ---------- */
 function confetti(){if(reduce)return;const c=$('#confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
- const cols=['#4255ff','#3ccfcf','#ffcd1f','#ff725b','#18ae79','#7b61ff'];
+ const cols=['#2b2321','#e9b949','#d9776a','#7fae8e','#8fb3d9','#c9bfb5'];
  const ps=Array.from({length:120},()=>({x:c.width/2,y:c.height*.35,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,s:Math.random()*7+4,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[Math.random()*6|0]}));
  let t=0;(function f(){x.clearRect(0,0,c.width,c.height);ps.forEach(p=>{p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);x.restore()});
  if(++t<150)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})();buzz([30,40,30])}
@@ -76,23 +78,52 @@ function openFilter(){const f=F(),days=[...new Set(words.flatMap(w=>w.tags.filte
  const close=()=>{sh.classList.add('hidden');route()};$('#fdone').onclick=close;sh.onclick=e=>{if(e.target==sh)close()};$('#fdone').focus()}
 document.addEventListener('keydown',e=>{if(e.key=='Escape'&&!$('#sheet').classList.contains('hidden')){$('#sheet').classList.add('hidden');route()}});
 
+/* ---------- onboarding ---------- */
+function onboarding(step=0,draft={...(S.user||{})}){const N=4,seg=`<div class="seg" aria-label="Bước ${step+1}/${N}">${[...Array(N)].map((_,i)=>`<i class="${i<=step?'on':''}"></i>`).join('')}</div>`;
+ const nav=(b)=>{$('#title').textContent='';$('#back').classList.toggle('hidden',step==0);$('#back').onclick=()=>onboarding(step-1,draft)};
+ const goals=[['10','10 từ','Nhẹ nhàng'],['25','25 từ','Vừa sức'],['50','50 từ','Chăm chỉ'],['all','Học hết toàn bộ','Không giới hạn']];
+ const styles=[['cards','🃏','Thẻ ghi nhớ','lật thẻ, vuốt trái/phải, học hết cả bộ'],['learn','🧠','Học từng vòng','trắc nghiệm rồi gõ từ, nhớ sâu'],['review','⏰','Ôn theo lịch','đúng lúc sắp quên, tiết kiệm thời gian'],['mix','✨','Trộn đều','mỗi ngày một kiểu, không nhàm chán']];
+ let html;
+ if(step==0)html=`${mascot('wave','Chào bạn! Mình là Cú Bông 🦉<br>Bạn tên là gì?')}<input class="bigin" id="nm" placeholder="Tên của bạn" maxlength="24" autocomplete="given-name" aria-label="Tên của bạn" value="${esc(draft.name||'')}"><div class="grow"></div>
+  <button class="btn" id="nx">Tiếp tục</button><button class="btn ghost" id="sk" style="margin-top:10px">Để sau</button>`;
+ if(step==1)html=`${mascot('think',`Mỗi ngày ${esc(draft.name||'bạn')} muốn học bao nhiêu từ mới?`)}<div class="choice">${goals.map(([v,l,d])=>`<button class="chip ${(draft.goal||'25')==v?'on':''}" data-g="${v}" aria-pressed="${(draft.goal||'25')==v}">${l} <span class="muted" style="font-weight:500">· ${d}</span></button>`).join('')}</div>
+  <p class="muted" style="text-align:center;margin-top:16px">Bạn luôn có thể “Học hết toàn bộ” bất cứ lúc nào.</p><div class="grow"></div><button class="btn" id="nx">Chốt vậy nhé</button>`;
+ if(step==2){const k=Math.max(0,styles.findIndex(x=>x[0]==(draft.style||'cards')));const st=styles[k];
+  html=`${mascot('idle','Bạn thích học theo kiểu nào?')}<div class="pick">${mascot('happy',null,{small:true})}<h4>${st[2]}</h4><p>${st[3]}</p>
+  <div class="dots" role="radiogroup">${styles.map((x,i)=>`<button role="radio" aria-checked="${i==k}" aria-label="${x[2]}" class="${i==k?'on':''}" data-s="${x[0]}">${x[1]}</button>`).join('')}</div></div><div class="grow"></div><button class="btn" id="nx">Nghe hợp lý đấy</button>`}
+ if(step==3){const g=goals.find(x=>x[0]==(draft.goal||'25')),st=styles.find(x=>x[0]==(draft.style||'cards'));
+  html=`${mascot('celebrate',`Đây là kế hoạch của ${esc(draft.name||'bạn')}!`)}<div class="plan">
+  <div class="li"><span class="ic">1</span><div><b>${g[1]} mỗi ngày</b><small>Cú Bông sẽ nhắc bạn giữ chuỗi ngày học 🔥</small></div></div>
+  <div class="li"><span class="ic">2</span><div><b>${st[2]}</b><small>${st[3]}</small></div></div>
+  <div class="li"><span class="ic">3</span><div><b>252 từ Oxford 3000 · IELTS</b><small>có phát âm, ví dụ, mẹo nhớ; chạy cả khi offline</small></div></div></div>
+  <p class="muted" style="text-align:center">Tiến độ chỉ lưu trên điện thoại này.</p><div class="grow"></div><button class="btn" id="nx">Bắt đầu</button>`}
+ view('',`<div class="ob">${seg}${html}</div>`,step>0);nav();
+ if(step==0){const nm=$('#nm');nm.onkeydown=e=>{if(e.key=='Enter')$('#nx').click()};$('#nx').onclick=()=>{draft.name=nm.value.trim();onboarding(1,draft)};$('#sk').onclick=()=>{draft.name='';onboarding(1,draft)}}
+ if(step==1){$$('[data-g]').forEach(b=>b.onclick=()=>{draft.goal=b.dataset.g;buzz(8);onboarding(1,draft)});$('#nx').onclick=()=>{draft.goal=draft.goal||'25';onboarding(2,draft)}}
+ if(step==2){$$('[data-s]').forEach(b=>b.onclick=()=>{draft.style=b.dataset.s;buzz(8);onboarding(2,draft)});$('#nx').onclick=()=>{draft.style=draft.style||'cards';onboarding(3,draft)}}
+ if(step==3)$('#nx').onclick=()=>{S.user={...draft,done:true,since:today()};save();confetti();$('#back').onclick=()=>{location.hash='#/'};location.hash='#/';route()}}
+
 /* ---------- home ---------- */
 function home(){const d=deck(),now=Date.now(),learned=d.filter(w=>S.srs[w.id]&&S.srs[w.id].reps).length,due=d.filter(w=>S.srs[w.id]&&S.srs[w.id].due<=now).length;
- const pct=d.length?Math.round(learned/d.length*100):0;let streak=0;for(let x=new Date();S.log[ymd(x)];x=new Date(x-DAY))streak++;
- const tl=S.log[today()]||{rev:0,new:0},stars=Object.keys(S.star).length;
- view('Học Từ Vựng',`<section class="hero"><div class="hrow"><div class="ring" style="--p:${pct}" role="img" aria-label="Đã học ${pct}%"><b>${pct}%</b></div>
- <div><h2>${esc(deckName())}</h2><p>${d.length} từ · đã học ${learned} · cần ôn ${due}</p><p style="margin-top:6px">🔥 ${streak} ngày liên tiếp · hôm nay ${tl.rev} lượt</p></div></div></section>
- <div class="chips"><button class="chip on" id="filt">⚙︎ Chọn bộ từ</button>${['day01','day02','day03','day04','day05','day06','day07','day08','day09','day10'].filter(x=>words.some(w=>w.tags.includes(x))).map(x=>`<button class="chip ${F().day==x?'on':''}" data-day="${x}">Ngày ${+x.slice(3)}</button>`).join('')}</div>
- <div class="modes">
- <button class="mode wide" data-go="cards"><span class="e">🃏</span><span><b>Thẻ ghi nhớ</b><br><small>Lật thẻ, vuốt phải “đã biết”, trái “đang học” · học hết toàn bộ, không giới hạn</small></span></button>
- <button class="mode" data-go="learn"><span class="e">🧠</span><b>Học</b><small>Từng vòng: trắc nghiệm → gõ từ</small></button>
- <button class="mode" data-go="review"><span class="e">⏰</span><b>Ôn theo lịch</b><small>${due} cần ôn · ${NEW_PER_DAY} từ mới/ngày</small></button>
- <button class="mode" data-go="match"><span class="e">⚡</span><b>Ghép thẻ</b><small>Ghép nhanh nhất có thể${S.best.match?' · kỷ lục '+(S.best.match/1000).toFixed(1)+'s':''}</small></button>
- <button class="mode" data-go="test"><span class="e">📝</span><b>Kiểm tra</b><small>20 câu hỗn hợp, chấm điểm</small></button>
- <button class="mode" data-go="list"><span class="e">📖</span><b>Danh sách từ</b><small>Tìm, nghe, gắn sao (${stars} ★)</small></button>
- <button class="mode" data-go="stats"><span class="e">📊</span><b>Thống kê</b><small>Tiến độ theo cấp độ</small></button></div>
- <p class="muted" style="text-align:center;margin-top:20px">Tiến độ được lưu riêng trên thiết bị này. Thêm vào màn hình chính để dùng offline.</p>`,false);
- $('#filt').onclick=openFilter;$$('[data-day]').forEach(b=>b.onclick=()=>{F().day=F().day==b.dataset.day?'':b.dataset.day;save();home();buzz(8)});
+ let streak=0;for(let x=new Date();S.log[ymd(x)];x=new Date(x-DAY))streak++;const yest=S.log[ymd(new Date(now-DAY))];
+ const tl=S.log[today()]||{rev:0,new:0},stars=Object.keys(S.star).length,g=newPerDay(),gl=g>=1e9?'∞':g,gp=g>=1e9?(tl.new?100:0):Math.min(100,tl.new/g*100);
+ const hr=new Date().getHours(),hi=hr<11?'Chào buổi sáng':hr<18?'Chào buổi chiều':'Chào buổi tối';
+ let st='wave',msg=`${hi}, ${esc(uname())}!<br>Hôm nay mình học ${g>=1e9?'hết toàn bộ':g+' từ'} nhé?`;
+ if(!tl.rev&&yest&&!S.log[today()]){st='sleepy';msg=`Cú Bông buồn ngủ quá… Học vài từ để giữ chuỗi ${streak+1} ngày nhé!`}
+ else if(tl.new>=g&&g<1e9){st='happy';msg=`Xong mục tiêu hôm nay rồi! Giỏi quá ${esc(uname())} 🎉`}
+ else if(!d.length){st='meditate';msg='Bộ từ đang trống. Đổi bộ lọc nhé.'}
+ const style=(S.user&&S.user.style)||'cards',main=style=='mix'?['cards','learn','review'][new Date().getDate()%3]:style;
+ const ML={cards:['🃏','Thẻ ghi nhớ','Lật thẻ, vuốt phải “đã biết”, trái “đang học” · học hết toàn bộ'],learn:['🧠','Học','Từng vòng: trắc nghiệm → gõ từ'],review:['⏰','Ôn theo lịch',`${due} thẻ cần ôn · ${gl} từ mới/ngày`],match:['⚡','Ghép thẻ',S.best.match?'Kỷ lục '+(S.best.match/1000).toFixed(1)+' giây':'Ghép nhanh nhất có thể'],test:['📝','Kiểm tra','20 câu hỗn hợp, chấm điểm'],list:['📖','Danh sách từ',`Tìm, nghe, gắn sao (${stars} ★)`],stats:['📊','Thống kê','Tiến độ theo cấp độ']};
+ const M=k=>`<button class="mode ${k==main?'wide':''}" data-go="${k}"><span class="e" aria-hidden="true">${ML[k][0]}</span><span><b>${ML[k][1]}</b><br><small>${ML[k][2]}</small></span></button>`;
+ view('',`${mascot(st,msg)}
+ <section class="today"><div class="t"><b>Hôm nay</b><span class="muted">🔥 ${streak} ngày liên tiếp</span></div><div class="t" style="margin-top:4px"><span class="n">${tl.new}<span class="muted" style="font-size:16px"> / ${gl} từ mới</span></span><span class="muted">${tl.rev} lượt</span></div>
+ <div class="bar" role="progressbar" aria-valuenow="${Math.round(gp)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${gp}%"></i></div>
+ <div class="kpis"><span><b>${learned}</b>đã học</span><span><b>${due}</b>cần ôn</span><span><b>${d.length}</b>${esc(deckName())}</span></div></section>
+ <div class="chips"><button class="chip on" id="filt">⚙︎ Chọn bộ từ</button>${['day01','day02','day03','day04','day05','day06','day07','day08','day09','day10'].filter(x=>words.some(w=>w.tags.includes(x))).map(x=>`<button class="chip ${F().day==x?'on':''}" data-day="${x}" aria-pressed="${F().day==x}">Ngày ${+x.slice(3)}</button>`).join('')}</div>
+ <div class="modes">${M(main)}${['cards','learn','review','match','test','list','stats'].filter(k=>k!=main).map(M).join('')}</div>
+ <button class="btn ghost" id="redo" style="margin-top:18px">Đổi tên, mục tiêu, kiểu học</button>
+ <p class="muted" style="text-align:center;margin-top:14px">Tiến độ lưu riêng trên thiết bị này · thêm vào màn hình chính để học offline.</p>`,false);
+ $('#filt').onclick=openFilter;$$('[data-day]').forEach(b=>b.onclick=()=>{F().day=F().day==b.dataset.day?'':b.dataset.day;save();home();buzz(8)});$('#redo').onclick=()=>onboarding(0);
  $$('[data-go]').forEach(b=>b.onclick=()=>{if(!deck().length&&b.dataset.go!='stats'){toast('Bộ từ đang trống – hãy đổi bộ lọc');return}location.hash='#/'+b.dataset.go})}
 
 /* ---------- swipeable card ---------- */
@@ -115,13 +146,14 @@ let FC=null;
 function cards(){const d=deck();if(!FC||FC.sig!=JSON.stringify(F()))FC={sig:JSON.stringify(F()),queue:d.map(w=>w.id),i:0,know:0,learn:0,hist:[],shuffled:false};
  render();
  function render(){const total=FC.queue.length;if(FC.i>=total)return done();const w=words.find(x=>x.id==FC.queue[FC.i]);
-  view('Thẻ ghi nhớ',`<div class="prog"><span class="pill l" aria-label="Đang học">${FC.learn}</span><div class="bar" aria-hidden="true"><i style="width:${FC.i/total*100}%"></i></div><span class="pill k" aria-label="Đã biết">${FC.know}</span></div>
+  view('Thẻ ghi nhớ',`${mascot(FC.i==0?'wave':'idle',FC.i==0?'Chạm để lật · vuốt phải nếu đã biết':FC.tip||'Tiếp tục nào!',{small:true,row:true})}<div class="prog"><span class="pill l" aria-label="Đang học">${FC.learn}</span><div class="bar" aria-hidden="true"><i style="width:${FC.i/total*100}%"></i></div><span class="pill k" aria-label="Đã biết">${FC.know}</span></div>
   <p class="muted" style="text-align:center;margin:-4px 0 8px">${FC.i+1} / ${total}</p><div class="stage" id="stage"></div>
   <div class="yn"><button class="btn l" id="nL">✕ Đang học</button><button class="btn k" id="nK">✓ Đã biết</button></div>
   <div class="ctrl"><button class="ib" id="undo" aria-label="Hoàn tác" ${FC.hist.length?'':'disabled'}>↶</button><button class="ib ${FC.shuffled?'on':''}" id="shuf" aria-label="Trộn thẻ" aria-pressed="${FC.shuffled}">🔀</button>
   <button class="ib" id="flipb" aria-label="Lật thẻ">⟲</button><button class="ib ${S.set.dir=='vi'?'on':''}" id="dirb" aria-label="Đổi chiều Anh/Việt">${S.set.dir=='en'?'EN':'VI'}</button><button class="ib ${S.set.autoplay?'on':''}" id="autob" aria-label="Tự phát âm" aria-pressed="${S.set.autoplay}">🔈</button></div>
   <p class="muted hint">Chạm để lật · vuốt phải: đã biết · vuốt trái: đang học · phím ← →</p>`);
-  const c=makeCard($('#stage'),w,S.set.dir,right=>{FC.hist.push({id:w.id,right});right?FC.know++:FC.learn++;grade(w,right?4:0);if(!right)FC.queue.push(w.id);FC.i++;render()});
+  const c=makeCard($('#stage'),w,S.set.dir,right=>{FC.tip=right?['Tuyệt! Đã biết ✓','Nhớ tốt lắm!','Giỏi quá!'][Math.random()*3|0]:'Không sao, mình sẽ gặp lại từ này';FC.mood=right?'happy':'sad';FC.hist.push({id:w.id,right});right?FC.know++:FC.learn++;grade(w,right?4:0);if(!right)FC.queue.push(w.id);FC.i++;render()});
+  if(FC.mood){moodTo($('.mascot'),FC.mood,null,1400);FC.mood=null}
   if(S.set.dir=='en'&&S.set.autoplay)play(w);
   $('#nL').onclick=()=>c.fling(false);$('#nK').onclick=()=>c.fling(true);$('#flipb').onclick=c.flip;
   $('#undo').onclick=()=>{const h=FC.hist.pop();if(!h)return;FC.i--;h.right?FC.know--:FC.learn--;if(!h.right)FC.queue.pop();render()};
@@ -130,15 +162,15 @@ function cards(){const d=deck();if(!FC||FC.sig!=JSON.stringify(F()))FC={sig:JSON
   keys=e=>{if(e.target.tagName=='INPUT')return;if(e.key=='ArrowRight')c.fling(true);else if(e.key=='ArrowLeft')c.fling(false);else if(e.key==' '){e.preventDefault();c.flip()}};
   c.el.focus({preventScroll:true})}
  function done(){confetti();const learning=[...new Set(FC.hist.filter(h=>!h.right).map(h=>h.id))];
-  view('Thẻ ghi nhớ',`<div class="res q"><div style="font-size:48px">🎉</div><h2>Bạn đã đi hết bộ thẻ!</h2><p>${FC.know} lần “đã biết” · ${FC.learn} lần “đang học”</p>
+  view('Thẻ ghi nhớ',`<div class="res">${mascot('celebrate','Bạn đã đi hết bộ thẻ! 🎉')}<p>${FC.know} lần “đã biết” · ${FC.learn} lần “đang học”</p>
   <div class="row"><button class="btn ghost" id="again">Bắt đầu lại</button><button class="btn" id="learnm">Chế độ Học</button></div></div>`);
   $('#again').onclick=()=>{FC=null;cards()};$('#learnm').onclick=()=>location.hash='#/learn'}}
 let keys=null;document.addEventListener('keydown',e=>keys&&keys(e));
 
 /* ---------- SRS review ---------- */
 function review(){const d=deck(),now=Date.now(),due=d.filter(w=>S.srs[w.id]&&S.srs[w.id].due<=now).sort((a,b)=>S.srs[a.id].due-S.srs[b.id].due);
- const left=Math.max(0,NEW_PER_DAY-((S.log[today()]||{}).new||0));let q=due.concat(d.filter(w=>!S.srs[w.id]).slice(0,left)),n=0;const tot=q.length;
- (function nx(){const w=q.shift();if(!w){if(n)confetti();view('Ôn theo lịch',`<div class="res q"><div style="font-size:48px">${n?'🎉':'✅'}</div><h2>${n?'Xong lượt ôn hôm nay!':'Không có thẻ cần ôn'}</h2><p class="muted">Muốn học tiếp? “Thẻ ghi nhớ” cho phép học hết toàn bộ, không giới hạn.</p><button class="btn" onclick="location.hash='#/cards'">Học hết toàn bộ</button></div>`);return}
+ const left=Math.max(0,newPerDay()-((S.log[today()]||{}).new||0));let q=due.concat(d.filter(w=>!S.srs[w.id]).slice(0,left)),n=0;const tot=q.length;
+ (function nx(){const w=q.shift();if(!w){if(n)confetti();view('Ôn theo lịch',`<div class="res">${mascot(n?'celebrate':'meditate',n?'Xong lượt ôn hôm nay!':'Không có thẻ cần ôn. Thư giãn chút nhé…')}<p class="muted">Muốn học tiếp? “Thẻ ghi nhớ” cho phép học hết toàn bộ, không giới hạn.</p><button class="btn" onclick="location.hash='#/cards'">Học hết toàn bộ</button></div>`);return}
   const st=S.srs[w.id];const b=[0,3,4,5].map(g=>[g,ivl(g<3?0:sm2(st,g).int)]);
   view('Ôn theo lịch',`<div class="prog"><div class="bar"><i style="width:${n/tot*100}%"></i></div><span>${tot-n}</span></div><div class="stage" id="stage"></div>
   <div class="yn hidden" id="gr" style="grid-template-columns:repeat(4,1fr)">${b.map(([g,t],i)=>`<button class="btn sm" style="width:100%;flex-direction:column;gap:0;background:${['#ff725b','#f59e0b','#18ae79','#4255ff'][i]}" data-g="${g}">${['Quên','Khó','Nhớ','Dễ'][i]}<small style="font-weight:400">${t}</small></button>`).join('')}</div>
@@ -157,7 +189,7 @@ function learn(){const d=deck(),ROUND=7;let round=[],ri=0,rc=0;
   const cur=pend.filter(w=>S.learn[w.id]!=null);const fresh=pend.filter(w=>S.learn[w.id]==null);
   round=shuffle(cur).concat(fresh).slice(0,ROUND);round=shuffle(round);ri=0;rc=0;ask()}
  function header(){const m=d.filter(w=>lv(w)>=2).length,f=d.filter(w=>lv(w)==1).length;
-  return `<div class="prog" aria-label="Tiến độ"><div class="bar" style="position:relative"><i style="width:${(m+f*.5)/d.length*100}%"></i></div><span>${m}/${d.length}</span></div><p class="muted">Vòng hiện tại: ${ri+1}/${round.length} · ${f} từ đang quen dần</p>`}
+  return `${mascot('think',['Từ này nghĩa là gì nhỉ?','Bình tĩnh suy nghĩ nhé…','Bạn làm được mà!'][ri%3],{small:true,row:true})}<div class="prog" aria-label="Tiến độ"><div class="bar" style="position:relative"><i style="width:${(m+f*.5)/d.length*100}%"></i></div><span>${m}/${d.length}</span></div><p class="muted">Vòng hiện tại: ${ri+1}/${round.length} · ${f} từ đang quen dần</p>`}
  function ask(){if(ri>=round.length)return roundEnd();const w=round[ri],typing=lv(w)>=1,en=Math.random()<.5;
   if(!typing){const opts=shuffle([w,...shuffle(words.filter(x=>x.id!=w.id&&x.pos.split(',')[0]==w.pos.split(',')[0])).concat(shuffle(words.filter(x=>x.id!=w.id))).filter((x,i,a)=>a.indexOf(x)==i).slice(0,3)]);
    view('Học',header()+`<div class="q"><div class="kind">${en?'Thuật ngữ':'Định nghĩa'}</div><div class="term">${esc(en?w.w:w.vi)}</div>${en?`<button class="ib" data-au="${w.id}" aria-label="Nghe">🔊</button>`:''}
@@ -172,20 +204,21 @@ function learn(){const d=deck(),ROUND=7;let round=[],ri=0,rc=0;
    const chk=give=>{if(ti.disabled)return;const ok=!give&&accepts(w).includes(norm(ti.value));ti.disabled=true;ti.classList.add(ok?'ok':'bad');$('#ck').parentNode.remove();res(w,ok,2)};
    $('#ck').onclick=()=>chk(false);$('#dk').onclick=()=>chk(true);ti.onkeydown=e=>{if(e.key=='Enter')chk(false)};keys=null}}
  function res(w,ok,to){if(ok){S.learn[w.id]=Math.max(lv(w),to);rc++;buzz(12);grade(w,4)}else{S.learn[w.id]=0;buzz([40,30,40]);grade(w,0)}save();play(w);
-  const fb=$('#fb');fb.innerHTML=`<div class="fb ${ok?'ok':'bad'}">${ok?['Chính xác! 🎯','Tuyệt vời! ✨','Giỏi lắm! 💪'][Math.random()*3|0]:'Chưa đúng – đáp án: <b>'+esc(w.w)+'</b> = '+esc(w.vi)}</div>${ok?'':`<p class="muted">${esc(w.ex)}</p>`}<button class="btn" id="nx" style="margin-top:10px">Tiếp tục</button>`;
+  moodTo($('.mascot'),ok?'happy':'sad',ok?['Chính xác! 🎯','Tuyệt vời! ✨','Giỏi lắm! 💪'][Math.random()*3|0]:'Chưa đúng rồi, xem lại nhé');
+  const fb=$('#fb');fb.innerHTML=`<div class="fb ${ok?'ok':'bad'}">${ok?'✓ '+esc(w.w)+' = '+esc(w.vi):'Đáp án: <b>'+esc(w.w)+'</b> = '+esc(w.vi)}</div>${ok?'':`<p class="muted">${esc(w.ex)}</p>`}<button class="btn" id="nx" style="margin-top:10px">Tiếp tục</button>`;
   const go=()=>{ri++;ask()};$('#nx').onclick=go;$('#nx').focus();if(ok)setTimeout(()=>{if($('#nx')&&document.activeElement==$('#nx'))go()},900);keys=e=>{if(e.key=='Enter'&&$('#nx')){e.preventDefault();go()}}}
  function roundEnd(){confetti();const m=d.filter(w=>lv(w)>=2).length;
-  view('Học',`<div class="q res"><div style="font-size:48px">🏁</div><h2>Hoàn thành vòng!</h2><p>Đúng ${rc}/${round.length} câu · đã thuộc ${m}/${d.length} từ</p>
+  view('Học',`<div class="res">${mascot('celebrate','Hoàn thành vòng! 🏁')}<p>Đúng ${rc}/${round.length} câu · đã thuộc ${m}/${d.length} từ</p>
   <div class="list">${round.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> – ${esc(w.vi)}</div><span>${lv(w)>=2?'✅':lv(w)==1?'🟡':'🔴'}</span></div>`).join('')}</div><button class="btn" id="nr" style="margin-top:12px">Vòng tiếp theo</button></div>`);
   $('#nr').onclick=start;$('#nr').focus();keys=e=>{if(e.key=='Enter')start()}}
- function finished(){confetti();view('Học',`<div class="q res"><div style="font-size:56px">🏆</div><h2>Bạn đã thuộc cả ${d.length} từ!</h2><p class="muted">Hãy làm bài Kiểm tra, hoặc học lại từ đầu.</p>
+ function finished(){confetti();view('Học',`<div class="res">${mascot('celebrate',`Bạn đã thuộc cả ${d.length} từ! 🏆`)}<p class="muted">Hãy làm bài Kiểm tra, hoặc học lại từ đầu.</p>
   <div class="row"><button class="btn ghost" id="rs">Học lại từ đầu</button><button class="btn" onclick="location.hash='#/test'">Kiểm tra</button></div></div>`);$('#rs').onclick=()=>{d.forEach(w=>delete S.learn[w.id]);save();start()}}
  start()}
 
 /* ---------- Match game ---------- */
 function match(){const d=deck();if(d.length<3){toast('Cần ít nhất 3 từ');return home()}
  const N=Math.min(6,d.length);
- function intro(){view('Ghép thẻ',`<div class="q res"><div style="font-size:56px">⚡</div><h2>Sẵn sàng chơi?</h2><p>Ghép ${N} cặp từ tiếng Anh với nghĩa tiếng Việt nhanh nhất có thể. Ghép sai bị cộng 1 giây.</p>${S.best.match?`<p>🏆 Kỷ lục: <b>${(S.best.match/1000).toFixed(1)} giây</b></p>`:''}<button class="btn" id="go">Bắt đầu</button></div>`);$('#go').onclick=play_;$('#go').focus()}
+ function intro(){view('Ghép thẻ',`<div class="res">${mascot('idle','Sẵn sàng chơi chưa? ⚡')}<p>Ghép ${N} cặp từ tiếng Anh với nghĩa tiếng Việt nhanh nhất có thể. Ghép sai bị cộng 1 giây.</p>${S.best.match?`<p>🏆 Kỷ lục: <b>${(S.best.match/1000).toFixed(1)} giây</b></p>`:''}<button class="btn" id="go">Bắt đầu</button></div>`);$('#go').onclick=play_;$('#go').focus()}
  function play_(){const ps=shuffle(d).slice(0,N);const tiles=shuffle(ps.flatMap(w=>[{id:w.id,t:w.w,k:'en'},{id:w.id,t:w.vi,k:'vi'}]));let sel=null,left=N,pen=0;const t0=performance.now();
   view('Ghép thẻ',`<div class="timer" id="tm" aria-live="off">0.0 giây</div><div class="mgrid">${tiles.map((x,i)=>`<button class="tile" data-i="${i}" lang="${x.k=='en'?'en':'vi'}">${esc(x.t)}</button>`).join('')}</div>`);
   let raf;const tick=()=>{const e=$('#tm');if(!e)return;e.textContent=((performance.now()-t0)/1000+pen).toFixed(1)+' giây';raf=requestAnimationFrame(tick)};tick();
@@ -193,7 +226,7 @@ function match(){const d=deck();if(d.length<3){toast('Cần ít nhất 3 từ');
    const y=tiles[sel.dataset.i];if(x.id==y.id&&x.k!=y.k){b.classList.add('ok');sel.classList.add('ok');buzz(12);if(x.k=='en')play(words.find(w=>w.id==x.id));else play(words.find(w=>w.id==y.id));sel=null;if(--left==0){cancelAnimationFrame(raf);finish((performance.now()-t0)+pen*1000)}}
    else{const s=sel;[s,b].forEach(z=>{z.classList.remove('sel');z.classList.add('bad')});pen+=1;buzz([40,30,40]);setTimeout(()=>[s,b].forEach(z=>z.classList.remove('bad')),400);sel=null}})}
  function finish(ms){const rec=!S.best.match||ms<S.best.match;if(rec)S.best.match=Math.round(ms);save();confetti();
-  view('Ghép thẻ',`<div class="q res"><div style="font-size:56px">${rec?'🏆':'🎉'}</div><div class="big">${(ms/1000).toFixed(1)}s</div><p>${rec?'Kỷ lục mới!':'Kỷ lục của bạn: '+(S.best.match/1000).toFixed(1)+'s'}</p><div class="row"><button class="btn ghost" onclick="location.hash='#/'">Trang chủ</button><button class="btn" id="pa">Chơi lại</button></div></div>`);$('#pa').onclick=play_}
+  view('Ghép thẻ',`<div class="res">${mascot('celebrate',rec?'Kỷ lục mới! 🏆':'Xong rồi, nhanh quá!')}<div class="big">${(ms/1000).toFixed(1)}s</div><p>${rec?'Kỷ lục mới!':'Kỷ lục của bạn: '+(S.best.match/1000).toFixed(1)+'s'}</p><div class="row"><button class="btn ghost" onclick="location.hash='#/'">Trang chủ</button><button class="btn" id="pa">Chơi lại</button></div></div>`);$('#pa').onclick=play_}
  intro()}
 
 /* ---------- Test ---------- */
@@ -209,14 +242,14 @@ function test(){const d=deck();if(d.length<4){toast('Cần ít nhất 4 từ');r
  $('#sub').onclick=()=>{let sc=0;const wrong=[];qs.forEach((q,i)=>{const c=$(`[data-q="${i}"]`);let ok;
   if(q.t=='type')ok=accepts(q.w).includes(norm($('.ti',c).value));else if(q.t=='mc')ok=c.dataset.a==q.w.id;else ok=c.dataset.a==(q.truth?'1':'0');
   if(ok)sc++;else wrong.push(q.w);grade(q.w,ok?4:0)});const p=Math.round(sc/n*100);if(p>=80)confetti();
-  view('Kết quả',`<div class="q res"><div class="big">${p}%</div><p>Đúng ${sc}/${n} câu · ${p>=80?'Xuất sắc! 🎉':p>=50?'Khá tốt, cố thêm nhé!':'Ôn lại nhé 💪'}</p></div>
+  view('Kết quả',`<div class="res">${mascot(p>=80?'celebrate':p>=50?'happy':'sad',p>=80?'Xuất sắc! Cú Bông tự hào lắm':p>=50?'Khá lắm, cố thêm chút nữa!':'Không sao, ôn lại rồi thử lại nhé')}<div class="big">${p}%</div><p>Đúng ${sc}/${n} câu · ${p>=80?'Xuất sắc! 🎉':p>=50?'Khá tốt, cố thêm nhé!':'Ôn lại nhé 💪'}</p></div>
   ${wrong.length?`<h3>Cần ôn lại (${wrong.length})</h3><div class="list">${wrong.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(w.ipa)}</span><br>${esc(w.vi)}</div><button class="ib" data-au="${w.id}" aria-label="Nghe">🔊</button>${starBtn(w).replace('class="st','class="ib st').replace('position','')}</div>`).join('')}</div>`:''}
   <div class="row"><button class="btn ghost" onclick="location.hash='#/'">Trang chủ</button><button class="btn" id="rt">Làm bài mới</button></div>`);$('#rt').onclick=test}}
 
 /* ---------- list & stats ---------- */
 function list(){const d=deck();view('Danh sách từ',`<input class="search" type="search" id="sq" placeholder="Tìm từ hoặc nghĩa…" aria-label="Tìm kiếm"><p class="muted" id="lc"></p><div class="list" id="ls"></div>`);
  const r=()=>{const q=norm($('#sq').value);const xs=d.filter(w=>!q||norm(w.w).includes(q)||norm(w.vi).includes(q));$('#lc').textContent=xs.length+' từ';
-  $('#ls').innerHTML=xs.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(w.ipa)}</span> <span class="tag lv">${esc(w.lv)}</span><br>${esc(w.vi)}</div><button class="ib" data-au="${w.id}" aria-label="Nghe ${esc(w.w)}">🔊</button><button class="ib st ${S.star[w.id]?'on':''}" style="position:static" data-star="${w.id}" aria-pressed="${!!S.star[w.id]}" aria-label="Gắn sao">★</button></div>`).join('')};
+  $('#ls').innerHTML=xs.length?'':mascot('meditate','Không tìm thấy từ nào…');if(xs.length)$('#ls').innerHTML=xs.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(w.ipa)}</span> <span class="tag lv">${esc(w.lv)}</span><br>${esc(w.vi)}</div><button class="ib" data-au="${w.id}" aria-label="Nghe ${esc(w.w)}">🔊</button><button class="ib st ${S.star[w.id]?'on':''}" style="position:static" data-star="${w.id}" aria-pressed="${!!S.star[w.id]}" aria-label="Gắn sao">★</button></div>`).join('')};
  $('#sq').oninput=r;r()}
 function stats(){const d=deck(),now=Date.now(),L=d.filter(w=>S.srs[w.id]&&S.srs[w.id].reps).length,M=d.filter(w=>S.srs[w.id]&&S.srs[w.id].int>=21).length,D=d.filter(w=>S.srs[w.id]&&S.srs[w.id].due<=now).length;
  const days=[...Array(7)].map((_,i)=>ymd(new Date(now-(6-i)*DAY))),mx=Math.max(1,...days.map(x=>(S.log[x]||{}).rev||0));
@@ -228,9 +261,9 @@ function stats(){const d=deck(),now=Date.now(),L=d.filter(w=>S.srs[w.id]&&S.srs[
 
 /* ---------- router & boot ---------- */
 const R={'':home,cards,review,learn,match,test,list,stats};
-function route(){keys=null;audio.pause();const k=location.hash.replace(/^#\/?/,'');(R[k]||home)()}
+function route(){keys=null;audio.pause();$('#back').onclick=()=>{location.hash='#/'};if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');(R[k]||home)()}
 addEventListener('hashchange',route);$('#back').onclick=()=>{location.hash='#/'};
-const applyTheme=()=>{document.body.classList.toggle('dark',!!S.set.dark);$('#theme').textContent=S.set.dark?'☀️':'🌙';$('meta[name=theme-color]').content=S.set.dark?'#0a092d':'#4255ff'};
+const applyTheme=()=>{document.body.classList.toggle('dark',!!S.set.dark);$('#theme').textContent=S.set.dark?'☀️':'🌙';$('meta[name=theme-color]').content=S.set.dark?'#1b1715':'#efece6'};
 if(S.set.dark==null)S.set.dark=matchMedia('(prefers-color-scheme: dark)').matches;applyTheme();
 $('#theme').onclick=()=>{S.set.dark=!S.set.dark;save();applyTheme()};
 const applySnd=()=>{$('#sound').classList.toggle('off',!S.set.autoplay);$('#sound').setAttribute('aria-pressed',!!S.set.autoplay)};applySnd();

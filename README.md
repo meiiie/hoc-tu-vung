@@ -14,5 +14,5 @@ Tiến độ lưu trong `localStorage` của từng máy, nên mỗi người d�
 ## Ghi nhận
 - Cách bố trí các chế độ học (Flashcards, Learn, Match, Test) tham khảo trải nghiệm của Quizlet. Không dùng mã nguồn hay tài sản của Quizlet.
 - Thuật toán lặp lại ngắt quãng: SM-2 (P. A. Woźniak, SuperMemo, 1987), tự viết lại.
-- Mã nguồn tự viết, không sao chép từ dự án mã nguồn mở nào.
+- Mã nguồn tự viết, không sao chép từ dự án mã nguồn mở nào. Linh vật "Cú Bông" là nhân vật gốc, vẽ bằng SVG trong `mascot.js`.
 - Danh sách từ: Oxford 3000 (Oxford University Press), nghĩa tiếng Việt theo tài liệu học. Âm thanh tạo bằng gTTS (Google Text-to-Speech).
