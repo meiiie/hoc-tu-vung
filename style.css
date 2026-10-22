@@ -1,7 +1,7 @@
 /* ===== Design tokens ===== */
 :root{
  --bg:#F6F5F2;--surface:#FFFFFF;--surface-2:#EFEDE8;--border:#E2DFD8;--text:#1B1A18;--text-2:#55514B;--text-3:#706B64;
- --primary:#3446C9;--primary-hover:#2B3BB0;--primary-soft:#E8EBFB;--on-primary:#FFFFFF;
+ --primary:#245E87;--primary-hover:#1D4F73;--primary-soft:#E2EFF8;--on-primary:#FFFFFF;
  --success:#1F7A4D;--success-soft:#E3F3EA;--danger:#C2342E;--danger-soft:#FBE7E5;--warn:#9A5800;--warn-soft:#FBF0DC;--star:#C98A04;
  --m-fill:#FFFFFF;--m-beak:#E5A72E;--m-cheek:#F3C3BA;
  --shadow-1:0 1px 2px rgba(27,26,24,.05),0 1px 1px rgba(27,26,24,.03);--shadow-2:0 2px 6px rgba(27,26,24,.05),0 10px 24px rgba(27,26,24,.06);
@@ -11,7 +11,7 @@
  --ease:cubic-bezier(.2,.8,.2,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);--t-fast:120ms;--t-med:220ms;--t-slow:420ms;
  color-scheme:light}
 .dark{--bg:#121214;--surface:#1B1B1F;--surface-2:#25252A;--border:#33333A;--text:#EEEEF0;--text-2:#B9B9C1;--text-3:#9A9AA4;
- --primary:#8C9BFF;--primary-hover:#A3AFFF;--primary-soft:#262B52;--on-primary:#0E1240;
+ --primary:#8CC4EA;--primary-hover:#A9D4F1;--primary-soft:#1B2F3D;--on-primary:#0B2233;
  --success:#4CC38A;--success-soft:#15301F;--danger:#FF8A80;--danger-soft:#3A1C1A;--warn:#E7B04B;--warn-soft:#3A2C10;--star:#F2C14E;
  --m-fill:#26262B;--m-beak:#E7B04B;--m-cheek:#5A3A40;
  --shadow-1:0 1px 2px rgba(0,0,0,.4);--shadow-2:0 2px 8px rgba(0,0,0,.35),0 12px 28px rgba(0,0,0,.3);color-scheme:dark}
@@ -44,29 +44,13 @@ h2{font-size:var(--fs-xl);font-weight:700;letter-spacing:-.02em;margin:0}
 .muted{color:var(--text-2);font-size:var(--fs-s)}.center{text-align:center}
 /* ===== Mascot ===== */
 .mascot{display:flex;flex-direction:column;align-items:center;margin:var(--s1) 0 var(--s4)}
-.mwrap{width:120px;height:136px;color:var(--text)}.mz{width:100%;height:100%;overflow:visible}
-.mascot.small .mwrap{width:52px;height:60px}.mascot.row{flex-direction:row;gap:var(--s3);justify-content:flex-start;margin:0 0 var(--s3)}
+.mwrap{width:128px;height:128px}
+.mascot.small .mwrap{width:56px;height:56px}.mascot.row{flex-direction:row;gap:var(--s3);justify-content:flex-start;margin:0 0 var(--s3)}
 .bubble{position:relative;margin-top:var(--s3);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:16px;font-weight:600;font-size:var(--fs-m);text-align:center;max-width:320px;line-height:1.35}
 .bubble::after{content:"";position:absolute;left:50%;top:-10px;width:6px;height:6px;border-radius:50%;background:var(--text);transform:translateX(-50%)}
 .mascot.row .bubble{margin-top:0;text-align:left;font-size:var(--fs-s);padding:8px 12px;border-radius:14px}
 .mascot.row .bubble::after{left:-9px;top:50%;transform:translateY(-50%)}
 .bubble.pop{animation:bpop var(--t-slow) var(--ease-spring)}@keyframes bpop{from{transform:scale(.9);opacity:.3}}
-.body{transform-origin:60px 118px}.eyes{transform-origin:60px 56px;animation:blink 4.2s infinite}@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
-.m-idle .body,.m-wave .body{animation:bob 2.8s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-3px)}}
-.m-wave .wr{transform-origin:90px 68px;animation:wave .45s ease-in-out 4 alternate}@keyframes wave{to{transform:rotate(-40deg)}}
-.m-think .body{animation:tilt 3s ease-in-out infinite}@keyframes tilt{50%{transform:rotate(-4deg)}}
-.m-think .pr-dots circle{animation:dot 1.4s infinite}.m-think .pr-dots circle:nth-child(2){animation-delay:.3s}@keyframes dot{50%{opacity:.2}}
-.m-happy .body{animation:jump .55s var(--ease) 2}@keyframes jump{40%{transform:translateY(-14px) scale(1.02,.98)}70%{transform:translateY(0) scale(1.04,.95)}}
-.m-happy .wl,.m-celebrate .wl{transform-origin:30px 68px;animation:flapL .3s 4 alternate}.m-happy .wr,.m-celebrate .wr{transform-origin:90px 68px;animation:flapR .3s 4 alternate}
-@keyframes flapL{to{transform:rotate(30deg)}}@keyframes flapR{to{transform:rotate(-30deg)}}
-.m-sad .body{animation:wob .6s ease-in-out 2}@keyframes wob{25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
-.m-sad .pr-tear{animation:tear 1.6s ease-in infinite}@keyframes tear{from{transform:translateY(0);opacity:1}to{transform:translateY(16px);opacity:0}}
-.m-meditate .body{animation:float 3.6s ease-in-out infinite}@keyframes float{50%{transform:translateY(-6px)}}.m-meditate .pr-aura{animation:dot 3.6s infinite}
-.m-celebrate .body{animation:jump .7s var(--ease) infinite}.m-celebrate .pr-conf{animation:conf 1.2s ease-out infinite}@keyframes conf{from{transform:translateY(-6px);opacity:1}to{transform:translateY(14px);opacity:0}}
-.m-celebrate .pr-hat{transform-origin:62px 22px;animation:hat .7s infinite}@keyframes hat{40%{transform:rotate(-8deg) translateY(-3px)}}
-.m-sleepy .body{animation:breathe 3.2s ease-in-out infinite}@keyframes breathe{50%{transform:scale(1.03,.97)}}
-.m-sleepy .pr-z text{animation:zz 2.4s infinite}.m-sleepy .pr-z text:nth-child(2){animation-delay:1.2s}@keyframes zz{from{opacity:0;transform:translateY(6px)}50%{opacity:1}to{opacity:0;transform:translateY(-8px)}}
-.m-listen .body{animation:tilt 1.2s ease-in-out infinite}
 /* ===== Cards & surfaces ===== */
 .card{background:var(--surface);border-radius:var(--r-l);box-shadow:var(--shadow-2);padding:var(--s5)}
 .today .top{display:flex;justify-content:space-between;align-items:center}.today .num{font-size:var(--fs-2xl);font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
@@ -202,3 +186,50 @@ h2{font-size:var(--fs-xl);font-weight:700;letter-spacing:-.02em;margin:0}
 #toast{opacity:0;visibility:hidden;transition:transform var(--t-slow) var(--ease-spring),opacity var(--t-med),visibility 0s linear var(--t-slow);max-width:calc(100vw - 32px)}
 #toast.on{opacity:1;visibility:visible;transition:transform var(--t-slow) var(--ease-spring),opacity var(--t-med),visibility 0s}
 @supports (height:1svh){.stage{height:min(54svh,440px)}.sheet>div{max-height:88svh}}
+
+/* ===== Neko mascot (Wiii brand) ===== */
+:root{--nk-milk:#F5F0E6;--nk-cocoa:#2A2928;--nk-lift:#454241;--nk-sky:#BBDDF2;--nk-sky-ink:#3B7FB0}
+.dark{--nk-tail:#666363;--nk-lift:#858080}
+.nk{width:100%;height:100%;overflow:visible;display:block}
+.nk .tail-b{fill:var(--nk-tail,var(--nk-cocoa))}.nk .milk{fill:var(--nk-milk)}.nk .tail-f{fill:var(--nk-lift)}
+.nk .eyes ellipse{fill:var(--nk-cocoa)}.nk .lids path{fill:none;stroke:var(--nk-cocoa);stroke-width:6;stroke-linecap:round}
+.nk .sky{fill:var(--nk-sky);stroke:var(--nk-sky)}.nk .pop{fill:none}
+.nk .whole{transform-origin:128px 230px}.nk .head{transform-origin:140px 170px}
+.nk .eyes ellipse{transform-box:fill-box;transform-origin:center;transition:transform .3s var(--ease)}
+/* idle: a calm breath and an occasional slow blink */
+.nk-idle .whole,.nk-listen .whole{animation:nkBreath 5.5s ease-in-out infinite}
+.nk-idle .eyes ellipse,.nk-listen .eyes ellipse,.nk-wave .eyes ellipse,.nk-think .eyes ellipse,.nk-encouraging .eyes ellipse{animation:nkBlink 7s infinite}
+@keyframes nkBreath{50%{transform:scale(1.012,.992)}}@keyframes nkBlink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+/* wave: friendly head nod and a tail flick */
+.nk-wave .head{animation:nkNod .9s var(--ease) 2}.nk-wave .tail-f{transform-origin:40px 150px;animation:nkFlick .45s ease-in-out 4 alternate}
+@keyframes nkNod{40%{transform:rotate(-6deg)}}@keyframes nkFlick{to{transform:rotate(-4deg) translateY(-3px)}}
+/* think: tilt 7deg, eyes glance once toward the workspace */
+.nk-think .head{transform:rotate(-7deg);animation:nkTiltIn .5s var(--ease)}.nk-think .eyes{animation:nkGlance 1.6s var(--ease) .4s both}
+@keyframes nkTiltIn{from{transform:rotate(0)}}@keyframes nkGlance{40%,100%{transform:translate(6px,-3px)}}
+.nk-think .sky,.nk-listen .sky{animation:nkPulse 1.6s ease-in-out 3}@keyframes nkPulse{50%{opacity:.35}}
+/* happy / celebrate / encouraging: content eyes, a small ease-out lift */
+.nk-happy .eyes ellipse,.nk-celebrate .eyes ellipse{transform:scale(1.05,.5)}
+.nk-happy .whole{animation:nkLift .7s var(--ease)}.nk-celebrate .whole{animation:nkLift .7s var(--ease) 2}
+.nk-celebrate .head{animation:nkWiggle .5s ease-in-out .2s 2}.nk-celebrate .spark circle{animation:nkSpark 1.2s var(--ease) both}
+.nk-celebrate .spark circle:nth-child(2){animation-delay:.15s}.nk-celebrate .spark circle:nth-child(3){animation-delay:.3s}.nk-celebrate .spark circle:nth-child(4){animation-delay:.45s}
+@keyframes nkLift{40%{transform:translateY(-10px)}}@keyframes nkWiggle{30%{transform:rotate(4deg)}70%{transform:rotate(-4deg)}}@keyframes nkSpark{from{opacity:0;transform:scale(.3)}}
+.nk-encouraging .head{transform:rotate(5deg);animation:nkTiltIn .5s var(--ease)}.nk-encouraging .eyes{transform:translateY(-3px)}.nk-encouraging .eyes ellipse{transform:scaleY(.8)}
+.nk-encouraging .whole{animation:nkLift .8s var(--ease) .1s}
+/* sad (concerned): sinks a little and looks down; the text carries the message */
+.nk-sad .head{transform:translateY(6px) rotate(-3deg);animation:nkSink .6s var(--ease)}.nk-sad .eyes{transform:translateY(6px)}.nk-sad .eyes ellipse{transform:scaleY(.82)}
+@keyframes nkSink{from{transform:none}}
+/* meditate / sleepy: Nap, closed eyes, no continuous motion except a very slow breath */
+.nk-meditate .whole{animation:nkBreath 8s ease-in-out infinite}.nk-sleepy .head{transform:translateY(5px) rotate(4deg)}
+/* surprised: eyes widen, quick pop */
+.nk-surprised .eyes ellipse{transform:scale(1.18,1.22)}.nk-surprised .whole{animation:nkPop .35s var(--ease-spring)}.nk-surprised .pop{animation:nkSpark .5s var(--ease) both}
+@keyframes nkPop{50%{transform:scale(1.05)}}
+
+/* ===== v7: answer feedback, cloze, steps, notes, streak freeze ===== */
+.ti.near{border-color:var(--warn)}.fb.near{background:var(--warn-soft);color:var(--text)}.fb.near .i{color:var(--warn)}
+.diffrow{margin:10px 0 0;font-size:17px}.diff{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}
+.diff ins{text-decoration:underline 2px;text-underline-offset:3px;color:var(--success);font-weight:700}.diff del{color:var(--danger);text-decoration:line-through 2px}
+.cloze{font-size:19px;line-height:1.55;margin:4px 0 10px;color:var(--text)}.gap{font-weight:700;color:var(--primary);letter-spacing:.06em}
+.steps{display:inline-flex;gap:4px;vertical-align:middle;margin-left:6px}.steps i{width:14px;height:5px;border-radius:3px;background:var(--border)}.steps i.done{background:var(--success)}.steps i.cur{background:var(--primary)}
+.sec.note{display:flex;gap:10px;align-items:flex-start;text-align:left}.sec.note>div{flex:1}.sec.note .lab{display:block}.sec.note .ib{flex:none}
+.frz{display:inline-flex;align-items:center;gap:2px;margin-left:8px;color:var(--primary)}
+textarea.ti{font:inherit;min-height:84px}

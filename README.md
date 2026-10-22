@@ -28,5 +28,14 @@
 - Lịch ôn: [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) 5.4.2 (MIT) trong `vendor/`; SM-2 theo Anki (tự cài đặt lại từ tài liệu [Deck Options](https://docs.ankiweb.net/deck-options.html)); cân bằng tải và chuyển đổi SM-2 → FSRS chuyển thể từ [ankitects/anki](https://github.com/ankitects/anki) (`rslib/src/scheduler/states/load_balancer.rs`, AGPL-3.0 — chỉ tham khảo công thức) và [fsrs-rs](https://github.com/open-spaced-repetition/fsrs-rs) (`memory_state_from_sm2`).
 - Kiểm thử: `tests/srs.test.js` so sánh với ts-fsrs gốc; `tests/*.py` là kiểm thử Playwright trên điện thoại giả lập.
 - Cách bố trí chế độ học tham khảo trải nghiệm của Quizlet, Duolingo, Anki, ELSA Speak. Không dùng mã nguồn hay tài sản của các ứng dụng này.
-- Linh vật “Cú Bông” là nhân vật gốc của dự án (`mascot.js`).
+- Linh vật “Neko” lấy từ hệ thương hiệu Wiii (github.com/meiiie/wiii, AGPL-3.0, cùng tác giả), vẽ lại bằng SVG trong `mascot.js`.
 - Danh sách từ: Oxford 3000 (Oxford University Press). Nghĩa tiếng Việt theo tài liệu học.
+
+## v7
+- Học theo 4 bước cho mỗi từ: trắc nghiệm → tự gõ → điền vào câu ví dụ → nghe – chép.
+- Chấm gõ chấp nhận lỗi chính tả nhỏ ("Gần đúng"), có so sánh từng chữ và nút "Tôi đã đúng".
+- Chuỗi ngày học tách khỏi mục tiêu ngày (10/20/50/100 câu). Cứ 7 ngày liên tiếp được thêm 1 ngày nghỉ (tối đa 2), tự dùng khi lỡ một ngày.
+- Chế độ "Từ khó": gom từ hay sai, hay quên hoặc đã gắn sao.
+- Mẹo nhớ riêng cho từng từ.
+- Linh vật Neko, bảng màu và biểu tượng ứng dụng mới.
+- Cơ sở nghiên cứu: `docs/RESEARCH.md`.

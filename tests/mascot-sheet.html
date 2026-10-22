@@ -1,0 +1,4 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Neko – bộ biểu cảm</title><link rel="stylesheet" href="../style.css">
+<style>body{padding:20px;font-family:system-ui}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.c{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:12px;text-align:center}.c .mwrap{margin:0 auto}b{display:block;margin-top:6px;color:var(--text)}</style></head>
+<body><h1 style="font-size:20px;color:var(--text)">Neko – 11 trạng thái</h1><div class="grid" id="g"></div>
+<script src="../mascot.js"></script><script>document.getElementById('g').innerHTML=NK_STATES.map(s=>`<div class="c"><div class="mwrap m-${s}">${mascotSVG(s)}</div><b>${s}</b></div>`).join('')</script></body></html>

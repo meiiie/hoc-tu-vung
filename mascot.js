@@ -1,39 +1,25 @@
 'use strict';
-/* "Cú Bông" – original mascot (colours come from CSS design tokens) for Học Từ Vựng: a round little owl who carries a word book.
-   States: idle, wave, think, happy, sad, meditate, celebrate, sleepy. Pure SVG + CSS, light. */
-const MASCOT_NAME='Cú Bông';
-function mascotSVG(state){const s=state||'idle';
- const props={
-  think:`<g class="pr-book"><rect x="38" y="84" width="44" height="24" rx="3" style="fill:var(--m-fill)" stroke="currentColor" stroke-width="3"/><path d="M60 84v24" stroke="currentColor" stroke-width="2.5"/><path d="M44 92h10M44 99h8M66 92h10M66 99h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></g><g class="pr-dots"><circle cx="96" cy="22" r="3"/><circle cx="104" cy="12" r="4.5"/></g>`,
-  celebrate:`<g class="pr-hat"><path d="M48 22 L64 -6 L76 24 Z" fill="currentColor"/><circle cx="64" cy="-7" r="4" style="fill:var(--m-beak)"/></g><g class="pr-conf"><rect x="12" y="20" width="6" height="3" style="fill:var(--m-beak)"/><rect x="104" y="30" width="6" height="3" style="fill:var(--danger)"/><circle cx="20" cy="52" r="2.5" style="fill:var(--success)"/><circle cx="102" cy="58" r="2.5" style="fill:var(--m-beak)"/><rect x="96" y="10" width="3" height="7" style="fill:var(--success)"/><rect x="24" y="8" width="3" height="7" style="fill:var(--danger)"/></g>`,
-  sleepy:`<g class="pr-z" font-family="sans-serif" font-weight="800" fill="currentColor"><text x="92" y="30" font-size="14">z</text><text x="102" y="18" font-size="10">z</text></g>`,
-  sad:`<path class="pr-tear" d="M84 52 q4 7 0 10 q-4 -3 0 -10z" style="fill:var(--primary)"/>`,
-  meditate:`<g class="pr-aura" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5"><path d="M18 60 q-6 -10 2 -20"/><path d="M102 60 q6 -10 -2 -20"/></g>`,
-  happy:`<g class="pr-spark" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M16 30l6 4M14 46h7M104 30l-6 4M106 46h-7"/></g>`,
-  wave:`<g class="pr-spark" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 40l5 3M12 52h6M16 30l4 5"/></g>`};
- const eyes=s=='happy'||s=='celebrate'?`<path d="M45 56 q5 -7 10 0M65 56 q5 -7 10 0" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>`
-  :s=='meditate'||s=='sleepy'?`<path d="M44 57 q6 5 12 0M64 57 q6 5 12 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`
-  :s=='sad'?`<g class="eyes"><ellipse cx="50" cy="57" rx="4.5" ry="6"/><ellipse cx="70" cy="57" rx="4.5" ry="6"/></g><path d="M44 47l10 3M76 47l-10 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>`
-  :`<g class="eyes"><ellipse cx="50" cy="56" rx="4.5" ry="6.5"/><ellipse cx="70" cy="56" rx="4.5" ry="6.5"/><circle cx="51.5" cy="53.5" r="1.6" style="fill:var(--m-fill)"/><circle cx="71.5" cy="53.5" r="1.6" style="fill:var(--m-fill)"/></g>`;
- const mouth=s=='sad'?`<path d="M55 74 q5 -4 10 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>`
-  :s=='think'?`<path d="M56 73h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>`
-  :s=='sleepy'?`<ellipse cx="60" cy="73" rx="3" ry="2.5"/>`
-  :`<path d="M54 70 q6 6 12 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>`;
- const wings=s=='meditate'?`<path d="M30 80 q-6 10 8 12 M90 80 q6 10 -8 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`
-  :`<path class="wl" d="M30 66 q-12 8 -6 22 q8 -2 10 -10" style="fill:var(--m-fill)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path class="wr" d="M90 66 q12 8 6 22 q-8 -2 -10 -10" style="fill:var(--m-fill)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>`;
- return `<svg viewBox="0 -12 120 142" class="mz" aria-hidden="true" fill="currentColor">
- <ellipse class="shadow" cx="60" cy="124" rx="${s=='meditate'?34:26}" ry="5" fill="currentColor" opacity=".12"/>
- <g class="body">
-  <path d="M40 30 l-6 -14 l14 9 M80 30 l6 -14 l-14 9" style="fill:var(--m-fill)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M60 22 c26 0 38 20 38 46 c0 28 -16 46 -38 46 c-22 0 -38 -18 -38 -46 c0 -26 12 -46 38 -46z" style="fill:var(--m-fill)" stroke="currentColor" stroke-width="3.2"/>
-  <path d="M48 96 q12 8 24 0" fill="none" stroke="currentColor" stroke-width="2" opacity=".35" stroke-linecap="round"/>
-  <ellipse cx="42" cy="68" rx="5" ry="3" style="fill:var(--m-cheek)" opacity=".7"/><ellipse cx="78" cy="68" rx="5" ry="3" style="fill:var(--m-cheek)" opacity=".7"/>
-  ${eyes}<path d="M57 63 l3 4 l3 -4z" style="fill:var(--m-beak)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>${mouth}${wings}
-  ${s=='meditate'?'<path d="M36 112 q24 10 48 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>':'<path d="M50 113v5M70 113v5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>'}
- </g>${props[s]||''}</svg>`}
+/* "Neko" – companion from the Wiii brand (github.com/meiiie/wiii, docs/assets/brand/neko-family-v1).
+   Hand-built SVG that keeps the Neko Peek mark geometry (ivory cat peeking over a graphite tail) and the brand rules:
+   expressions live in the eyes and the pose only (no mouth, no paws, no sad face), motion is soft and brief,
+   and everything nonessential stops under prefers-reduced-motion.
+   States: idle, wave, think, happy, sad (shown as "concerned"), meditate, celebrate, sleepy, surprised, encouraging, listen. */
+const MASCOT_NAME='Neko';
+const NK_STATES=['idle','wave','think','happy','sad','meditate','celebrate','sleepy','surprised','encouraging','listen'];
+function mascotSVG(state){const s=NK_STATES.includes(state)?state:'idle';const closed=s=='meditate'||s=='sleepy';
+ const eyes=closed?`<g class="lids"><path d="M100 106q11 7 22 0"/><path d="M146 103q11 7 22 0"/></g>`
+  :`<g class="eyes"><ellipse class="el" cx="111" cy="103" rx="10" ry="15"/><ellipse class="er" cx="157" cy="100" rx="10" ry="15"/></g>`;
+ const extra=s=='think'||s=='listen'?`<circle class="sky" cx="222" cy="44" r="9"/>`
+  :s=='celebrate'?`<g class="sky spark"><circle cx="34" cy="60" r="7"/><circle cx="226" cy="40" r="9"/><circle cx="238" cy="96" r="5"/><circle cx="20" cy="104" r="5"/></g>`
+  :s=='surprised'?`<g class="sky pop"><path d="M222 22V6M198 34l-10-10M246 34l10-10" stroke-width="7" stroke-linecap="round"/></g>`
+  :s=='encouraging'?`<circle class="sky" cx="34" cy="52" r="7"/>`:'';
+ return `<svg viewBox="0 0 256 256" class="nk nk-${s}" aria-hidden="true" focusable="false">
+ <g class="whole"><path class="tail-b" d="M28 148C20 104 43 70 82 57c38-13 91-10 125 16 28 22 37 60 25 94-14 42-53 62-105 61-54-1-91-30-99-80Z"/>
+ <g class="head"><path class="milk" d="M61 133c-7-22-6-53 1-77 5-18 18-25 34-15 21-11 49-14 76-8 10-18 28-18 37 1 10 21 12 52 4 78-8 26-36 42-72 43-36 1-70-7-80-22Z"/>${eyes}</g>
+ <path class="tail-f" d="M31 136c31 23 72 38 117 41 33 2 61-7 84-29 3 24-7 47-29 62-23 16-59 22-100 16-43-6-71-31-77-63-2-10 0-19 5-27Z"/></g>${extra}</svg>`}
 function mascot(state,text,opts={}){return `<div class="mascot ${opts.small?'small':''} ${opts.row?'row':''}" role="img" aria-label="${MASCOT_NAME}${text?': '+String(text).replace(/<[^>]+>/g,'').replace(/"/g,''):''}">
  <div class="mwrap m-${state}">${mascotSVG(state)}</div>${text?`<div class="bubble">${text}</div>`:''}</div>`}
-/* swap state of a mascot already on screen */
+/* swap the state of a mascot already on screen */
 function moodTo(el,state,text,ms){if(!el)return;const w=el.querySelector('.mwrap');w.className='mwrap m-'+state;w.innerHTML=mascotSVG(state);
  if(text!=null){let b=el.querySelector('.bubble');if(!b){b=document.createElement('div');b.className='bubble';el.appendChild(b)}b.innerHTML=text;b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop')}
  if(ms){clearTimeout(el._t);el._t=setTimeout(()=>moodTo(el,'idle'),ms)}}

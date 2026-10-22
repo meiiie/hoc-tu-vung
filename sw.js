@@ -1,5 +1,5 @@
-const V='htv-v6',AUDIO='htv-audio-v1';
-const SHELL=['./','index.html','style.css','app.js','srs.js','vendor/ts-fsrs.min.js','mascot.js','manifest.webmanifest','data/pages.json','data/p1.json','icons/icon-192.png','icons/icon-512.png'];
+const V='htv-v7',AUDIO='htv-audio-v1';
+const SHELL=['./','index.html','style.css','app.js','srs.js','vendor/ts-fsrs.min.js','mascot.js','manifest.webmanifest','data/pages.json','data/p1.json','icons/icon-192.png','icons/icon-512.png','icons/icon.svg','icons/maskable-192.png','icons/maskable-512.png','icons/apple-touch-icon.png'];
 /* Install precaches the shell but WAITS: the page shows "Có bản mới — Tải lại" and posts 'skip' when the user agrees.
    Progress lives in localStorage, which a service worker update never touches. */
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL.map(u=>new Request(u,{cache:'reload'})))))});
