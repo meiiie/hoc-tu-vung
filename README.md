@@ -50,6 +50,6 @@
 - Neko vẽ lại có tai mèo, đủ biểu cảm (nghe, nói, đúng, sai…), chọn màu trong Cài đặt.
 
 ## v9
-- Neko vẽ lại theo nguyên lý trong grokbot-animation-anatomy: mắt khoét (mask) đổi hình từng điểm qua 9 biểu cảm, đuôi tai cử động riêng, lò xo 120 Hz, chớp mắt theo clip, hào quang thở, trạng thái "đang chấm" biến thành ba chấm.
+- Neko vẽ lại theo nguyên lý trong grokbot-animation-anatomy: mắt khoét (mask) đổi hình từng điểm qua 9 biểu cảm, hai tai cử động riêng, lò xo 120 Hz, chớp mắt theo clip, hào quang thở, trạng thái "đang chấm" biến thành ba chấm.
 - Luyện nói: Neko nghe (tai phản ứng theo âm lượng micro) → đang chấm → đúng / gần đúng / sai.
 - 6 màu Neko, có bản cho giao diện sáng và tối, đều đạt độ tương phản ≥ 3:1. Chạm vào Neko để chọc.
