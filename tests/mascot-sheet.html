@@ -1,4 +1,13 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Neko v8 – bộ biểu cảm</title><link rel="stylesheet" href="../style.css">
-<style>body{padding:20px;font-family:system-ui;background:var(--bg)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.c{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:12px;text-align:center}.c .mwrap{margin:0 auto;width:110px;height:110px}b{display:block;margin-top:4px;color:var(--text)}</style></head>
-<body><h1 style="font-size:20px;color:var(--text)">Neko v8 – 16 trạng thái</h1><div class="grid" id="g"></div>
-<script src="../mascot.js"></script><script>document.getElementById('g').innerHTML=NK_STATES.map(s=>`<div class="c"><div class="mwrap" data-state="${s}"></div><b>${s}</b></div>`).join('')</script></body></html>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Neko v9 – bộ biểu cảm</title><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css">
+<style>body{padding:20px;font-family:system-ui;background:var(--bg);color:var(--text)}h1{font-size:20px}h2{font-size:15px;margin:22px 0 10px;color:var(--text-2)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid.c6{grid-template-columns:repeat(6,1fr)}.c{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:10px;text-align:center}
+.c .mwrap{margin:0 auto;width:104px;height:104px}.c6 .c .mwrap{width:72px;height:72px}b{display:block;margin-top:4px;font-size:13px}small{color:var(--text-3)}</style></head>
+<body><h1>Neko v9 – trạng thái &amp; biểu cảm</h1><div class="grid" id="g"></div><h2>Màu (giao diện hiện tại)</h2><div class="grid c6" id="cols"></div>
+<script src="../mascot.js"></script><script>
+/* frozen = clip time shown (deterministic frame, like the reference player's frozenAt) */
+const T={wave:.42,happy:.38,celebrate:1.25,correct:.4,wrong:.25,surprised:.12,waking:.45,proud:.5,encouraging:.3,curious:1,confused:.4,sad:1,listen:1.5,listening:1.5,speaking:.22,processing:.35,analyzing:.35};
+const q=new URLSearchParams(location.search);const only=q.get('states');
+document.getElementById('g').innerHTML=(only?only.split(','):NK_STATES.filter(s=>s!='listen'&&s!='analyzing')).map(s=>`<div class="c"><div class="mwrap" data-state="${s}" ${q.has('live')?'':`data-frozen="${T[s]??1}"`}></div><b>${s}</b></div>`).join('');
+const dark=document.body.classList.contains('dark');
+document.getElementById('cols').innerHTML=Object.entries(NK_COLORS).map(([k,c])=>`<div class="c" style="--mk-body:${matchMedia('(prefers-color-scheme: dark)').matches||document.documentElement.classList.contains('dark')?c.d:c.l}" data-c="${k}"><div class="mwrap" data-state="happy" data-frozen=".38"></div><b>${c.vi}</b><small>${k}</small></div>`).join('');
+</script></body></html>

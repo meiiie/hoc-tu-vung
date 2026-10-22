@@ -187,13 +187,15 @@ h2{font-size:var(--fs-xl);font-weight:700;letter-spacing:-.02em;margin:0}
 #toast.on{opacity:1;visibility:visible;transition:transform var(--t-slow) var(--ease-spring),opacity var(--t-med),visibility 0s}
 @supports (height:1svh){.stage{height:min(54svh,440px)}.sheet>div{max-height:88svh}}
 
-/* ===== Neko v8 mascot (procedural SVG, see mascot.js) ===== */
-:root{--mk-body:#2A2928;--mk-eye:#F5F0E6;--mk-deco:#7FB6DB}
-.dark{--mk-body:#5B5856}
-.nk2{width:100%;height:100%;overflow:visible;display:block}
-.nk2 .nk-hi{stop-color:color-mix(in srgb,var(--mk-body) 62%,#fff)}.nk2 .nk-mid{stop-color:var(--mk-body)}.nk2 .nk-lo{stop-color:color-mix(in srgb,var(--mk-body) 78%,#000)}
-.nk2 .nk-eyes rect{fill:var(--mk-eye)}.nk2 .nk-arc{fill:none;stroke:var(--mk-eye);stroke-linecap:round}
+/* ===== Neko v9 mascot (procedural SVG, see mascot.js). Eyes are cut-outs, so they always show the page behind. ===== */
+:root{--mk-body:#2A2928;--mk-deco:#3F7FAE}
+.dark{--mk-body:#B9B2A8;--mk-deco:#7FB6DB}
+.nk2{width:100%;height:100%;overflow:visible;display:block;touch-action:manipulation}
+.nk2 .nk-hi{stop-color:color-mix(in srgb,var(--mk-body) 84%,#fff)}.nk2 .nk-mid{stop-color:var(--mk-body)}.nk2 .nk-lo{stop-color:color-mix(in srgb,var(--mk-body) 78%,#000)}
+.nk2 .nk-halo{stop-color:var(--mk-body)}.nk2 .nk-dot{fill:var(--mk-body)}
 .nk2 .nk-decor{fill:var(--mk-deco);stroke:var(--mk-deco)}.nk2 .nk-shadow{fill:var(--text);opacity:.08}
+.mcrow{align-items:center;gap:12px}.mcrow .mascot{margin:0;flex:none}.mcrow>div:last-child{flex:1;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.dark .swatch{background:var(--swd)}
 /* ===== v7: answer feedback, cloze, steps, notes, streak freeze ===== */
 .ti.near{border-color:var(--warn)}.fb.near{background:var(--warn-soft);color:var(--text)}.fb.near .i{color:var(--warn)}
 .diffrow{margin:10px 0 0;font-size:17px}.diff{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}

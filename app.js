@@ -11,7 +11,7 @@ const I=(n,c='')=>`<svg class="i ${c}" aria-hidden="true"><use href="#i-${n}"/><
 
 /* ---------- state ---------- */
 const blank={srs:{},known:{},star:{},learn:{},speak:{},pron:{},log:{},best:{},notes:{},miss:{},streak:{freeze:0,frozen:[],earned:''},user:null,set:{goalAns:20,asr:'auto',mcolor:'cocoa',autoplay:true,dir:'en',voice:'gb',slow:false,theme:'system',haptics:true,f:{},algo:'fsrs',retention:0.9,rev:true}};
-const SCHEMA=6;
+const SCHEMA=7;
 const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}};const lsSet=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
 /* Migrations: each step upgrades stored data by one schema version. Never drops unknown fields. */
 function migrate(d){d=d&&typeof d=='object'?d:{};let v=+d.v||2;
@@ -21,6 +21,8 @@ function migrate(d){d=d&&typeof d=='object'?d:{};let v=+d.v||2;
  if(v<5){if(d.learn&&typeof d.learn=='object')for(const id in d.learn)if(d.learn[id]>=2)d.learn[id]=4;v=5}
  /* v6: speaking history (pron), engine and mascot colour settings; filled from defaults below */
  if(v<6)v=6;
+ /* v7: mascot palette changed ("milk" removed); unknown colours fall back to the default */
+ if(v<7){if(d.set&&typeof d.set=='object'&&d.set.mcolor!=null&&!NK_COLORS[d.set.mcolor])d.set.mcolor='cocoa';v=7}
  d.v=SCHEMA;for(const k in blank)if(d[k]==null||typeof d[k]!=typeof blank[k])d[k]=structuredClone(blank[k]);
  for(const k in blank.set)if(d.set[k]==null)d.set[k]=structuredClone(blank.set[k]);if(!d.set.f||typeof d.set.f!='object')d.set.f={};return d}
 let S,loadErr=false;{const raw=lsGet(KEY);if(raw){try{S=JSON.parse(raw)}catch(e){loadErr=true;lsSet(KEY+'-corrupt-'+Date.now(),raw)}}
@@ -166,16 +168,16 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <div class="eyebrow">Chấm phát âm</div><div class="group">
  <div class="opt-row"><span>Cách chấm<br><small class="muted">Trên máy: chấm từng âm, riêng tư, offline</small></span>${seg('asr',[['auto','Trên máy'],['browser','Trình duyệt']])}</div>
  <div class="opt-row"><span>Mô hình ZIPA (71 MB)<br><small class="muted" id="mst2">Đang kiểm tra…</small></span><button class="btn sm sec" id="mdl">${I('download','s')}Tải</button></div></div>
- <div class="eyebrow">Giao diện</div><div class="group"><div class="opt-row"><span>Màu Neko</span><div class="swatches" role="radiogroup" aria-label="Màu linh vật">${Object.entries(MCOL).map(([k,c])=>`<button role="radio" class="swatch ${S.set.mcolor==k?'on':''}" aria-checked="${S.set.mcolor==k}" data-mc="${k}" aria-label="${c[2]}" style="--sw:${c[0]}"></button>`).join('')}</div></div>
+ <div class="eyebrow">Giao diện</div><div class="group"><div class="opt-row mcrow">${mascot('idle','',{small:true})}<div><span id="mcl">Màu Neko</span><div class="swatches" role="radiogroup" aria-labelledby="mcl">${Object.entries(MCOL).map(([k,c])=>`<button role="radio" class="swatch ${S.set.mcolor==k?'on':''}" aria-checked="${S.set.mcolor==k}" data-mc="${k}" aria-label="${c.vi}" style="--sw:${c.l};--swd:${c.d}"></button>`).join('')}</div></div></div>
  <div class="opt-row"><span>Chế độ</span>${seg('theme',[['system','Tự động'],['light','Sáng'],['dark','Tối']])}</div>
  <label class="opt-row"><span>Rung phản hồi</span><input class="sw" type="checkbox" data-sw="haptics" ${S.set.haptics?'checked':''}></label></div>
  <div class="eyebrow">Tài khoản trên máy này</div><div class="group"><button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="redo"><span>Đổi tên, mục tiêu, kiểu học</span>${I('chevron-right')}</button>
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="exp"><span>Xuất bản sao lưu tiến độ<br><small class="muted">Lưu tệp .json để chuyển máy hoặc phòng mất dữ liệu</small></span>${I('download')}</button>
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="imp"><span>Nhập tiến độ từ tệp sao lưu</span>${I('upload')}</button><input type="file" id="impf" accept="application/json,.json" hidden aria-label="Chọn tệp sao lưu">
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left;color:var(--danger)" id="rst"><span>Xoá toàn bộ tiến độ</span>${I('rotate-ccw')}</button></div>
- <p class="muted center" style="margin-top:16px">Phiên bản 8 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
+ <p class="muted center" style="margin-top:16px">Phiên bản 9 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
  $$('[data-set]',sh).forEach(b=>b.onclick=()=>{const k=b.dataset.set;let v=b.dataset.v;if(k=='slow')v=v=='true';if(k=='retention'||k=='goalAns')v=+v;if(k=='goal'){S.user=S.user||{};S.user.goal=v}else S.set[k]=v;save();$$(`[data-set="${k}"]`,sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});if(k=='theme')applyTheme();if(k=='asr')toast(v=='auto'?'Chấm trên máy (từng âm)':'Dùng nhận dạng của trình duyệt','mic');if(k=='voice'||k=='slow')play(words[2]);updVoice();buzz(8)});
- $$('[data-mc]',sh).forEach(b=>b.onclick=()=>{S.set.mcolor=b.dataset.mc;save();applyTheme();$$('[data-mc]',sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});buzz(8)});
+ $$('[data-mc]',sh).forEach(b=>b.onclick=()=>{S.set.mcolor=b.dataset.mc;save();applyTheme();$$('[data-mc]',sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});moodTo($('.mcrow .mascot',sh),'happy',null,1400);buzz(8)});
  if(Speech.supported()){const upd=s=>{const t=$('#mst2',sh),b=$('#mdl',sh);if(!t)return;t.textContent=s.cached?'Đã tải, dùng được offline':'Chưa tải';b.innerHTML=s.cached?I('trash-2','s')+'Xoá':I('download','s')+'Tải';
    b.onclick=async()=>{if(s.cached){await Speech.forget();upd({cached:false});toast('Đã xoá mô hình','check')}else{b.disabled=true;try{await Speech.load(m=>{t.textContent=m.phase=='init'?'Đang khởi động…':'Đang tải '+Math.round(m.got/m.total*100)+'%'});upd({cached:true})}catch(e){t.textContent='Tải lỗi, thử lại';}b.disabled=false}}};Speech.status().then(upd)}
  else{$('#mst2',sh).textContent='Trình duyệt này không hỗ trợ';$('#mdl',sh).disabled=true}
@@ -488,14 +490,14 @@ function speak(){const d=deck();let q=shuffle(d),i=0,att=0,st='init',rec=null,sr
  async function start(w){const a=++att;stop();const m=mode();audio.pause();
   if(m=='model'&&!modelOK)return render('offer');
   if(m=='browser')return startSR(w,a);
-  let r;try{rec=await Speech.record({onLevel:v=>{const l=$('#lvl');if(l)l.style.width=Math.round(v*100)+'%'}})}catch(e){if(a===att)render('err',{msg:e&&e.name=='NotAllowedError'?'Bạn chưa cho phép dùng micro. Hãy bật quyền micro cho trang này trong cài đặt trình duyệt.':'Không mở được micro.'});return}
+  let r;try{rec=await Speech.record({onLevel:v=>{const l=$('#lvl');if(l)l.style.width=Math.round(v*100)+'%';mascotLevel($('.mascot'),v)}})}catch(e){if(a===att)render('err',{msg:e&&e.name=='NotAllowedError'?'Bạn chưa cho phép dùng micro. Hãy bật quyền micro cho trang này trong cài đặt trình duyệt.':'Không mở được micro.'});return}
   if(a!==att)return rec.stop();render('rec');moodTo($('.mascot'),'listening','Neko đang nghe…');buzz(10);
   r=await rec.done;rec=null;if(a!==att||dead)return;
   const pcm=Speech.trim(Speech.to16k(r.pcm,r.sr));
   if(!r.speech||pcm.length<16000*0.25||Speech.peak(pcm)<0.02){render('err',{msg:'Chưa nghe thấy giọng nói. Hãy nói to, gần micro hơn rồi thử lại.'});moodTo($('.mascot'),'idle','Mình chưa nghe thấy gì.');return}
   my=pcm;if(myUrl)URL.revokeObjectURL(myUrl);myUrl=URL.createObjectURL(Speech.wav(pcm));
   if(m=='none'){render('result',{score:0,kind:'none'});$('.score')&&$('.score').remove();$('.sres-l')&&($('.sres-l').innerHTML='<b>Đã ghi âm: nghe lại và so sánh với giọng chuẩn</b>');return}
-  render('busy');moodTo($('.mascot'),'analyzing','Đang chấm…');
+  render('busy');moodTo($('.mascot'),'processing','Đang chấm…');
   try{const res=await Speech.analyze(pcm.slice(),PRON[w.id]||[[]],S.set.voice=='gb');if(a!==att||dead)return;
    if(res.empty){render('err',{msg:'Không nhận ra âm nào. Hãy nói rõ từng âm và gần micro hơn.'});moodTo($('.mascot'),'idle','Thử lại nhé.');return}
    res.stress=PR.stress(res.phones,pcm,16000,res.frameSec);save1(w,res.score,'model');render('result',{res,score:res.score,kind:'model'});feel(res.score)}
@@ -594,9 +596,9 @@ const R={'':home,cards,review,cram:()=>review(true),learn:()=>learn(),hard:()=>l
 function route(){keys=null;audio.pause();if(cleanup){try{cleanup()}catch(e){}cleanup=null}$('#back').onclick=()=>{location.hash='#/'};
  if(!words.length)return;if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');const r=(R[k]||home)();if(typeof r=='function')cleanup=r}
 addEventListener('hashchange',route);
-const MCOL={cocoa:['#2A2928','#5B5856','Than','#F5F0E6'],sky:['#245E87','#4F8DBA','Xanh trời','#F5F0E6'],sage:['#3E7C59','#5E9E78','Xanh lá','#F5F0E6'],plum:['#6B4A7A','#8E6C9E','Tím mận','#F5F0E6'],clay:['#A8523A','#C7745C','Đất nung','#F5F0E6'],milk:['#E9E1D3','#E9E1D3','Sữa','#2A2928']};
+const MCOL=NK_COLORS;
 function applyTheme(){const dark=S.set.theme=='dark'||(S.set.theme=='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.body.classList.toggle('dark',dark);
- const mc=MCOL[S.set.mcolor]||MCOL.cocoa;document.body.style.setProperty('--mk-body',dark?mc[1]:mc[0]);document.body.style.setProperty('--mk-eye',mc[3]);$('meta[name=theme-color]').content=dark?'#121214':'#F6F5F2'}
+ const mc=MCOL[S.set.mcolor]||MCOL.cocoa;document.body.style.setProperty('--mk-body',dark?mc.d:mc.l);$('meta[name=theme-color]').content=dark?'#121214':'#F6F5F2'}
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',applyTheme);
 applyTheme();
 const updVoice=()=>{$('#voice').textContent=S.set.voice=='us'?'US':'UK';$('#voice').setAttribute('aria-label',(S.set.voice=='us'?'US':'UK')+', giọng '+(S.set.voice=='us'?'Mỹ':'Anh')+'. Bấm để đổi')};updVoice();

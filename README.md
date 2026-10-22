@@ -29,7 +29,7 @@
 - Kiểm thử: `tests/srs.test.js` so sánh với ts-fsrs gốc; `tests/*.py` là kiểm thử Playwright trên điện thoại giả lập.
 - Cách bố trí chế độ học tham khảo trải nghiệm của Quizlet, Duolingo, Anki, ELSA Speak. Không dùng mã nguồn hay tài sản của các ứng dụng này.
 - Chấm phát âm: mô hình [ZIPA-CR-Ns small](https://huggingface.co/anyspeech/zipa-small-crctc-ns-700k) (Zhu et al., ACL 2025; giấy phép CC BY-NC-SA 4.0, chỉ dùng phi thương mại), tải về máy người dùng từ Hugging Face khi bật. Chạy bằng [onnxruntime-web](https://github.com/microsoft/onnxruntime) 1.30.0 (MIT, `vendor/ort/LICENSE`). Phiên âm chuẩn từ [CMUdict](https://github.com/cmusphinx/cmudict) (BSD-2). Chi tiết: `docs/PRONUNCIATION.md`.
-- Linh vật “Neko” lấy từ hệ thương hiệu Wiii (github.com/meiiie/wiii, AGPL-3.0, cùng tác giả), vẽ lại bằng SVG trong `mascot.js`. Từ v8, chuyển động theo nguyên lý trong [grokbot-animation-anatomy](https://github.com/ArvinYin1/grokbot-animation-anatomy) (chỉ tham khảo nguyên lý, mã tự viết).
+- Linh vật “Neko” lấy từ hệ thương hiệu Wiii (github.com/meiiie/wiii, AGPL-3.0, cùng tác giả), vẽ lại bằng SVG trong `mascot.js`. Từ v9, chuyển động theo nguyên lý trong [grokbot-animation-anatomy](https://github.com/ArvinYin1/grokbot-animation-anatomy) (chỉ tham khảo nguyên lý, mã và dữ liệu tự viết; xem `docs/MASCOT.md`).
 - Danh sách từ: Oxford 3000 (Oxford University Press). Nghĩa tiếng Việt theo tài liệu học.
 
 ## v7
@@ -48,3 +48,8 @@
 - Không có mô hình thì dùng Web Speech của trình duyệt; sửa lỗi hiện cùng lúc "Có lỗi nhận dạng" và điểm 100.
 - Sửa nút dưới cùng bị thanh công cụ Safari che (safe area).
 - Neko vẽ lại có tai mèo, đủ biểu cảm (nghe, nói, đúng, sai…), chọn màu trong Cài đặt.
+
+## v9
+- Neko vẽ lại theo nguyên lý trong grokbot-animation-anatomy: mắt khoét (mask) đổi hình từng điểm qua 9 biểu cảm, đuôi tai cử động riêng, lò xo 120 Hz, chớp mắt theo clip, hào quang thở, trạng thái "đang chấm" biến thành ba chấm.
+- Luyện nói: Neko nghe (tai phản ứng theo âm lượng micro) → đang chấm → đúng / gần đúng / sai.
+- 6 màu Neko, có bản cho giao diện sáng và tối, đều đạt độ tương phản ≥ 3:1. Chạm vào Neko để chọc.
