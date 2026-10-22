@@ -3,9 +3,12 @@
 Ứng dụng học từ vựng IELTS miễn phí, chạy offline: https://meiiie.github.io/hoc-tu-vung/
 
 ## Tính năng
-- **Thẻ ghi nhớ:** lật 3D; vuốt phải là “đã biết”, vuốt trái là “đang học”; trộn thẻ, hoàn tác, tự phát âm. Học hết toàn bộ, không giới hạn số từ.
+- **Thẻ ghi nhớ:** lật 3D; vuốt phải là “đã biết”, vuốt trái là “đang học”; trộn thẻ, hoàn tác, tự phát âm. Chế độ luyện tập, không làm thay đổi lịch ôn.
 - **Học:** chia thành từng vòng. Mỗi từ được hỏi trắc nghiệm trước, rồi mới phải gõ từ.
-- **Ôn theo lịch:** lặp lại ngắt quãng theo thuật toán SM-2, số từ mới mỗi ngày theo mục tiêu bạn chọn.
+- **Ôn theo lịch (kiểu Anki):** thuật toán FSRS-6 (mặc định, mức nhớ mong muốn 85/90/95%) hoặc SM-2 như Anki. Thẻ Mới / Đang học / Ôn / Học lại, bước học 1p 10p, bước học lại 10p, 4 nút Lại/Khó/Được/Dễ kèm khoảng cách tiếp theo, bộ đếm xanh/đỏ/lục, thẻ hai chiều với chôn thẻ anh em trong ngày, cân bằng tải, phát hiện thẻ “hay quên” (8 lần quên → tạm ngưng), hoàn tác, khả năng nhớ của từng thẻ. Mặc định học hết toàn bộ thẻ mới mỗi ngày.
+- **Ôn toàn bộ:** lướt cả bộ từ mà không làm lệch lịch ôn.
+- **Phiên học được lưu:** tải lại trang (F5) vẫn tiếp tục đúng thẻ, đúng mặt thẻ.
+- **Sao lưu:** xuất/nhập tiến độ ra tệp JSON trong Cài đặt; dữ liệu có phiên bản (schema) và được tự nâng cấp khi cập nhật.
 - **Luyện nói:** chấm phát âm bằng Web Speech API. Trình duyệt không hỗ trợ thì chuyển sang ghi âm để tự so sánh.
 - **Nghe – chép:** nghe từ rồi gõ lại; có nghe chậm và gợi ý.
 - **Ghép thẻ** và **Kiểm tra.**
@@ -22,7 +25,8 @@
 ## Ghi nhận và giấy phép
 - Biểu tượng: [Lucide](https://lucide.dev), giấy phép ISC, nhúng dạng SVG sprite trong `index.html`.
 - Giọng đọc: Microsoft Edge Neural TTS, tạo bằng [edge-tts](https://github.com/rany2/edge-tts) (GPL-3.0, chỉ dùng để tạo file, không đóng gói vào ứng dụng).
-- Thuật toán SM-2: P. A. Woźniak (SuperMemo, 1987), tự cài đặt lại.
+- Lịch ôn: [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) 5.4.2 (MIT) trong `vendor/`; SM-2 theo Anki (tự cài đặt lại từ tài liệu [Deck Options](https://docs.ankiweb.net/deck-options.html)); cân bằng tải và chuyển đổi SM-2 → FSRS chuyển thể từ [ankitects/anki](https://github.com/ankitects/anki) (`rslib/src/scheduler/states/load_balancer.rs`, AGPL-3.0 — chỉ tham khảo công thức) và [fsrs-rs](https://github.com/open-spaced-repetition/fsrs-rs) (`memory_state_from_sm2`).
+- Kiểm thử: `tests/srs.test.js` so sánh với ts-fsrs gốc; `tests/*.py` là kiểm thử Playwright trên điện thoại giả lập.
 - Cách bố trí chế độ học tham khảo trải nghiệm của Quizlet, Duolingo, Anki, ELSA Speak. Không dùng mã nguồn hay tài sản của các ứng dụng này.
 - Linh vật “Cú Bông” là nhân vật gốc của dự án (`mascot.js`).
 - Danh sách từ: Oxford 3000 (Oxford University Press). Nghĩa tiếng Việt theo tài liệu học.
