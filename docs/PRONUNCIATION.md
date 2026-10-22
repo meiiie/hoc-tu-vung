@@ -27,3 +27,31 @@ ZIPA licence: CC BY-NC-SA 4.0. The app is free and non-commercial. The model is 
 - Real iPhone speed and memory (the int8 model takes roughly 150–250 MB RAM while running), and microphone capture through ScriptProcessor on iOS.
 - Real Vietnamese learners' voices. All measurements use TTS voices.
 - The stress check is a heuristic, not a trained model.
+
+## v10 re-evaluation (Oct 2026)
+Every candidate below was checked to exist on HF, GitHub, PyPI or arXiv. Scores come from the same scorer (`pron.js`) and the same 32 correct/mispronounced TTS pairs, plus 8 words read by native voices and by a Vietnamese-accent voice.
+
+| Candidate | Exists / licence | Size | ok / bad mean | ok > bad | gap ≥ 20 | native / vi | Phone? |
+|---|---|---|---|---|---|---|---|
+| **ZIPA-CR-Ns small (current)** | yes, CC BY-NC-SA 4.0 | 70.7 MB int8 | **92.7 / 59.6** | **30/32** | **27** | 96.4 / 45.1 | yes |
+| KoelLabs/xlsr-english-01 (tested via the public mirror ReubenAImen/xlsr-english-01; the original is gated) | yes, AGPL-3.0 | 1.26 GB fp32 (315M params, about 320 MB int8) | 94.0 / 62.2 | 29 | 25 | 94.5 / 45.6 | no |
+| Pransfrance/cmubye-phoneme-encoder | yes, Apache-2.0 | 1.26 GB fp32 | 93.2 / 59.9 | 28 | 26 | 92.9 / 33.1 | no |
+| moxeeeem/wav2vec2-finetuned-pronunciation-correction | yes, Apache-2.0 | 1.26 GB fp32 | 91.5 / 62.2 | 29 | 23 | 93.4 / 46.3 | no |
+| OpenPronounce (PyPI 0.3.0) | yes, MIT | two wav2vec2 models, about 1.2 GB each (its phone model is lv-60-espeak, measured in v8) | not re-run | | | | no (server) |
+| oollim (arXiv 2610.26406, github cburst/oollim) | yes, licence "other" | XLS-R + XEUS + PhoneticXeus | not run | | | | no (gaming PC) |
+| "17 MB CTC + GOP engine" (fabiosuizu / Brainiall) | exists as a REST API and blog posts; **no public weights** (the HF Space calls api.brainiall.com) | claimed 17 MB INT4 Citrinet-256 | cannot run | | | | n/a |
+| Qwen2.5-Omni-7B | yes, licence "other" | 10.7 GB | not run | | | | no |
+
+Decision: keep ZIPA. No candidate separates correct from mispronounced audio better, and all the wav2vec2/XLS-R models are about 4–5 times too large for a phone browser. An ensemble would add more than 300 MB, so I left it out.
+
+UK reference: `data/pron-uk.json`, generated from [Britfone](https://github.com/JoseLlarena/Britfone) (MIT) by `tools/pron-uk.py`, covers 251/252 words ("alcoholic" falls back to CMUdict). In UK mode the British form comes first, and the US forms are still accepted. In the app, the UK-voice "bath" recording now shows /ɑː/ as correct (score 31 → 59). /θ/ is still missing because this TTS clip is recognised without it.
+
+Reference audio (TTS): the 252 words were run through ZIPA and scored against the reference IPA. Lower PER is better.
+
+| Voice set | US PER | UK PER |
+|---|---|---|
+| edge-tts (current) | 3.3 % | **2.1 %** |
+| Kokoro-82M v1.0 (Apache-2.0; af_heart / bf_emma) | **2.5 %** | 3.6 % |
+| Kyutai Pocket TTS (CC BY 4.0; "anna", a British VCTK speaker) | n/a | 2.9 % |
+
+I kept edge-tts. Kokoro is slightly better on US but worse on UK, and it misreads some words (for example "agenda", "a"). Not tried: Gradium phonon-31m-en (exists, Apache-2.0) and Ming-3.0-tts-0.5B (exists, MIT, 1.5 GB).

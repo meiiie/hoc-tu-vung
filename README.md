@@ -28,7 +28,7 @@
 - Lịch ôn: [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) 5.4.2 (MIT) trong `vendor/`; SM-2 theo Anki (tự cài đặt lại từ tài liệu [Deck Options](https://docs.ankiweb.net/deck-options.html)); cân bằng tải và chuyển đổi SM-2 → FSRS chuyển thể từ [ankitects/anki](https://github.com/ankitects/anki) (`rslib/src/scheduler/states/load_balancer.rs`, AGPL-3.0 — chỉ tham khảo công thức) và [fsrs-rs](https://github.com/open-spaced-repetition/fsrs-rs) (`memory_state_from_sm2`).
 - Kiểm thử: `tests/srs.test.js` so sánh với ts-fsrs gốc; `tests/*.py` là kiểm thử Playwright trên điện thoại giả lập.
 - Cách bố trí chế độ học tham khảo trải nghiệm của Quizlet, Duolingo, Anki, ELSA Speak. Không dùng mã nguồn hay tài sản của các ứng dụng này.
-- Chấm phát âm: mô hình [ZIPA-CR-Ns small](https://huggingface.co/anyspeech/zipa-small-crctc-ns-700k) (Zhu et al., ACL 2025; giấy phép CC BY-NC-SA 4.0, chỉ dùng phi thương mại), tải về máy người dùng từ Hugging Face khi bật. Chạy bằng [onnxruntime-web](https://github.com/microsoft/onnxruntime) 1.30.0 (MIT, `vendor/ort/LICENSE`). Phiên âm chuẩn từ [CMUdict](https://github.com/cmusphinx/cmudict) (BSD-2). Chi tiết: `docs/PRONUNCIATION.md`.
+- Chấm phát âm: mô hình [ZIPA-CR-Ns small](https://huggingface.co/anyspeech/zipa-small-crctc-ns-700k) (Zhu et al., ACL 2025; giấy phép CC BY-NC-SA 4.0, chỉ dùng phi thương mại), tải về máy người dùng từ Hugging Face khi bật. Chạy bằng [onnxruntime-web](https://github.com/microsoft/onnxruntime) 1.30.0 (MIT, `vendor/ort/LICENSE`). Phiên âm chuẩn từ [CMUdict](https://github.com/cmusphinx/cmudict) (BSD-2, giọng Mỹ) và [Britfone](https://github.com/JoseLlarena/Britfone) (MIT, giọng Anh). Chi tiết: `docs/PRONUNCIATION.md`.
 - Linh vật “Neko” lấy từ hệ thương hiệu Wiii (github.com/meiiie/wiii, AGPL-3.0, cùng tác giả), vẽ lại bằng SVG trong `mascot.js`. Từ v9, chuyển động theo nguyên lý trong [grokbot-animation-anatomy](https://github.com/ArvinYin1/grokbot-animation-anatomy) (chỉ tham khảo nguyên lý, mã và dữ liệu tự viết; xem `docs/MASCOT.md`).
 - Danh sách từ: Oxford 3000 (Oxford University Press). Nghĩa tiếng Việt theo tài liệu học.
 
@@ -53,3 +53,7 @@
 - Neko vẽ lại theo nguyên lý trong grokbot-animation-anatomy: mắt khoét (mask) đổi hình từng điểm qua 9 biểu cảm, hai tai cử động riêng, lò xo 120 Hz, chớp mắt theo clip, hào quang thở, trạng thái "đang chấm" biến thành ba chấm.
 - Luyện nói: Neko nghe (tai phản ứng theo âm lượng micro) → đang chấm → đúng / gần đúng / sai.
 - 6 màu Neko, có bản cho giao diện sáng và tối, đều đạt độ tương phản ≥ 3:1. Chạm vào Neko để chọc.
+
+## v10
+- Chấm giọng Anh (UK) theo phiên âm Anh (Britfone): ví dụ "bath" là /bɑːθ/; phiên âm Mỹ vẫn được chấp nhận.
+- Đánh giá lại các mô hình chấm phát âm và giọng đọc mới (xem `docs/PRONUNCIATION.md`); giữ ZIPA và edge-tts vì không có lựa chọn nào tốt hơn mà vẫn chạy được trên điện thoại.

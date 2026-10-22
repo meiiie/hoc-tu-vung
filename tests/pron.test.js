@@ -14,4 +14,7 @@ t('bad: correct beats ae->e',()=>{const a=run('p1-214_ok_ryan'),b=run('p1-214_ba
 t('accommodation: native high, Vietnamese accent low',()=>{const a=run('p1-015_ok_guy'),b=run('p1-015_ok_vi');assert.ok(a.score>=85);assert.ok(b.score<60)});
 t('silence: empty logits give empty result and score 0, never a fake 100',()=>{const T=20,V=127,lp=new Float32Array(T*V).fill(-20);for(let i=0;i<T;i++)lp[i*V]=0;const r=PR.score(lp,T,V,tok,P['p1-234'],{});assert.ok(r.empty);assert.strictEqual(r.score,0)});
 t('tips mention /θ/ when th is wrong',()=>{const tips=PR.tips(run('p1-234_bad_guy'),'bath');assert.ok(tips.some(x=>x.p=='θ'))});
+const PU=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/pron-uk.json')));
+t('UK references (Britfone) cover the word list; bath is /bɑːθ/',()=>{assert.ok(Object.keys(PU).length>=250);assert.strictEqual(PU['p1-234'][0].map(x=>x[0]).join(' '),'b ɑ θ')});
+t('UK reference: every UK phone is in the scorer inventory',()=>{const inv=new Set('ɑ æ ʌ ə ɔ aʊ aɪ t͡ʃ d͡ʒ ɛ ɚ eɪ ɡ i ɪ j ŋ oʊ ɔɪ ɹ ʃ ʊ u ʒ t d k p b f h l m n s v w z ð θ'.split(' '));for(const v of Object.values(PU))for(const va of v)for(const [p] of va)assert.ok(inv.has(p),p)});
 console.log(n+' tests passed');
