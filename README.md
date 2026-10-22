@@ -57,3 +57,9 @@
 ## v10
 - Chấm giọng Anh (UK) theo phiên âm Anh (Britfone): ví dụ "bath" là /bɑːθ/; phiên âm Mỹ vẫn được chấp nhận.
 - Đánh giá lại các mô hình chấm phát âm và giọng đọc mới (xem `docs/PRONUNCIATION.md`); giữ ZIPA và edge-tts vì không có lựa chọn nào tốt hơn mà vẫn chạy được trên điện thoại.
+
+## v11
+- iPhone mic fix: a new capture context and a new microphone stream for every attempt, a silent-stream watchdog, an adaptive noise threshold, and a `?debug=1` diagnostic overlay. See docs/PRONUNCIATION.md.
+- Live waveform; states for opening the mic, listening, "Neko nghe thấy bạn", waiting for you to finish (countdown), and no sound from the mic.
+- Each syllable is a pill. Stress is a dot above the stressed syllable plus an underline, with no stray ˈ characters.
+- Animated mouth cross-sections (tongue, lips, jaw, voicing, airflow) for each sound.

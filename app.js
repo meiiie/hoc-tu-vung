@@ -175,7 +175,7 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="exp"><span>Xuất bản sao lưu tiến độ<br><small class="muted">Lưu tệp .json để chuyển máy hoặc phòng mất dữ liệu</small></span>${I('download')}</button>
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="imp"><span>Nhập tiến độ từ tệp sao lưu</span>${I('upload')}</button><input type="file" id="impf" accept="application/json,.json" hidden aria-label="Chọn tệp sao lưu">
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left;color:var(--danger)" id="rst"><span>Xoá toàn bộ tiến độ</span>${I('rotate-ccw')}</button></div>
- <p class="muted center" style="margin-top:16px">Phiên bản 10 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
+ <p class="muted center" style="margin-top:16px">Phiên bản 11 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
  $$('[data-set]',sh).forEach(b=>b.onclick=()=>{const k=b.dataset.set;let v=b.dataset.v;if(k=='slow')v=v=='true';if(k=='retention'||k=='goalAns')v=+v;if(k=='goal'){S.user=S.user||{};S.user.goal=v}else S.set[k]=v;save();$$(`[data-set="${k}"]`,sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});if(k=='theme')applyTheme();if(k=='asr')toast(v=='auto'?'Chấm trên máy (từng âm)':'Dùng nhận dạng của trình duyệt','mic');if(k=='voice'||k=='slow')play(words[2]);updVoice();buzz(8)});
  $$('[data-mc]',sh).forEach(b=>b.onclick=()=>{S.set.mcolor=b.dataset.mc;save();applyTheme();$$('[data-mc]',sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});moodTo($('.mcrow .mascot',sh),'happy',null,1400);buzz(8)});
  if(Speech.supported()){const upd=s=>{const t=$('#mst2',sh),b=$('#mdl',sh);if(!t)return;t.textContent=s.cached?'Đã tải, dùng được offline':'Chưa tải';b.innerHTML=s.cached?I('trash-2','s')+'Xoá':I('download','s')+'Tải';
@@ -427,9 +427,10 @@ function syllables(ph){const v=ph.map((x,i)=>PR.isVowel(x.p)?i:-1).filter(i=>i>=
 const phClass=x=>x.st=='ok'?'g':x.st=='close'?'y':'r';
 const phLabel=x=>x.st=='ok'?'tốt':x.st=='close'?`gần đúng, nghe như /${x.heard}/`:x.st=='sub'?`chưa đúng, nghe như /${x.heard}/`:'bị thiếu';
 function refRow(w,res){const v=pronVars(w);if(!v.length)return '';const ph=res?res.phones:v[0].map(([p,s])=>({p,stress:s}));const syl=syllables(ph);
- return `<div class="phrow" role="group" aria-label="${res?'Kết quả từng âm':'Các âm của từ'}">${syl.map((idx,k)=>{const st=idx.some(i=>ph[i].stress===1)?'ˈ':idx.some(i=>ph[i].stress===2)?'ˌ':'';
-  const worst=res?idx.map(i=>ph[i]).reduce((a,x)=>x.score<a.score?x:a):null;
-  return `<span class="syl ${worst?phClass(worst):''} ${st=='ˈ'?'str':''}">${st?`<span class="smark" aria-hidden="true">${st}</span>`:''}${idx.map(i=>{const x=ph[i];return `<button class="ph ${res?phClass(x):''}" data-ph="${esc(x.p)}" aria-label="Âm /${esc(phDisp(x.p))}/${res?': '+phLabel(x):''}. Xem cách phát âm">${esc(phDisp(x.p))}</button>`}).join('')}</span>`}).join('<span class="sdot" aria-hidden="true">·</span>')}</div>`}
+ /* v11: one pill per syllable; stress is a mark above the pill (filled = primary, hollow = secondary) plus a bold underline; no IPA stress glyphs */
+ return `<div class="phrow" role="group" aria-label="${res?'Kết quả từng âm':'Các âm của từ'}">${syl.map(idx=>{const st=idx.some(i=>ph[i].stress===1)?1:idx.some(i=>ph[i].stress===2)?2:0;
+  const worst=res?idx.map(i=>ph[i]).sort((a,b)=>a.score-b.score)[0]:null;
+  return `<span class="syl${st==1?' s1':st==2?' s2':''}${worst?' '+phClass(worst):''}"${st?` title="${st==1?'Trọng âm chính':'Trọng âm phụ'}"`:''}>${st?`<span class="sm" aria-hidden="true"></span><span class="sr">${st==1?'Trọng âm chính: ':'Trọng âm phụ: '}</span>`:''}${idx.map(i=>{const x=ph[i];return `<button class="ph ${res?phClass(x):''}" data-ph="${esc(x.p)}" aria-label="Âm /${esc(phDisp(x.p))}/${res?': '+phLabel(x):''}. Xem cách phát âm">${esc(phDisp(x.p))}</button>`}).join('')}</span>`}).join('')}</div>`}
 function openArtic(p){const t=ARTIC.text(p);if(!t)return;const ex=ARTIC.ex(p);sheet(`<h2>Âm /${esc(phDisp(p))}/</h2><div class="artic">${ARTIC.svg(p)}</div><p>${esc(t)}</p>${ex?`<p class="muted">Ví dụ: <b>${esc(ex)}</b></p>`:''}
  <p class="muted" style="font-size:var(--fs-xs)">Hình vẽ mặt cắt miệng nhìn nghiêng: môi bên phải, lưỡi màu hồng.</p><button class="btn" id="acl">Đã hiểu</button>`);$('#acl').onclick=()=>$('#sheet')._close();$('#acl').focus()}
 function drawCompare(cv,nat,mine){if(!cv)return;const dpr=devicePixelRatio||1,W=cv.clientWidth||300,H=cv.clientHeight||150;cv.width=W*dpr;cv.height=H*dpr;const g=cv.getContext('2d');g.scale(dpr,dpr);g.clearRect(0,0,W,H);
@@ -460,7 +461,9 @@ function speak(){const d=deck();let q=shuffle(d),i=0,att=0,st='init',rec=null,sr
    <div class="row"><button class="btn" id="dlm">${I('download','s')}Tải mô hình</button>${SRok?'<button class="btn sec" id="usebr">Dùng nhận dạng của trình duyệt</button>':''}</div>`;
   else if(s=='dl')b.innerHTML=`<p class="muted" style="margin-top:16px">${data.phase=='init'?'Đang khởi động mô hình…':`Đang tải mô hình… ${data.pct||0}%`}</p><div class="bar" role="progressbar" aria-label="Tải mô hình" aria-valuenow="${data.pct||0}" aria-valuemin="0" aria-valuemax="100"><i style="width:${data.pct||0}%"></i></div>`;
   else if(s=='ready')b.innerHTML=`${micBtn()}<p class="muted">${m=='model'?'Bấm micro, đọc to rồi dừng lại. Máy tự dừng khi bạn ngừng nói.':'Bấm micro và đọc to từ trên.'}</p>${m=='browser'?'<p class="muted" style="font-size:var(--fs-xs)">Đang dùng nhận dạng của trình duyệt: chỉ chấm cả từ, không chấm từng âm.</p>':''}`;
-  else if(s=='rec')b.innerHTML=`${micBtn()}<div class="lvl" aria-hidden="true"><i id="lvl"></i></div><p class="muted">Đang nghe… hãy đọc “${esc(answerText(w).split(/,\s*/)[0])}”</p>`;
+  else if(s=='rec')b.innerHTML=`<div class="recw ${data.perm?'perm':'listen'}" id="recw"><button class="mic rec" id="mic" aria-label="Dừng ghi âm"><span class="ring" aria-hidden="true"></span>${I('square','xl')}</button>
+   <canvas class="wave" id="wave" aria-hidden="true"></canvas><div class="tailbar" aria-hidden="true"><i></i></div>
+   <p class="rst" id="rst">${data.perm?'Đang mở micro…':'Mời bạn đọc…'}</p><p class="muted">Hãy đọc “${esc(answerText(w).split(/,\s*/)[0])}”</p></div>`;
   else if(s=='busy')b.innerHTML=`<div class="spin" aria-hidden="true"></div><p class="muted">Đang chấm từng âm…</p>`;
   else if(s=='err')b.innerHTML=`${micBtn('Thử lại')}<p class="err-t">${esc(data.msg)}</p>`;
   else if(s=='none')b.innerHTML=`<div class="note" role="note">${I('info')}<div><b>Thiết bị này chưa chấm phát âm được.</b> Bạn vẫn có thể ghi âm và so sánh với giọng chuẩn.</div></div>${micBtn('Ghi âm')}`;
@@ -486,16 +489,34 @@ function speak(){const d=deck();let q=shuffle(d),i=0,att=0,st='init',rec=null,sr
    $('#pn').onclick=pn;$('#pm').onclick=pm;$('#pb').onclick=async()=>{await pn();await pm()};$('#sl').onclick=e=>{slow=!slow;e.currentTarget.setAttribute('aria-pressed',slow);e.currentTarget.classList.toggle('on',slow)}}}
  async function download(){const a=att;render('dl',{pct:0});try{await Speech.load(m=>{if(a!==att||dead)return;render('dl',{pct:m.phase=='init'?100:Math.round(m.got/m.total*100),phase:m.phase})});if(a!==att||dead)return;modelOK=true;toast('Đã tải xong mô hình chấm phát âm','check');render('ready')}
   catch(e){if(a!==att||dead)return;render(SRok?'offer':'none');toast('Không tải được mô hình. Kiểm tra mạng rồi thử lại.','wifi-off',4000)}}
+ /* live level: a scrolling bar waveform and a ring that follows the voice, drawn at display rate */
+ function meter(a){const hist=new Array(48).fill(0);let cur=0,shown=0,raf=0,on=true;const RMq=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const draw=()=>{raf=0;if(!on||a!==att)return;const cv=$('#wave'),ring=$('#recw .ring');shown+=(cur-shown)*(RMq?1:.35);
+   if(ring){ring.style.setProperty('--lv',shown.toFixed(3))}
+   if(cv){const dpr=devicePixelRatio||1,W=cv.clientWidth||240,H=cv.clientHeight||44;if(cv.width!==W*dpr){cv.width=W*dpr;cv.height=H*dpr}const g=cv.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,W,H);
+    const col=getComputedStyle(cv).color,n=hist.length,bw=W/n;g.fillStyle=col;for(let k=0;k<n;k++){const h=Math.max(2,hist[k]*(H-4));const x=k*bw+bw*.2;g.globalAlpha=.35+.65*(k/n);g.beginPath();g.roundRect?g.roundRect(x,(H-h)/2,bw*.6,h,bw*.3):g.rect(x,(H-h)/2,bw*.6,h);g.fill()}g.globalAlpha=1}
+   raf=requestAnimationFrame(draw)};
+  raf=requestAnimationFrame(draw);
+  return {push(v){cur=v;hist.push(v);hist.shift()},stop(){on=false;if(raf)cancelAnimationFrame(raf)}}}
  function stop(){try{rec&&rec.stop()}catch(e){}rec=null;try{sr&&sr.abort()}catch(e){}sr=null}
  function save1(w,score,kind){S.speak[w.id]=Math.max(S.speak[w.id]||0,score);const h=S.pron[w.id]=S.pron[w.id]||[];h.push({t:Date.now(),s:score,k:kind=='model'?'m':'b'});if(h.length>20)h.splice(0,h.length-20);logIt(false);save();$('#shist')&&($('#shist').innerHTML=hist(w))}
  function feel(score){const m=$('.mascot');if(score>=85){moodTo(m,'correct','Chuẩn lắm!');buzz([10,30,10])}else if(score>=60)moodTo(m,'encouraging','Gần được rồi, sửa các âm màu vàng/đỏ nhé.');else{moodTo(m,'wrong','Nghe mẫu chậm rồi thử lại nhé.');buzz([30,40,30])}}
  async function start(w){const a=++att;stop();const m=mode();audio.pause();
   if(m=='model'&&!modelOK)return render('offer');
   if(m=='browser')return startSR(w,a);
-  let r;try{rec=await Speech.record({onLevel:v=>{const l=$('#lvl');if(l)l.style.width=Math.round(v*100)+'%';mascotLevel($('.mascot'),v)}})}catch(e){if(a===att)render('err',{msg:e&&e.name=='NotAllowedError'?'Bạn chưa cho phép dùng micro. Hãy bật quyền micro cho trang này trong cài đặt trình duyệt.':'Không mở được micro.'});return}
-  if(a!==att)return rec.stop();render('rec');moodTo($('.mascot'),'listening','Neko đang nghe…');buzz(10);
-  r=await rec.done;rec=null;if(a!==att||dead)return;
+  /* the capture context is created inside this tap (Speech.record primes it synchronously) */
+  render('rec',{perm:1});const vis=meter(a);let r,heardOnce=false;
+  try{rec=await Speech.record({onLevel:(v,rms)=>{if(a!==att)return;vis.push(v);mascotLevel($('.mascot'),v)},
+   onState:(k,p)=>{if(a!==att)return;const box=$('#recw'),t=$('#rst');if(!box||!t)return;
+    if(k=='tailp'){box.style.setProperty('--tp',p.toFixed(3));return}
+    box.className='recw '+k;t.textContent={perm:'Đang mở micro…',listen:'Mời bạn đọc…',quiet:'Không nhận được tiếng từ micro. Hãy nói to hơn, hoặc kiểm tra micro.',voice:'Neko nghe thấy bạn',tail:'Đang chờ bạn nói hết…'}[k]||'';
+    if(k=='voice'&&!heardOnce){heardOnce=true;buzz(8);moodTo($('.mascot'),'listening','Neko nghe thấy bạn')}
+    if(k=='listen')moodTo($('.mascot'),'listening','Neko đang nghe…')}})}
+  catch(e){vis.stop();if(a===att)render('err',{msg:e&&e.name=='NotAllowedError'?'Bạn chưa cho phép dùng micro. Hãy bật quyền micro cho trang này trong cài đặt trình duyệt.':'Không mở được micro. Hãy đóng ứng dụng khác đang dùng micro rồi thử lại.'});return}
+  if(a!==att){vis.stop();return rec.stop()}buzz(10);
+  r=await rec.done;rec=null;vis.stop();if(a!==att||dead)return;
   const pcm=Speech.trim(Speech.to16k(r.pcm,r.sr));
+  if(r.why=='dead'||r.why=='ended'){render('err',{msg:'Không nhận được tiếng từ micro. Hãy thử lại; nếu vẫn vậy, tải lại trang hoặc đóng ứng dụng khác đang dùng micro.'});moodTo($('.mascot'),'confused','Micro không gửi tiếng nào.');return}
   if(!r.speech||pcm.length<16000*0.25||Speech.peak(pcm)<0.02){render('err',{msg:'Chưa nghe thấy giọng nói. Hãy nói to, gần micro hơn rồi thử lại.'});moodTo($('.mascot'),'idle','Mình chưa nghe thấy gì.');return}
   my=pcm;if(myUrl)URL.revokeObjectURL(myUrl);myUrl=URL.createObjectURL(Speech.wav(pcm));
   if(m=='none'){render('result',{score:0,kind:'none'});$('.score')&&$('.score').remove();$('.sres-l')&&($('.sres-l').innerHTML='<b>Đã ghi âm: nghe lại và so sánh với giọng chuẩn</b>');return}

@@ -55,3 +55,45 @@ Reference audio (TTS): the 252 words were run through ZIPA and scored against th
 | Kyutai Pocket TTS (CC BY 4.0; "anna", a British VCTK speaker) | n/a | 2.9 % |
 
 I kept edge-tts. Kokoro is slightly better on US but worse on UK, and it misreads some words (for example "agenda", "a"). Not tried: Gradium phonon-31m-en (exists, Apache-2.0) and Ming-3.0-tts-0.5B (exists, MIT, 1.5 GB).
+
+## v11: microphone on iOS Safari (Oct 2026)
+
+**Report.** On a real iPhone the mic worked once after the model download. After that, every attempt said "no speech": the orange mic indicator was on, but the level bar stayed empty.
+
+**Probable root cause.** This is not confirmed on a device; we could not reproduce it on Linux.
+- v10 kept one long-lived `AudioContext`, which was also used for `decodeAudioData`, and resumed it only when `state === 'suspended'`.
+- On iOS the context can be `interrupted`, so it was never resumed.
+- iOS also changes the audio session and hardware sample rate after a mic track stops or after an `<audio>` element plays. A new `MediaStreamSource` on the old context can then deliver silence.
+- `ScriptProcessor` callbacks keep firing with zeros, so the recorder timed out as "no speech". The page never knew the mic was dead.
+
+**Fix (speech.js).**
+- Every attempt creates a new capture `AudioContext` synchronously inside the tap (`prime()`).
+- Every attempt makes a new `getUserMedia` call and checks that the track exists and is `live`.
+- If the track's sample rate differs from the context's, the context is rebuilt at the track's rate.
+- The context is resumed whenever it is not `running`.
+- A watchdog runs: if there are no callbacks, or only exact zeros, after 900 ms, it rebuilds the context once. If that also fails, it stops with `dead` and shows an honest message.
+- A track `ended` event stops the attempt cleanly.
+- On every exit, tracks are stopped and the context is closed.
+- Decoding uses `OfflineAudioContext`, so playback never shares a context with capture.
+- Voice detection uses an adaptive noise floor: the median RMS of the first 300 ms, with threshold max(0.008, 3×floor) and 2 loud frames.
+- If the level stays near zero for 1.5 s, a "Không nhận được tiếng từ micro" warning appears.
+- `?debug=1` shows a live overlay with context state, sample rate, track state, RMS, callbacks and rebuilds.
+
+**Tested.** Playwright Chromium and Playwright WebKit (`test_v11.py`, `test_v11_webkit.py`), using a fake microphone stream built from real recordings:
+- 6 attempts in a row, including attempts right after the native recording played.
+- Each attempt was scored correctly, with a fresh `getUserMedia` call per attempt.
+- The quiet warning was checked.
+- An all-zero stream triggered one rebuild and then the `dead` message.
+
+**Not tested.** A real iPhone. Playwright's WebKit is not iOS Safari: it has no iOS audio session, no `interrupted` state and no hardware sample-rate switch. Please confirm on the device with `?debug=1`.
+
+## v11: articulation diagrams
+`artic.js` draws original animated mid-sagittal sections:
+- tongue, lips, jaw and lower teeth move from a rest pose to the target pose, glide to a second target for diphthongs, then return;
+- the velum is lowered for nasals;
+- airflow is shown along the oral or nasal path, and for stops it appears only at release;
+- voicing is shown as a vibrating line at the larynx.
+
+The animation uses SMIL `animate` on paths with the same structure in every pose, which Safari supports. With reduced motion, a static target frame is shown.
+
+The layout is our own schematic. Seeing Speech (University of Glasgow), Sounds of Speech (University of Iowa) and Rachel's English were consulted for articulator placement only; no artwork was copied.
