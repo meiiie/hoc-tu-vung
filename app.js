@@ -243,7 +243,7 @@ function lev(a,b){const m=a.length,n=b.length,d=Array.from({length:m+1},(_,i)=>[
  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[m][n]}
 function speechScore(w,alts){const targets=accepts(w);let best=0,heard=alts[0]||'';
  for(const a of alts){const h=norm(a);for(const t of targets){let s;if(h==t||h.split(' ').includes(t)||(t.includes(' ')&&h.includes(t)))s=1;else{const toks=[h,...h.split(' ')];s=Math.max(...toks.map(x=>1-lev(x,t)/Math.max(x.length,t.length,1)))}if(s>best){best=s;heard=a}}}
- return {score:Math.round(best*100),heard}}
+ return {score:Math.round(best*best*100),heard}}
 function speak(){const d=deck();let q=shuffle(d),i=0,rec=null,mrec=null,chunks=[],myUrl=null;
  const support=SR&&!(isIOS&&standalone);
  function note(){if(support)return '';return `<div class="note" role="note">${I('info')}<div><b>Thiết bị này chưa hỗ trợ chấm phát âm tự động.</b> ${isIOS?(standalone?'Trên iPhone, khi mở từ màn hình chính, Apple chưa cho phép nhận dạng giọng nói. Hãy mở trang bằng Safari để được chấm điểm (iOS 14.5 trở lên).':'Hãy cập nhật iOS 14.5 trở lên và cho phép Safari dùng micro.'):'Hãy dùng Chrome hoặc Edge (Android, máy tính) hoặc Safari.'} Bạn vẫn có thể ghi âm giọng mình và so sánh với giọng chuẩn.</div></div>`}
