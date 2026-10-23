@@ -117,14 +117,15 @@ function openNote(id){const w=byId(id);if(!w)return;const {sh,close}=sheet(`<h2>
  $('#ndel')&&($('#ndel').onclick=()=>{delete S.notes[id];save();upd();close()});setTimeout(()=>$('#nt').focus(),60)}
 const starBtn=w=>`<button class="ib star ${S.star[w.id]?'on':''}" data-star="${w.id}" aria-pressed="${!!S.star[w.id]}" aria-label="Gắn sao từ khó">${I('star')}</button>`;
 function backFace(w){return `<div class="corner l">${starBtn(w)}</div><div class="corner r">${auBtns(w,false)}</div>
- <div class="w">${esc(w.w)}</div><div class="ipa">${esc(w.ipa)}</div>
+ <div class="w">${esc(w.w)}<button class="ib sm cp" data-copy="${esc(w.w)}" aria-label="Sao chép từ" title="Sao chép từ">${I('copy','s')}</button></div><div class="ipa" data-ipa="${w.id}">${esc(ipaOf(w))}</div>
  <div class="tags"><span class="tag">${esc(w.pos)}</span><span class="tag lv">${esc(w.lv)}</span>${w.tags.includes('ielts-task1')?'<span class="tag">IELTS Task 1</span>':''}</div>
  <div class="vi" style="margin-top:12px">${esc(w.vi)}</div>
- <div class="sec"><div class="lab">Ví dụ <button class="ib sm" data-au="${w.id}" data-k="ex" aria-label="Nghe câu ví dụ">${I('play','s')}</button></div><i>${esc(w.ex)}</i><br><span class="muted">${esc(w.exvi)}</span></div>
+ <div class="sec"><div class="lab">Ví dụ <button class="ib sm" data-au="${w.id}" data-k="ex" aria-label="Nghe câu ví dụ">${I('play','s')}</button><button class="ib sm" data-copy="${esc(w.ex)}" aria-label="Sao chép câu ví dụ" title="Sao chép câu ví dụ">${I('copy','s')}</button></div><i>${esc(w.ex)}</i><br><span class="muted">${esc(w.exvi)}</span></div>
  <div class="sec"><div class="lab">Cụm từ · họ từ</div>${esc(w.col)}</div>${w.tip?`<div class="sec tip">${I('lightbulb','s')}<div>${esc(w.tip)}</div></div>`:''}${noteHTML(w)}`}
-function frontFace(w,dir){return `<div class="corner l">${starBtn(w)}</div>`+(dir=='en'?`<div class="corner r"><button class="ib" data-au="${w.id}" data-k="w" aria-label="Nghe phát âm">${I('volume-2')}</button></div><div class="w">${esc(w.w)}</div><div class="ipa">${esc(w.ipa)}</div><div class="tags"><span class="tag">${esc(w.pos)}</span></div>`
+function frontFace(w,dir){return `<div class="corner l">${starBtn(w)}</div>`+(dir=='en'?`<div class="corner r"><button class="ib" data-au="${w.id}" data-k="w" aria-label="Nghe phát âm">${I('volume-2')}</button></div><div class="w">${esc(w.w)}</div><div class="ipa" data-ipa="${w.id}">${esc(ipaOf(w))}</div><div class="tags"><span class="tag">${esc(w.pos)}</span></div>`
  :`<div class="vi">${esc(w.vi)}</div><div class="tags"><span class="tag">${esc(w.pos)}</span></div><p class="muted">Từ tiếng Anh là gì?</p>`)}
-document.addEventListener('click',e=>{const a=e.target.closest('[data-au]');if(a){e.stopPropagation();play(byId(a.dataset.au),a.dataset.k||'w',{slow:a.dataset.slow?true:undefined,btn:a});return}
+async function copyText(t){try{await navigator.clipboard.writeText(t)}catch(_){const x=document.createElement('textarea');x.value=t;x.setAttribute('readonly','');x.style.cssText='position:fixed;opacity:0';document.body.appendChild(x);x.select();try{document.execCommand('copy')}catch(_){}x.remove()}toast('Đã sao chép','copy');buzz(8)}
+document.addEventListener('click',e=>{const cp=e.target.closest('[data-copy]');if(cp){e.stopPropagation();copyText(cp.dataset.copy);return}const a=e.target.closest('[data-au]');if(a){e.stopPropagation();play(byId(a.dataset.au),a.dataset.k||'w',{slow:a.dataset.slow?true:undefined,btn:a});return}
  const nb=e.target.closest('[data-note]');if(nb){e.stopPropagation();openNote(nb.dataset.note);return}
  const s=e.target.closest('[data-star]');if(s){e.stopPropagation();const id=s.dataset.star;S.star[id]=!S.star[id];if(!S.star[id])delete S.star[id];save();$$(`[data-star="${id}"]`).forEach(b=>{b.classList.toggle('on',!!S.star[id]);b.setAttribute('aria-pressed',!!S.star[id])});buzz(10);toast(S.star[id]?'Đã gắn sao':'Đã bỏ sao','star')}},true);
 /* a click that ends a swipe must not also press the button under the finger */
@@ -158,6 +159,7 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <div class="opt-row"><span>Giọng đọc</span>${seg('voice',[['gb','Anh (UK)'],['us','Mỹ (US)']])}</div>
  <div class="opt-row"><span>Tốc độ mặc định</span>${seg('slow',[['false','Bình thường'],['true','Chậm']])}</div>
  <label class="opt-row"><span>Tự phát âm khi hiện thẻ</span><input class="sw" type="checkbox" data-sw="autoplay" ${S.set.autoplay?'checked':''}></label>
+ <label class="opt-row"><span>Kéo thẻ bằng chuột<br><small class="muted">Máy tính: kéo từ vùng trống của thẻ để chọn; chữ luôn bôi đen được</small></span><input class="sw" type="checkbox" data-sw="mdrag" ${S.set.mdrag?'checked':''}></label>
  <div class="opt-row"><span>Tải âm thanh để học offline<br><small class="muted" id="dlst">Âm thanh được lưu dần khi bạn nghe</small></span><button class="btn sm sec" id="dl">${I('download','s')}Tải</button></div></div>
  <div class="eyebrow">Lịch ôn (kiểu Anki)</div><div class="group">
  <div class="opt-row"><span>Mục tiêu mỗi ngày<br><small class="muted">Số câu trả lời ở mọi chế độ</small></span>${seg('goalAns',[['10','10'],['20','20'],['50','50'],['100','100']])}</div>
@@ -175,13 +177,13 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="exp"><span>Xuất bản sao lưu tiến độ<br><small class="muted">Lưu tệp .json để chuyển máy hoặc phòng mất dữ liệu</small></span>${I('download')}</button>
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="imp"><span>Nhập tiến độ từ tệp sao lưu</span>${I('upload')}</button><input type="file" id="impf" accept="application/json,.json" hidden aria-label="Chọn tệp sao lưu">
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left;color:var(--danger)" id="rst"><span>Xoá toàn bộ tiến độ</span>${I('rotate-ccw')}</button></div>
- <p class="muted center" style="margin-top:16px">Phiên bản 11 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
+ <p class="muted center" style="margin-top:16px">Phiên bản 12 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
  $$('[data-set]',sh).forEach(b=>b.onclick=()=>{const k=b.dataset.set;let v=b.dataset.v;if(k=='slow')v=v=='true';if(k=='retention'||k=='goalAns')v=+v;if(k=='goal'){S.user=S.user||{};S.user.goal=v}else S.set[k]=v;save();$$(`[data-set="${k}"]`,sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});if(k=='theme')applyTheme();if(k=='asr')toast(v=='auto'?'Chấm trên máy (từng âm)':'Dùng nhận dạng của trình duyệt','mic');if(k=='voice'||k=='slow')play(words[2]);updVoice();buzz(8)});
  $$('[data-mc]',sh).forEach(b=>b.onclick=()=>{S.set.mcolor=b.dataset.mc;save();applyTheme();$$('[data-mc]',sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});moodTo($('.mcrow .mascot',sh),'happy',null,1400);buzz(8)});
  if(Speech.supported()){const upd=s=>{const t=$('#mst2',sh),b=$('#mdl',sh);if(!t)return;t.textContent=s.cached?'Đã tải, dùng được offline':'Chưa tải';b.innerHTML=s.cached?I('trash-2','s')+'Xoá':I('download','s')+'Tải';
    b.onclick=async()=>{if(s.cached){await Speech.forget();upd({cached:false});toast('Đã xoá mô hình','check')}else{b.disabled=true;try{await Speech.load(m=>{t.textContent=m.phase=='init'?'Đang khởi động…':'Đang tải '+Math.round(m.got/m.total*100)+'%'});upd({cached:true})}catch(e){t.textContent='Tải lỗi, thử lại';}b.disabled=false}}};Speech.status().then(upd)}
  else{$('#mst2',sh).textContent='Trình duyệt này không hỗ trợ';$('#mdl',sh).disabled=true}
- $$('[data-sw]',sh).forEach(x=>x.onchange=()=>{S.set[x.dataset.sw]=x.checked;save()});
+ $$('[data-sw]',sh).forEach(x=>x.onchange=()=>{S.set[x.dataset.sw]=x.checked;save();applyTheme()});
  $('#redo').onclick=()=>{close();onboarding(0)};$('#exp').onclick=exportProgress;$('#imp').onclick=()=>$('#impf').click();$('#impf').onchange=e=>{const f=e.target.files[0];if(f)importProgress(f,close);e.target.value=''};$('#rst').onclick=()=>{if(confirm('Xoá toàn bộ tiến độ trên thiết bị này?')){Object.assign(S,{srs:{},known:{},learn:{},speak:{},pron:{},log:{},best:{},notes:{},miss:{},streak:{freeze:0,frozen:[],earned:''}});save();FC=null;toast('Đã xoá tiến độ','rotate-ccw');close()}};
  $('#dl').onclick=async()=>{if(!('caches'in window)){toast('Trình duyệt không hỗ trợ lưu offline','info');return}const b=$('#dl');b.disabled=true;const c=await caches.open(AUDIO_CACHE);const urls=words.flatMap(w=>[aurl(w,'w'),aurl(w,'ex')]);let n=0;
   for(let i=0;i<urls.length;i+=8){await Promise.all(urls.slice(i,i+8).map(u=>c.match(u).then(m=>m||fetch(u).then(r=>r.ok&&c.put(u,r))).catch(()=>{})));n=Math.min(urls.length,i+8);const st=$('#dlst');if(st)st.textContent=`Đang tải ${n}/${urls.length}…`}
@@ -240,23 +242,35 @@ function makeCard(stage,w,dir,onSwipe){const el=document.createElement('div');el
  stage.appendChild(el);const L=$('.lbl.L',el),K=$('.lbl.K',el),FF=$('.face.f',el),FB=$('.face.b',el);const faces=()=>{const f=el.classList.contains('flip');FF.inert=f;FB.inert=!f;FF.setAttribute('aria-hidden',f);FB.setAttribute('aria-hidden',!f)};faces();new MutationObserver(faces).observe(el,{attributes:true,attributeFilter:['class']});
  /* Gesture state machine: idle -> pending -> (tap | swipe | scroll). Only a clean tap flips. */
  const TAP_SLOP=10,TAP_MS=450,FLIP_LOCK=reduce?60:540;let st='idle',pid=null,sx=0,sy=0,dx=0,t0=0,lastFlip=0,lastSwipeEnd=0,busy=false;
- const INTERACTIVE='button,a,input,textarea,select,label,[data-au],[data-star],[data-noflip]';
+ const INTERACTIVE='button,a,input,textarea,select,label,[data-au],[data-star],[data-copy],[data-noflip]';
+ /* v12 desktop: text is selectable; a mouse never drag-swipes from text (and never at all unless the "drag with mouse" setting is on).
+    A mouse click flips only when the mouse did not move and nothing got selected; a click on text waits out the double-click window. */
+ const TEXT='.w,.ipa,.vi,.sec,.muted,.tag,p';let mode='',flipT=0;
+ const hasSel=()=>{const g=getSelection&&getSelection();return !!(g&&!g.isCollapsed&&String(g).trim()&&el.contains(g.anchorNode))};
  const flip=()=>{const n=performance.now();if(busy||n-lastFlip<FLIP_LOCK)return;lastFlip=n;el.classList.toggle('flip');el.classList.remove('hint');buzz(6);if(el.classList.contains('flip')&&dir=='vi'&&S.set.autoplay)play(w);if(el._onflip)el._onflip()};
  const reset=()=>{el.style.transition=reduce?'none':'transform 480ms var(--ease-spring)';el.style.transform='';L.style.opacity=K.style.opacity=0;el.classList.remove('dragging')};
- let onBtn=false;el.addEventListener('pointerdown',e=>{if(busy||(e.pointerType=='mouse'&&e.button!==0)){st='idle';return}
-  onBtn=!!e.target.closest(INTERACTIVE);st='pending';pid=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;t0=performance.now();if(!onBtn)el.classList.add('pressed')});
- el.addEventListener('pointermove',e=>{if(e.pointerId!==pid||st=='idle'||st=='scroll')return;const mx=e.clientX-sx,my=e.clientY-sy;
+ let onBtn=false;el.addEventListener('pointerdown',e=>{clearTimeout(flipT);if(busy||(e.pointerType=='mouse'&&e.button!==0)){st='idle';return}
+  onBtn=!!e.target.closest(INTERACTIVE);const onText=!!e.target.closest(TEXT);mode=e.pointerType=='mouse'?((S.set.mdrag&&!onText)?'mdrag':(onText?'mtext':'mclick')):'touch';
+  if(mode=='mtext'||mode=='mclick'){st='mouse';pid=e.pointerId;sx=e.clientX;sy=e.clientY;t0=performance.now();el._sel0=hasSel();return}st='pending';pid=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;t0=performance.now();if(!onBtn)el.classList.add('pressed')});
+ el.addEventListener('pointermove',e=>{if(e.pointerId!==pid||st=='idle'||st=='scroll'||st=='mouse')return;const mx=e.clientX-sx,my=e.clientY-sy;
   if(st=='pending'){if(Math.hypot(mx,my)<TAP_SLOP)return;el.classList.remove('pressed');
    if(Math.abs(mx)>Math.abs(my)*1.2){st='swipe';el.classList.add('dragging');el.style.transition='none';try{el.setPointerCapture(pid)}catch(_){}}else{st='scroll';return}}
   if(st=='swipe'){dx=mx;const lim=innerWidth*.9,rx=Math.abs(dx)>lim?Math.sign(dx)*(lim+(Math.abs(dx)-lim)*.25):dx;
    el.style.transform=`translate3d(${rx}px,0,0) rotate(${rx/24}deg)`;const o=Math.min(1,Math.abs(dx)/100);L.style.opacity=dx<0?o:0;K.style.opacity=dx>0?o:0}});
  el.addEventListener('pointerup',e=>{if(e.pointerId!==pid)return;el.classList.remove('pressed');const s0=st;st='idle';pid=null;
+  if(s0=='mouse'){if(onBtn)return;const moved=Math.hypot(e.clientX-sx,e.clientY-sy)>4;if(moved||e.detail>1||hasSel()||el._sel0)return;
+   if(mode=='mtext')flipT=setTimeout(()=>{if(!hasSel())flip()},280);else flip();return}
+  if(s0=='mselect')return;
   if(s0=='pending'){if(onBtn)return;const sel=getSelection&&String(getSelection()).length>0;if(performance.now()-t0<=TAP_MS&&!sel&&performance.now()-lastSwipeEnd>300)flip();return}
   if(s0=='swipe'){lastSwipeEnd=window._swipeT=performance.now();const v=Math.abs(dx)/(performance.now()-t0);if(Math.abs(dx)>100||(v>.5&&Math.abs(dx)>40))fling(dx>0);else reset()}});
  el.addEventListener('pointercancel',()=>{el.classList.remove('pressed');if(st=='swipe')reset();st='idle';pid=null});
  el.addEventListener('lostpointercapture',e=>{if(e.target===el&&st=='swipe'){st='idle';reset()}});
  el.addEventListener('click',e=>{if(!e.target.closest(INTERACTIVE)){e.preventDefault()}});
- el.addEventListener('contextmenu',e=>{if(e.pointerType!='mouse')e.preventDefault()});
+ el.addEventListener('contextmenu',e=>{if(e.pointerType!='mouse'&&!e.target.closest(TEXT))e.preventDefault()});
+ el.addEventListener('dblclick',()=>clearTimeout(flipT));
+ el.addEventListener('mousedown',e=>{if(mode=='mdrag'&&!onBtn)e.preventDefault()});/* drag-to-swipe from a non-text area must not start a text selection */
+ /* touch long-press selection: once the user selects text inside the card, cancel any pending tap/swipe */
+ const onSel=()=>{if(!el.isConnected){document.removeEventListener('selectionchange',onSel);return}if(st!=='idle'&&st!=='mouse'&&hasSel()){if(st=='swipe')reset();el.classList.remove('pressed');st='idle';pid=null}};document.addEventListener('selectionchange',onSel);
  function fling(right){if(busy)return;busy=true;buzz(12);el.classList.remove('dragging');if(reduce){el.remove();onSwipe(right);return}
   el.style.transition='transform 300ms var(--ease),opacity 300ms';el.style.transform=`translate3d(${(right?1:-1)*innerWidth*1.2}px,24px,0) rotate(${right?18:-18}deg)`;el.style.opacity=0;(right?K:L).style.opacity=1;setTimeout(()=>{el.remove();onSwipe(right)},240)}
  el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==' '||e.key=='Enter'){e.preventDefault();e.stopPropagation();flip()}});return {el,flip,fling}}
@@ -265,13 +279,13 @@ function makeCard(stage,w,dir,onSwipe){const el=document.createElement('div');el
 let FC=null,keys=null;document.addEventListener('keydown',e=>keys&&keys(e));
 function cards(){const d=deck();if(!FC){const o=sess('cards');if(o&&o.sig==JSON.stringify(F())&&o.queue.every(byId))FC=o}if(!FC||FC.sig!=JSON.stringify(F()))FC={sig:JSON.stringify(F()),queue:d.map(w=>w.id),i:0,know:0,learn:0,hist:[],shuffled:false,flipped:false};render();
  function render(){const total=FC.queue.length;if(FC.i>=total)return done();sess('cards',FC);const w=byId(FC.queue[FC.i]);
-  view('Thẻ ghi nhớ',`${mascot(FC.mood||(FC.i==0?'wave':'idle'),FC.tip||'Chạm để lật. Vuốt phải nếu đã biết.',{small:true,row:true})}
+  view('Thẻ ghi nhớ',`${mascot(FC.mood||(FC.i==0?'wave':'idle'),FC.tip||(matchMedia('(hover:hover) and (pointer:fine)').matches?'Nhấp để lật. Phím → nếu đã biết.':'Chạm để lật. Vuốt phải nếu đã biết.'),{small:true,row:true})}
   <div class="prog"><span class="count l" aria-label="Đang học ${FC.learn}">${FC.learn}</span><div class="bar" role="progressbar" aria-label="Tiến độ bộ thẻ" aria-valuenow="${FC.i}" aria-valuemax="${total}"><i style="width:${FC.i/total*100}%"></i></div><span class="count k" aria-label="Đã biết ${FC.know}">${FC.know}</span></div>
   <div class="stage" id="stage"></div>
-  <div class="yn"><button class="btn l" id="nL">${I('x')}Đang học</button><button class="btn k" id="nK">${I('check')}Đã biết</button></div>
-  <div class="ctrl"><button class="ib" id="undo" aria-label="Hoàn tác" ${FC.hist.length?'':'disabled'}>${I('undo-2')}</button><button class="ib ${FC.shuffled?'on':''}" id="shuf" aria-label="Trộn thẻ" aria-pressed="${FC.shuffled}">${I('shuffle')}</button>
-  <button class="ib" id="flipb" aria-label="Lật thẻ">${I('refresh-cw')}</button><button class="ib ${S.set.dir=='vi'?'on':''}" id="dirb" aria-label="Đổi chiều Anh – Việt">${I('languages')}</button><button class="ib ${S.set.autoplay?'on':''}" id="autob" aria-label="Tự phát âm" aria-pressed="${S.set.autoplay}">${I(S.set.autoplay?'volume-2':'volume-x')}</button></div>
-  <p class="hint">${FC.i+1} / ${total} · Phím ← → để vuốt, phím cách để lật</p>`);
+  <div class="yn"><button class="btn l" id="nL" title="Đang học (phím ←)">${I('x')}Đang học</button><button class="btn k" id="nK" title="Đã biết (phím →)">${I('check')}Đã biết</button></div>
+  <div class="ctrl"><button class="ib" id="undo" aria-label="Hoàn tác" title="Hoàn tác (phím Z)" ${FC.hist.length?'':'disabled'}>${I('undo-2')}</button><button class="ib ${FC.shuffled?'on':''}" id="shuf" title="Trộn thẻ" aria-label="Trộn thẻ" aria-pressed="${FC.shuffled}">${I('shuffle')}</button>
+  <button class="ib" id="flipb" aria-label="Lật thẻ" title="Lật thẻ (phím cách)">${I('refresh-cw')}</button><button class="ib ${S.set.dir=='vi'?'on':''}" id="dirb" aria-label="Đổi chiều Anh – Việt" title="Đổi chiều Anh – Việt">${I('languages')}</button><button class="ib ${S.set.autoplay?'on':''}" id="autob" title="Tự phát âm" aria-label="Tự phát âm" aria-pressed="${S.set.autoplay}">${I(S.set.autoplay?'volume-2':'volume-x')}</button></div>
+  <p class="hint">${FC.i+1} / ${total} · <span class="t-touch">Chạm để lật, vuốt để chọn</span><span class="t-desk">Nhấp để lật · phím ← → để chọn · phím cách để lật · kéo chuột để chọn chữ</span></p>`);
   if(FC.mood){const m=$('.mascot');setTimeout(()=>moodTo(m,'idle'),1300);FC.mood=null}
   const c=makeCard($('#stage'),w,S.set.dir,right=>{FC.tip=right?['Tuyệt, đã biết!','Nhớ tốt lắm!','Giỏi quá!'][Math.random()*3|0]:'Không sao, mình sẽ gặp lại từ này.';FC.mood=right?'happy':'sad';FC.hist.push({id:w.id,right});right?FC.know++:FC.learn++;practice(w,right);if(!right)FC.queue.push(w.id);FC.i++;FC.flipped=false;render()});
   c.el._onflip=()=>{FC.flipped=c.el.classList.contains('flip');sess('cards',FC)};if(FC.flipped)c.el.classList.add('flip');
@@ -280,7 +294,7 @@ function cards(){const d=deck();if(!FC){const o=sess('cards');if(o&&o.sig==JSON.
   $('#undo').onclick=()=>{const h=FC.hist.pop();if(!h)return;FC.i--;FC.flipped=false;h.right?FC.know--:FC.learn--;if(!h.right)FC.queue.pop();FC.tip='Đã hoàn tác';render()};
   $('#shuf').onclick=()=>{FC.shuffled=!FC.shuffled;const rest=FC.queue.slice(FC.i);FC.queue=FC.queue.slice(0,FC.i).concat(FC.shuffled?shuffle(rest):rest.sort((a,b)=>a.localeCompare(b)));toast(FC.shuffled?'Đã trộn thẻ':'Theo thứ tự','shuffle');render()};
   $('#dirb').onclick=()=>{S.set.dir=S.set.dir=='en'?'vi':'en';save();render()};$('#autob').onclick=()=>{S.set.autoplay=!S.set.autoplay;save();render()};
-  keys=e=>{if(e.target.tagName=='INPUT')return;if(e.key=='ArrowRight')c.fling(true);else if(e.key=='ArrowLeft')c.fling(false);else if(e.key==' '){e.preventDefault();c.flip()}}}
+  keys=e=>{if(e.target.tagName=='INPUT'||e.ctrlKey||e.metaKey||e.altKey)return;if((e.key=='z'||e.key=='Z')&&FC.hist.length){$('#undo').click();return}if(e.key=='ArrowRight')c.fling(true);else if(e.key=='ArrowLeft')c.fling(false);else if(e.key==' '){e.preventDefault();c.flip()}}}
  function done(){sess('cards',null);confetti();view('Thẻ ghi nhớ',`<div class="res">${mascot('celebrate','Bạn đã đi hết bộ thẻ!')}<p class="muted">${FC.know} lần “đã biết” · ${FC.learn} lần “đang học”</p>
   <div class="row"><button class="btn sec" id="again">Bắt đầu lại</button><button class="btn" id="learnm">Chế độ Học</button></div></div>`);
   $('#again').onclick=()=>{FC=null;sess('cards',null);cards()};$('#learnm').onclick=()=>location.hash='#/learn'}}
@@ -388,7 +402,7 @@ function learn(mode){const hard=mode=='hard',SK=hard?'hard':'learn',MAX=4,ROUND=
   apply(ok);if(ok)rc++;buzz(ok?10:[30,40,30]);practice(w,ok);play(w);
   const near=!!(r&&r.ok&&!r.exact);
   moodTo($('.mascot'),ok?'happy':'sad',ok?(near?'Gần đúng! Chú ý chính tả nhé.':PRAISE[Math.random()*PRAISE.length|0]):'Chưa đúng, xem lại nhé.');
-  $('#fb').innerHTML=`<div class="fb ${ok?(near?'near':'ok'):'bad'}">${I(ok?'circle-check':'circle-x')}<div>${near?'Gần đúng · ':''}${ok?'':'Đáp án: '}<b>${esc(w.w)}</b> ${esc(w.ipa)}<br><span style="font-weight:500">${esc(w.vi)}</span></div></div>
+  $('#fb').innerHTML=`<div class="fb ${ok?(near?'near':'ok'):'bad'}">${I(ok?'circle-check':'circle-x')}<div>${near?'Gần đúng · ':''}${ok?'':'Đáp án: '}<b>${esc(w.w)}</b> ${esc(ipaOf(w))}<br><span style="font-weight:500">${esc(w.vi)}</span></div></div>
   ${r&&r.input&&!r.exact?diffRow(r):''}${ok?'':`<p class="muted"><i>${esc(w.ex)}</i></p>`}${noteHTML(w)}
   <div class="row" style="margin-top:12px">${!ok&&r&&r.input?'<button class="btn sec" id="ovr">Tôi đã đúng</button>':''}<button class="btn" id="nx">Tiếp tục</button></div>`;
   ri++;put();ri--;const go=()=>{ri++;ask()};$('#nx').onclick=go;$('#nx').focus({preventScroll:true});keys=e=>{if(e.key=='Enter'&&!$('#sheet:not(.hidden)')&&document.activeElement.tagName!='TEXTAREA'){e.preventDefault();go()}};
@@ -416,6 +430,9 @@ function speechScore(w,alts){const targets=accepts(w);let best=0,heard=alts[0]||
 /* ---------- Speaking: on-device pronunciation trainer (v8) ---------- */
 let PRON=null,PRON_UK={};async function loadPron(){if(PRON)return PRON;const get=async u=>{try{const r=await fetch(u);return r.ok?await r.json():{}}catch(e){return {}}};[PRON,PRON_UK]=await Promise.all([get('data/pron.json'),get('data/pron-uk.json')]);return PRON}
 /* reference variants: UK voice = British pronunciations (Britfone) first, US (CMUdict) still accepted; US voice = CMUdict */
+/* v12: IPA shown follows the selected accent when pronunciation data is loaded (falls back to the dictionary IPA) */
+function ipaOf(w){const v=pronVars(w);if(!v.length||typeof syllables!='function')return w.ipa;const ph=v[0].map(([p,s])=>({p,stress:s}));
+ const sy=syllables(ph);return '/'+sy.map(idx=>{const st=sy.length<2?'':idx.some(i=>ph[i].stress===1)?'ˈ':idx.some(i=>ph[i].stress===2)?'ˌ':'';return st+idx.map(i=>phDisp(ph[i].p)).join('')}).join('').replace(/^\/?/,'')+'/'}
 function pronVars(w){const us=PRON&&PRON[w.id]||[],uk=S.set.voice=='gb'&&PRON_UK[w.id];return uk?[...uk,...us].slice(0,5):us}
 const PDISP={'i':'iː','u':'uː','ɑ':'ɑː','ɔ':'ɔː','ɛ':'e','t͡ʃ':'tʃ','d͡ʒ':'dʒ','ɹ':'r','ɡ':'g'};
 const phDisp=p=>S.set.voice=='gb'?({...PDISP,'oʊ':'əʊ','ɚ':'ə'}[p]||p):({...PDISP,'ɚ':'ər'}[p]||p);
@@ -447,7 +464,7 @@ function speak(){const d=deck();let q=shuffle(d),i=0,att=0,st='init',rec=null,sr
  function hist(w){const h=S.pron[w.id]||[];if(!h.length)return '';return `<p class="muted hist">Lịch sử: ${h.slice(-6).map(x=>`<span class="hs ${x.s>=85?'g':x.s>=60?'y':'r'}">${x.s}</span>`).join(' ')} · cao nhất ${Math.max(...h.map(x=>x.s))}</p>`}
  async function show(){const w=q[i%q.length];att++;stop();my=null;nat=null;if(myUrl){URL.revokeObjectURL(myUrl);myUrl=null}await loadPron();if(dead)return;
   view('Luyện nói',`${mascot('idle','Nghe mẫu, rồi bấm micro và đọc to.',{small:true,row:true})}
-  <div class="card q center" style="margin-top:12px"><div class="kind">Từ ${i%q.length+1} / ${q.length}</div><div class="w" style="margin-top:6px">${esc(w.w)}</div><div class="ipa">${esc(w.ipa)}</div>
+  <div class="card q center" style="margin-top:12px"><div class="kind">Từ ${i%q.length+1} / ${q.length}</div><div class="w" style="margin-top:6px">${esc(w.w)}</div><div class="ipa" data-ipa="${w.id}">${esc(ipaOf(w))}</div>
   ${refRow(w)}<div class="tags"><span class="tag">${esc(w.pos)}</span><span class="tag lv">${esc(w.lv)}</span></div><p class="muted" style="margin:8px 0 0">${esc(w.vi)}</p>
   <div class="audiobar">${auBtns(w)}</div><div id="sarea" aria-live="polite"></div><div id="shist">${hist(w)}</div></div>
   <div class="row"><button class="btn sec" id="prev" ${i?'':'disabled'}>Từ trước</button><button class="btn" id="next">Từ tiếp theo</button></div>
@@ -548,12 +565,12 @@ function listen(fresh){const d=deck();let o=!fresh&&sess('listen');if(!o||o.sig!
   const ti=$('#ti');setTimeout(()=>ti.focus(),80);
   const chk=give=>{if(ti.disabled)return;const r=give?{ok:false,input:''}:checkAns(ti.value,accepts(w)),ok=r.ok,near=ok&&!r.exact;ti.disabled=true;ti.classList.add(ok?(near?'near':'ok'):'bad');$('#tirow').remove();if(ok)sc++;else{wrong.push(w);S.miss[w.id]=(S.miss[w.id]||0)+1}practice(w,ok);
    moodTo($('.mascot'),ok?'happy':'sad',ok?(near?'Gần đúng! Chú ý chính tả nhé.':PRAISE[Math.random()*PRAISE.length|0]):'Chưa đúng, nghe lại nhé.');buzz(ok?10:[30,40,30]);
-   $('#fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}" style="text-align:left">${I(ok?'circle-check':'circle-x')}<div><b>${esc(w.w)}</b> ${esc(w.ipa)}<br><span style="font-weight:500">${esc(w.vi)}</span></div></div>${r.input&&!r.exact?diffRow(r):''}<div class="audiobar">${auBtns(w)}</div><button class="btn" id="nx" style="margin-top:12px">Tiếp tục</button>`;
+   $('#fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}" style="text-align:left">${I(ok?'circle-check':'circle-x')}<div><b>${esc(w.w)}</b> ${esc(ipaOf(w))}<br><span style="font-weight:500">${esc(w.vi)}</span></div></div>${r.input&&!r.exact?diffRow(r):''}<div class="audiobar">${auBtns(w)}</div><button class="btn" id="nx" style="margin-top:12px">Tiếp tục</button>`;
    i++;put();i--;const go=()=>{i++;ask()};$('#nx').onclick=go;$('#nx').focus({preventScroll:true});keys=e=>{if(e.key=='Enter'){e.preventDefault();go()}}};
   $('#ck').onclick=()=>chk(false);$('#dk').onclick=()=>chk(true);ti.onkeydown=e=>{if(e.key=='Enter')chk(false)};keys=null}
  function end(){sess('listen',null);const p=Math.round(sc/N*100);if(p>=80)confetti();
   view('Nghe – chép',`<div class="res">${mascot(p>=80?'celebrate':p>=50?'happy':'sad',p>=80?'Tai nghe rất tốt!':p>=50?'Khá lắm, luyện thêm nhé.':'Nghe chậm vài lần rồi thử lại nhé.')}<div class="big">${sc}/${N}</div></div>
-  ${wrong.length?`<h3>Cần nghe lại</h3><div class="list">${wrong.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(w.ipa)}</span><br><span class="muted">${esc(w.vi)}</span></div>${auBtns(w,false)}</div>`).join('')}</div>`:''}
+  ${wrong.length?`<h3>Cần nghe lại</h3><div class="list">${wrong.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(ipaOf(w))}</span><br><span class="muted">${esc(w.vi)}</span></div>${auBtns(w,false)}</div>`).join('')}</div>`:''}
   <div class="row"><button class="btn sec" onclick="location.hash='#/'">Trang chủ</button><button class="btn" id="ag">Làm lượt mới</button></div>`);$('#ag').onclick=()=>listen(true)}
  ask()}
 
@@ -581,13 +598,13 @@ function test(){const d=deck();if(d.length<4){toast('Cần ít nhất 4 từ','i
  $('#sub').onclick=()=>{let sc=0;const wrong=[];qs.forEach((q,i)=>{const c=$(`[data-q="${i}"]`);const ok=q.t=='type'?checkAns($('.ti',c).value,accepts(q.w)).ok:q.t=='mc'?c.dataset.a==q.w.id:c.dataset.a==(q.truth?'1':'0');if(ok)sc++;else{wrong.push(q.w);S.miss[q.w.id]=(S.miss[q.w.id]||0)+1}practice(q.w,ok)});
   const p=Math.round(sc/n*100);if(p>=80)confetti();
   view('Kết quả',`<div class="res">${mascot(p>=80?'celebrate':p>=50?'happy':'sad',p>=80?'Xuất sắc! Neko tự hào lắm.':p>=50?'Khá lắm, cố thêm chút nữa!':'Không sao, ôn lại rồi thử lại nhé.')}<div class="big">${p}%</div><p class="muted">Đúng ${sc}/${n} câu</p></div>
-  ${wrong.length?`<h3>Cần ôn lại (${wrong.length})</h3><div class="list">${wrong.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(w.ipa)}</span><br><span class="muted">${esc(w.vi)}</span></div><button class="ib" data-au="${w.id}" aria-label="Nghe">${I('volume-2')}</button>${starBtn(w)}</div>`).join('')}</div>`:''}
+  ${wrong.length?`<h3>Cần ôn lại (${wrong.length})</h3><div class="list">${wrong.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(ipaOf(w))}</span><br><span class="muted">${esc(w.vi)}</span></div><button class="ib" data-au="${w.id}" aria-label="Nghe">${I('volume-2')}</button>${starBtn(w)}</div>`).join('')}</div>`:''}
   <div class="row"><button class="btn sec" onclick="location.hash='#/'">Trang chủ</button><button class="btn" id="rt">Làm bài mới</button></div>`);$('#rt').onclick=test}}
 
 /* ---------- List & stats ---------- */
 function list(){const d=deck();view('Danh sách từ',`<div class="search">${I('search')}<input type="search" id="sq" placeholder="Tìm từ hoặc nghĩa" aria-label="Tìm kiếm"></div><p class="muted" id="lc" aria-live="polite"></p><div class="list" id="ls"></div>`);
  const r=()=>{const q=norm($('#sq').value);const xs=d.filter(w=>!q||norm(w.w).includes(q)||norm(w.vi).includes(q));$('#lc').textContent=xs.length+' từ';
-  $('#ls').innerHTML=xs.length?xs.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(w.ipa)}</span> <span class="tag lv">${esc(w.lv)}</span>${susp(w)?'<span class="tag sus">Tạm ngưng</span>':''}<br><span class="muted">${esc(w.vi)}</span></div>${susp(w)?`<button class="ib" data-unsus="${w.id}" aria-label="Mở lại thẻ ${esc(w.w)}">${I('rotate-ccw')}</button>`:''}<button class="ib" data-au="${w.id}" aria-label="Nghe ${esc(w.w)}">${I('volume-2')}</button>${starBtn(w)}</div>`).join(''):mascot('meditate','Không tìm thấy từ nào.')};
+  $('#ls').innerHTML=xs.length?xs.map(w=>`<div class="it"><div><b>${esc(w.w)}</b> <span class="muted">${esc(ipaOf(w))}</span> <span class="tag lv">${esc(w.lv)}</span>${susp(w)?'<span class="tag sus">Tạm ngưng</span>':''}<br><span class="muted">${esc(w.vi)}</span></div>${susp(w)?`<button class="ib" data-unsus="${w.id}" aria-label="Mở lại thẻ ${esc(w.w)}">${I('rotate-ccw')}</button>`:''}<button class="ib" data-au="${w.id}" aria-label="Nghe ${esc(w.w)}">${I('volume-2')}</button>${starBtn(w)}</div>`).join(''):mascot('meditate','Không tìm thấy từ nào.')};
  let t;$('#sq').oninput=()=>{clearTimeout(t);t=setTimeout(r,120)};$('#ls').onclick=e=>{const b=e.target.closest('[data-unsus]');if(!b)return;for(const k of [b.dataset.unsus,b.dataset.unsus+'~r'])if(S.srs[k])delete S.srs[k].susp;save();toast('Đã mở lại thẻ','rotate-ccw');r()};r()}
 const susp=w=>[w.id,w.id+'~r'].some(k=>S.srs[k]&&S.srs[k].susp);
 function stats(){const d=deck(),now=Date.now(),cards=allCards(d);let nw=0,lr=0,yg=0,mt=0,su=0;const fc=Array(30).fill(0);
@@ -620,12 +637,12 @@ function route(){keys=null;audio.pause();if(cleanup){try{cleanup()}catch(e){}cle
  if(!words.length)return;if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');const r=(R[k]||home)();if(typeof r=='function')cleanup=r}
 addEventListener('hashchange',route);
 const MCOL=NK_COLORS;
-function applyTheme(){const dark=S.set.theme=='dark'||(S.set.theme=='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.body.classList.toggle('dark',dark);
+function applyTheme(){const dark=S.set.theme=='dark'||(S.set.theme=='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.body.classList.toggle('dark',dark);document.body.classList.toggle('mdrag',!!S.set.mdrag);
  const mc=MCOL[S.set.mcolor]||MCOL.cocoa;document.body.style.setProperty('--mk-body',dark?mc.d:mc.l);$('meta[name=theme-color]').content=dark?'#121214':'#F6F5F2'}
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',applyTheme);
 applyTheme();
 const updVoice=()=>{$('#voice').textContent=S.set.voice=='us'?'US':'UK';$('#voice').setAttribute('aria-label',(S.set.voice=='us'?'US':'UK')+', giọng '+(S.set.voice=='us'?'Mỹ':'Anh')+'. Bấm để đổi')};updVoice();
-$('#voice').onclick=()=>{S.set.voice=S.set.voice=='gb'?'us':'gb';save();updVoice();toast(S.set.voice=='gb'?'Giọng Anh (UK)':'Giọng Mỹ (US)','languages');buzz(8);if(location.hash.startsWith('#/speak'))route()};
+$('#voice').onclick=()=>{S.set.voice=S.set.voice=='gb'?'us':'gb';save();updVoice();toast(S.set.voice=='gb'?'Giọng Anh (UK)':'Giọng Mỹ (US)','languages');buzz(8);if(/^#\/(speak|cards)/.test(location.hash))route();else $$('.ipa[data-ipa]').forEach(x=>{const w=byId(x.dataset.ipa);if(w)x.textContent=ipaOf(w)})};
 $('#settings').onclick=openSettings;
 addEventListener('offline',()=>toast('Đang offline: vẫn học được, âm thanh đã nghe sẽ có sẵn','wifi-off'));addEventListener('online',()=>toast('Đã có mạng trở lại','check'));
 if('serviceWorker' in navigator){let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading||!window._wantReload)return;reloading=true;location.reload()});
@@ -634,5 +651,5 @@ if('serviceWorker' in navigator){let reloading=false;navigator.serviceWorker.add
   r.addEventListener('updatefound',()=>{const n=r.installing;n&&n.addEventListener('statechange',()=>{if(n.state=='installed'&&navigator.serviceWorker.controller)offer(n)})});
   setInterval(()=>r.update().catch(()=>{}),36e5);document.addEventListener('visibilitychange',()=>{if(document.visibilityState=='visible')r.update().catch(()=>{})})}).catch(()=>{})}
 function boot(){app.innerHTML=`<div class="sk" style="height:150px;margin:12px 0"></div><div class="sk" style="height:170px;margin-bottom:12px"></div><div class="modes"><div class="sk" style="height:112px"></div><div class="sk" style="height:112px"></div><div class="sk" style="height:112px"></div><div class="sk" style="height:112px"></div></div>`;
- loadData().then(route).catch(e=>{console.warn(e);view('',`${mascot('sad','Không tải được dữ liệu.')}<p class="muted center">Kiểm tra kết nối mạng rồi thử lại.</p><button class="btn" id="retry">${I('refresh-cw','s')}Thử lại</button>`,false);$('#retry').onclick=boot})}
+ loadData().then(()=>loadPron()).then(route).catch(e=>{console.warn(e);view('',`${mascot('sad','Không tải được dữ liệu.')}<p class="muted center">Kiểm tra kết nối mạng rồi thử lại.</p><button class="btn" id="retry">${I('refresh-cw','s')}Thử lại</button>`,false);$('#retry').onclick=boot})}
 boot();

@@ -63,3 +63,9 @@
 - Live waveform; states for opening the mic, listening, "Neko nghe thấy bạn", waiting for you to finish (countdown), and no sound from the mic.
 - Each syllable is a pill. Stress is a dot above the stressed syllable plus an underline, with no stray ˈ characters.
 - Animated mouth cross-sections (tongue, lips, jaw, voicing, airflow) for each sound.
+
+## v12
+- Desktop: chữ trên thẻ bôi đen và sao chép được. Kéo chuột không còn vuốt hay lật thẻ. Nhấp (không kéo) để lật; nhấp đúp để chọn một từ. Có nút sao chép cho từ và câu ví dụ.
+- Điều hướng bằng nút hoặc phím (← → phím cách, Z để hoàn tác). Muốn kéo thẻ bằng chuột thì bật “Kéo thẻ bằng chuột” trong Cài đặt; khi đó chỉ kéo được từ vùng trống của thẻ.
+- Điện thoại: vẫn vuốt như cũ. Nhấn giữ để chọn chữ sẽ huỷ thao tác vuốt và lật.
+- Phiên âm IPA hiển thị theo giọng đang chọn (US/UK), khớp với các ô âm.
