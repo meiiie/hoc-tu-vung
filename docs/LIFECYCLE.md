@@ -16,14 +16,17 @@ Every mode reads from one lifecycle record per word: `S.srs[id]` for the English
 
 Mastered is a milestone, not a terminal state. A lapse sends the word back to Relearning, as in Anki. This differs from Duolingo and Memrise, which let mastered items "decay" visually but don't track them.
 
-## Flashcards
-* **Theo lịch (default):** uses the same queue and session as Ôn theo lịch, so the same card cannot be counted twice. The queue order is due learning cards, then reviews, then new cards (within the daily new limit), then learn-ahead up to 20 minutes. Swipe right or → means Được (Good); swipe left or ← means Lại (Again). Each button shows its next interval. "Thêm Khó / Dễ" exposes all four ratings, and keys 1 to 4 always work. A reviewed card's sibling is buried for the day (Anki sibling burying). Review cards graded today are not due again today because FSRS sets the due date at least 1 day ahead. The only same-day repeats are learning steps, which is Anki's rule.
-* **Lướt tự do:** this is the old free-browse mode, like Quizlet Flashcards with "track progress" off. It never changes the schedule. "Đang học" counts as a failed self-check (see below).
+## Flashcards vs. Ôn theo lịch (v17 decision)
+v16 put two modes inside Thẻ ghi nhớ ("Theo lịch" / "Lướt tự do"). Testing on a real iPhone showed this was confusing: it was a hidden mode, the same screen behaved two ways, and the toggle was easy to miss. v17 separates them again (option A):
+* **Ôn theo lịch** is the *only* place where the schedule changes. It has 4 buttons (Lại / Khó / Được / Dễ) with intervals, and labelled counters (Mới / Học / Ôn).
+* **Thẻ ghi nhớ** is free browsing of the whole deck. It never changes stability or interval. "Đang học" counts as practice evidence, as in the table below.
+
+This matches the market leaders. Anki has one scheduled path ("Study Now"), and Custom Study/preview don't affect scheduling by default. Quizlet keeps Flashcards (browse; "track progress" only sorts the current round) separate from Learn/spaced review. Duolingo has one primary "next lesson" path and practice outside it. One obvious place where the schedule changes means lower cognitive load and no hidden state. Merging (option B) would only help users who never open the review screen, and the home screen already makes Ôn theo lịch the primary button with its due count.
 
 ## Evidence from the other modes
 | Mode | Success | Failure | Why |
 |---|---|---|---|
-| Lướt tự do, Học, Nghe–chép, Kiểm tra | Logged. A new word met here is introduced first in the next scheduled session. | Logged, and `S.miss` is incremented (feeds Từ khó). If the word is in Review and due later than tomorrow, it is brought forward to tomorrow (at most once per day). Its stability and interval are kept. | Practice happens out of schedule. Counting a success would inflate intervals, because the item was shown recently or recognised from multiple choice. Anki's "custom study / preview" and Quizlet Learn don't feed the long-term schedule either. A failure is real evidence that memory is weaker than predicted, so the word is checked sooner. The FSRS rating itself is then made in a proper spaced retrieval, which keeps the model calibrated. |
+| Thẻ ghi nhớ, Học, Nghe–chép, Kiểm tra | Logged. A new word met here is introduced first in the next scheduled session. | Logged, and `S.miss` is incremented (feeds Từ khó). If the word is in Review and due later than tomorrow, it is brought forward to tomorrow (at most once per day). Its stability and interval are kept. | Practice happens out of schedule. Counting a success would inflate intervals, because the item was shown recently or recognised from multiple choice. Anki's "custom study / preview" and Quizlet Learn don't feed the long-term schedule either. A failure is real evidence that memory is weaker than predicted, so the word is checked sooner. The FSRS rating itself is then made in a proper spaced retrieval, which keeps the model calibrated. |
 | Ghép thẻ (Match) | Logged as exposure only | No effect | Match is a timed recognition game with elimination cues, so its errors are mostly mis-taps and say little about recall. |
 | Luyện nói | Pronunciation history only (`S.pron`) | – | Pronunciation is a separate skill from recall of meaning. |
 

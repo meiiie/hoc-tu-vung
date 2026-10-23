@@ -220,7 +220,7 @@ function onboarding(step=0,draft={...(S.user||{})}){const N=4,seg=`<div class="s
  if(step==3)$('#nx').onclick=()=>{S.user={...draft,done:true,since:S.user?.since||today()};save();confetti();location.hash='#/';route()}}
 
 /* ---------- home ---------- */
-const MODES={cards:['layers','Thẻ ghi nhớ','Lật thẻ theo lịch ôn, vuốt phải “được”, trái “lại”'],learn:['brain','Học','4 bước: chọn, nhớ lại, điền câu, nghe'],hard:['target','Từ khó',''],
+const MODES={cards:['layers','Thẻ ghi nhớ','Xem nhanh cả bộ, không ảnh hưởng lịch ôn'],learn:['brain','Học','4 bước: chọn, nhớ lại, điền câu, nghe'],hard:['target','Từ khó',''],
  speak:['mic','Luyện nói','Nói theo giọng chuẩn, chấm điểm'],listen:['headphones','Nghe – chép','Nghe từ rồi gõ lại'],review:['calendar-clock','Ôn theo lịch',''],cram:['repeat','Ôn toàn bộ','Lướt cả bộ từ, không làm lệch lịch ôn'],
  match:['zap','Ghép thẻ',''],test:['clipboard-check','Kiểm tra','20 câu hỗn hợp, chấm điểm'],list:['list-checks','Danh sách từ',''],stats:['chart-column','Thống kê','Tiến độ theo cấp độ']};
 /* v14: earliest upcoming due time among scheduled cards (for the 'nothing due' state) */
@@ -302,20 +302,21 @@ function makeCard(stage,w,dir,onSwipe){const el=document.createElement('div');el
 /* ---------- flashcards ---------- */
 /* v16: Flashcards have two modes. "Theo lịch" = the same FSRS queue as Ôn theo lịch (shared session, no double counting);
    "Lướt tự do" = free browsing that never changes the schedule. */
-const fcSwitch=()=>`<div class="fcmode" role="radiogroup" aria-label="Chế độ thẻ ghi nhớ">${[['sched','Theo lịch','calendar-clock'],['free','Lướt tự do','layers']].map(([k,l,ic])=>`<button role="radio" class="fcm ${S.set.fcMode==k?'on':''}" aria-checked="${S.set.fcMode==k}" data-fcm="${k}">${I(ic,'s')}${l}</button>`).join('')}</div>`;
-function bindFc(){$$('[data-fcm]').forEach(b=>b.onclick=()=>{if(S.set.fcMode==b.dataset.fcm)return;S.set.fcMode=b.dataset.fcm;save();route()})}
+const FCX={sched:'Theo lịch: chỉ thẻ đến hạn và thẻ mới, tự xếp lịch ôn',free:'Lướt tự do: xem cả bộ theo thứ tự, không ảnh hưởng lịch ôn'};
+const fcSwitch=()=>`<div class="fcwrap"><div class="fcmode" role="radiogroup" aria-label="Chế độ thẻ ghi nhớ">${[['sched','Theo lịch','calendar-clock'],['free','Lướt tự do','layers']].map(([k,l,ic])=>`<button role="radio" class="fcm ${S.set.fcMode==k?'on':''}" aria-checked="${S.set.fcMode==k}" data-fcm="${k}">${I(ic,'s')}${l}</button>`).join('')}</div><p class="fcx" id="fcx">${FCX[S.set.fcMode=='free'?'free':'sched']}</p></div>`;
+function bindFc(){if(!S.set.fchint){S.set.fchint=1;save();setTimeout(()=>toast('Thẻ ghi nhớ có 2 chế độ: “Theo lịch” giúp nhớ lâu (khuyên dùng), “Lướt tự do” để xem nhanh cả bộ','info',6000),700)}$$('[data-fcm]').forEach(b=>b.onclick=()=>{if(S.set.fcMode==b.dataset.fcm)return;S.set.fcMode=b.dataset.fcm;save();route()})}
 let FC=null,keys=null;document.addEventListener('keydown',e=>keys&&keys(e));
 function cards(){const d=deck();if(!FC){const o=sess('cards');if(o&&o.sig==JSON.stringify(F())&&o.queue.every(byId))FC=o}if(!FC||FC.sig!=JSON.stringify(F()))FC={sig:JSON.stringify(F()),queue:d.map(w=>w.id),i:0,know:0,learn:0,hist:[],shuffled:false,flipped:false};render();
  function render(){const total=FC.queue.length;if(FC.i>=total)return done();sess('cards',FC);const w=byId(FC.queue[FC.i]);
-  view('Thẻ ghi nhớ',`${fcSwitch()}${mascot(FC.mood||(FC.i==0?'wave':'idle'),FC.tip||(matchMedia('(hover:hover) and (pointer:fine)').matches?'Nhấp để lật. Phím → nếu đã biết.':'Chạm để lật. Vuốt phải nếu đã biết.'),{small:true,row:true})}
+  view('Thẻ ghi nhớ',`${mascot(FC.mood||(FC.i==0?'wave':'idle'),FC.tip||(matchMedia('(hover:hover) and (pointer:fine)').matches?'Nhấp để lật. Phím → nếu đã biết.':'Chạm để lật. Vuốt phải nếu đã biết.'),{small:true,row:true})}
   <div class="prog"><span class="count l" aria-label="Đang học ${FC.learn}">${FC.learn}</span><div class="bar" role="progressbar" aria-label="Tiến độ bộ thẻ" aria-valuenow="${FC.i}" aria-valuemax="${total}"><i style="width:${FC.i/total*100}%"></i></div><span class="count k" aria-label="Đã biết ${FC.know}">${FC.know}</span></div>
   <div class="stage" id="stage"></div>
   <div class="yn"><button class="btn l" id="nL" title="Đang học (phím ←)">${I('x')}Đang học</button><button class="btn k" id="nK" title="Đã biết (phím →)">${I('check')}Đã biết</button></div>
   <div class="ctrl"><button class="ib" id="undo" aria-label="Hoàn tác" title="Hoàn tác (phím Z)" ${FC.hist.length?'':'disabled'}>${I('undo-2')}</button><button class="ib ${FC.shuffled?'on':''}" id="shuf" title="Trộn thẻ" aria-label="Trộn thẻ" aria-pressed="${FC.shuffled}">${I('shuffle')}</button>
   <button class="ib" id="flipb" aria-label="Lật thẻ" title="Lật thẻ (phím cách)">${I('refresh-cw')}</button><button class="ib ${S.set.dir=='vi'?'on':''}" id="dirb" aria-label="Đổi chiều Anh – Việt" title="Đổi chiều Anh – Việt">${I('languages')}</button><button class="ib ${S.set.autoplay?'on':''}" id="autob" title="Tự phát âm" aria-label="Tự phát âm" aria-pressed="${S.set.autoplay}">${I(S.set.autoplay?'volume-2':'volume-x')}</button></div>
-  <p class="xnote">${I('info','s')}Lướt tự do: không thay đổi lịch ôn. Chọn “Đang học” sẽ đưa từ đã ôn lên sớm hơn.</p><p class="hint">${FC.i+1} / ${total} · <span class="t-touch">Chạm để lật, vuốt để chọn</span><span class="t-desk">Nhấp để lật · kéo nhanh hoặc phím ← → để chọn · giữ chuột rồi kéo để bôi đen chữ</span></p>`);
+  <p class="xnote">${I('info','s')}Xem cả bộ, không thay đổi lịch ôn. Muốn ghi nhớ lâu dài: <a href="#/review">Ôn theo lịch</a></p><p class="hint">${FC.i+1} / ${total} · <span class="t-touch">Chạm để lật, vuốt để chọn</span><span class="t-desk">Nhấp để lật · kéo nhanh hoặc phím ← → để chọn · giữ chuột rồi kéo để bôi đen chữ</span></p>`);
   if(!S.set.mhint&&matchMedia('(hover:hover) and (pointer:fine)').matches&&S.set.mdrag!==false){S.set.mhint=1;save();setTimeout(()=>toast('Mẹo: kéo nhanh thẻ sang ngang để chuyển thẻ; giữ chuột một chút rồi kéo để bôi đen chữ','info',5000),900)}
-  bindFc();if(FC.mood){const m=$('.mascot');setTimeout(()=>moodTo(m,'idle'),1300);FC.mood=null}
+  if(FC.mood){const m=$('.mascot');setTimeout(()=>moodTo(m,'idle'),1300);FC.mood=null}
   const c=makeCard($('#stage'),w,S.set.dir,right=>{FC.tip=right?['Tuyệt, đã biết!','Nhớ tốt lắm!','Giỏi quá!'][Math.random()*3|0]:'Không sao, mình sẽ gặp lại từ này.';FC.mood=right?'happy':'sad';FC.hist.push({id:w.id,right});right?FC.know++:FC.learn++;practice(w,right);if(!right)FC.queue.push(w.id);FC.i++;FC.flipped=false;render()});
   c.el._onflip=()=>{FC.flipped=c.el.classList.contains('flip');sess('cards',FC)};if(FC.flipped)c.el.classList.add('flip');
   if(S.set.dir=='en'&&S.set.autoplay&&!FC.flipped)play(w);
@@ -324,8 +325,8 @@ function cards(){const d=deck();if(!FC){const o=sess('cards');if(o&&o.sig==JSON.
   $('#shuf').onclick=()=>{FC.shuffled=!FC.shuffled;const rest=FC.queue.slice(FC.i);FC.queue=FC.queue.slice(0,FC.i).concat(FC.shuffled?shuffle(rest):rest.sort((a,b)=>a.localeCompare(b)));toast(FC.shuffled?'Đã trộn thẻ':'Theo thứ tự','shuffle');render()};
   $('#dirb').onclick=()=>{S.set.dir=S.set.dir=='en'?'vi':'en';save();render()};$('#autob').onclick=()=>{S.set.autoplay=!S.set.autoplay;save();render()};
   keys=e=>{if(e.target.tagName=='INPUT'||e.ctrlKey||e.metaKey||e.altKey)return;if((e.key=='z'||e.key=='Z')&&FC.hist.length){$('#undo').click();return}if(e.key=='ArrowRight')c.fling(true);else if(e.key=='ArrowLeft')c.fling(false);else if(e.key==' '){e.preventDefault();c.flip()}}}
- function done(){sess('cards',null);confetti();view('Thẻ ghi nhớ',`${fcSwitch()}<div class="res">${mascot('celebrate','Bạn đã đi hết bộ thẻ!')}<p class="muted">${FC.know} lần “đã biết” · ${FC.learn} lần “đang học”</p>
-  <div class="row"><button class="btn sec" id="again">Bắt đầu lại</button><button class="btn" id="learnm">Chế độ Học</button></div></div>`);bindFc();
+ function done(){sess('cards',null);confetti();view('Thẻ ghi nhớ',`<div class="res">${mascot('celebrate','Bạn đã đi hết bộ thẻ!')}<p class="muted">${FC.know} lần “đã biết” · ${FC.learn} lần “đang học”</p>
+  <div class="row"><button class="btn sec" id="again">Bắt đầu lại</button><button class="btn" id="learnm">Chế độ Học</button></div></div>`);
   $('#again').onclick=()=>{FC=null;sess('cards',null);cards()};$('#learnm').onclick=()=>location.hash='#/learn'}}
 
 /* ---------- SRS review (Anki-style queues, FSRS/SM-2) ---------- */
@@ -367,13 +368,15 @@ function review(cram=false,flash=false){const d=deck(),T=cram?'Ôn toàn bộ':f
   const c=cram?null:S.srs[x.cid]?SRS.migrate(S.srs[x.cid]):null,k=SRS.kind(c),q=cram?null:counts(cards,now),labs=cram?['ôn lại','sau ít thẻ','xong','xong']:SRS.preview(c,now,schedOpt()).map(SRS.label);
   const R=cram?null:SRS.retrievability(c,now);
   const head=cram?`<div class="prog"><div class="bar" role="progressbar" aria-label="Tiến độ ôn toàn bộ" aria-valuenow="${ss.i}" aria-valuemax="${ss.queue.length}"><i style="width:${ss.i/ss.queue.length*100}%"></i></div><span>${ss.i+1}/${ss.queue.length}</span></div>`
-   :`<div class="qhead"><div class="qcounts" role="status" aria-label="Mới ${q.n}, đang học ${q.l}, cần ôn ${q.r}"><span class="cn n ${k=='new'?'cur':''}">${q.n}</span><span class="cn l ${k=='learn'?'cur':''}">${q.l}</span><span class="cn r ${k=='review'?'cur':''}">${q.r}</span></div>
+   :`<div class="qhead"><div class="qcounts" role="status" aria-label="Mới ${q.n}, đang học ${q.l}, cần ôn ${q.r}"><span class="cn n ${k=='new'?'cur':''}"><b>${q.n}</b><small>Mới</small></span><span class="cn l ${k=='learn'?'cur':''}"><b>${q.l}</b><small>Học</small></span><span class="cn r ${k=='review'?'cur':''}"><b>${q.r}</b><small>Ôn</small></span></div>
     <span class="rtag" title="Xác suất bạn còn nhớ thẻ này lúc này">${R==null?'Thẻ mới':'Khả năng nhớ '+Math.round(R*100)+'%'}${x.dir=='vi'?' · Việt → Anh':''}</span>
     <button class="ib" id="undo" aria-label="Hoàn tác câu trả lời trước" ${ss.undo.length?'':'disabled'}>${I('undo-2')}</button></div>`;
   view(T,`${flash?fcSwitch():''}${head}<div class="stage" id="stage"></div>
-  ${flash?`<div class="yn"><button class="btn l" id="fA" aria-label="Lại, gặp lại sau ${labs[0]}">${I('x')}<span>Lại <small>${labs[0]}</small></span></button><button class="btn k" id="fG" aria-label="Được, gặp lại sau ${labs[2]}">${I('check')}<span>Được <small>${labs[2]}</small></span></button></div>
-  <button class="lnk" id="more4" aria-expanded="${!!S.set.fc4}">${S.set.fc4?'Ẩn Khó / Dễ':'Thêm Khó / Dễ'}</button>`:''}
-  <div class="grades hidden${flash&&!S.set.fc4?' f-off':''}" id="gr" role="group" aria-label="Bạn nhớ thẻ này thế nào?">${['Lại','Khó','Được','Dễ'].map((t,i)=>`<button class="gbtn g${i+1}${i==2?' main':''}" data-g="${i+1}" title="${['Quên, gặp lại sớm','Nhớ ra nhưng rất vất vả','Nhớ được bình thường (phím cách)','Nhớ ngay, quá dễ'][i]} · phím ${i+1}" aria-label="${t}, gặp lại sau ${labs[i]}"><small>${labs[i]}</small><b>${t}</b></button>`).join('')}</div>
+  ${flash&&S.set.fc4?`<div class="grades g4f" role="group" aria-label="Bạn nhớ thẻ này thế nào?">${['Lại','Khó','Được','Dễ'].map((t,i)=>`<button class="gbtn g${i+1}${i==2?' main':''}" data-g="${i+1}" aria-label="${t}, gặp lại sau ${labs[i]}"><small>${labs[i]}</small><b>${t}</b></button>`).join('')}</div>`:''}
+  ${flash&&!S.set.fc4?`<div class="yn"><button class="btn l" id="fA" aria-label="Lại, gặp lại sau ${labs[0]}">${I('x')}<span>Lại <small>${labs[0]}</small></span></button><button class="btn k" id="fG" aria-label="Được, gặp lại sau ${labs[2]}">${I('check')}<span>Được <small>${labs[2]}</small></span></button></div>
+</div>`:''}
+  ${flash?`<label class="sw4"><span>4 mức đánh giá (Lại · Khó · Được · Dễ)</span><button role="switch" id="more4" class="swt ${S.set.fc4?'on':''}" aria-checked="${!!S.set.fc4}" aria-label="Hiện 4 mức đánh giá"><i></i></button></label>`:''}
+  <div class="grades hidden${flash?' f-off':''}" id="gr" role="group" aria-label="Bạn nhớ thẻ này thế nào?">${['Lại','Khó','Được','Dễ'].map((t,i)=>`<button class="gbtn g${i+1}${i==2?' main':''}" data-g="${i+1}" title="${['Quên, gặp lại sớm','Nhớ ra nhưng rất vất vả','Nhớ được bình thường (phím cách)','Nhớ ngay, quá dễ'][i]} · phím ${i+1}" aria-label="${t}, gặp lại sau ${labs[i]}"><small>${labs[i]}</small><b>${t}</b></button>`).join('')}</div>
   ${S.set.gtip?'':`<div class="gtip hidden" id="gtip" role="note"><div><b>Chọn thế nào?</b> <b class="c1">Lại</b> = quên hẳn. <b class="c2">Khó</b> = nhớ ra được nhưng rất vất vả (không phải trả lời sai). <b class="c3">Được</b> = nhớ bình thường, chọn mặc định. <b class="c4">Dễ</b> = nhớ ngay, quá dễ.</div><button class="btn sm sec" id="gtipx">Đã hiểu</button></div>`}
   ${flash?'':'<button class="btn" id="show" style="margin-top:12px">Hiện đáp án</button>'}<p class="hint">Vuốt phải = Được · trái = Lại · phím 1–4, phím cách = ${flash?'lật / Được':'Được'}${cram?'':' · Z hoàn tác'}</p>`);
   const answer=r=>{buzz(8);ss.flipped=false;ss.done++;
@@ -383,7 +386,7 @@ function review(cram=false,flash=false){const d=deck(),T=cram?'Ôn toàn bộ':f
   function undo(){const u=ss.undo.pop();if(!u)return;if(u.prev)S.srs[u.cid]=u.prev;else delete S.srs[u.cid];if(u.log)S.log[u.t]=u.log;else delete S.log[u.t];S.bury=u.bury;if(S.revlog)S.revlog.length=Math.min(S.revlog.length,u.rl);
    if(u.known===undefined)delete S.known[u.cid.replace('~r','')];else S.known[u.cid.replace('~r','')]=u.known;ss.cur=u.cid;ss.flipped=true;ss.done=u.done;save();put();toast('Đã hoàn tác','undo-2');nx()}
   const cc=makeCard($('#stage'),w,x.dir,right=>answer(right?3:1));
-  if(flash){bindFc();$('#fA').onclick=()=>cc.fling(false);$('#fG').onclick=()=>cc.fling(true);$('#more4').onclick=()=>{S.set.fc4=!S.set.fc4;save();const g=$('#gr');g.classList.toggle('f-off',!S.set.fc4);$('#more4').textContent=S.set.fc4?'Ẩn Khó / Dễ':'Thêm Khó / Dễ';$('#more4').setAttribute('aria-expanded',!!S.set.fc4)}}
+  if(flash){bindFc();$('#fA')&&($('#fA').onclick=()=>cc.fling(false));$('#fG')&&($('#fG').onclick=()=>cc.fling(true));$('#more4').onclick=()=>{S.set.fc4=!S.set.fc4;save();buzz(8);nx()}}
   const showGr=()=>{$('#gr').classList.remove('hidden');$('#show')&&$('#show').classList.add('hidden');const gt=$('#gtip');if(gt){gt.classList.remove('hidden');$('#gtipx').onclick=()=>{S.set.gtip=1;save();gt.remove()}}};
   cc.el._onflip=()=>{ss.flipped=cc.el.classList.contains('flip');put();showGr()};
   if(ss.flipped){cc.el.classList.add('flip');showGr()}
@@ -710,12 +713,12 @@ async function importProgress(file,close){try{if(file.size>5e6)throw new Error('
  catch(e){toast('Tệp không hợp lệ, không thay đổi gì','info',3000)}}
 
 /* ---------- router & boot ---------- */
-const R={'':home,cards:()=>S.set.fcMode=='free'?cards():review(false,true),review,cram:()=>review(true),learn:()=>learn(),hard:()=>learn('hard'),speak,listen,match,test,list,stats};let cleanup=null;
+const R={'':home,cards,review,cram:()=>review(true),learn:()=>learn(),hard:()=>learn('hard'),speak,listen,match,test,list,stats};let cleanup=null;
 function route(){keys=null;audio.pause();if(cleanup){try{cleanup()}catch(e){}cleanup=null}$('#back').onclick=()=>{location.hash='#/'};
  if(!words.length)return;if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');const r=(R[k]||home)();if(typeof r=='function')cleanup=r;document.body.classList.toggle('home-v',!k)}
 addEventListener('hashchange',route);
 /* v15: keyboard shortcuts per mode, shown in a '?' sheet (desktop) instead of a side panel */
-const KEYS={cards:[['Phím cách','Lật thẻ, rồi Được'],['→','Được / Đã biết'],['←','Lại / Đang học'],['1–4','Lại, Khó, Được, Dễ (theo lịch)'],['Z','Hoàn tác']],review:[['Phím cách','Hiện đáp án, rồi chọn Được'],['1','Lại'],['2','Khó'],['3','Được'],['4','Dễ'],['Z','Hoàn tác']],cram:[['Phím cách','Hiện đáp án, rồi Được'],['1–4','Chấm điểm']],
+const KEYS={cards:[['Phím cách','Lật thẻ'],['→','Đã biết'],['←','Đang học'],['Z','Hoàn tác']],review:[['Phím cách','Hiện đáp án, rồi chọn Được'],['1','Lại'],['2','Khó'],['3','Được'],['4','Dễ'],['Z','Hoàn tác']],cram:[['Phím cách','Hiện đáp án, rồi Được'],['1–4','Chấm điểm']],
  learn:[['1–4','Chọn đáp án'],['Enter','Kiểm tra / tiếp']],test:[['1–4','Chọn đáp án'],['Enter','Kiểm tra / tiếp']],listen:[['Enter','Kiểm tra'],['Ctrl + Space','Nghe lại']],speak:[['Space','Nghe mẫu']],'':[['Tab','Di chuyển giữa các mục'],['Enter','Mở chế độ']]};
 function openKeys(){const k=location.hash.replace(/^#\/?/,'').split('?')[0];const ks=KEYS[k]||[];
  sheet(`<h2>Phím tắt</h2>${ks.length?`<dl class="kgrid">${ks.map(([a,b])=>`<div><dt><kbd>${a}</kbd></dt><dd>${b}</dd></div>`).join('')}</dl>`:'<p class="muted">Màn hình này không có phím tắt riêng.</p>'}<dl class="kgrid"><div><dt><kbd>?</kbd></dt><dd>Mở bảng phím tắt</dd></div><div><dt><kbd>Esc</kbd></dt><dd>Đóng bảng</dd></div></dl>`)}
@@ -738,3 +741,5 @@ if('serviceWorker' in navigator){let reloading=false;navigator.serviceWorker.add
 function boot(){app.innerHTML=`<div class="sk" style="height:150px;margin:12px 0"></div><div class="sk" style="height:170px;margin-bottom:12px"></div><div class="modes"><div class="sk" style="height:112px"></div><div class="sk" style="height:112px"></div><div class="sk" style="height:112px"></div><div class="sk" style="height:112px"></div></div>`;
  loadData().then(()=>loadPron()).then(route).catch(e=>{console.warn(e);view('',`${mascot('sad','Không tải được dữ liệu.')}<p class="muted center">Kiểm tra kết nối mạng rồi thử lại.</p><button class="btn" id="retry">${I('refresh-cw','s')}Thử lại</button>`,false);$('#retry').onclick=boot})}
 boot();
+/* v17: expose the sticky header height so the flashcard mode switch can stick right under it (iOS safe-area aware) */
+{const h=document.querySelector('header');if(h){const set=()=>document.documentElement.style.setProperty('--hh',h.getBoundingClientRect().height+'px');set();try{new ResizeObserver(set).observe(h)}catch(e){addEventListener('resize',set)}}}
