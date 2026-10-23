@@ -159,7 +159,7 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <div class="opt-row"><span>Giọng đọc</span>${seg('voice',[['gb','Anh (UK)'],['us','Mỹ (US)']])}</div>
  <div class="opt-row"><span>Tốc độ mặc định</span>${seg('slow',[['false','Bình thường'],['true','Chậm']])}</div>
  <label class="opt-row"><span>Tự phát âm khi hiện thẻ</span><input class="sw" type="checkbox" data-sw="autoplay" ${S.set.autoplay?'checked':''}></label>
- <label class="opt-row"><span>Kéo thẻ bằng chuột<br><small class="muted">Máy tính: kéo từ vùng trống của thẻ để chọn; chữ luôn bôi đen được</small></span><input class="sw" type="checkbox" data-sw="mdrag" ${S.set.mdrag?'checked':''}></label>
+ <label class="opt-row"><span>Kéo thẻ bằng chuột<br><small class="muted">Máy tính: kéo nhanh sang ngang để chuyển thẻ; giữ chuột rồi kéo để bôi đen chữ</small></span><input class="sw" type="checkbox" data-sw="mdrag" ${S.set.mdrag!==false?'checked':''}></label>
  <div class="opt-row"><span>Tải âm thanh để học offline<br><small class="muted" id="dlst">Âm thanh được lưu dần khi bạn nghe</small></span><button class="btn sm sec" id="dl">${I('download','s')}Tải</button></div></div>
  <div class="eyebrow">Lịch ôn (kiểu Anki)</div><div class="group">
  <div class="opt-row"><span>Mục tiêu mỗi ngày<br><small class="muted">Số câu trả lời ở mọi chế độ</small></span>${seg('goalAns',[['10','10'],['20','20'],['50','50'],['100','100']])}</div>
@@ -177,7 +177,7 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="exp"><span>Xuất bản sao lưu tiến độ<br><small class="muted">Lưu tệp .json để chuyển máy hoặc phòng mất dữ liệu</small></span>${I('download')}</button>
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="imp"><span>Nhập tiến độ từ tệp sao lưu</span>${I('upload')}</button><input type="file" id="impf" accept="application/json,.json" hidden aria-label="Chọn tệp sao lưu">
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left;color:var(--danger)" id="rst"><span>Xoá toàn bộ tiến độ</span>${I('rotate-ccw')}</button></div>
- <p class="muted center" style="margin-top:16px">Phiên bản 12 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
+ <p class="muted center" style="margin-top:16px">Phiên bản 13 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
  $$('[data-set]',sh).forEach(b=>b.onclick=()=>{const k=b.dataset.set;let v=b.dataset.v;if(k=='slow')v=v=='true';if(k=='retention'||k=='goalAns')v=+v;if(k=='goal'){S.user=S.user||{};S.user.goal=v}else S.set[k]=v;save();$$(`[data-set="${k}"]`,sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});if(k=='theme')applyTheme();if(k=='asr')toast(v=='auto'?'Chấm trên máy (từng âm)':'Dùng nhận dạng của trình duyệt','mic');if(k=='voice'||k=='slow')play(words[2]);updVoice();buzz(8)});
  $$('[data-mc]',sh).forEach(b=>b.onclick=()=>{S.set.mcolor=b.dataset.mc;save();applyTheme();$$('[data-mc]',sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});moodTo($('.mcrow .mascot',sh),'happy',null,1400);buzz(8)});
  if(Speech.supported()){const upd=s=>{const t=$('#mst2',sh),b=$('#mdl',sh);if(!t)return;t.textContent=s.cached?'Đã tải, dùng được offline':'Chưa tải';b.innerHTML=s.cached?I('trash-2','s')+'Xoá':I('download','s')+'Tải';
@@ -246,23 +246,29 @@ function makeCard(stage,w,dir,onSwipe){const el=document.createElement('div');el
  /* v12 desktop: text is selectable; a mouse never drag-swipes from text (and never at all unless the "drag with mouse" setting is on).
     A mouse click flips only when the mouse did not move and nothing got selected; a click on text waits out the double-click window. */
  const TEXT='.w,.ipa,.vi,.sec,.muted,.tag,p';let mode='',flipT=0;
+ /* v13 mouse on text: decide swipe vs select from the first movement. Fast, mostly-horizontal motion that crosses DEC_PX within DEC_MS
+    (and before a DWELL_MS hold) = swipe (selection cleared); a hold, slow or vertical motion = native text selection. */
+ const DEC_PX=8,DEC_MS=150,DWELL_MS=220,DEC_V=0.5,DEC_RATIO=1.5,mdragOn=()=>S.set.mdrag!==false;
  const hasSel=()=>{const g=getSelection&&getSelection();return !!(g&&!g.isCollapsed&&String(g).trim()&&el.contains(g.anchorNode))};
  const flip=()=>{const n=performance.now();if(busy||n-lastFlip<FLIP_LOCK)return;lastFlip=n;el.classList.toggle('flip');el.classList.remove('hint');buzz(6);if(el.classList.contains('flip')&&dir=='vi'&&S.set.autoplay)play(w);if(el._onflip)el._onflip()};
  const reset=()=>{el.style.transition=reduce?'none':'transform 480ms var(--ease-spring)';el.style.transform='';L.style.opacity=K.style.opacity=0;el.classList.remove('dragging')};
  let onBtn=false;el.addEventListener('pointerdown',e=>{clearTimeout(flipT);if(busy||(e.pointerType=='mouse'&&e.button!==0)){st='idle';return}
-  onBtn=!!e.target.closest(INTERACTIVE);const onText=!!e.target.closest(TEXT);mode=e.pointerType=='mouse'?((S.set.mdrag&&!onText)?'mdrag':(onText?'mtext':'mclick')):'touch';
-  if(mode=='mtext'||mode=='mclick'){st='mouse';pid=e.pointerId;sx=e.clientX;sy=e.clientY;t0=performance.now();el._sel0=hasSel();return}st='pending';pid=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;t0=performance.now();if(!onBtn)el.classList.add('pressed')});
+  onBtn=!!e.target.closest(INTERACTIVE);const onText=!!e.target.closest(TEXT);mode=e.pointerType=='mouse'?(mdragOn()?(onText?'mdecide':'mdrag'):(onText?'mtext':'mclick')):'touch';
+  if(mode=='mtext'||mode=='mclick'||mode=='mdecide'){st=mode=='mdecide'?'decide':'mouse';dx=0;pid=e.pointerId;sx=e.clientX;sy=e.clientY;t0=performance.now();el._sel0=hasSel();return}st='pending';pid=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;t0=performance.now();if(!onBtn)el.classList.add('pressed')});
  el.addEventListener('pointermove',e=>{if(e.pointerId!==pid||st=='idle'||st=='scroll'||st=='mouse')return;const mx=e.clientX-sx,my=e.clientY-sy;
+  if(st=='decide'){const d=Math.hypot(mx,my),t=performance.now()-t0;if(d<DEC_PX){if(t>DWELL_MS)st='mouse';return}
+   if(t<=DEC_MS&&d/Math.max(t,1)>=DEC_V&&Math.abs(mx)>Math.abs(my)*DEC_RATIO){try{getSelection().removeAllRanges()}catch(_){}st='swipe';el.classList.add('dragging');el.style.transition='none';try{el.setPointerCapture(pid)}catch(_){}}
+   else{st='mouse';return}}
   if(st=='pending'){if(Math.hypot(mx,my)<TAP_SLOP)return;el.classList.remove('pressed');
    if(Math.abs(mx)>Math.abs(my)*1.2){st='swipe';el.classList.add('dragging');el.style.transition='none';try{el.setPointerCapture(pid)}catch(_){}}else{st='scroll';return}}
-  if(st=='swipe'){dx=mx;const lim=innerWidth*.9,rx=Math.abs(dx)>lim?Math.sign(dx)*(lim+(Math.abs(dx)-lim)*.25):dx;
+  if(st=='swipe'){if(e.pointerType=='mouse'&&hasSel())getSelection().removeAllRanges();dx=mx;const lim=innerWidth*.9,rx=Math.abs(dx)>lim?Math.sign(dx)*(lim+(Math.abs(dx)-lim)*.25):dx;
    el.style.transform=`translate3d(${rx}px,0,0) rotate(${rx/24}deg)`;const o=Math.min(1,Math.abs(dx)/100);L.style.opacity=dx<0?o:0;K.style.opacity=dx>0?o:0}});
  el.addEventListener('pointerup',e=>{if(e.pointerId!==pid)return;el.classList.remove('pressed');const s0=st;st='idle';pid=null;
-  if(s0=='mouse'){if(onBtn)return;const moved=Math.hypot(e.clientX-sx,e.clientY-sy)>4;if(moved||e.detail>1||hasSel()||el._sel0)return;
-   if(mode=='mtext')flipT=setTimeout(()=>{if(!hasSel())flip()},280);else flip();return}
+  if(s0=='mouse'||s0=='decide'){if(onBtn)return;const moved=Math.hypot(e.clientX-sx,e.clientY-sy)>4;if(moved||e.detail>1||hasSel()||el._sel0)return;
+   if(mode=='mtext'||mode=='mdecide')flipT=setTimeout(()=>{if(!hasSel())flip()},280);else flip();return}
   if(s0=='mselect')return;
   if(s0=='pending'){if(onBtn)return;const sel=getSelection&&String(getSelection()).length>0;if(performance.now()-t0<=TAP_MS&&!sel&&performance.now()-lastSwipeEnd>300)flip();return}
-  if(s0=='swipe'){lastSwipeEnd=window._swipeT=performance.now();const v=Math.abs(dx)/(performance.now()-t0);if(Math.abs(dx)>100||(v>.5&&Math.abs(dx)>40))fling(dx>0);else reset()}});
+  if(s0=='swipe'){if(e.pointerType=='mouse')try{getSelection().removeAllRanges()}catch(_){}lastSwipeEnd=window._swipeT=performance.now();const v=Math.abs(dx)/(performance.now()-t0);if(Math.abs(dx)>100||(v>.5&&Math.abs(dx)>40))fling(dx>0);else reset()}});
  el.addEventListener('pointercancel',()=>{el.classList.remove('pressed');if(st=='swipe')reset();st='idle';pid=null});
  el.addEventListener('lostpointercapture',e=>{if(e.target===el&&st=='swipe'){st='idle';reset()}});
  el.addEventListener('click',e=>{if(!e.target.closest(INTERACTIVE)){e.preventDefault()}});
@@ -285,7 +291,8 @@ function cards(){const d=deck();if(!FC){const o=sess('cards');if(o&&o.sig==JSON.
   <div class="yn"><button class="btn l" id="nL" title="Đang học (phím ←)">${I('x')}Đang học</button><button class="btn k" id="nK" title="Đã biết (phím →)">${I('check')}Đã biết</button></div>
   <div class="ctrl"><button class="ib" id="undo" aria-label="Hoàn tác" title="Hoàn tác (phím Z)" ${FC.hist.length?'':'disabled'}>${I('undo-2')}</button><button class="ib ${FC.shuffled?'on':''}" id="shuf" title="Trộn thẻ" aria-label="Trộn thẻ" aria-pressed="${FC.shuffled}">${I('shuffle')}</button>
   <button class="ib" id="flipb" aria-label="Lật thẻ" title="Lật thẻ (phím cách)">${I('refresh-cw')}</button><button class="ib ${S.set.dir=='vi'?'on':''}" id="dirb" aria-label="Đổi chiều Anh – Việt" title="Đổi chiều Anh – Việt">${I('languages')}</button><button class="ib ${S.set.autoplay?'on':''}" id="autob" title="Tự phát âm" aria-label="Tự phát âm" aria-pressed="${S.set.autoplay}">${I(S.set.autoplay?'volume-2':'volume-x')}</button></div>
-  <p class="hint">${FC.i+1} / ${total} · <span class="t-touch">Chạm để lật, vuốt để chọn</span><span class="t-desk">Nhấp để lật · phím ← → để chọn · phím cách để lật · kéo chuột để chọn chữ</span></p>`);
+  <p class="hint">${FC.i+1} / ${total} · <span class="t-touch">Chạm để lật, vuốt để chọn</span><span class="t-desk">Nhấp để lật · kéo nhanh hoặc phím ← → để chọn · giữ chuột rồi kéo để bôi đen chữ</span></p>`);
+  if(!S.set.mhint&&matchMedia('(hover:hover) and (pointer:fine)').matches&&S.set.mdrag!==false){S.set.mhint=1;save();setTimeout(()=>toast('Mẹo: kéo nhanh thẻ sang ngang để chuyển thẻ; giữ chuột một chút rồi kéo để bôi đen chữ','info',5000),900)}
   if(FC.mood){const m=$('.mascot');setTimeout(()=>moodTo(m,'idle'),1300);FC.mood=null}
   const c=makeCard($('#stage'),w,S.set.dir,right=>{FC.tip=right?['Tuyệt, đã biết!','Nhớ tốt lắm!','Giỏi quá!'][Math.random()*3|0]:'Không sao, mình sẽ gặp lại từ này.';FC.mood=right?'happy':'sad';FC.hist.push({id:w.id,right});right?FC.know++:FC.learn++;practice(w,right);if(!right)FC.queue.push(w.id);FC.i++;FC.flipped=false;render()});
   c.el._onflip=()=>{FC.flipped=c.el.classList.contains('flip');sess('cards',FC)};if(FC.flipped)c.el.classList.add('flip');
@@ -443,11 +450,10 @@ function syllables(ph){const v=ph.map((x,i)=>PR.isVowel(x.p)?i:-1).filter(i=>i>=
  return cut.map((c,k)=>{const e=k+1<cut.length?cut[k+1]:ph.length;return [...Array(e-c)].map((_,i)=>c+i)})}
 const phClass=x=>x.st=='ok'?'g':x.st=='close'?'y':'r';
 const phLabel=x=>x.st=='ok'?'tốt':x.st=='close'?`gần đúng, nghe như /${x.heard}/`:x.st=='sub'?`chưa đúng, nghe như /${x.heard}/`:'bị thiếu';
-function refRow(w,res){const v=pronVars(w);if(!v.length)return '';const ph=res?res.phones:v[0].map(([p,s])=>({p,stress:s}));const syl=syllables(ph);
- /* v11: one pill per syllable; stress is a mark above the pill (filled = primary, hollow = secondary) plus a bold underline; no IPA stress glyphs */
- return `<div class="phrow" role="group" aria-label="${res?'Kết quả từng âm':'Các âm của từ'}">${syl.map(idx=>{const st=idx.some(i=>ph[i].stress===1)?1:idx.some(i=>ph[i].stress===2)?2:0;
-  const worst=res?idx.map(i=>ph[i]).sort((a,b)=>a.score-b.score)[0]:null;
-  return `<span class="syl${st==1?' s1':st==2?' s2':''}${worst?' '+phClass(worst):''}"${st?` title="${st==1?'Trọng âm chính':'Trọng âm phụ'}"`:''}>${st?`<span class="sm" aria-hidden="true"></span><span class="sr">${st==1?'Trọng âm chính: ':'Trọng âm phụ: '}</span>`:''}${idx.map(i=>{const x=ph[i];return `<button class="ph ${res?phClass(x):''}" data-ph="${esc(x.p)}" aria-label="Âm /${esc(phDisp(x.p))}/${res?': '+phLabel(x):''}. Xem cách phát âm">${esc(phDisp(x.p))}</button>`}).join('')}</span>`}).join('')}</div>`}
+function refRow(w,res){const v=pronVars(w);if(!v.length)return '';const ph=res?res.phones:v[0].map(([p,s])=>({p,stress:s}));const syl=syllables(ph),multi=syl.length>1;
+ /* v13: one compact IPA line; each phone is a button; syllables split by thin middots; primary stress = bold + accent colour, secondary = semibold */
+ return `<div class="ipal${res?' scored':''}" role="group" aria-label="${res?'Kết quả từng âm':'Phiên âm, chạm vào âm để xem cách phát âm'}" title="${multi?'Âm tiết in đậm màu: trọng âm chính. ':''}Bấm vào một âm để xem cách phát âm"><span class="sl" aria-hidden="true">/</span>${syl.map((idx,k)=>{const st=multi?(idx.some(i=>ph[i].stress===1)?1:idx.some(i=>ph[i].stress===2)?2:0):0;
+  return `${k?'<span class="md" aria-hidden="true">·</span>':''}<span class="syl${st==1?' s1':st==2?' s2':''}">${st?`<span class="sr">${st==1?'Trọng âm chính: ':'Trọng âm phụ: '}</span>`:''}${idx.map(i=>{const x=ph[i];return `<button class="ph ${res?phClass(x):''}" data-ph="${esc(x.p)}" title="${res?'/'+esc(phDisp(x.p))+'/: '+esc(phLabel(x))+' · ':''}Xem cách phát âm /${esc(phDisp(x.p))}/" aria-label="Âm /${esc(phDisp(x.p))}/${res?': '+phLabel(x):''}. Xem cách phát âm">${esc(phDisp(x.p))}</button>`}).join('')}</span>`}).join('')}<span class="sl" aria-hidden="true">/</span></div>`}
 function openArtic(p){const t=ARTIC.text(p);if(!t)return;const ex=ARTIC.ex(p);sheet(`<h2>Âm /${esc(phDisp(p))}/</h2><div class="artic">${ARTIC.svg(p)}</div><p>${esc(t)}</p>${ex?`<p class="muted">Ví dụ: <b>${esc(ex)}</b></p>`:''}
  <p class="muted" style="font-size:var(--fs-xs)">Hình vẽ mặt cắt miệng nhìn nghiêng: môi bên phải, lưỡi màu hồng.</p><button class="btn" id="acl">Đã hiểu</button>`);$('#acl').onclick=()=>$('#sheet')._close();$('#acl').focus()}
 function drawCompare(cv,nat,mine){if(!cv)return;const dpr=devicePixelRatio||1,W=cv.clientWidth||300,H=cv.clientHeight||150;cv.width=W*dpr;cv.height=H*dpr;const g=cv.getContext('2d');g.scale(dpr,dpr);g.clearRect(0,0,W,H);
@@ -464,8 +470,7 @@ function speak(){const d=deck();let q=shuffle(d),i=0,att=0,st='init',rec=null,sr
  function hist(w){const h=S.pron[w.id]||[];if(!h.length)return '';return `<p class="muted hist">Lịch sử: ${h.slice(-6).map(x=>`<span class="hs ${x.s>=85?'g':x.s>=60?'y':'r'}">${x.s}</span>`).join(' ')} · cao nhất ${Math.max(...h.map(x=>x.s))}</p>`}
  async function show(){const w=q[i%q.length];att++;stop();my=null;nat=null;if(myUrl){URL.revokeObjectURL(myUrl);myUrl=null}await loadPron();if(dead)return;
   view('Luyện nói',`${mascot('idle','Nghe mẫu, rồi bấm micro và đọc to.',{small:true,row:true})}
-  <div class="card q center" style="margin-top:12px"><div class="kind">Từ ${i%q.length+1} / ${q.length}</div><div class="w" style="margin-top:6px">${esc(w.w)}</div><div class="ipa" data-ipa="${w.id}">${esc(ipaOf(w))}</div>
-  ${refRow(w)}<div class="tags"><span class="tag">${esc(w.pos)}</span><span class="tag lv">${esc(w.lv)}</span></div><p class="muted" style="margin:8px 0 0">${esc(w.vi)}</p>
+  <div class="card q center" style="margin-top:12px"><div class="kind">Từ ${i%q.length+1} / ${q.length}</div><div class="w" style="margin-top:6px">${esc(w.w)}</div>${refRow(w)||`<div class="ipa" data-ipa="${w.id}">${esc(ipaOf(w))}</div>`}<div class="tags"><span class="tag">${esc(w.pos)}</span><span class="tag lv">${esc(w.lv)}</span></div><p class="muted" style="margin:8px 0 0">${esc(w.vi)}</p>
   <div class="audiobar">${auBtns(w)}</div><div id="sarea" aria-live="polite"></div><div id="shist">${hist(w)}</div></div>
   <div class="row"><button class="btn sec" id="prev" ${i?'':'disabled'}>Từ trước</button><button class="btn" id="next">Từ tiếp theo</button></div>
   <p class="hint">Ví dụ: <i>${esc(w.ex)}</i></p>`);
@@ -488,7 +493,7 @@ function speak(){const d=deck();let q=shuffle(d),i=0,att=0,st='init',rec=null,sr
   wire(w,data)}
  function resultHTML(w,{res,score,heard,kind}){const c=score>=85?'var(--success)':score>=60?'var(--warn)':'var(--danger)',lab=score>=85?'Rất tốt':score>=60?'Khá, còn vài âm cần sửa':score>=40?'Cần luyện thêm':'Chưa giống, nghe mẫu rồi thử lại';
   let h=`<div class="score" style="--p:${score};--c:${c}" role="img" aria-label="Điểm ${score} trên 100"><b>${score}</b></div><p class="sres-l"><b>${lab}</b></p>`;
-  if(kind=='model'){const stz=res.stress;h+=refRow(w,res)+`<p class="legend2"><span class="ph g">a</span> tốt <span class="ph y">a</span> gần đúng <span class="ph r">a</span> chưa đúng/thiếu · chạm vào âm để xem cách phát âm</p>`;
+  if(kind=='model'){const stz=res.stress;h+=refRow(w,res)+`<p class="legend2"><span><span class="lg g"></span> tốt</span> <span><span class="lg y"></span> gần đúng</span> <span><span class="lg r"></span> chưa đúng/thiếu</span> <span>· bấm vào âm để xem cách phát âm</span></p>`;
    h+=`<p class="muted">Máy nghe được: <b class="ipa-h">/${esc(res.heard||'–')}/</b></p>`;
    if(stz)h+=`<p class="stz ${stz.ok?'ok':'bad'}">${I(stz.ok?'circle-check':'info','s')}<span>${stz.ok?'Trọng âm: đúng chỗ':'Trọng âm: có vẻ bạn nhấn sai âm tiết, hãy nhấn mạnh âm tiết có dấu ˈ'} <small class="muted">(ước lượng theo độ to và độ dài)</small></span></p>`;
    const tips=PR.tips(res,w.w);if(tips.length)h+=`<div class="tips">${tips.map(t=>`<div class="tip2">${I('lightbulb','s')}<div>${esc(t.m)}</div>${ARTIC.has(t.p)?`<button class="btn sm sec" data-ph="${esc(t.p)}">Cách đặt lưỡi</button>`:''}</div>`).join('')}</div>`;
@@ -637,7 +642,7 @@ function route(){keys=null;audio.pause();if(cleanup){try{cleanup()}catch(e){}cle
  if(!words.length)return;if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');const r=(R[k]||home)();if(typeof r=='function')cleanup=r}
 addEventListener('hashchange',route);
 const MCOL=NK_COLORS;
-function applyTheme(){const dark=S.set.theme=='dark'||(S.set.theme=='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.body.classList.toggle('dark',dark);document.body.classList.toggle('mdrag',!!S.set.mdrag);
+function applyTheme(){const dark=S.set.theme=='dark'||(S.set.theme=='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.body.classList.toggle('dark',dark);document.body.classList.toggle('mdrag',S.set.mdrag!==false);
  const mc=MCOL[S.set.mcolor]||MCOL.cocoa;document.body.style.setProperty('--mk-body',dark?mc.d:mc.l);$('meta[name=theme-color]').content=dark?'#121214':'#F6F5F2'}
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',applyTheme);
 applyTheme();

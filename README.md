@@ -69,3 +69,13 @@
 - Điều hướng bằng nút hoặc phím (← → phím cách, Z để hoàn tác). Muốn kéo thẻ bằng chuột thì bật “Kéo thẻ bằng chuột” trong Cài đặt; khi đó chỉ kéo được từ vùng trống của thẻ.
 - Điện thoại: vẫn vuốt như cũ. Nhấn giữ để chọn chữ sẽ huỷ thao tác vuốt và lật.
 - Phiên âm IPA hiển thị theo giọng đang chọn (US/UK), khớp với các ô âm.
+
+## v13
+- Trên máy tính, chuột vừa vuốt được vừa bôi đen được chữ:
+  - Kéo nhanh và gần như nằm ngang (khoảng 0,5 px/ms trở lên, vượt 8 px trong 150 ms đầu) thì chuyển thẻ.
+  - Giữ chuột khoảng 220 ms, kéo chậm hoặc kéo theo chiều dọc thì bôi đen chữ.
+  - Kéo từ vùng trống của thẻ thì luôn là vuốt.
+  - Tính năng này bật sẵn và tắt được trong Cài đặt.
+- Phiên âm gọn lại còn một dòng IPA, bấm vào từng âm để xem cách phát âm:
+  - Các âm tiết cách nhau bằng dấu chấm giữa. Trọng âm chính in đậm có màu, trọng âm phụ đậm vừa.
+  - Sau khi chấm điểm, mỗi âm có nền xanh, vàng hoặc đỏ. Âm gần đúng có thêm gạch chân chấm, âm sai có gạch chân lượn sóng.
