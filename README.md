@@ -79,3 +79,9 @@
 - Phiên âm gọn lại còn một dòng IPA, bấm vào từng âm để xem cách phát âm:
   - Các âm tiết cách nhau bằng dấu chấm giữa. Trọng âm chính in đậm có màu, trọng âm phụ đậm vừa.
   - Sau khi chấm điểm, mỗi âm có nền xanh, vàng hoặc đỏ. Âm gần đúng có thêm gạch chân chấm, âm sai có gạch chân lượn sóng.
+
+## v14
+- Trên máy tính bảng và máy tính có thanh điều hướng bên trái. Từ 1024 px có thêm cột phải với tiến độ hôm nay, phím tắt và Neko. Trang chủ thành dạng lưới; danh sách từ thành bảng có sắp xếp và tìm kiếm; thống kê chia hai cột. Giao diện điện thoại giữ nguyên. Xem docs/LAYOUT.md.
+- Nút chính trên trang chủ là “Ôn theo lịch”, ghi số thẻ cần ôn hôm nay hoặc thời điểm ôn tiếp theo.
+- Thẻ ghi nhớ có dòng ghi chú “Luyện thêm: không thay đổi lịch ôn”.
+- Khi chấm điểm, nút “Được” nổi bật nhất. Phím cách chọn “Được”, phím 1–4 chọn từng mức. Lần đầu có mẹo giải thích Lại, Khó, Được, Dễ.

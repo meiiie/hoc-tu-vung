@@ -1,4 +1,4 @@
-const V='htv-v13',AUDIO='htv-audio-v1',ENGINE='htv-engine-v1';
+const V='htv-v14',AUDIO='htv-audio-v1',ENGINE='htv-engine-v1';
 const SHELL=['./','index.html','style.css','app.js','srs.js','vendor/ts-fsrs.min.js','mascot.js','pron.js','artic.js','speech.js','asr-worker.js','data/pron.json','data/pron-uk.json','vendor/zipa-tokens.txt','manifest.webmanifest','data/pages.json','data/p1.json','icons/icon-192.png','icons/icon-512.png','icons/icon.svg','icons/maskable-192.png','icons/maskable-512.png','icons/apple-touch-icon.png'];
 /* Install precaches the shell but WAITS: the page shows "Có bản mới — Tải lại" and posts 'skip' when the user agrees.
    Progress lives in localStorage, which a service worker update never touches. */
