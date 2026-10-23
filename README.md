@@ -85,3 +85,6 @@
 - Nút chính trên trang chủ là “Ôn theo lịch”, ghi số thẻ cần ôn hôm nay hoặc thời điểm ôn tiếp theo.
 - Thẻ ghi nhớ có dòng ghi chú “Luyện thêm: không thay đổi lịch ôn”.
 - Khi chấm điểm, nút “Được” nổi bật nhất. Phím cách chọn “Được”, phím 1–4 chọn từng mức. Lần đầu có mẹo giải thích Lại, Khó, Được, Dễ.
+
+## v15
+- Bỏ thanh điều hướng bên trái và cột bên phải. Máy tính và máy tính bảng dùng đúng giao diện điện thoại, đặt ở giữa màn hình (rộng tối đa 600 px, trang chủ 720 px). Chữ lớn hơn một chút, có trạng thái khi rê chuột, và nút “?” (hoặc phím ?) để xem phím tắt. Cài đặt mở ở giữa màn hình. Xem docs/LAYOUT.md.

@@ -28,7 +28,7 @@ function migrate(d){d=d&&typeof d=='object'?d:{};let v=+d.v||2;
 let S,loadErr=false;{const raw=lsGet(KEY);if(raw){try{S=JSON.parse(raw)}catch(e){loadErr=true;lsSet(KEY+'-corrupt-'+Date.now(),raw)}}
  if(!S||loadErr){const bak=lsGet(KEY+'-bak');if(bak)try{S=JSON.parse(bak)}catch(e){}}S=migrate(S)}
 let saveWarned=false;
-const save=()=>{window.__railSoon&&window.__railSoon();S.v=SCHEMA;S.saved=Date.now();const j=JSON.stringify(S);if(lsSet(KEY,j)){saveWarned=false;const b=lsGet(KEY+'-bakd');if(b!==today()){lsSet(KEY+'-bak',j);lsSet(KEY+'-bakd',today())}}
+const save=()=>{S.v=SCHEMA;S.saved=Date.now();const j=JSON.stringify(S);if(lsSet(KEY,j)){saveWarned=false;const b=lsGet(KEY+'-bakd');if(b!==today()){lsSet(KEY+'-bak',j);lsSet(KEY+'-bakd',today())}}
  else if(!saveWarned){saveWarned=true;setTimeout(()=>toast('Không lưu được tiến độ (bộ nhớ đầy hoặc chế độ ẩn danh). Hãy xuất bản sao lưu trong Cài đặt.','info',5000),0)}};
 lsSet(KEY,JSON.stringify(S));
 async function persistStorage(){try{if(navigator.storage&&navigator.storage.persist&&!(await navigator.storage.persisted()))await navigator.storage.persist()}catch(e){}}
@@ -177,7 +177,7 @@ function openSettings(){const cur=k=>k=='goal'?((S.user&&S.user.goal)||'all'):St
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="exp"><span>Xuất bản sao lưu tiến độ<br><small class="muted">Lưu tệp .json để chuyển máy hoặc phòng mất dữ liệu</small></span>${I('download')}</button>
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left" id="imp"><span>Nhập tiến độ từ tệp sao lưu</span>${I('upload')}</button><input type="file" id="impf" accept="application/json,.json" hidden aria-label="Chọn tệp sao lưu">
  <button class="opt-row" style="width:100%;border:none;background:none;text-align:left;color:var(--danger)" id="rst"><span>Xoá toàn bộ tiến độ</span>${I('rotate-ccw')}</button></div>
- <p class="muted center" style="margin-top:16px">Phiên bản 14 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
+ <p class="muted center" style="margin-top:16px">Phiên bản 15 · Chấm phát âm: ZIPA (CC BY-NC-SA 4.0) · Linh vật Neko · Biểu tượng Lucide (ISC) · Giọng đọc Microsoft Neural</p>`,route);
  $$('[data-set]',sh).forEach(b=>b.onclick=()=>{const k=b.dataset.set;let v=b.dataset.v;if(k=='slow')v=v=='true';if(k=='retention'||k=='goalAns')v=+v;if(k=='goal'){S.user=S.user||{};S.user.goal=v}else S.set[k]=v;save();$$(`[data-set="${k}"]`,sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});if(k=='theme')applyTheme();if(k=='asr')toast(v=='auto'?'Chấm trên máy (từng âm)':'Dùng nhận dạng của trình duyệt','mic');if(k=='voice'||k=='slow')play(words[2]);updVoice();buzz(8)});
  $$('[data-mc]',sh).forEach(b=>b.onclick=()=>{S.set.mcolor=b.dataset.mc;save();applyTheme();$$('[data-mc]',sh).forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-checked',x==b)});moodTo($('.mcrow .mascot',sh),'happy',null,1400);buzz(8)});
  if(Speech.supported()){const upd=s=>{const t=$('#mst2',sh),b=$('#mdl',sh);if(!t)return;t.textContent=s.cached?'Đã tải, dùng được offline':'Chưa tải';b.innerHTML=s.cached?I('trash-2','s')+'Xoá':I('download','s')+'Tải';
@@ -617,7 +617,7 @@ function test(){const d=deck();if(d.length<4){toast('Cần ít nhất 4 từ','i
   <div class="row"><button class="btn sec" onclick="location.hash='#/'">Trang chủ</button><button class="btn" id="rt">Làm bài mới</button></div>`);$('#rt').onclick=test}}
 
 /* ---------- List & stats ---------- */
-function list(){const d=deck(),wideQ=matchMedia('(min-width:1024px)');let sortK=S.set.lsort||'az',dirS=1;
+function list(){const d=deck(),wideQ=matchMedia('not all')/* v15: always the simple mobile list */;let sortK=S.set.lsort||'az',dirS=1;
  view('Danh sách từ',`<div class="ltools"><div class="search">${I('search')}<input type="search" id="sq" placeholder="Tìm từ hoặc nghĩa" aria-label="Tìm kiếm"></div>
  <label class="lsort"><span>Sắp xếp</span><select id="ssort" aria-label="Sắp xếp danh sách">${[['az','A → Z'],['lv','Cấp độ'],['due','Đến hạn sớm'],['state','Trạng thái'],['star','Gắn sao trước']].map(([v,l])=>`<option value="${v}" ${v==sortK?'selected':''}>${l}</option>`).join('')}</select></label></div>
  <p class="muted" id="lc" aria-live="polite"></p><div class="list" id="ls"></div>`);
@@ -664,31 +664,15 @@ async function importProgress(file,close){try{if(file.size>5e6)throw new Error('
 /* ---------- router & boot ---------- */
 const R={'':home,cards,review,cram:()=>review(true),learn:()=>learn(),hard:()=>learn('hard'),speak,listen,match,test,list,stats};let cleanup=null;
 function route(){keys=null;audio.pause();if(cleanup){try{cleanup()}catch(e){}cleanup=null}$('#back').onclick=()=>{location.hash='#/'};
- if(!words.length)return;if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');const r=(R[k]||home)();if(typeof r=='function')cleanup=r;try{chrome()}catch(e){console.warn(e)}}
+ if(!words.length)return;if(!S.user||!S.user.done)return onboarding(0);const k=location.hash.replace(/^#\/?/,'');const r=(R[k]||home)();if(typeof r=='function')cleanup=r;document.body.classList.toggle('home-v',!k)}
 addEventListener('hashchange',route);
-/* ---------- v14 wide-screen chrome: sidebar navigation + right "today" panel (hidden below 768px / 1024px by CSS) ---------- */
-const NAV=[['','house','Trang chủ'],['review','calendar-clock','Ôn theo lịch'],['cards','layers','Thẻ ghi nhớ'],['learn','brain','Học'],['speak','mic','Luyện nói'],['listen','headphones','Nghe – chép'],['match','zap','Ghép thẻ'],['test','clipboard-check','Kiểm tra'],['hard','target','Từ khó'],['cram','repeat','Ôn toàn bộ'],null,['list','list-checks','Danh sách từ'],['stats','chart-column','Thống kê']];
+/* v15: keyboard shortcuts per mode, shown in a '?' sheet (desktop) instead of a side panel */
 const KEYS={cards:[['Phím cách','Lật thẻ'],['→','Đã biết'],['←','Đang học'],['Z','Hoàn tác']],review:[['Phím cách','Hiện đáp án, rồi chọn Được'],['1','Lại'],['2','Khó'],['3','Được'],['4','Dễ'],['Z','Hoàn tác']],cram:[['Phím cách','Hiện đáp án, rồi Được'],['1–4','Chấm điểm']],
  learn:[['1–4','Chọn đáp án'],['Enter','Kiểm tra / tiếp']],test:[['1–4','Chọn đáp án'],['Enter','Kiểm tra / tiếp']],listen:[['Enter','Kiểm tra'],['Ctrl + Space','Nghe lại']],speak:[['Space','Nghe mẫu']],'':[['Tab','Di chuyển giữa các mục'],['Enter','Mở chế độ']]};
-const wideMQ=matchMedia('(min-width:768px)'),railMQ=matchMedia('(min-width:1024px)');
-function chrome(){const side=$('#side'),rail=$('#rail');if(!side||!rail)return;const k=location.hash.replace(/^#\/?/,'').split('?')[0];
- if(!wideMQ.matches){side.innerHTML='';rail.innerHTML='';return}
- side.innerHTML=`<div class="brand"><span class="logo">${I('book-open')}</span><b>Học Từ Vựng</b></div><ul>${NAV.map(n=>n?`<li><a class="nv${n[0]==k?' on':''}" href="#/${n[0]}" ${n[0]==k?'aria-current="page"':''} title="${n[2]}">${I(n[1])}<span class="nl">${n[2]}</span>${n[0]=='review'?'<span class="nb" id="navdue"></span>':''}</a></li>`:'<li class="sep" aria-hidden="true"></li>').join('')}</ul>
-  <button class="nv set" id="side-set" title="Cài đặt">${I('settings-2')}<span class="nl">Cài đặt</span></button>`;
- $('#side-set').onclick=openSettings;
- if(railMQ.matches){if(!rail.querySelector('.rmas'))rail.innerHTML=`<div class="rmas">${mascot('idle','',{small:true})}</div><section class="rt" id="rtoday" aria-label="Tiến độ hôm nay"></section><section class="rk" id="rkeys" aria-label="Phím tắt"></section>`;
-  const ks=KEYS[k];$('#rkeys').innerHTML=ks?`<h2 class="eyebrow">${I('keyboard','s')}Phím tắt</h2><dl>${ks.map(([a,b])=>`<div><dt><kbd>${a}</kbd></dt><dd>${b}</dd></div>`).join('')}</dl>`:''}
- else rail.innerHTML='';
- railToday()}
-function railToday(){const el=$('#rtoday'),nb=$('#navdue');if(!el&&!nb)return;const d=deck(),now=Date.now(),q=counts(allCards(d),now),due=q.r+q.l;
- if(nb){nb.textContent=due||'';nb.hidden=!due;nb.setAttribute('aria-label',due+' thẻ cần ôn')}
- if(!el)return;const tl=S.log[today()]||{rev:0,new:0},ga=goalAns(),p=Math.min(1,tl.rev/ga),R=26,C=2*Math.PI*R,streak=streakNow(),dl=dueLine(d,now);
- el.innerHTML=`<h2 class="eyebrow">Hôm nay</h2><div class="rrow"><svg class="ring" viewBox="0 0 64 64" role="img" aria-label="Mục tiêu hôm nay: ${Math.min(tl.rev,ga)} trên ${ga} câu"><circle cx="32" cy="32" r="${R}" class="rg0"/><circle cx="32" cy="32" r="${R}" class="rg1" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-p)}" transform="rotate(-90 32 32)"/><text x="32" y="36" text-anchor="middle">${Math.round(p*100)}%</text></svg>
-  <div><b>${Math.min(tl.rev,ga)} / ${ga}</b><span class="muted">câu mục tiêu</span><span class="streak">${I('flame','s')}${streak} ngày liên tiếp</span></div></div>
-  <div class="rdue"><div><b class="cn n">${q.n}</b><span>mới</span></div><div><b class="cn l">${q.l}</b><span>đang học</span></div><div><b class="cn r">${q.r}</b><span>cần ôn</span></div></div>
-  <p class="muted rnext">${esc(dl.txt)}</p>${due||q.n?`<a class="btn" href="#/review">${I('calendar-clock','s')}Ôn ngay</a>`:''}`}
-let railT=0;const railSoon=window.__railSoon=()=>{cancelAnimationFrame(railT);railT=requestAnimationFrame(()=>{try{railToday()}catch(_){}})};
-wideMQ.addEventListener('change',chrome);railMQ.addEventListener('change',()=>{$('#rail')&&($('#rail').innerHTML='');chrome()});
+function openKeys(){const k=location.hash.replace(/^#\/?/,'').split('?')[0];const ks=KEYS[k]||[];
+ sheet(`<h2>Phím tắt</h2>${ks.length?`<dl class="kgrid">${ks.map(([a,b])=>`<div><dt><kbd>${a}</kbd></dt><dd>${b}</dd></div>`).join('')}</dl>`:'<p class="muted">Màn hình này không có phím tắt riêng.</p>'}<dl class="kgrid"><div><dt><kbd>?</kbd></dt><dd>Mở bảng phím tắt</dd></div><div><dt><kbd>Esc</kbd></dt><dd>Đóng bảng</dd></div></dl>`)}
+document.addEventListener('keydown',e=>{if(e.key=='?'&&!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)&&$('#sheet').classList.contains('hidden')){e.preventDefault();openKeys()}});
+
 const MCOL=NK_COLORS;
 function applyTheme(){const dark=S.set.theme=='dark'||(S.set.theme=='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.body.classList.toggle('dark',dark);document.body.classList.toggle('mdrag',S.set.mdrag!==false);
  const mc=MCOL[S.set.mcolor]||MCOL.cocoa;document.body.style.setProperty('--mk-body',dark?mc.d:mc.l);$('meta[name=theme-color]').content=dark?'#121214':'#F6F5F2'}
@@ -696,7 +680,7 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',applyThem
 applyTheme();
 const updVoice=()=>{$('#voice').textContent=S.set.voice=='us'?'US':'UK';$('#voice').setAttribute('aria-label',(S.set.voice=='us'?'US':'UK')+', giọng '+(S.set.voice=='us'?'Mỹ':'Anh')+'. Bấm để đổi')};updVoice();
 $('#voice').onclick=()=>{S.set.voice=S.set.voice=='gb'?'us':'gb';save();updVoice();toast(S.set.voice=='gb'?'Giọng Anh (UK)':'Giọng Mỹ (US)','languages');buzz(8);if(/^#\/(speak|cards)/.test(location.hash))route();else $$('.ipa[data-ipa]').forEach(x=>{const w=byId(x.dataset.ipa);if(w)x.textContent=ipaOf(w)})};
-$('#settings').onclick=openSettings;
+$('#settings').onclick=openSettings;$('#keysb')&&($('#keysb').onclick=openKeys);
 addEventListener('offline',()=>toast('Đang offline: vẫn học được, âm thanh đã nghe sẽ có sẵn','wifi-off'));addEventListener('online',()=>toast('Đã có mạng trở lại','check'));
 if('serviceWorker' in navigator){let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading||!window._wantReload)return;reloading=true;location.reload()});
  const offer=w=>{toast('Có bản mới','sparkles',0,{label:'Tải lại',run:()=>{window._wantReload=true;w.postMessage('skip')}})};

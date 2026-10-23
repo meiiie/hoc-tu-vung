@@ -1,18 +1,28 @@
-# v14 wide-screen layout and review UX
+# Layout (v15): the mobile UI, centred, at every width
 
-## Breakpoints
-- **Below 768 px:** the mobile layout is unchanged. The sidebar and the right panel are not rendered (`display:none`).
-- **768–1023 px (tablet):** an icon sidebar (76 px). Each link keeps its text label for screen readers and shows it as a tooltip. The study column is up to 640 px, and home shows modes in 3 columns.
-- **1024 px and up:** a sidebar with labels (224 px) on the left. In the middle, the study column: cards are 560 px; home, the word list and statistics are up to 980 px. On the right, a 300 px panel with today's progress (goal ring, streak, new/learning/review counts, next due time, an "Ôn ngay" button), a keyboard-shortcut list for the current mode, and Neko. At 1440 px and up the side columns are 248 and 340 px.
-- The sidebar and the right panel are sticky and scroll independently. They are drawn for every screen in `chrome()`, called from `route()`. The right panel's numbers refresh after every save.
+v14 added a left sidebar and a right panel on wide screens. The user found it unfriendly, so v15 removes both at every width. Tablets and desktops now get the same single-column mobile UI, centred.
 
-## Patterns studied (briefly)
-- **Duolingo web:** a fixed left sidebar with the active item highlighted as a pill; the learning path in the centre; a right column with streak, daily quests and progress cards. Source: Screenrove capture "Duolingo / Learn path", 2026-09-24, https://screenrove.com/duolingo/product/duolingo-product-learn
-- **Anki:** the answer buttons show the next interval; Good is the normal answer ("80–95% of the time"); shortcuts are 1–4 and Space/Enter = Good; Hard means "correct, but you had doubts or it took a long time", not a wrong answer. Sources: Anki Manual, Studying, https://docs.ankiweb.net/studying.html, and Deck Options (on FSRS: pressing Hard when you forgot makes intervals too long), https://docs.ankiweb.net/deck-options.html
-- **Quizlet web:** cards centred in a narrow study column, with navigation by on-screen buttons and arrow keys (from general product knowledge; no capture cited).
+## What changes with width
+- **Below 768 px:** exactly the mobile layout.
+- **768 px and up:**
+  - The content column is at most 600 px on study screens and 720 px on home, with the header aligned to the same column.
+  - Home keeps the "Hôm nay" card (goal, streak), the main "Ôn theo lịch" button with the due count, and a 2-column grid of modes.
+  - Type is slightly larger: body 16 px instead of 15, headings scaled to match.
+  - The page background is a soft tint.
+  - Settings and other sheets open as a centred dialog instead of a bottom sheet.
+  - The word list stays the mobile list, with search and a sort menu.
+- **Mouse and trackpad (hover-capable pointers):**
+  - Hover states on mode cards, list rows and rating buttons.
+  - A "?" button in the header (or the `?` key) opens a keyboard-shortcut sheet for the current screen.
+  - Shortcuts work as before: Space, ← →, 1–4, Z.
+- **Everywhere:** focus rings on interactive elements. Kept from v14: the Flashcards note, the dominant Được button, Space = Được, and the one-time rating tip.
 
-## Review UX
-- On home, the main button is **Ôn theo lịch**. It reads "Hôm nay cần ôn N thẻ", or, when nothing is due, gives the next due time (`nextDueAt`).
-- In **Thẻ ghi nhớ**, a one-line note says it is extra practice that does not change the review schedule, with a link to Ôn theo lịch.
-- In the rating row, **Được** is the largest button and is filled. Every button shows its interval. Keys 1–4 rate the card; Space reveals the answer, then rates it Được.
-- A one-time tip explains the buttons: Lại = forgot, Khó = remembered but with great effort (not wrong), Được = normal, Dễ = instant. It is dismissed with "Đã hiểu" and saved as `set.gtip`.
+## References (briefly)
+- **Quizlet:** the 2021 study-modes redesign "removed the sidebar and improved global nav so students can more easily focus on the content front and center". It reports +9% one-day retention in Learn. Vickie Chiang, "Quizlet Study Modes Redesign", https://vickiechiang.medium.com/quizlet-study-modes-redesign-d80c6fd509c7
+- **Duolingo:** lessons are "full-screen with no navigation". There is a top progress row and one primary action, and celebration screens are single centred cards. Only the browsing/home path uses a sidebar. Screenrove, "Duolingo design system", https://screenrove.com/duolingo/design
+- **Material Design 3 / Android adaptive guidance:** under 600 dp, use a single pane with 16 dp margins. Window size classes are about available width, not device type. Use larger multi-pane layouts only when the content benefits (for example list–detail). A single-task study flow doesn't, so we keep one pane and limit its line length. Sources: https://m3.material.io/foundations/layout/breakpoints/compact and https://developer.android.com/develop/adaptive-apps/guides/use-window-size-classes
+- **Focus apps such as Things and Linear:** a centred, readable content column with generous whitespace. This one comes from general product knowledge; I have no capture to cite.
+- **Anki:** for the rating buttons, Good is the default and Space/Enter = Good. https://docs.ankiweb.net/studying.html
+
+## Review UX (unchanged from v14)
+See the README sections for v14 and v15.
