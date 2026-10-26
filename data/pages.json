@@ -1,10 +1,127 @@
 {
- "pages": [
-  {
-   "id": "p1",
-   "title": "Oxford 3000 – Trang 1 (a → beer)",
-   "file": "data/p1.json",
-   "short": "Trang 1 (a → beer)"
-  }
- ]
+  "version": "2026-10-26",
+  "entries": 4971,
+  "headwords": 4970,
+  "pages": [
+    {
+      "id": "p1",
+      "title": "Oxford 5000 · a, an → beer",
+      "file": "data/p1.json",
+      "short": "a, an → beer"
+    },
+    {
+      "id": "p2",
+      "title": "Oxford 5000 · abolish → body",
+      "file": "data/p2.json",
+      "short": "abolish → body"
+    },
+    {
+      "id": "p3",
+      "title": "Oxford 5000 · boil → clause",
+      "file": "data/p3.json",
+      "short": "boil → clause"
+    },
+    {
+      "id": "p4",
+      "title": "Oxford 5000 · clean → coordinate",
+      "file": "data/p4.json",
+      "short": "clean → coordinate"
+    },
+    {
+      "id": "p5",
+      "title": "Oxford 5000 · coordination → deteriorate",
+      "file": "data/p5.json",
+      "short": "coordination → deteriorate"
+    },
+    {
+      "id": "p6",
+      "title": "Oxford 5000 · determination → emergency",
+      "file": "data/p6.json",
+      "short": "determination → emergency"
+    },
+    {
+      "id": "p7",
+      "title": "Oxford 5000 · emission → feeling",
+      "file": "data/p7.json",
+      "short": "emission → feeling"
+    },
+    {
+      "id": "p8",
+      "title": "Oxford 5000 · fellow → grandfather",
+      "file": "data/p8.json",
+      "short": "fellow → grandfather"
+    },
+    {
+      "id": "p9",
+      "title": "Oxford 5000 · grandmother → incentive",
+      "file": "data/p9.json",
+      "short": "grandmother → incentive"
+    },
+    {
+      "id": "p10",
+      "title": "Oxford 5000 · inch → language",
+      "file": "data/p10.json",
+      "short": "inch → language"
+    },
+    {
+      "id": "p11",
+      "title": "Oxford 5000 · lap → memorable",
+      "file": "data/p11.json",
+      "short": "lap → memorable"
+    },
+    {
+      "id": "p12",
+      "title": "Oxford 5000 · memorial → occasion",
+      "file": "data/p12.json",
+      "short": "memorial → occasion"
+    },
+    {
+      "id": "p13",
+      "title": "Oxford 5000 · occasional → pit",
+      "file": "data/p13.json",
+      "short": "occasional → pit"
+    },
+    {
+      "id": "p14",
+      "title": "Oxford 5000 · pitch → purely",
+      "file": "data/p14.json",
+      "short": "pitch → purely"
+    },
+    {
+      "id": "p15",
+      "title": "Oxford 5000 · purple → reverse",
+      "file": "data/p15.json",
+      "short": "purple → reverse"
+    },
+    {
+      "id": "p16",
+      "title": "Oxford 5000 · review → signature",
+      "file": "data/p16.json",
+      "short": "review → signature"
+    },
+    {
+      "id": "p17",
+      "title": "Oxford 5000 · significance → strongly",
+      "file": "data/p17.json",
+      "short": "significance → strongly"
+    },
+    {
+      "id": "p18",
+      "title": "Oxford 5000 · structural → tide",
+      "file": "data/p18.json",
+      "short": "structural → tide"
+    },
+    {
+      "id": "p19",
+      "title": "Oxford 5000 · tidy → very",
+      "file": "data/p19.json",
+      "short": "tidy → very"
+    },
+    {
+      "id": "p20",
+      "title": "Oxford 5000 · vessel → tape",
+      "file": "data/p20.json",
+      "short": "vessel → tape"
+    }
+  ]
 }

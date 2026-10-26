@@ -1,0 +1,180 @@
+{
+  "oldWordsUnchanged": 4961,
+  "oldAudioUnchanged": 19812,
+  "oldPronunciationEntriesUnchangedPerVoice": 4961,
+  "added": [
+    {
+      "id": "p20-210",
+      "word": "blank",
+      "cefr": [
+        "A2"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/13de15bec6f9f9f62a48dd5c.mp3",
+          "ex": "audio/generated/gb/b883439c4050eb547a101a76.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/ca73561efde88bf3b0a31f22.mp3",
+          "ex": "audio/generated/us/96026e7e78e7e5c71b429c68.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-211",
+      "word": "CD",
+      "cefr": [
+        "A1"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/51a38523fc9c29864d1e0a8f.mp3",
+          "ex": "audio/generated/gb/d5b92669ba24eaf8c6684a2b.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/4b7f884bcb8a491635e5a4c3.mp3",
+          "ex": "audio/generated/us/e7055204b291e8dcc446f975.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-212",
+      "word": "chairman",
+      "cefr": [
+        "B2"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/05037af7519d698a9fa207f0.mp3",
+          "ex": "audio/generated/gb/f227451de4ce12d47205c952.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/81e8278e28d97486d50c726d.mp3",
+          "ex": "audio/generated/us/fe6a5d78953c6fadd47ef8ea.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-213",
+      "word": "disc",
+      "cefr": [
+        "B2"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/5e36f877b1a4f2eccf5c05c8.mp3",
+          "ex": "audio/generated/gb/4b22cd8de932a3b40065197c.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/130f5776f5bc4fa39f03f2ae.mp3",
+          "ex": "audio/generated/us/795bca128412814d4c201510.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-214",
+      "word": "DVD",
+      "cefr": [
+        "A1"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/23af4b11263e342b560be2d7.mp3",
+          "ex": "audio/generated/gb/c5fda7dfb03595bb7a6d3b4e.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/9fe6aba98a752b96585b533b.mp3",
+          "ex": "audio/generated/us/bd923e2abdc55b43b287d9da.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-215",
+      "word": "gentleman",
+      "cefr": [
+        "B1"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/26f77770e6f5c8939e68ba03.mp3",
+          "ex": "audio/generated/gb/487087016e87df5399368e5e.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/84a412fb16048e437c15bf55.mp3",
+          "ex": "audio/generated/us/3acf5ea91ded30a774fe7927.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-216",
+      "word": "policeman",
+      "cefr": [
+        "A1"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/c38df013e5a6faf25ab0bc2d.mp3",
+          "ex": "audio/generated/gb/ac742073c6f6aab61f8d62db.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/7b256089dbb0599fff73c0b6.mp3",
+          "ex": "audio/generated/us/78cb3b6f8b344e4e85346875.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-217",
+      "word": "sculpture",
+      "cefr": [
+        "B1"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/2eb00ddac4143ae2857dcb1a.mp3",
+          "ex": "audio/generated/gb/b38bb966e193c69985c3f513.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/cc5feb134c5acb4f85a1b9ed.mp3",
+          "ex": "audio/generated/us/58f2e01dfdd8ddae6fa3209a.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-218",
+      "word": "stiff",
+      "cefr": [
+        "B2"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/485606772f716ea5c5fedc1f.mp3",
+          "ex": "audio/generated/gb/d5b0d850b6e3094bb6b33f3e.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/463df343374401b07198548d.mp3",
+          "ex": "audio/generated/us/3e4fd01bea13998eb66a6ef6.mp3"
+        }
+      }
+    },
+    {
+      "id": "p20-219",
+      "word": "tape",
+      "cefr": [
+        "B1"
+      ],
+      "audio": {
+        "gb": {
+          "w": "audio/generated/gb/312d4efd98c91f251c6dcaa2.mp3",
+          "ex": "audio/generated/gb/4e7e5152f4751d876ffd5b3b.mp3"
+        },
+        "us": {
+          "w": "audio/generated/us/6c0be775b17d5668500b9f26.mp3",
+          "ex": "audio/generated/us/edde384079ff775196d0bd18.mp3"
+        }
+      }
+    }
+  ],
+  "newAudioFiles": 40,
+  "totalWords": 4971,
+  "finalDaySize": 21
+}

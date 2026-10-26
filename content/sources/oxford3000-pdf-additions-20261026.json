@@ -1,0 +1,94 @@
+{
+  "source": "oxford3000-pdf-20200706",
+  "pdfSha256": "ddaf936ef29f5e67c2df0ab3b547fd5bf9d9631f900c3cf55c195cb9c5ad0b40",
+  "references": [
+    {
+      "word": "blank",
+      "pos": "adjective",
+      "ox5000": "a2",
+      "source": "oxford3000-pdf-20200706",
+      "page": 2,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=2"
+    },
+    {
+      "word": "blank",
+      "pos": "noun",
+      "ox5000": "a2",
+      "source": "oxford3000-pdf-20200706",
+      "page": 2,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=2"
+    },
+    {
+      "word": "CD",
+      "pos": "noun",
+      "ox5000": "a1",
+      "source": "oxford3000-pdf-20200706",
+      "page": 2,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=2"
+    },
+    {
+      "word": "chairman",
+      "pos": "noun",
+      "ox5000": "b2",
+      "source": "oxford3000-pdf-20200706",
+      "page": 2,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=2"
+    },
+    {
+      "word": "disc",
+      "pos": "noun",
+      "ox5000": "b2",
+      "source": "oxford3000-pdf-20200706",
+      "page": 3,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=3"
+    },
+    {
+      "word": "DVD",
+      "pos": "noun",
+      "ox5000": "a1",
+      "source": "oxford3000-pdf-20200706",
+      "page": 4,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=4"
+    },
+    {
+      "word": "gentleman",
+      "pos": "noun",
+      "ox5000": "b1",
+      "source": "oxford3000-pdf-20200706",
+      "page": 5,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=5"
+    },
+    {
+      "word": "policeman",
+      "pos": "noun",
+      "ox5000": "a1",
+      "source": "oxford3000-pdf-20200706",
+      "page": 8,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=8"
+    },
+    {
+      "word": "sculpture",
+      "pos": "noun",
+      "ox5000": "b1",
+      "source": "oxford3000-pdf-20200706",
+      "page": 9,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=9"
+    },
+    {
+      "word": "stiff",
+      "pos": "adjective",
+      "ox5000": "b2",
+      "source": "oxford3000-pdf-20200706",
+      "page": 10,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=10"
+    },
+    {
+      "word": "tape",
+      "pos": "noun",
+      "ox5000": "b1",
+      "source": "oxford3000-pdf-20200706",
+      "page": 10,
+      "url": "https://www.oxfordlearnersdictionaries.com/us/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf#page=10"
+    }
+  ]
+}

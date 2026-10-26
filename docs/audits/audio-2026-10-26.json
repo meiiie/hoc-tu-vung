@@ -1,0 +1,12 @@
+{
+  "references": 19884,
+  "uniqueFiles": 19852,
+  "bytes": 172938583,
+  "decoded": 19852,
+  "failures": [],
+  "voices": {
+    "gb": 9926,
+    "us": 9926
+  },
+  "note": "Decode, duration, energy and checksum checks; not a human pronunciation review."
+}

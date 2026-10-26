@@ -1,5 +1,5 @@
 {
- "name": "Học Từ Vựng – Oxford 3000",
+ "name": "Học Từ Vựng",
  "short_name": "Học Từ",
  "start_url": "./",
  "scope": "./",
@@ -39,5 +39,5 @@
    "purpose": "maskable"
   }
  ],
- "description": "Flashcard Oxford 3000 cho IELTS"
+ "description": "Flashcard Oxford 5000 cho IELTS"
 }

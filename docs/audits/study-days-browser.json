@@ -1,0 +1,21 @@
+{
+  "migrationAndCoverage": {
+    "total": 4971,
+    "selected": 25,
+    "days": 199,
+    "last": 21,
+    "filter": {
+      "day": "day01"
+    },
+    "goal": 25,
+    "schema": 11
+  },
+  "sameDayExtraGroup": "25 distinct words in day02, 2 in day03 today; undo, return, reload retain counts and schedules",
+  "groupBudget": "smaller pace is scoped to the group; narrower filters do not reset its usage",
+  "lastGroup": "day199 has 21 words; quick selector reaches every group, learning stays inside selected scope",
+  "globalDueAndPause": "due card outside selected group remains available with empty filter and zero new-word goal",
+  "practiceAndUndo": "free practice does not grade FSRS; undo restores full review log at 20,000 entries",
+  "offline": "199 groups, chosen group and real progress survive offline reload",
+  "pageErrors": [],
+  "explicitReset": "reset clears schedule and word/direction history together in the isolated test profile"
+}

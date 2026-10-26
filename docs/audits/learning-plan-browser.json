@@ -1,0 +1,33 @@
+{
+  "migrationAndCoverage": {
+    "total": 4961,
+    "selected": 4961,
+    "dayChips": 0,
+    "counts": {
+      "n": 10,
+      "b": 1,
+      "l": 0,
+      "r": 0
+    },
+    "filter": {},
+    "order": 4961,
+    "goal": 10
+  },
+  "learnerChoice": "C1 filter is optional; starred C1 enters a learning round and scheduled suggestions without prior A1 progress",
+  "wordBudgetAndUndo": "10 distinct words, undo/regrade, filter switch, legacy route redirect and reload preserve the cap",
+  "globalDueAndPause": "due card outside practice scope appears even with empty practice scope and zero new-word limit",
+  "flashcardModes": "free success does not reschedule cards; explicit link opens scheduled review",
+  "undoAtLogCapacity": "undo restores the oldest review event when the 20,000-event buffer rolls over",
+  "pauseSetting": "visible 0 option pauses all new introductions",
+  "v9Migration": {
+    "removed": true,
+    "keptFilter": true,
+    "sameSchedule": true,
+    "sameQuota": true,
+    "sameHistory": true,
+    "sameNotes": true
+  },
+  "offline": "all 4,961 suggestions and progress survive offline reload",
+  "pageErrors": [],
+  "explicitReset": "reset clears schedule, introduction history and quota together"
+}

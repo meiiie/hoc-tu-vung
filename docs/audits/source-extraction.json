@@ -1,0 +1,8 @@
+{
+  "source": "https://kaikki.org/viwiktionary/rawdata.html",
+  "dumpDate": "2026-10-02",
+  "dumpSha256": "c3cea49225e0a8d601393807cb041af7eb394a25d008ae6b69db6bb829790d4a",
+  "projectionSha256": "e14dc2908002611e38900f2d1bd4034837959b837a0b23b99b48aca33ad14292",
+  "englishEntries": 8576,
+  "filter": "lang_code == en, then Oxford snapshot headword membership"
+}

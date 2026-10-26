@@ -1,0 +1,12009 @@
+{
+  "source": "User-supplied Oxford University Press PDF, The Oxford 3000",
+  "sha256": "ddaf936ef29f5e67c2df0ab3b547fd5bf9d9631f900c3cf55c195cb9c5ad0b40",
+  "pages": 11,
+  "creationMetadata": "2020-07-06",
+  "parseNotes": "3000 entry starts; continuation lines excluded; superscript homograph IDs retained in headword. Facts-only projection, no definitions.",
+  "entries": [
+    {
+      "headword": "a, an",
+      "page": 1
+    },
+    {
+      "headword": "abandon",
+      "page": 1
+    },
+    {
+      "headword": "ability",
+      "page": 1
+    },
+    {
+      "headword": "able",
+      "page": 1
+    },
+    {
+      "headword": "about",
+      "page": 1
+    },
+    {
+      "headword": "above",
+      "page": 1
+    },
+    {
+      "headword": "abroad",
+      "page": 1
+    },
+    {
+      "headword": "absolute",
+      "page": 1
+    },
+    {
+      "headword": "absolutely",
+      "page": 1
+    },
+    {
+      "headword": "academic",
+      "page": 1
+    },
+    {
+      "headword": "accept",
+      "page": 1
+    },
+    {
+      "headword": "acceptable",
+      "page": 1
+    },
+    {
+      "headword": "access",
+      "page": 1
+    },
+    {
+      "headword": "accident",
+      "page": 1
+    },
+    {
+      "headword": "accommodation",
+      "page": 1
+    },
+    {
+      "headword": "accompany",
+      "page": 1
+    },
+    {
+      "headword": "according to",
+      "page": 1
+    },
+    {
+      "headword": "account",
+      "page": 1
+    },
+    {
+      "headword": "accurate",
+      "page": 1
+    },
+    {
+      "headword": "accuse",
+      "page": 1
+    },
+    {
+      "headword": "achieve",
+      "page": 1
+    },
+    {
+      "headword": "achievement",
+      "page": 1
+    },
+    {
+      "headword": "acknowledge",
+      "page": 1
+    },
+    {
+      "headword": "acquire",
+      "page": 1
+    },
+    {
+      "headword": "across",
+      "page": 1
+    },
+    {
+      "headword": "act",
+      "page": 1
+    },
+    {
+      "headword": "action",
+      "page": 1
+    },
+    {
+      "headword": "active",
+      "page": 1
+    },
+    {
+      "headword": "activity",
+      "page": 1
+    },
+    {
+      "headword": "actor",
+      "page": 1
+    },
+    {
+      "headword": "actress",
+      "page": 1
+    },
+    {
+      "headword": "actual",
+      "page": 1
+    },
+    {
+      "headword": "actually",
+      "page": 1
+    },
+    {
+      "headword": "ad",
+      "page": 1
+    },
+    {
+      "headword": "adapt",
+      "page": 1
+    },
+    {
+      "headword": "add",
+      "page": 1
+    },
+    {
+      "headword": "addition",
+      "page": 1
+    },
+    {
+      "headword": "additional",
+      "page": 1
+    },
+    {
+      "headword": "address",
+      "page": 1
+    },
+    {
+      "headword": "administration",
+      "page": 1
+    },
+    {
+      "headword": "admire",
+      "page": 1
+    },
+    {
+      "headword": "admit",
+      "page": 1
+    },
+    {
+      "headword": "adopt",
+      "page": 1
+    },
+    {
+      "headword": "adult",
+      "page": 1
+    },
+    {
+      "headword": "advance",
+      "page": 1
+    },
+    {
+      "headword": "advanced",
+      "page": 1
+    },
+    {
+      "headword": "advantage",
+      "page": 1
+    },
+    {
+      "headword": "adventure",
+      "page": 1
+    },
+    {
+      "headword": "advertise",
+      "page": 1
+    },
+    {
+      "headword": "advertisement",
+      "page": 1
+    },
+    {
+      "headword": "advertising",
+      "page": 1
+    },
+    {
+      "headword": "advice",
+      "page": 1
+    },
+    {
+      "headword": "advise",
+      "page": 1
+    },
+    {
+      "headword": "affair",
+      "page": 1
+    },
+    {
+      "headword": "affect",
+      "page": 1
+    },
+    {
+      "headword": "afford",
+      "page": 1
+    },
+    {
+      "headword": "afraid",
+      "page": 1
+    },
+    {
+      "headword": "after",
+      "page": 1
+    },
+    {
+      "headword": "afternoon",
+      "page": 1
+    },
+    {
+      "headword": "afterwards",
+      "page": 1
+    },
+    {
+      "headword": "again",
+      "page": 1
+    },
+    {
+      "headword": "against",
+      "page": 1
+    },
+    {
+      "headword": "age",
+      "page": 1
+    },
+    {
+      "headword": "aged",
+      "page": 1
+    },
+    {
+      "headword": "agency",
+      "page": 1
+    },
+    {
+      "headword": "agenda",
+      "page": 1
+    },
+    {
+      "headword": "agent",
+      "page": 1
+    },
+    {
+      "headword": "aggressive",
+      "page": 1
+    },
+    {
+      "headword": "ago",
+      "page": 1
+    },
+    {
+      "headword": "agree",
+      "page": 1
+    },
+    {
+      "headword": "agreement",
+      "page": 1
+    },
+    {
+      "headword": "ah",
+      "page": 1
+    },
+    {
+      "headword": "ahead",
+      "page": 1
+    },
+    {
+      "headword": "aid",
+      "page": 1
+    },
+    {
+      "headword": "aim",
+      "page": 1
+    },
+    {
+      "headword": "air",
+      "page": 1
+    },
+    {
+      "headword": "aircraft",
+      "page": 1
+    },
+    {
+      "headword": "airline",
+      "page": 1
+    },
+    {
+      "headword": "airport",
+      "page": 1
+    },
+    {
+      "headword": "alarm",
+      "page": 1
+    },
+    {
+      "headword": "album",
+      "page": 1
+    },
+    {
+      "headword": "alcohol",
+      "page": 1
+    },
+    {
+      "headword": "alcoholic",
+      "page": 1
+    },
+    {
+      "headword": "alive",
+      "page": 1
+    },
+    {
+      "headword": "all",
+      "page": 1
+    },
+    {
+      "headword": "all right",
+      "page": 1
+    },
+    {
+      "headword": "allow",
+      "page": 1
+    },
+    {
+      "headword": "almost",
+      "page": 1
+    },
+    {
+      "headword": "alone",
+      "page": 1
+    },
+    {
+      "headword": "along",
+      "page": 1
+    },
+    {
+      "headword": "already",
+      "page": 1
+    },
+    {
+      "headword": "also",
+      "page": 1
+    },
+    {
+      "headword": "alter",
+      "page": 1
+    },
+    {
+      "headword": "alternative",
+      "page": 1
+    },
+    {
+      "headword": "although",
+      "page": 1
+    },
+    {
+      "headword": "always",
+      "page": 1
+    },
+    {
+      "headword": "amazed",
+      "page": 1
+    },
+    {
+      "headword": "amazing",
+      "page": 1
+    },
+    {
+      "headword": "ambition",
+      "page": 1
+    },
+    {
+      "headword": "ambitious",
+      "page": 1
+    },
+    {
+      "headword": "among",
+      "page": 1
+    },
+    {
+      "headword": "amount",
+      "page": 1
+    },
+    {
+      "headword": "analyse",
+      "page": 1
+    },
+    {
+      "headword": "analysis",
+      "page": 1
+    },
+    {
+      "headword": "ancient",
+      "page": 1
+    },
+    {
+      "headword": "and",
+      "page": 1
+    },
+    {
+      "headword": "anger",
+      "page": 1
+    },
+    {
+      "headword": "angle",
+      "page": 1
+    },
+    {
+      "headword": "angry",
+      "page": 1
+    },
+    {
+      "headword": "animal",
+      "page": 1
+    },
+    {
+      "headword": "ankle",
+      "page": 1
+    },
+    {
+      "headword": "anniversary",
+      "page": 1
+    },
+    {
+      "headword": "announce",
+      "page": 1
+    },
+    {
+      "headword": "announcement",
+      "page": 1
+    },
+    {
+      "headword": "annoy",
+      "page": 1
+    },
+    {
+      "headword": "annoyed",
+      "page": 1
+    },
+    {
+      "headword": "annoying",
+      "page": 1
+    },
+    {
+      "headword": "annual",
+      "page": 1
+    },
+    {
+      "headword": "another",
+      "page": 1
+    },
+    {
+      "headword": "answer",
+      "page": 1
+    },
+    {
+      "headword": "anxious",
+      "page": 1
+    },
+    {
+      "headword": "any",
+      "page": 1
+    },
+    {
+      "headword": "anybody",
+      "page": 1
+    },
+    {
+      "headword": "any more",
+      "page": 1
+    },
+    {
+      "headword": "anyone",
+      "page": 1
+    },
+    {
+      "headword": "anything",
+      "page": 1
+    },
+    {
+      "headword": "anyway",
+      "page": 1
+    },
+    {
+      "headword": "anywhere",
+      "page": 1
+    },
+    {
+      "headword": "apart",
+      "page": 1
+    },
+    {
+      "headword": "apartment",
+      "page": 1
+    },
+    {
+      "headword": "apologize",
+      "page": 1
+    },
+    {
+      "headword": "app",
+      "page": 1
+    },
+    {
+      "headword": "apparent",
+      "page": 1
+    },
+    {
+      "headword": "apparently",
+      "page": 1
+    },
+    {
+      "headword": "appeal",
+      "page": 1
+    },
+    {
+      "headword": "appear",
+      "page": 1
+    },
+    {
+      "headword": "appearance",
+      "page": 1
+    },
+    {
+      "headword": "apple",
+      "page": 1
+    },
+    {
+      "headword": "application",
+      "page": 1
+    },
+    {
+      "headword": "apply",
+      "page": 1
+    },
+    {
+      "headword": "appointment",
+      "page": 1
+    },
+    {
+      "headword": "appreciate",
+      "page": 1
+    },
+    {
+      "headword": "approach",
+      "page": 1
+    },
+    {
+      "headword": "appropriate",
+      "page": 1
+    },
+    {
+      "headword": "approval",
+      "page": 1
+    },
+    {
+      "headword": "approve",
+      "page": 1
+    },
+    {
+      "headword": "approximately",
+      "page": 1
+    },
+    {
+      "headword": "April",
+      "page": 1
+    },
+    {
+      "headword": "architect",
+      "page": 1
+    },
+    {
+      "headword": "architecture",
+      "page": 1
+    },
+    {
+      "headword": "area",
+      "page": 1
+    },
+    {
+      "headword": "argue",
+      "page": 1
+    },
+    {
+      "headword": "argument",
+      "page": 1
+    },
+    {
+      "headword": "arise",
+      "page": 1
+    },
+    {
+      "headword": "arm",
+      "page": 1
+    },
+    {
+      "headword": "armed",
+      "page": 1
+    },
+    {
+      "headword": "arms",
+      "page": 1
+    },
+    {
+      "headword": "army",
+      "page": 1
+    },
+    {
+      "headword": "around",
+      "page": 1
+    },
+    {
+      "headword": "arrange",
+      "page": 1
+    },
+    {
+      "headword": "arrangement",
+      "page": 1
+    },
+    {
+      "headword": "arrest",
+      "page": 1
+    },
+    {
+      "headword": "arrival",
+      "page": 1
+    },
+    {
+      "headword": "arrive",
+      "page": 1
+    },
+    {
+      "headword": "art",
+      "page": 1
+    },
+    {
+      "headword": "article",
+      "page": 1
+    },
+    {
+      "headword": "artificial",
+      "page": 1
+    },
+    {
+      "headword": "artist",
+      "page": 1
+    },
+    {
+      "headword": "artistic",
+      "page": 1
+    },
+    {
+      "headword": "as",
+      "page": 1
+    },
+    {
+      "headword": "ashamed",
+      "page": 1
+    },
+    {
+      "headword": "ask",
+      "page": 1
+    },
+    {
+      "headword": "asleep",
+      "page": 1
+    },
+    {
+      "headword": "aspect",
+      "page": 1
+    },
+    {
+      "headword": "assess",
+      "page": 1
+    },
+    {
+      "headword": "assessment",
+      "page": 1
+    },
+    {
+      "headword": "assignment",
+      "page": 1
+    },
+    {
+      "headword": "assist",
+      "page": 1
+    },
+    {
+      "headword": "assistant",
+      "page": 1
+    },
+    {
+      "headword": "associate",
+      "page": 1
+    },
+    {
+      "headword": "associated",
+      "page": 1
+    },
+    {
+      "headword": "association",
+      "page": 1
+    },
+    {
+      "headword": "assume",
+      "page": 1
+    },
+    {
+      "headword": "at",
+      "page": 1
+    },
+    {
+      "headword": "athlete",
+      "page": 1
+    },
+    {
+      "headword": "atmosphere",
+      "page": 1
+    },
+    {
+      "headword": "attach",
+      "page": 1
+    },
+    {
+      "headword": "attack",
+      "page": 1
+    },
+    {
+      "headword": "attempt",
+      "page": 1
+    },
+    {
+      "headword": "attend",
+      "page": 1
+    },
+    {
+      "headword": "attention",
+      "page": 1
+    },
+    {
+      "headword": "attitude",
+      "page": 1
+    },
+    {
+      "headword": "attract",
+      "page": 1
+    },
+    {
+      "headword": "attraction",
+      "page": 1
+    },
+    {
+      "headword": "attractive",
+      "page": 1
+    },
+    {
+      "headword": "audience",
+      "page": 1
+    },
+    {
+      "headword": "August",
+      "page": 1
+    },
+    {
+      "headword": "aunt",
+      "page": 1
+    },
+    {
+      "headword": "author",
+      "page": 1
+    },
+    {
+      "headword": "authority",
+      "page": 1
+    },
+    {
+      "headword": "autumn",
+      "page": 1
+    },
+    {
+      "headword": "available",
+      "page": 1
+    },
+    {
+      "headword": "average",
+      "page": 1
+    },
+    {
+      "headword": "avoid",
+      "page": 1
+    },
+    {
+      "headword": "award",
+      "page": 1
+    },
+    {
+      "headword": "aware",
+      "page": 1
+    },
+    {
+      "headword": "away",
+      "page": 1
+    },
+    {
+      "headword": "awful",
+      "page": 1
+    },
+    {
+      "headword": "baby",
+      "page": 1
+    },
+    {
+      "headword": "back",
+      "page": 1
+    },
+    {
+      "headword": "background",
+      "page": 1
+    },
+    {
+      "headword": "backwards",
+      "page": 1
+    },
+    {
+      "headword": "bacteria",
+      "page": 1
+    },
+    {
+      "headword": "bad",
+      "page": 1
+    },
+    {
+      "headword": "badly",
+      "page": 1
+    },
+    {
+      "headword": "bag",
+      "page": 1
+    },
+    {
+      "headword": "bake",
+      "page": 1
+    },
+    {
+      "headword": "balance",
+      "page": 1
+    },
+    {
+      "headword": "ball",
+      "page": 1
+    },
+    {
+      "headword": "ban",
+      "page": 1
+    },
+    {
+      "headword": "banana",
+      "page": 1
+    },
+    {
+      "headword": "band",
+      "page": 1
+    },
+    {
+      "headword": "bank (money)",
+      "page": 1
+    },
+    {
+      "headword": "bank (river)",
+      "page": 1
+    },
+    {
+      "headword": "bar",
+      "page": 1
+    },
+    {
+      "headword": "barrier",
+      "page": 1
+    },
+    {
+      "headword": "base",
+      "page": 1
+    },
+    {
+      "headword": "baseball",
+      "page": 1
+    },
+    {
+      "headword": "based",
+      "page": 1
+    },
+    {
+      "headword": "basic",
+      "page": 1
+    },
+    {
+      "headword": "basically",
+      "page": 1
+    },
+    {
+      "headword": "basis",
+      "page": 1
+    },
+    {
+      "headword": "basketball",
+      "page": 1
+    },
+    {
+      "headword": "bath",
+      "page": 1
+    },
+    {
+      "headword": "bathroom",
+      "page": 1
+    },
+    {
+      "headword": "battery",
+      "page": 1
+    },
+    {
+      "headword": "battle",
+      "page": 1
+    },
+    {
+      "headword": "be",
+      "page": 1
+    },
+    {
+      "headword": "beach",
+      "page": 1
+    },
+    {
+      "headword": "bean",
+      "page": 1
+    },
+    {
+      "headword": "bear (deal with)",
+      "page": 1
+    },
+    {
+      "headword": "bear (animal)",
+      "page": 1
+    },
+    {
+      "headword": "beat",
+      "page": 1
+    },
+    {
+      "headword": "beautiful",
+      "page": 1
+    },
+    {
+      "headword": "beauty",
+      "page": 1
+    },
+    {
+      "headword": "because",
+      "page": 1
+    },
+    {
+      "headword": "become",
+      "page": 1
+    },
+    {
+      "headword": "bed",
+      "page": 1
+    },
+    {
+      "headword": "bedroom",
+      "page": 1
+    },
+    {
+      "headword": "bee",
+      "page": 1
+    },
+    {
+      "headword": "beef",
+      "page": 1
+    },
+    {
+      "headword": "beer",
+      "page": 1
+    },
+    {
+      "headword": "before",
+      "page": 2
+    },
+    {
+      "headword": "beg",
+      "page": 2
+    },
+    {
+      "headword": "begin",
+      "page": 2
+    },
+    {
+      "headword": "beginning",
+      "page": 2
+    },
+    {
+      "headword": "behave",
+      "page": 2
+    },
+    {
+      "headword": "behaviour",
+      "page": 2
+    },
+    {
+      "headword": "behind",
+      "page": 2
+    },
+    {
+      "headword": "being",
+      "page": 2
+    },
+    {
+      "headword": "belief",
+      "page": 2
+    },
+    {
+      "headword": "believe",
+      "page": 2
+    },
+    {
+      "headword": "bell",
+      "page": 2
+    },
+    {
+      "headword": "belong",
+      "page": 2
+    },
+    {
+      "headword": "below",
+      "page": 2
+    },
+    {
+      "headword": "belt",
+      "page": 2
+    },
+    {
+      "headword": "bend",
+      "page": 2
+    },
+    {
+      "headword": "benefit",
+      "page": 2
+    },
+    {
+      "headword": "bent",
+      "page": 2
+    },
+    {
+      "headword": "best",
+      "page": 2
+    },
+    {
+      "headword": "bet",
+      "page": 2
+    },
+    {
+      "headword": "better",
+      "page": 2
+    },
+    {
+      "headword": "between",
+      "page": 2
+    },
+    {
+      "headword": "beyond",
+      "page": 2
+    },
+    {
+      "headword": "bicycle",
+      "page": 2
+    },
+    {
+      "headword": "big",
+      "page": 2
+    },
+    {
+      "headword": "bike",
+      "page": 2
+    },
+    {
+      "headword": "bill",
+      "page": 2
+    },
+    {
+      "headword": "billion",
+      "page": 2
+    },
+    {
+      "headword": "bin",
+      "page": 2
+    },
+    {
+      "headword": "biology",
+      "page": 2
+    },
+    {
+      "headword": "bird",
+      "page": 2
+    },
+    {
+      "headword": "birth",
+      "page": 2
+    },
+    {
+      "headword": "birthday",
+      "page": 2
+    },
+    {
+      "headword": "biscuit",
+      "page": 2
+    },
+    {
+      "headword": "bit",
+      "page": 2
+    },
+    {
+      "headword": "bite",
+      "page": 2
+    },
+    {
+      "headword": "bitter",
+      "page": 2
+    },
+    {
+      "headword": "black",
+      "page": 2
+    },
+    {
+      "headword": "blame",
+      "page": 2
+    },
+    {
+      "headword": "blank",
+      "page": 2
+    },
+    {
+      "headword": "blind",
+      "page": 2
+    },
+    {
+      "headword": "block",
+      "page": 2
+    },
+    {
+      "headword": "blog",
+      "page": 2
+    },
+    {
+      "headword": "blonde",
+      "page": 2
+    },
+    {
+      "headword": "blood",
+      "page": 2
+    },
+    {
+      "headword": "blow",
+      "page": 2
+    },
+    {
+      "headword": "blue",
+      "page": 2
+    },
+    {
+      "headword": "board",
+      "page": 2
+    },
+    {
+      "headword": "boat",
+      "page": 2
+    },
+    {
+      "headword": "body",
+      "page": 2
+    },
+    {
+      "headword": "boil",
+      "page": 2
+    },
+    {
+      "headword": "bomb",
+      "page": 2
+    },
+    {
+      "headword": "bond",
+      "page": 2
+    },
+    {
+      "headword": "bone",
+      "page": 2
+    },
+    {
+      "headword": "book",
+      "page": 2
+    },
+    {
+      "headword": "boot",
+      "page": 2
+    },
+    {
+      "headword": "border",
+      "page": 2
+    },
+    {
+      "headword": "bored",
+      "page": 2
+    },
+    {
+      "headword": "boring",
+      "page": 2
+    },
+    {
+      "headword": "born",
+      "page": 2
+    },
+    {
+      "headword": "borrow",
+      "page": 2
+    },
+    {
+      "headword": "boss",
+      "page": 2
+    },
+    {
+      "headword": "both",
+      "page": 2
+    },
+    {
+      "headword": "bother",
+      "page": 2
+    },
+    {
+      "headword": "bottle",
+      "page": 2
+    },
+    {
+      "headword": "bottom",
+      "page": 2
+    },
+    {
+      "headword": "bowl",
+      "page": 2
+    },
+    {
+      "headword": "box",
+      "page": 2
+    },
+    {
+      "headword": "boy",
+      "page": 2
+    },
+    {
+      "headword": "boyfriend",
+      "page": 2
+    },
+    {
+      "headword": "brain",
+      "page": 2
+    },
+    {
+      "headword": "branch",
+      "page": 2
+    },
+    {
+      "headword": "brand",
+      "page": 2
+    },
+    {
+      "headword": "brave",
+      "page": 2
+    },
+    {
+      "headword": "bread",
+      "page": 2
+    },
+    {
+      "headword": "break",
+      "page": 2
+    },
+    {
+      "headword": "breakfast",
+      "page": 2
+    },
+    {
+      "headword": "breast",
+      "page": 2
+    },
+    {
+      "headword": "breath",
+      "page": 2
+    },
+    {
+      "headword": "breathe",
+      "page": 2
+    },
+    {
+      "headword": "breathing",
+      "page": 2
+    },
+    {
+      "headword": "bride",
+      "page": 2
+    },
+    {
+      "headword": "bridge",
+      "page": 2
+    },
+    {
+      "headword": "brief",
+      "page": 2
+    },
+    {
+      "headword": "bright",
+      "page": 2
+    },
+    {
+      "headword": "brilliant",
+      "page": 2
+    },
+    {
+      "headword": "bring",
+      "page": 2
+    },
+    {
+      "headword": "broad",
+      "page": 2
+    },
+    {
+      "headword": "broadcast",
+      "page": 2
+    },
+    {
+      "headword": "broken",
+      "page": 2
+    },
+    {
+      "headword": "brother",
+      "page": 2
+    },
+    {
+      "headword": "brown",
+      "page": 2
+    },
+    {
+      "headword": "brush",
+      "page": 2
+    },
+    {
+      "headword": "bubble",
+      "page": 2
+    },
+    {
+      "headword": "budget",
+      "page": 2
+    },
+    {
+      "headword": "build",
+      "page": 2
+    },
+    {
+      "headword": "building",
+      "page": 2
+    },
+    {
+      "headword": "bullet",
+      "page": 2
+    },
+    {
+      "headword": "bunch",
+      "page": 2
+    },
+    {
+      "headword": "burn",
+      "page": 2
+    },
+    {
+      "headword": "bury",
+      "page": 2
+    },
+    {
+      "headword": "bus",
+      "page": 2
+    },
+    {
+      "headword": "bush",
+      "page": 2
+    },
+    {
+      "headword": "business",
+      "page": 2
+    },
+    {
+      "headword": "businessman",
+      "page": 2
+    },
+    {
+      "headword": "busy",
+      "page": 2
+    },
+    {
+      "headword": "but",
+      "page": 2
+    },
+    {
+      "headword": "butter",
+      "page": 2
+    },
+    {
+      "headword": "button",
+      "page": 2
+    },
+    {
+      "headword": "buy",
+      "page": 2
+    },
+    {
+      "headword": "by",
+      "page": 2
+    },
+    {
+      "headword": "bye",
+      "page": 2
+    },
+    {
+      "headword": "cable",
+      "page": 2
+    },
+    {
+      "headword": "cafe",
+      "page": 2
+    },
+    {
+      "headword": "cake",
+      "page": 2
+    },
+    {
+      "headword": "calculate",
+      "page": 2
+    },
+    {
+      "headword": "call",
+      "page": 2
+    },
+    {
+      "headword": "calm",
+      "page": 2
+    },
+    {
+      "headword": "camera",
+      "page": 2
+    },
+    {
+      "headword": "camp",
+      "page": 2
+    },
+    {
+      "headword": "campaign",
+      "page": 2
+    },
+    {
+      "headword": "camping",
+      "page": 2
+    },
+    {
+      "headword": "campus",
+      "page": 2
+    },
+    {
+      "headword": "can1",
+      "page": 2
+    },
+    {
+      "headword": "can2",
+      "page": 2
+    },
+    {
+      "headword": "cancel",
+      "page": 2
+    },
+    {
+      "headword": "cancer",
+      "page": 2
+    },
+    {
+      "headword": "candidate",
+      "page": 2
+    },
+    {
+      "headword": "cannot",
+      "page": 2
+    },
+    {
+      "headword": "cap",
+      "page": 2
+    },
+    {
+      "headword": "capable",
+      "page": 2
+    },
+    {
+      "headword": "capacity",
+      "page": 2
+    },
+    {
+      "headword": "capital",
+      "page": 2
+    },
+    {
+      "headword": "captain",
+      "page": 2
+    },
+    {
+      "headword": "capture",
+      "page": 2
+    },
+    {
+      "headword": "car",
+      "page": 2
+    },
+    {
+      "headword": "card",
+      "page": 2
+    },
+    {
+      "headword": "care",
+      "page": 2
+    },
+    {
+      "headword": "career",
+      "page": 2
+    },
+    {
+      "headword": "careful",
+      "page": 2
+    },
+    {
+      "headword": "carefully",
+      "page": 2
+    },
+    {
+      "headword": "careless",
+      "page": 2
+    },
+    {
+      "headword": "carpet",
+      "page": 2
+    },
+    {
+      "headword": "carrot",
+      "page": 2
+    },
+    {
+      "headword": "carry",
+      "page": 2
+    },
+    {
+      "headword": "cartoon",
+      "page": 2
+    },
+    {
+      "headword": "case",
+      "page": 2
+    },
+    {
+      "headword": "cash",
+      "page": 2
+    },
+    {
+      "headword": "cast",
+      "page": 2
+    },
+    {
+      "headword": "castle",
+      "page": 2
+    },
+    {
+      "headword": "cat",
+      "page": 2
+    },
+    {
+      "headword": "catch",
+      "page": 2
+    },
+    {
+      "headword": "category",
+      "page": 2
+    },
+    {
+      "headword": "cause",
+      "page": 2
+    },
+    {
+      "headword": "CD",
+      "page": 2
+    },
+    {
+      "headword": "ceiling",
+      "page": 2
+    },
+    {
+      "headword": "celebrate",
+      "page": 2
+    },
+    {
+      "headword": "celebration",
+      "page": 2
+    },
+    {
+      "headword": "celebrity",
+      "page": 2
+    },
+    {
+      "headword": "cell",
+      "page": 2
+    },
+    {
+      "headword": "cent",
+      "page": 2
+    },
+    {
+      "headword": "central",
+      "page": 2
+    },
+    {
+      "headword": "centre",
+      "page": 2
+    },
+    {
+      "headword": "century",
+      "page": 2
+    },
+    {
+      "headword": "ceremony",
+      "page": 2
+    },
+    {
+      "headword": "certain",
+      "page": 2
+    },
+    {
+      "headword": "certainly",
+      "page": 2
+    },
+    {
+      "headword": "chain",
+      "page": 2
+    },
+    {
+      "headword": "chair",
+      "page": 2
+    },
+    {
+      "headword": "chairman",
+      "page": 2
+    },
+    {
+      "headword": "challenge",
+      "page": 2
+    },
+    {
+      "headword": "champion",
+      "page": 2
+    },
+    {
+      "headword": "chance",
+      "page": 2
+    },
+    {
+      "headword": "change",
+      "page": 2
+    },
+    {
+      "headword": "channel",
+      "page": 2
+    },
+    {
+      "headword": "chapter",
+      "page": 2
+    },
+    {
+      "headword": "character",
+      "page": 2
+    },
+    {
+      "headword": "characteristic",
+      "page": 2
+    },
+    {
+      "headword": "charge",
+      "page": 2
+    },
+    {
+      "headword": "charity",
+      "page": 2
+    },
+    {
+      "headword": "chart",
+      "page": 2
+    },
+    {
+      "headword": "chat",
+      "page": 2
+    },
+    {
+      "headword": "cheap",
+      "page": 2
+    },
+    {
+      "headword": "cheat",
+      "page": 2
+    },
+    {
+      "headword": "check",
+      "page": 2
+    },
+    {
+      "headword": "cheerful",
+      "page": 2
+    },
+    {
+      "headword": "cheese",
+      "page": 2
+    },
+    {
+      "headword": "chef",
+      "page": 2
+    },
+    {
+      "headword": "chemical",
+      "page": 2
+    },
+    {
+      "headword": "chemistry",
+      "page": 2
+    },
+    {
+      "headword": "chest",
+      "page": 2
+    },
+    {
+      "headword": "chicken",
+      "page": 2
+    },
+    {
+      "headword": "chief",
+      "page": 2
+    },
+    {
+      "headword": "child",
+      "page": 2
+    },
+    {
+      "headword": "childhood",
+      "page": 2
+    },
+    {
+      "headword": "chip",
+      "page": 2
+    },
+    {
+      "headword": "chocolate",
+      "page": 2
+    },
+    {
+      "headword": "choice",
+      "page": 2
+    },
+    {
+      "headword": "choose",
+      "page": 2
+    },
+    {
+      "headword": "church",
+      "page": 2
+    },
+    {
+      "headword": "cigarette",
+      "page": 2
+    },
+    {
+      "headword": "cinema",
+      "page": 2
+    },
+    {
+      "headword": "circle",
+      "page": 2
+    },
+    {
+      "headword": "circumstance",
+      "page": 2
+    },
+    {
+      "headword": "cite",
+      "page": 2
+    },
+    {
+      "headword": "citizen",
+      "page": 2
+    },
+    {
+      "headword": "city",
+      "page": 2
+    },
+    {
+      "headword": "civil",
+      "page": 2
+    },
+    {
+      "headword": "claim",
+      "page": 2
+    },
+    {
+      "headword": "class",
+      "page": 2
+    },
+    {
+      "headword": "classic",
+      "page": 2
+    },
+    {
+      "headword": "classical",
+      "page": 2
+    },
+    {
+      "headword": "classroom",
+      "page": 2
+    },
+    {
+      "headword": "clause",
+      "page": 2
+    },
+    {
+      "headword": "clean",
+      "page": 2
+    },
+    {
+      "headword": "clear",
+      "page": 2
+    },
+    {
+      "headword": "clearly",
+      "page": 2
+    },
+    {
+      "headword": "clever",
+      "page": 2
+    },
+    {
+      "headword": "click",
+      "page": 2
+    },
+    {
+      "headword": "client",
+      "page": 2
+    },
+    {
+      "headword": "climate",
+      "page": 2
+    },
+    {
+      "headword": "climb",
+      "page": 2
+    },
+    {
+      "headword": "clock",
+      "page": 2
+    },
+    {
+      "headword": "close1",
+      "page": 2
+    },
+    {
+      "headword": "close2",
+      "page": 2
+    },
+    {
+      "headword": "closed",
+      "page": 2
+    },
+    {
+      "headword": "closely",
+      "page": 2
+    },
+    {
+      "headword": "cloth",
+      "page": 2
+    },
+    {
+      "headword": "clothes",
+      "page": 2
+    },
+    {
+      "headword": "clothing",
+      "page": 2
+    },
+    {
+      "headword": "cloud",
+      "page": 2
+    },
+    {
+      "headword": "club",
+      "page": 2
+    },
+    {
+      "headword": "clue",
+      "page": 2
+    },
+    {
+      "headword": "coach",
+      "page": 2
+    },
+    {
+      "headword": "coal",
+      "page": 2
+    },
+    {
+      "headword": "coast",
+      "page": 2
+    },
+    {
+      "headword": "coat",
+      "page": 2
+    },
+    {
+      "headword": "code",
+      "page": 2
+    },
+    {
+      "headword": "coffee",
+      "page": 2
+    },
+    {
+      "headword": "coin",
+      "page": 2
+    },
+    {
+      "headword": "cold",
+      "page": 2
+    },
+    {
+      "headword": "collapse",
+      "page": 2
+    },
+    {
+      "headword": "colleague",
+      "page": 2
+    },
+    {
+      "headword": "collect",
+      "page": 2
+    },
+    {
+      "headword": "collection",
+      "page": 2
+    },
+    {
+      "headword": "college",
+      "page": 2
+    },
+    {
+      "headword": "colour",
+      "page": 2
+    },
+    {
+      "headword": "coloured",
+      "page": 2
+    },
+    {
+      "headword": "column",
+      "page": 2
+    },
+    {
+      "headword": "combination",
+      "page": 2
+    },
+    {
+      "headword": "combine",
+      "page": 2
+    },
+    {
+      "headword": "come",
+      "page": 2
+    },
+    {
+      "headword": "comedy",
+      "page": 2
+    },
+    {
+      "headword": "comfort",
+      "page": 2
+    },
+    {
+      "headword": "comfortable",
+      "page": 2
+    },
+    {
+      "headword": "command",
+      "page": 2
+    },
+    {
+      "headword": "comment",
+      "page": 2
+    },
+    {
+      "headword": "commercial",
+      "page": 2
+    },
+    {
+      "headword": "commission",
+      "page": 2
+    },
+    {
+      "headword": "commit",
+      "page": 2
+    },
+    {
+      "headword": "commitment",
+      "page": 2
+    },
+    {
+      "headword": "committee",
+      "page": 2
+    },
+    {
+      "headword": "common",
+      "page": 2
+    },
+    {
+      "headword": "commonly",
+      "page": 2
+    },
+    {
+      "headword": "communicate",
+      "page": 2
+    },
+    {
+      "headword": "communication",
+      "page": 2
+    },
+    {
+      "headword": "community",
+      "page": 2
+    },
+    {
+      "headword": "company",
+      "page": 2
+    },
+    {
+      "headword": "compare",
+      "page": 2
+    },
+    {
+      "headword": "comparison",
+      "page": 2
+    },
+    {
+      "headword": "compete",
+      "page": 2
+    },
+    {
+      "headword": "competition",
+      "page": 2
+    },
+    {
+      "headword": "competitive",
+      "page": 2
+    },
+    {
+      "headword": "competitor",
+      "page": 2
+    },
+    {
+      "headword": "complain",
+      "page": 2
+    },
+    {
+      "headword": "complaint",
+      "page": 2
+    },
+    {
+      "headword": "complete",
+      "page": 2
+    },
+    {
+      "headword": "completely",
+      "page": 2
+    },
+    {
+      "headword": "complex",
+      "page": 2
+    },
+    {
+      "headword": "complicated",
+      "page": 2
+    },
+    {
+      "headword": "component",
+      "page": 2
+    },
+    {
+      "headword": "computer",
+      "page": 3
+    },
+    {
+      "headword": "concentrate",
+      "page": 3
+    },
+    {
+      "headword": "concentration",
+      "page": 3
+    },
+    {
+      "headword": "concept",
+      "page": 3
+    },
+    {
+      "headword": "concern",
+      "page": 3
+    },
+    {
+      "headword": "concerned",
+      "page": 3
+    },
+    {
+      "headword": "concert",
+      "page": 3
+    },
+    {
+      "headword": "conclude",
+      "page": 3
+    },
+    {
+      "headword": "conclusion",
+      "page": 3
+    },
+    {
+      "headword": "condition",
+      "page": 3
+    },
+    {
+      "headword": "conduct",
+      "page": 3
+    },
+    {
+      "headword": "conference",
+      "page": 3
+    },
+    {
+      "headword": "confidence",
+      "page": 3
+    },
+    {
+      "headword": "confident",
+      "page": 3
+    },
+    {
+      "headword": "confirm",
+      "page": 3
+    },
+    {
+      "headword": "conflict",
+      "page": 3
+    },
+    {
+      "headword": "confuse",
+      "page": 3
+    },
+    {
+      "headword": "confused",
+      "page": 3
+    },
+    {
+      "headword": "confusing",
+      "page": 3
+    },
+    {
+      "headword": "connect",
+      "page": 3
+    },
+    {
+      "headword": "connected",
+      "page": 3
+    },
+    {
+      "headword": "connection",
+      "page": 3
+    },
+    {
+      "headword": "conscious",
+      "page": 3
+    },
+    {
+      "headword": "consequence",
+      "page": 3
+    },
+    {
+      "headword": "conservative",
+      "page": 3
+    },
+    {
+      "headword": "consider",
+      "page": 3
+    },
+    {
+      "headword": "consideration",
+      "page": 3
+    },
+    {
+      "headword": "consist",
+      "page": 3
+    },
+    {
+      "headword": "consistent",
+      "page": 3
+    },
+    {
+      "headword": "constant",
+      "page": 3
+    },
+    {
+      "headword": "constantly",
+      "page": 3
+    },
+    {
+      "headword": "construct",
+      "page": 3
+    },
+    {
+      "headword": "construction",
+      "page": 3
+    },
+    {
+      "headword": "consume",
+      "page": 3
+    },
+    {
+      "headword": "consumer",
+      "page": 3
+    },
+    {
+      "headword": "contact",
+      "page": 3
+    },
+    {
+      "headword": "contain",
+      "page": 3
+    },
+    {
+      "headword": "container",
+      "page": 3
+    },
+    {
+      "headword": "contemporary",
+      "page": 3
+    },
+    {
+      "headword": "content1",
+      "page": 3
+    },
+    {
+      "headword": "contest",
+      "page": 3
+    },
+    {
+      "headword": "context",
+      "page": 3
+    },
+    {
+      "headword": "continent",
+      "page": 3
+    },
+    {
+      "headword": "continue",
+      "page": 3
+    },
+    {
+      "headword": "continuous",
+      "page": 3
+    },
+    {
+      "headword": "contract",
+      "page": 3
+    },
+    {
+      "headword": "contrast",
+      "page": 3
+    },
+    {
+      "headword": "contribute",
+      "page": 3
+    },
+    {
+      "headword": "contribution",
+      "page": 3
+    },
+    {
+      "headword": "control",
+      "page": 3
+    },
+    {
+      "headword": "convenient",
+      "page": 3
+    },
+    {
+      "headword": "conversation",
+      "page": 3
+    },
+    {
+      "headword": "convert",
+      "page": 3
+    },
+    {
+      "headword": "convince",
+      "page": 3
+    },
+    {
+      "headword": "convinced",
+      "page": 3
+    },
+    {
+      "headword": "cook",
+      "page": 3
+    },
+    {
+      "headword": "cooker",
+      "page": 3
+    },
+    {
+      "headword": "cooking",
+      "page": 3
+    },
+    {
+      "headword": "cool",
+      "page": 3
+    },
+    {
+      "headword": "copy",
+      "page": 3
+    },
+    {
+      "headword": "core",
+      "page": 3
+    },
+    {
+      "headword": "corner",
+      "page": 3
+    },
+    {
+      "headword": "corporate",
+      "page": 3
+    },
+    {
+      "headword": "correct",
+      "page": 3
+    },
+    {
+      "headword": "correctly",
+      "page": 3
+    },
+    {
+      "headword": "cost",
+      "page": 3
+    },
+    {
+      "headword": "costume",
+      "page": 3
+    },
+    {
+      "headword": "cottage",
+      "page": 3
+    },
+    {
+      "headword": "cotton",
+      "page": 3
+    },
+    {
+      "headword": "could",
+      "page": 3
+    },
+    {
+      "headword": "council",
+      "page": 3
+    },
+    {
+      "headword": "count",
+      "page": 3
+    },
+    {
+      "headword": "country",
+      "page": 3
+    },
+    {
+      "headword": "countryside",
+      "page": 3
+    },
+    {
+      "headword": "county",
+      "page": 3
+    },
+    {
+      "headword": "couple",
+      "page": 3
+    },
+    {
+      "headword": "courage",
+      "page": 3
+    },
+    {
+      "headword": "course",
+      "page": 3
+    },
+    {
+      "headword": "court",
+      "page": 3
+    },
+    {
+      "headword": "cousin",
+      "page": 3
+    },
+    {
+      "headword": "cover",
+      "page": 3
+    },
+    {
+      "headword": "covered",
+      "page": 3
+    },
+    {
+      "headword": "cow",
+      "page": 3
+    },
+    {
+      "headword": "crash",
+      "page": 3
+    },
+    {
+      "headword": "crazy",
+      "page": 3
+    },
+    {
+      "headword": "cream",
+      "page": 3
+    },
+    {
+      "headword": "create",
+      "page": 3
+    },
+    {
+      "headword": "creation",
+      "page": 3
+    },
+    {
+      "headword": "creative",
+      "page": 3
+    },
+    {
+      "headword": "creature",
+      "page": 3
+    },
+    {
+      "headword": "credit",
+      "page": 3
+    },
+    {
+      "headword": "crew",
+      "page": 3
+    },
+    {
+      "headword": "crime",
+      "page": 3
+    },
+    {
+      "headword": "criminal",
+      "page": 3
+    },
+    {
+      "headword": "crisis",
+      "page": 3
+    },
+    {
+      "headword": "criterion",
+      "page": 3
+    },
+    {
+      "headword": "critic",
+      "page": 3
+    },
+    {
+      "headword": "critical",
+      "page": 3
+    },
+    {
+      "headword": "criticism",
+      "page": 3
+    },
+    {
+      "headword": "criticize",
+      "page": 3
+    },
+    {
+      "headword": "crop",
+      "page": 3
+    },
+    {
+      "headword": "cross",
+      "page": 3
+    },
+    {
+      "headword": "crowd",
+      "page": 3
+    },
+    {
+      "headword": "crowded",
+      "page": 3
+    },
+    {
+      "headword": "crucial",
+      "page": 3
+    },
+    {
+      "headword": "cruel",
+      "page": 3
+    },
+    {
+      "headword": "cry",
+      "page": 3
+    },
+    {
+      "headword": "cultural",
+      "page": 3
+    },
+    {
+      "headword": "culture",
+      "page": 3
+    },
+    {
+      "headword": "cup",
+      "page": 3
+    },
+    {
+      "headword": "cupboard",
+      "page": 3
+    },
+    {
+      "headword": "cure",
+      "page": 3
+    },
+    {
+      "headword": "curly",
+      "page": 3
+    },
+    {
+      "headword": "currency",
+      "page": 3
+    },
+    {
+      "headword": "current",
+      "page": 3
+    },
+    {
+      "headword": "currently",
+      "page": 3
+    },
+    {
+      "headword": "curtain",
+      "page": 3
+    },
+    {
+      "headword": "curve",
+      "page": 3
+    },
+    {
+      "headword": "curved",
+      "page": 3
+    },
+    {
+      "headword": "custom",
+      "page": 3
+    },
+    {
+      "headword": "customer",
+      "page": 3
+    },
+    {
+      "headword": "cut",
+      "page": 3
+    },
+    {
+      "headword": "cycle",
+      "page": 3
+    },
+    {
+      "headword": "dad",
+      "page": 3
+    },
+    {
+      "headword": "daily",
+      "page": 3
+    },
+    {
+      "headword": "damage",
+      "page": 3
+    },
+    {
+      "headword": "dance",
+      "page": 3
+    },
+    {
+      "headword": "dancer",
+      "page": 3
+    },
+    {
+      "headword": "dancing",
+      "page": 3
+    },
+    {
+      "headword": "danger",
+      "page": 3
+    },
+    {
+      "headword": "dangerous",
+      "page": 3
+    },
+    {
+      "headword": "dark",
+      "page": 3
+    },
+    {
+      "headword": "data",
+      "page": 3
+    },
+    {
+      "headword": "date",
+      "page": 3
+    },
+    {
+      "headword": "daughter",
+      "page": 3
+    },
+    {
+      "headword": "day",
+      "page": 3
+    },
+    {
+      "headword": "dead",
+      "page": 3
+    },
+    {
+      "headword": "deal",
+      "page": 3
+    },
+    {
+      "headword": "dear",
+      "page": 3
+    },
+    {
+      "headword": "death",
+      "page": 3
+    },
+    {
+      "headword": "debate",
+      "page": 3
+    },
+    {
+      "headword": "debt",
+      "page": 3
+    },
+    {
+      "headword": "decade",
+      "page": 3
+    },
+    {
+      "headword": "December",
+      "page": 3
+    },
+    {
+      "headword": "decent",
+      "page": 3
+    },
+    {
+      "headword": "decide",
+      "page": 3
+    },
+    {
+      "headword": "decision",
+      "page": 3
+    },
+    {
+      "headword": "declare",
+      "page": 3
+    },
+    {
+      "headword": "decline",
+      "page": 3
+    },
+    {
+      "headword": "decorate",
+      "page": 3
+    },
+    {
+      "headword": "decoration",
+      "page": 3
+    },
+    {
+      "headword": "decrease",
+      "page": 3
+    },
+    {
+      "headword": "deep",
+      "page": 3
+    },
+    {
+      "headword": "deeply",
+      "page": 3
+    },
+    {
+      "headword": "defeat",
+      "page": 3
+    },
+    {
+      "headword": "defence",
+      "page": 3
+    },
+    {
+      "headword": "defend",
+      "page": 3
+    },
+    {
+      "headword": "define",
+      "page": 3
+    },
+    {
+      "headword": "definite",
+      "page": 3
+    },
+    {
+      "headword": "definitely",
+      "page": 3
+    },
+    {
+      "headword": "definition",
+      "page": 3
+    },
+    {
+      "headword": "degree",
+      "page": 3
+    },
+    {
+      "headword": "delay",
+      "page": 3
+    },
+    {
+      "headword": "deliberate",
+      "page": 3
+    },
+    {
+      "headword": "deliberately",
+      "page": 3
+    },
+    {
+      "headword": "delicious",
+      "page": 3
+    },
+    {
+      "headword": "delight",
+      "page": 3
+    },
+    {
+      "headword": "delighted",
+      "page": 3
+    },
+    {
+      "headword": "deliver",
+      "page": 3
+    },
+    {
+      "headword": "delivery",
+      "page": 3
+    },
+    {
+      "headword": "demand",
+      "page": 3
+    },
+    {
+      "headword": "demonstrate",
+      "page": 3
+    },
+    {
+      "headword": "dentist",
+      "page": 3
+    },
+    {
+      "headword": "deny",
+      "page": 3
+    },
+    {
+      "headword": "department",
+      "page": 3
+    },
+    {
+      "headword": "departure",
+      "page": 3
+    },
+    {
+      "headword": "depend",
+      "page": 3
+    },
+    {
+      "headword": "depressed",
+      "page": 3
+    },
+    {
+      "headword": "depressing",
+      "page": 3
+    },
+    {
+      "headword": "depth",
+      "page": 3
+    },
+    {
+      "headword": "describe",
+      "page": 3
+    },
+    {
+      "headword": "description",
+      "page": 3
+    },
+    {
+      "headword": "desert",
+      "page": 3
+    },
+    {
+      "headword": "deserve",
+      "page": 3
+    },
+    {
+      "headword": "design",
+      "page": 3
+    },
+    {
+      "headword": "designer",
+      "page": 3
+    },
+    {
+      "headword": "desire",
+      "page": 3
+    },
+    {
+      "headword": "desk",
+      "page": 3
+    },
+    {
+      "headword": "desperate",
+      "page": 3
+    },
+    {
+      "headword": "despite",
+      "page": 3
+    },
+    {
+      "headword": "destination",
+      "page": 3
+    },
+    {
+      "headword": "destroy",
+      "page": 3
+    },
+    {
+      "headword": "detail",
+      "page": 3
+    },
+    {
+      "headword": "detailed",
+      "page": 3
+    },
+    {
+      "headword": "detect",
+      "page": 3
+    },
+    {
+      "headword": "detective",
+      "page": 3
+    },
+    {
+      "headword": "determine",
+      "page": 3
+    },
+    {
+      "headword": "determined",
+      "page": 3
+    },
+    {
+      "headword": "develop",
+      "page": 3
+    },
+    {
+      "headword": "development",
+      "page": 3
+    },
+    {
+      "headword": "device",
+      "page": 3
+    },
+    {
+      "headword": "diagram",
+      "page": 3
+    },
+    {
+      "headword": "dialogue",
+      "page": 3
+    },
+    {
+      "headword": "diamond",
+      "page": 3
+    },
+    {
+      "headword": "diary",
+      "page": 3
+    },
+    {
+      "headword": "dictionary",
+      "page": 3
+    },
+    {
+      "headword": "die",
+      "page": 3
+    },
+    {
+      "headword": "diet",
+      "page": 3
+    },
+    {
+      "headword": "difference",
+      "page": 3
+    },
+    {
+      "headword": "different",
+      "page": 3
+    },
+    {
+      "headword": "differently",
+      "page": 3
+    },
+    {
+      "headword": "difficult",
+      "page": 3
+    },
+    {
+      "headword": "difficulty",
+      "page": 3
+    },
+    {
+      "headword": "dig",
+      "page": 3
+    },
+    {
+      "headword": "digital",
+      "page": 3
+    },
+    {
+      "headword": "dinner",
+      "page": 3
+    },
+    {
+      "headword": "direct",
+      "page": 3
+    },
+    {
+      "headword": "direction",
+      "page": 3
+    },
+    {
+      "headword": "directly",
+      "page": 3
+    },
+    {
+      "headword": "director",
+      "page": 3
+    },
+    {
+      "headword": "dirt",
+      "page": 3
+    },
+    {
+      "headword": "dirty",
+      "page": 3
+    },
+    {
+      "headword": "disadvantage",
+      "page": 3
+    },
+    {
+      "headword": "disagree",
+      "page": 3
+    },
+    {
+      "headword": "disappear",
+      "page": 3
+    },
+    {
+      "headword": "disappointed",
+      "page": 3
+    },
+    {
+      "headword": "disappointing",
+      "page": 3
+    },
+    {
+      "headword": "disaster",
+      "page": 3
+    },
+    {
+      "headword": "disc",
+      "page": 3
+    },
+    {
+      "headword": "discipline",
+      "page": 3
+    },
+    {
+      "headword": "discount",
+      "page": 3
+    },
+    {
+      "headword": "discover",
+      "page": 3
+    },
+    {
+      "headword": "discovery",
+      "page": 3
+    },
+    {
+      "headword": "discuss",
+      "page": 3
+    },
+    {
+      "headword": "discussion",
+      "page": 3
+    },
+    {
+      "headword": "disease",
+      "page": 3
+    },
+    {
+      "headword": "dish",
+      "page": 3
+    },
+    {
+      "headword": "dishonest",
+      "page": 3
+    },
+    {
+      "headword": "dislike",
+      "page": 3
+    },
+    {
+      "headword": "dismiss",
+      "page": 3
+    },
+    {
+      "headword": "display",
+      "page": 3
+    },
+    {
+      "headword": "distance",
+      "page": 3
+    },
+    {
+      "headword": "distribute",
+      "page": 3
+    },
+    {
+      "headword": "distribution",
+      "page": 3
+    },
+    {
+      "headword": "district",
+      "page": 3
+    },
+    {
+      "headword": "divide",
+      "page": 3
+    },
+    {
+      "headword": "division",
+      "page": 3
+    },
+    {
+      "headword": "divorced",
+      "page": 3
+    },
+    {
+      "headword": "do1",
+      "page": 3
+    },
+    {
+      "headword": "doctor",
+      "page": 3
+    },
+    {
+      "headword": "document",
+      "page": 3
+    },
+    {
+      "headword": "documentary",
+      "page": 3
+    },
+    {
+      "headword": "dog",
+      "page": 3
+    },
+    {
+      "headword": "dollar",
+      "page": 3
+    },
+    {
+      "headword": "domestic",
+      "page": 3
+    },
+    {
+      "headword": "dominate",
+      "page": 3
+    },
+    {
+      "headword": "donate",
+      "page": 3
+    },
+    {
+      "headword": "door",
+      "page": 3
+    },
+    {
+      "headword": "double",
+      "page": 3
+    },
+    {
+      "headword": "doubt",
+      "page": 3
+    },
+    {
+      "headword": "down",
+      "page": 3
+    },
+    {
+      "headword": "download",
+      "page": 3
+    },
+    {
+      "headword": "downstairs",
+      "page": 3
+    },
+    {
+      "headword": "downwards",
+      "page": 3
+    },
+    {
+      "headword": "dozen",
+      "page": 3
+    },
+    {
+      "headword": "draft",
+      "page": 3
+    },
+    {
+      "headword": "drag",
+      "page": 3
+    },
+    {
+      "headword": "drama",
+      "page": 3
+    },
+    {
+      "headword": "dramatic",
+      "page": 3
+    },
+    {
+      "headword": "draw",
+      "page": 3
+    },
+    {
+      "headword": "drawing",
+      "page": 3
+    },
+    {
+      "headword": "dream",
+      "page": 3
+    },
+    {
+      "headword": "dress",
+      "page": 3
+    },
+    {
+      "headword": "dressed",
+      "page": 3
+    },
+    {
+      "headword": "drink",
+      "page": 3
+    },
+    {
+      "headword": "drive",
+      "page": 3
+    },
+    {
+      "headword": "driver",
+      "page": 3
+    },
+    {
+      "headword": "driving",
+      "page": 3
+    },
+    {
+      "headword": "drop",
+      "page": 3
+    },
+    {
+      "headword": "drug",
+      "page": 4
+    },
+    {
+      "headword": "drum",
+      "page": 4
+    },
+    {
+      "headword": "drunk",
+      "page": 4
+    },
+    {
+      "headword": "dry",
+      "page": 4
+    },
+    {
+      "headword": "due",
+      "page": 4
+    },
+    {
+      "headword": "during",
+      "page": 4
+    },
+    {
+      "headword": "dust",
+      "page": 4
+    },
+    {
+      "headword": "duty",
+      "page": 4
+    },
+    {
+      "headword": "DVD",
+      "page": 4
+    },
+    {
+      "headword": "each",
+      "page": 4
+    },
+    {
+      "headword": "ear",
+      "page": 4
+    },
+    {
+      "headword": "early",
+      "page": 4
+    },
+    {
+      "headword": "earn",
+      "page": 4
+    },
+    {
+      "headword": "earth",
+      "page": 4
+    },
+    {
+      "headword": "earthquake",
+      "page": 4
+    },
+    {
+      "headword": "easily",
+      "page": 4
+    },
+    {
+      "headword": "east",
+      "page": 4
+    },
+    {
+      "headword": "eastern",
+      "page": 4
+    },
+    {
+      "headword": "easy",
+      "page": 4
+    },
+    {
+      "headword": "eat",
+      "page": 4
+    },
+    {
+      "headword": "economic",
+      "page": 4
+    },
+    {
+      "headword": "economy",
+      "page": 4
+    },
+    {
+      "headword": "edge",
+      "page": 4
+    },
+    {
+      "headword": "edit",
+      "page": 4
+    },
+    {
+      "headword": "edition",
+      "page": 4
+    },
+    {
+      "headword": "editor",
+      "page": 4
+    },
+    {
+      "headword": "educate",
+      "page": 4
+    },
+    {
+      "headword": "educated",
+      "page": 4
+    },
+    {
+      "headword": "education",
+      "page": 4
+    },
+    {
+      "headword": "educational",
+      "page": 4
+    },
+    {
+      "headword": "effect",
+      "page": 4
+    },
+    {
+      "headword": "effective",
+      "page": 4
+    },
+    {
+      "headword": "effectively",
+      "page": 4
+    },
+    {
+      "headword": "efficient",
+      "page": 4
+    },
+    {
+      "headword": "effort",
+      "page": 4
+    },
+    {
+      "headword": "egg",
+      "page": 4
+    },
+    {
+      "headword": "eight",
+      "page": 4
+    },
+    {
+      "headword": "eighteen",
+      "page": 4
+    },
+    {
+      "headword": "eighty",
+      "page": 4
+    },
+    {
+      "headword": "either",
+      "page": 4
+    },
+    {
+      "headword": "elderly",
+      "page": 4
+    },
+    {
+      "headword": "elect",
+      "page": 4
+    },
+    {
+      "headword": "election",
+      "page": 4
+    },
+    {
+      "headword": "electric",
+      "page": 4
+    },
+    {
+      "headword": "electrical",
+      "page": 4
+    },
+    {
+      "headword": "electricity",
+      "page": 4
+    },
+    {
+      "headword": "electronic",
+      "page": 4
+    },
+    {
+      "headword": "element",
+      "page": 4
+    },
+    {
+      "headword": "elephant",
+      "page": 4
+    },
+    {
+      "headword": "eleven",
+      "page": 4
+    },
+    {
+      "headword": "else",
+      "page": 4
+    },
+    {
+      "headword": "elsewhere",
+      "page": 4
+    },
+    {
+      "headword": "email",
+      "page": 4
+    },
+    {
+      "headword": "embarrassed",
+      "page": 4
+    },
+    {
+      "headword": "embarrassing",
+      "page": 4
+    },
+    {
+      "headword": "emerge",
+      "page": 4
+    },
+    {
+      "headword": "emergency",
+      "page": 4
+    },
+    {
+      "headword": "emotion",
+      "page": 4
+    },
+    {
+      "headword": "emotional",
+      "page": 4
+    },
+    {
+      "headword": "emphasis",
+      "page": 4
+    },
+    {
+      "headword": "emphasize",
+      "page": 4
+    },
+    {
+      "headword": "employ",
+      "page": 4
+    },
+    {
+      "headword": "employee",
+      "page": 4
+    },
+    {
+      "headword": "employer",
+      "page": 4
+    },
+    {
+      "headword": "employment",
+      "page": 4
+    },
+    {
+      "headword": "empty",
+      "page": 4
+    },
+    {
+      "headword": "enable",
+      "page": 4
+    },
+    {
+      "headword": "encounter",
+      "page": 4
+    },
+    {
+      "headword": "encourage",
+      "page": 4
+    },
+    {
+      "headword": "end",
+      "page": 4
+    },
+    {
+      "headword": "ending",
+      "page": 4
+    },
+    {
+      "headword": "enemy",
+      "page": 4
+    },
+    {
+      "headword": "energy",
+      "page": 4
+    },
+    {
+      "headword": "engage",
+      "page": 4
+    },
+    {
+      "headword": "engaged",
+      "page": 4
+    },
+    {
+      "headword": "engine",
+      "page": 4
+    },
+    {
+      "headword": "engineer",
+      "page": 4
+    },
+    {
+      "headword": "engineering",
+      "page": 4
+    },
+    {
+      "headword": "enhance",
+      "page": 4
+    },
+    {
+      "headword": "enjoy",
+      "page": 4
+    },
+    {
+      "headword": "enormous",
+      "page": 4
+    },
+    {
+      "headword": "enough",
+      "page": 4
+    },
+    {
+      "headword": "enquiry",
+      "page": 4
+    },
+    {
+      "headword": "ensure",
+      "page": 4
+    },
+    {
+      "headword": "enter",
+      "page": 4
+    },
+    {
+      "headword": "entertain",
+      "page": 4
+    },
+    {
+      "headword": "entertainment",
+      "page": 4
+    },
+    {
+      "headword": "enthusiasm",
+      "page": 4
+    },
+    {
+      "headword": "enthusiastic",
+      "page": 4
+    },
+    {
+      "headword": "entire",
+      "page": 4
+    },
+    {
+      "headword": "entirely",
+      "page": 4
+    },
+    {
+      "headword": "entrance",
+      "page": 4
+    },
+    {
+      "headword": "entry",
+      "page": 4
+    },
+    {
+      "headword": "environment",
+      "page": 4
+    },
+    {
+      "headword": "environmental",
+      "page": 4
+    },
+    {
+      "headword": "episode",
+      "page": 4
+    },
+    {
+      "headword": "equal",
+      "page": 4
+    },
+    {
+      "headword": "equally",
+      "page": 4
+    },
+    {
+      "headword": "equipment",
+      "page": 4
+    },
+    {
+      "headword": "error",
+      "page": 4
+    },
+    {
+      "headword": "escape",
+      "page": 4
+    },
+    {
+      "headword": "especially",
+      "page": 4
+    },
+    {
+      "headword": "essay",
+      "page": 4
+    },
+    {
+      "headword": "essential",
+      "page": 4
+    },
+    {
+      "headword": "establish",
+      "page": 4
+    },
+    {
+      "headword": "estate",
+      "page": 4
+    },
+    {
+      "headword": "estimate",
+      "page": 4
+    },
+    {
+      "headword": "ethical",
+      "page": 4
+    },
+    {
+      "headword": "euro",
+      "page": 4
+    },
+    {
+      "headword": "evaluate",
+      "page": 4
+    },
+    {
+      "headword": "even",
+      "page": 4
+    },
+    {
+      "headword": "evening",
+      "page": 4
+    },
+    {
+      "headword": "event",
+      "page": 4
+    },
+    {
+      "headword": "eventually",
+      "page": 4
+    },
+    {
+      "headword": "ever",
+      "page": 4
+    },
+    {
+      "headword": "every",
+      "page": 4
+    },
+    {
+      "headword": "everybody",
+      "page": 4
+    },
+    {
+      "headword": "everyday",
+      "page": 4
+    },
+    {
+      "headword": "everyone",
+      "page": 4
+    },
+    {
+      "headword": "everything",
+      "page": 4
+    },
+    {
+      "headword": "everywhere",
+      "page": 4
+    },
+    {
+      "headword": "evidence",
+      "page": 4
+    },
+    {
+      "headword": "evil",
+      "page": 4
+    },
+    {
+      "headword": "exact",
+      "page": 4
+    },
+    {
+      "headword": "exactly",
+      "page": 4
+    },
+    {
+      "headword": "exam",
+      "page": 4
+    },
+    {
+      "headword": "examination",
+      "page": 4
+    },
+    {
+      "headword": "examine",
+      "page": 4
+    },
+    {
+      "headword": "example",
+      "page": 4
+    },
+    {
+      "headword": "excellent",
+      "page": 4
+    },
+    {
+      "headword": "except",
+      "page": 4
+    },
+    {
+      "headword": "exchange",
+      "page": 4
+    },
+    {
+      "headword": "excited",
+      "page": 4
+    },
+    {
+      "headword": "excitement",
+      "page": 4
+    },
+    {
+      "headword": "exciting",
+      "page": 4
+    },
+    {
+      "headword": "excuse",
+      "page": 4
+    },
+    {
+      "headword": "executive",
+      "page": 4
+    },
+    {
+      "headword": "exercise",
+      "page": 4
+    },
+    {
+      "headword": "exhibition",
+      "page": 4
+    },
+    {
+      "headword": "exist",
+      "page": 4
+    },
+    {
+      "headword": "existence",
+      "page": 4
+    },
+    {
+      "headword": "expand",
+      "page": 4
+    },
+    {
+      "headword": "expect",
+      "page": 4
+    },
+    {
+      "headword": "expectation",
+      "page": 4
+    },
+    {
+      "headword": "expected",
+      "page": 4
+    },
+    {
+      "headword": "expedition",
+      "page": 4
+    },
+    {
+      "headword": "expense",
+      "page": 4
+    },
+    {
+      "headword": "expensive",
+      "page": 4
+    },
+    {
+      "headword": "experience",
+      "page": 4
+    },
+    {
+      "headword": "experienced",
+      "page": 4
+    },
+    {
+      "headword": "experiment",
+      "page": 4
+    },
+    {
+      "headword": "expert",
+      "page": 4
+    },
+    {
+      "headword": "explain",
+      "page": 4
+    },
+    {
+      "headword": "explanation",
+      "page": 4
+    },
+    {
+      "headword": "explode",
+      "page": 4
+    },
+    {
+      "headword": "exploration",
+      "page": 4
+    },
+    {
+      "headword": "explore",
+      "page": 4
+    },
+    {
+      "headword": "explosion",
+      "page": 4
+    },
+    {
+      "headword": "export",
+      "page": 4
+    },
+    {
+      "headword": "expose",
+      "page": 4
+    },
+    {
+      "headword": "express",
+      "page": 4
+    },
+    {
+      "headword": "expression",
+      "page": 4
+    },
+    {
+      "headword": "extend",
+      "page": 4
+    },
+    {
+      "headword": "extent",
+      "page": 4
+    },
+    {
+      "headword": "external",
+      "page": 4
+    },
+    {
+      "headword": "extra",
+      "page": 4
+    },
+    {
+      "headword": "extraordinary",
+      "page": 4
+    },
+    {
+      "headword": "extreme",
+      "page": 4
+    },
+    {
+      "headword": "extremely",
+      "page": 4
+    },
+    {
+      "headword": "eye",
+      "page": 4
+    },
+    {
+      "headword": "face",
+      "page": 4
+    },
+    {
+      "headword": "facility",
+      "page": 4
+    },
+    {
+      "headword": "fact",
+      "page": 4
+    },
+    {
+      "headword": "factor",
+      "page": 4
+    },
+    {
+      "headword": "factory",
+      "page": 4
+    },
+    {
+      "headword": "fail",
+      "page": 4
+    },
+    {
+      "headword": "failure",
+      "page": 4
+    },
+    {
+      "headword": "fair",
+      "page": 4
+    },
+    {
+      "headword": "fairly",
+      "page": 4
+    },
+    {
+      "headword": "faith",
+      "page": 4
+    },
+    {
+      "headword": "fall",
+      "page": 4
+    },
+    {
+      "headword": "false",
+      "page": 4
+    },
+    {
+      "headword": "familiar",
+      "page": 4
+    },
+    {
+      "headword": "family",
+      "page": 4
+    },
+    {
+      "headword": "famous",
+      "page": 4
+    },
+    {
+      "headword": "fan",
+      "page": 4
+    },
+    {
+      "headword": "fancy",
+      "page": 4
+    },
+    {
+      "headword": "fantastic",
+      "page": 4
+    },
+    {
+      "headword": "far",
+      "page": 4
+    },
+    {
+      "headword": "farm",
+      "page": 4
+    },
+    {
+      "headword": "farmer",
+      "page": 4
+    },
+    {
+      "headword": "farming",
+      "page": 4
+    },
+    {
+      "headword": "fascinating",
+      "page": 4
+    },
+    {
+      "headword": "fashion",
+      "page": 4
+    },
+    {
+      "headword": "fashionable",
+      "page": 4
+    },
+    {
+      "headword": "fast",
+      "page": 4
+    },
+    {
+      "headword": "fasten",
+      "page": 4
+    },
+    {
+      "headword": "fat",
+      "page": 4
+    },
+    {
+      "headword": "father",
+      "page": 4
+    },
+    {
+      "headword": "fault",
+      "page": 4
+    },
+    {
+      "headword": "favour",
+      "page": 4
+    },
+    {
+      "headword": "favourite",
+      "page": 4
+    },
+    {
+      "headword": "fear",
+      "page": 4
+    },
+    {
+      "headword": "feather",
+      "page": 4
+    },
+    {
+      "headword": "feature",
+      "page": 4
+    },
+    {
+      "headword": "February",
+      "page": 4
+    },
+    {
+      "headword": "fee",
+      "page": 4
+    },
+    {
+      "headword": "feed",
+      "page": 4
+    },
+    {
+      "headword": "feedback",
+      "page": 4
+    },
+    {
+      "headword": "feel",
+      "page": 4
+    },
+    {
+      "headword": "feeling",
+      "page": 4
+    },
+    {
+      "headword": "fellow",
+      "page": 4
+    },
+    {
+      "headword": "female",
+      "page": 4
+    },
+    {
+      "headword": "fence",
+      "page": 4
+    },
+    {
+      "headword": "festival",
+      "page": 4
+    },
+    {
+      "headword": "few",
+      "page": 4
+    },
+    {
+      "headword": "fiction",
+      "page": 4
+    },
+    {
+      "headword": "field",
+      "page": 4
+    },
+    {
+      "headword": "fifteen",
+      "page": 4
+    },
+    {
+      "headword": "fifth",
+      "page": 4
+    },
+    {
+      "headword": "fifty",
+      "page": 4
+    },
+    {
+      "headword": "fight",
+      "page": 4
+    },
+    {
+      "headword": "fighting",
+      "page": 4
+    },
+    {
+      "headword": "figure",
+      "page": 4
+    },
+    {
+      "headword": "file",
+      "page": 4
+    },
+    {
+      "headword": "fill",
+      "page": 4
+    },
+    {
+      "headword": "film",
+      "page": 4
+    },
+    {
+      "headword": "final",
+      "page": 4
+    },
+    {
+      "headword": "finally",
+      "page": 4
+    },
+    {
+      "headword": "finance",
+      "page": 4
+    },
+    {
+      "headword": "financial",
+      "page": 4
+    },
+    {
+      "headword": "find",
+      "page": 4
+    },
+    {
+      "headword": "finding",
+      "page": 4
+    },
+    {
+      "headword": "fine",
+      "page": 4
+    },
+    {
+      "headword": "finger",
+      "page": 4
+    },
+    {
+      "headword": "finish",
+      "page": 4
+    },
+    {
+      "headword": "fire",
+      "page": 4
+    },
+    {
+      "headword": "firm",
+      "page": 4
+    },
+    {
+      "headword": "first",
+      "page": 4
+    },
+    {
+      "headword": "firstly",
+      "page": 4
+    },
+    {
+      "headword": "fish",
+      "page": 4
+    },
+    {
+      "headword": "fishing",
+      "page": 4
+    },
+    {
+      "headword": "fit",
+      "page": 4
+    },
+    {
+      "headword": "fitness",
+      "page": 4
+    },
+    {
+      "headword": "five",
+      "page": 4
+    },
+    {
+      "headword": "fix",
+      "page": 4
+    },
+    {
+      "headword": "fixed",
+      "page": 4
+    },
+    {
+      "headword": "flag",
+      "page": 4
+    },
+    {
+      "headword": "flame",
+      "page": 4
+    },
+    {
+      "headword": "flash",
+      "page": 4
+    },
+    {
+      "headword": "flat",
+      "page": 4
+    },
+    {
+      "headword": "flexible",
+      "page": 4
+    },
+    {
+      "headword": "flight",
+      "page": 4
+    },
+    {
+      "headword": "float",
+      "page": 4
+    },
+    {
+      "headword": "flood",
+      "page": 4
+    },
+    {
+      "headword": "floor",
+      "page": 4
+    },
+    {
+      "headword": "flour",
+      "page": 4
+    },
+    {
+      "headword": "flow",
+      "page": 4
+    },
+    {
+      "headword": "flower",
+      "page": 4
+    },
+    {
+      "headword": "flu",
+      "page": 4
+    },
+    {
+      "headword": "fly",
+      "page": 4
+    },
+    {
+      "headword": "flying",
+      "page": 4
+    },
+    {
+      "headword": "focus",
+      "page": 4
+    },
+    {
+      "headword": "fold",
+      "page": 4
+    },
+    {
+      "headword": "folding",
+      "page": 4
+    },
+    {
+      "headword": "folk",
+      "page": 4
+    },
+    {
+      "headword": "follow",
+      "page": 4
+    },
+    {
+      "headword": "following",
+      "page": 4
+    },
+    {
+      "headword": "food",
+      "page": 4
+    },
+    {
+      "headword": "foot",
+      "page": 4
+    },
+    {
+      "headword": "football",
+      "page": 4
+    },
+    {
+      "headword": "for",
+      "page": 4
+    },
+    {
+      "headword": "force",
+      "page": 4
+    },
+    {
+      "headword": "foreign",
+      "page": 4
+    },
+    {
+      "headword": "forest",
+      "page": 4
+    },
+    {
+      "headword": "forever",
+      "page": 4
+    },
+    {
+      "headword": "forget",
+      "page": 4
+    },
+    {
+      "headword": "forgive",
+      "page": 4
+    },
+    {
+      "headword": "fork",
+      "page": 4
+    },
+    {
+      "headword": "form",
+      "page": 4
+    },
+    {
+      "headword": "formal",
+      "page": 5
+    },
+    {
+      "headword": "former",
+      "page": 5
+    },
+    {
+      "headword": "fortunately",
+      "page": 5
+    },
+    {
+      "headword": "fortune",
+      "page": 5
+    },
+    {
+      "headword": "forty",
+      "page": 5
+    },
+    {
+      "headword": "forward",
+      "page": 5
+    },
+    {
+      "headword": "found",
+      "page": 5
+    },
+    {
+      "headword": "four",
+      "page": 5
+    },
+    {
+      "headword": "fourteen",
+      "page": 5
+    },
+    {
+      "headword": "fourth",
+      "page": 5
+    },
+    {
+      "headword": "frame",
+      "page": 5
+    },
+    {
+      "headword": "free",
+      "page": 5
+    },
+    {
+      "headword": "freedom",
+      "page": 5
+    },
+    {
+      "headword": "freeze",
+      "page": 5
+    },
+    {
+      "headword": "frequency",
+      "page": 5
+    },
+    {
+      "headword": "frequently",
+      "page": 5
+    },
+    {
+      "headword": "fresh",
+      "page": 5
+    },
+    {
+      "headword": "Friday",
+      "page": 5
+    },
+    {
+      "headword": "fridge",
+      "page": 5
+    },
+    {
+      "headword": "friend",
+      "page": 5
+    },
+    {
+      "headword": "friendly",
+      "page": 5
+    },
+    {
+      "headword": "friendship",
+      "page": 5
+    },
+    {
+      "headword": "frighten",
+      "page": 5
+    },
+    {
+      "headword": "frightened",
+      "page": 5
+    },
+    {
+      "headword": "frightening",
+      "page": 5
+    },
+    {
+      "headword": "frog",
+      "page": 5
+    },
+    {
+      "headword": "from",
+      "page": 5
+    },
+    {
+      "headword": "front",
+      "page": 5
+    },
+    {
+      "headword": "frozen",
+      "page": 5
+    },
+    {
+      "headword": "fruit",
+      "page": 5
+    },
+    {
+      "headword": "fry",
+      "page": 5
+    },
+    {
+      "headword": "fuel",
+      "page": 5
+    },
+    {
+      "headword": "full",
+      "page": 5
+    },
+    {
+      "headword": "fully",
+      "page": 5
+    },
+    {
+      "headword": "fun",
+      "page": 5
+    },
+    {
+      "headword": "function",
+      "page": 5
+    },
+    {
+      "headword": "fund",
+      "page": 5
+    },
+    {
+      "headword": "fundamental",
+      "page": 5
+    },
+    {
+      "headword": "funding",
+      "page": 5
+    },
+    {
+      "headword": "funny",
+      "page": 5
+    },
+    {
+      "headword": "fur",
+      "page": 5
+    },
+    {
+      "headword": "furniture",
+      "page": 5
+    },
+    {
+      "headword": "further",
+      "page": 5
+    },
+    {
+      "headword": "furthermore",
+      "page": 5
+    },
+    {
+      "headword": "future",
+      "page": 5
+    },
+    {
+      "headword": "gain",
+      "page": 5
+    },
+    {
+      "headword": "gallery",
+      "page": 5
+    },
+    {
+      "headword": "game",
+      "page": 5
+    },
+    {
+      "headword": "gang",
+      "page": 5
+    },
+    {
+      "headword": "gap",
+      "page": 5
+    },
+    {
+      "headword": "garage",
+      "page": 5
+    },
+    {
+      "headword": "garden",
+      "page": 5
+    },
+    {
+      "headword": "gas",
+      "page": 5
+    },
+    {
+      "headword": "gate",
+      "page": 5
+    },
+    {
+      "headword": "gather",
+      "page": 5
+    },
+    {
+      "headword": "general",
+      "page": 5
+    },
+    {
+      "headword": "generally",
+      "page": 5
+    },
+    {
+      "headword": "generate",
+      "page": 5
+    },
+    {
+      "headword": "generation",
+      "page": 5
+    },
+    {
+      "headword": "generous",
+      "page": 5
+    },
+    {
+      "headword": "genre",
+      "page": 5
+    },
+    {
+      "headword": "gentle",
+      "page": 5
+    },
+    {
+      "headword": "gentleman",
+      "page": 5
+    },
+    {
+      "headword": "geography",
+      "page": 5
+    },
+    {
+      "headword": "get",
+      "page": 5
+    },
+    {
+      "headword": "ghost",
+      "page": 5
+    },
+    {
+      "headword": "giant",
+      "page": 5
+    },
+    {
+      "headword": "gift",
+      "page": 5
+    },
+    {
+      "headword": "girl",
+      "page": 5
+    },
+    {
+      "headword": "girlfriend",
+      "page": 5
+    },
+    {
+      "headword": "give",
+      "page": 5
+    },
+    {
+      "headword": "glad",
+      "page": 5
+    },
+    {
+      "headword": "glass",
+      "page": 5
+    },
+    {
+      "headword": "global",
+      "page": 5
+    },
+    {
+      "headword": "glove",
+      "page": 5
+    },
+    {
+      "headword": "go",
+      "page": 5
+    },
+    {
+      "headword": "goal",
+      "page": 5
+    },
+    {
+      "headword": "god",
+      "page": 5
+    },
+    {
+      "headword": "gold",
+      "page": 5
+    },
+    {
+      "headword": "golf",
+      "page": 5
+    },
+    {
+      "headword": "good",
+      "page": 5
+    },
+    {
+      "headword": "goodbye",
+      "page": 5
+    },
+    {
+      "headword": "goods",
+      "page": 5
+    },
+    {
+      "headword": "govern",
+      "page": 5
+    },
+    {
+      "headword": "government",
+      "page": 5
+    },
+    {
+      "headword": "grab",
+      "page": 5
+    },
+    {
+      "headword": "grade",
+      "page": 5
+    },
+    {
+      "headword": "gradually",
+      "page": 5
+    },
+    {
+      "headword": "graduate",
+      "page": 5
+    },
+    {
+      "headword": "grain",
+      "page": 5
+    },
+    {
+      "headword": "grand",
+      "page": 5
+    },
+    {
+      "headword": "grandfather",
+      "page": 5
+    },
+    {
+      "headword": "grandmother",
+      "page": 5
+    },
+    {
+      "headword": "grandparent",
+      "page": 5
+    },
+    {
+      "headword": "grant",
+      "page": 5
+    },
+    {
+      "headword": "grass",
+      "page": 5
+    },
+    {
+      "headword": "grateful",
+      "page": 5
+    },
+    {
+      "headword": "great",
+      "page": 5
+    },
+    {
+      "headword": "green",
+      "page": 5
+    },
+    {
+      "headword": "greet",
+      "page": 5
+    },
+    {
+      "headword": "grey",
+      "page": 5
+    },
+    {
+      "headword": "ground",
+      "page": 5
+    },
+    {
+      "headword": "group",
+      "page": 5
+    },
+    {
+      "headword": "grow",
+      "page": 5
+    },
+    {
+      "headword": "growth",
+      "page": 5
+    },
+    {
+      "headword": "guarantee",
+      "page": 5
+    },
+    {
+      "headword": "guard",
+      "page": 5
+    },
+    {
+      "headword": "guess",
+      "page": 5
+    },
+    {
+      "headword": "guest",
+      "page": 5
+    },
+    {
+      "headword": "guide",
+      "page": 5
+    },
+    {
+      "headword": "guilty",
+      "page": 5
+    },
+    {
+      "headword": "guitar",
+      "page": 5
+    },
+    {
+      "headword": "gun",
+      "page": 5
+    },
+    {
+      "headword": "guy",
+      "page": 5
+    },
+    {
+      "headword": "gym",
+      "page": 5
+    },
+    {
+      "headword": "habit",
+      "page": 5
+    },
+    {
+      "headword": "hair",
+      "page": 5
+    },
+    {
+      "headword": "half",
+      "page": 5
+    },
+    {
+      "headword": "hall",
+      "page": 5
+    },
+    {
+      "headword": "hand",
+      "page": 5
+    },
+    {
+      "headword": "handle",
+      "page": 5
+    },
+    {
+      "headword": "hang",
+      "page": 5
+    },
+    {
+      "headword": "happen",
+      "page": 5
+    },
+    {
+      "headword": "happily",
+      "page": 5
+    },
+    {
+      "headword": "happiness",
+      "page": 5
+    },
+    {
+      "headword": "happy",
+      "page": 5
+    },
+    {
+      "headword": "hard",
+      "page": 5
+    },
+    {
+      "headword": "hardly",
+      "page": 5
+    },
+    {
+      "headword": "harm",
+      "page": 5
+    },
+    {
+      "headword": "harmful",
+      "page": 5
+    },
+    {
+      "headword": "hat",
+      "page": 5
+    },
+    {
+      "headword": "hate",
+      "page": 5
+    },
+    {
+      "headword": "have",
+      "page": 5
+    },
+    {
+      "headword": "have to",
+      "page": 5
+    },
+    {
+      "headword": "he",
+      "page": 5
+    },
+    {
+      "headword": "head",
+      "page": 5
+    },
+    {
+      "headword": "headache",
+      "page": 5
+    },
+    {
+      "headword": "headline",
+      "page": 5
+    },
+    {
+      "headword": "health",
+      "page": 5
+    },
+    {
+      "headword": "healthy",
+      "page": 5
+    },
+    {
+      "headword": "hear",
+      "page": 5
+    },
+    {
+      "headword": "hearing",
+      "page": 5
+    },
+    {
+      "headword": "heart",
+      "page": 5
+    },
+    {
+      "headword": "heat",
+      "page": 5
+    },
+    {
+      "headword": "heating",
+      "page": 5
+    },
+    {
+      "headword": "heaven",
+      "page": 5
+    },
+    {
+      "headword": "heavily",
+      "page": 5
+    },
+    {
+      "headword": "heavy",
+      "page": 5
+    },
+    {
+      "headword": "heel",
+      "page": 5
+    },
+    {
+      "headword": "height",
+      "page": 5
+    },
+    {
+      "headword": "helicopter",
+      "page": 5
+    },
+    {
+      "headword": "hell",
+      "page": 5
+    },
+    {
+      "headword": "hello",
+      "page": 5
+    },
+    {
+      "headword": "help",
+      "page": 5
+    },
+    {
+      "headword": "helpful",
+      "page": 5
+    },
+    {
+      "headword": "her",
+      "page": 5
+    },
+    {
+      "headword": "here",
+      "page": 5
+    },
+    {
+      "headword": "hero",
+      "page": 5
+    },
+    {
+      "headword": "hers",
+      "page": 5
+    },
+    {
+      "headword": "herself",
+      "page": 5
+    },
+    {
+      "headword": "hesitate",
+      "page": 5
+    },
+    {
+      "headword": "hey",
+      "page": 5
+    },
+    {
+      "headword": "hi",
+      "page": 5
+    },
+    {
+      "headword": "hide",
+      "page": 5
+    },
+    {
+      "headword": "high",
+      "page": 5
+    },
+    {
+      "headword": "highlight",
+      "page": 5
+    },
+    {
+      "headword": "highly",
+      "page": 5
+    },
+    {
+      "headword": "hill",
+      "page": 5
+    },
+    {
+      "headword": "him",
+      "page": 5
+    },
+    {
+      "headword": "himself",
+      "page": 5
+    },
+    {
+      "headword": "hire",
+      "page": 5
+    },
+    {
+      "headword": "his",
+      "page": 5
+    },
+    {
+      "headword": "historic",
+      "page": 5
+    },
+    {
+      "headword": "historical",
+      "page": 5
+    },
+    {
+      "headword": "history",
+      "page": 5
+    },
+    {
+      "headword": "hit",
+      "page": 5
+    },
+    {
+      "headword": "hobby",
+      "page": 5
+    },
+    {
+      "headword": "hockey",
+      "page": 5
+    },
+    {
+      "headword": "hold",
+      "page": 5
+    },
+    {
+      "headword": "hole",
+      "page": 5
+    },
+    {
+      "headword": "holiday",
+      "page": 5
+    },
+    {
+      "headword": "hollow",
+      "page": 5
+    },
+    {
+      "headword": "holy",
+      "page": 5
+    },
+    {
+      "headword": "home",
+      "page": 5
+    },
+    {
+      "headword": "homework",
+      "page": 5
+    },
+    {
+      "headword": "honest",
+      "page": 5
+    },
+    {
+      "headword": "honour",
+      "page": 5
+    },
+    {
+      "headword": "hope",
+      "page": 5
+    },
+    {
+      "headword": "horrible",
+      "page": 5
+    },
+    {
+      "headword": "horror",
+      "page": 5
+    },
+    {
+      "headword": "horse",
+      "page": 5
+    },
+    {
+      "headword": "hospital",
+      "page": 5
+    },
+    {
+      "headword": "host",
+      "page": 5
+    },
+    {
+      "headword": "hot",
+      "page": 5
+    },
+    {
+      "headword": "hotel",
+      "page": 5
+    },
+    {
+      "headword": "hour",
+      "page": 5
+    },
+    {
+      "headword": "house",
+      "page": 5
+    },
+    {
+      "headword": "household",
+      "page": 5
+    },
+    {
+      "headword": "housing",
+      "page": 5
+    },
+    {
+      "headword": "how",
+      "page": 5
+    },
+    {
+      "headword": "however",
+      "page": 5
+    },
+    {
+      "headword": "huge",
+      "page": 5
+    },
+    {
+      "headword": "human",
+      "page": 5
+    },
+    {
+      "headword": "humorous",
+      "page": 5
+    },
+    {
+      "headword": "humour",
+      "page": 5
+    },
+    {
+      "headword": "hundred",
+      "page": 5
+    },
+    {
+      "headword": "hungry",
+      "page": 5
+    },
+    {
+      "headword": "hunt",
+      "page": 5
+    },
+    {
+      "headword": "hunting",
+      "page": 5
+    },
+    {
+      "headword": "hurricane",
+      "page": 5
+    },
+    {
+      "headword": "hurry",
+      "page": 5
+    },
+    {
+      "headword": "hurt",
+      "page": 5
+    },
+    {
+      "headword": "husband",
+      "page": 5
+    },
+    {
+      "headword": "I",
+      "page": 5
+    },
+    {
+      "headword": "ice",
+      "page": 5
+    },
+    {
+      "headword": "ice cream",
+      "page": 5
+    },
+    {
+      "headword": "idea",
+      "page": 5
+    },
+    {
+      "headword": "ideal",
+      "page": 5
+    },
+    {
+      "headword": "identify",
+      "page": 5
+    },
+    {
+      "headword": "identity",
+      "page": 5
+    },
+    {
+      "headword": "if",
+      "page": 5
+    },
+    {
+      "headword": "ignore",
+      "page": 5
+    },
+    {
+      "headword": "ill",
+      "page": 5
+    },
+    {
+      "headword": "illegal",
+      "page": 5
+    },
+    {
+      "headword": "illness",
+      "page": 5
+    },
+    {
+      "headword": "illustrate",
+      "page": 5
+    },
+    {
+      "headword": "illustration",
+      "page": 5
+    },
+    {
+      "headword": "image",
+      "page": 5
+    },
+    {
+      "headword": "imaginary",
+      "page": 5
+    },
+    {
+      "headword": "imagination",
+      "page": 5
+    },
+    {
+      "headword": "imagine",
+      "page": 5
+    },
+    {
+      "headword": "immediate",
+      "page": 5
+    },
+    {
+      "headword": "immediately",
+      "page": 5
+    },
+    {
+      "headword": "immigrant",
+      "page": 5
+    },
+    {
+      "headword": "impact",
+      "page": 5
+    },
+    {
+      "headword": "impatient",
+      "page": 5
+    },
+    {
+      "headword": "imply",
+      "page": 5
+    },
+    {
+      "headword": "import",
+      "page": 5
+    },
+    {
+      "headword": "importance",
+      "page": 5
+    },
+    {
+      "headword": "important",
+      "page": 5
+    },
+    {
+      "headword": "impose",
+      "page": 5
+    },
+    {
+      "headword": "impossible",
+      "page": 5
+    },
+    {
+      "headword": "impress",
+      "page": 5
+    },
+    {
+      "headword": "impressed",
+      "page": 5
+    },
+    {
+      "headword": "impression",
+      "page": 5
+    },
+    {
+      "headword": "impressive",
+      "page": 5
+    },
+    {
+      "headword": "improve",
+      "page": 5
+    },
+    {
+      "headword": "improvement",
+      "page": 5
+    },
+    {
+      "headword": "in",
+      "page": 5
+    },
+    {
+      "headword": "inch",
+      "page": 5
+    },
+    {
+      "headword": "incident",
+      "page": 5
+    },
+    {
+      "headword": "include",
+      "page": 5
+    },
+    {
+      "headword": "included",
+      "page": 5
+    },
+    {
+      "headword": "including",
+      "page": 5
+    },
+    {
+      "headword": "income",
+      "page": 5
+    },
+    {
+      "headword": "increase",
+      "page": 5
+    },
+    {
+      "headword": "increasingly",
+      "page": 5
+    },
+    {
+      "headword": "incredible",
+      "page": 5
+    },
+    {
+      "headword": "incredibly",
+      "page": 5
+    },
+    {
+      "headword": "indeed",
+      "page": 5
+    },
+    {
+      "headword": "independent",
+      "page": 5
+    },
+    {
+      "headword": "indicate",
+      "page": 5
+    },
+    {
+      "headword": "indirect",
+      "page": 5
+    },
+    {
+      "headword": "individual",
+      "page": 5
+    },
+    {
+      "headword": "indoor",
+      "page": 5
+    },
+    {
+      "headword": "indoors",
+      "page": 5
+    },
+    {
+      "headword": "industrial",
+      "page": 5
+    },
+    {
+      "headword": "industry",
+      "page": 5
+    },
+    {
+      "headword": "infection",
+      "page": 5
+    },
+    {
+      "headword": "influence",
+      "page": 5
+    },
+    {
+      "headword": "inform",
+      "page": 5
+    },
+    {
+      "headword": "informal",
+      "page": 5
+    },
+    {
+      "headword": "information",
+      "page": 5
+    },
+    {
+      "headword": "ingredient",
+      "page": 5
+    },
+    {
+      "headword": "initial",
+      "page": 5
+    },
+    {
+      "headword": "initially",
+      "page": 5
+    },
+    {
+      "headword": "initiative",
+      "page": 5
+    },
+    {
+      "headword": "injure",
+      "page": 5
+    },
+    {
+      "headword": "injured",
+      "page": 5
+    },
+    {
+      "headword": "injury",
+      "page": 5
+    },
+    {
+      "headword": "inner",
+      "page": 6
+    },
+    {
+      "headword": "innocent",
+      "page": 6
+    },
+    {
+      "headword": "insect",
+      "page": 6
+    },
+    {
+      "headword": "inside",
+      "page": 6
+    },
+    {
+      "headword": "insight",
+      "page": 6
+    },
+    {
+      "headword": "insist",
+      "page": 6
+    },
+    {
+      "headword": "inspire",
+      "page": 6
+    },
+    {
+      "headword": "install",
+      "page": 6
+    },
+    {
+      "headword": "instance",
+      "page": 6
+    },
+    {
+      "headword": "instead",
+      "page": 6
+    },
+    {
+      "headword": "institute",
+      "page": 6
+    },
+    {
+      "headword": "institution",
+      "page": 6
+    },
+    {
+      "headword": "instruction",
+      "page": 6
+    },
+    {
+      "headword": "instructor",
+      "page": 6
+    },
+    {
+      "headword": "instrument",
+      "page": 6
+    },
+    {
+      "headword": "insurance",
+      "page": 6
+    },
+    {
+      "headword": "intelligence",
+      "page": 6
+    },
+    {
+      "headword": "intelligent",
+      "page": 6
+    },
+    {
+      "headword": "intend",
+      "page": 6
+    },
+    {
+      "headword": "intended",
+      "page": 6
+    },
+    {
+      "headword": "intense",
+      "page": 6
+    },
+    {
+      "headword": "intention",
+      "page": 6
+    },
+    {
+      "headword": "interest",
+      "page": 6
+    },
+    {
+      "headword": "interested",
+      "page": 6
+    },
+    {
+      "headword": "interesting",
+      "page": 6
+    },
+    {
+      "headword": "internal",
+      "page": 6
+    },
+    {
+      "headword": "international",
+      "page": 6
+    },
+    {
+      "headword": "internet",
+      "page": 6
+    },
+    {
+      "headword": "interpret",
+      "page": 6
+    },
+    {
+      "headword": "interrupt",
+      "page": 6
+    },
+    {
+      "headword": "interview",
+      "page": 6
+    },
+    {
+      "headword": "into",
+      "page": 6
+    },
+    {
+      "headword": "introduce",
+      "page": 6
+    },
+    {
+      "headword": "introduction",
+      "page": 6
+    },
+    {
+      "headword": "invent",
+      "page": 6
+    },
+    {
+      "headword": "invention",
+      "page": 6
+    },
+    {
+      "headword": "invest",
+      "page": 6
+    },
+    {
+      "headword": "investigate",
+      "page": 6
+    },
+    {
+      "headword": "investigation",
+      "page": 6
+    },
+    {
+      "headword": "investment",
+      "page": 6
+    },
+    {
+      "headword": "invitation",
+      "page": 6
+    },
+    {
+      "headword": "invite",
+      "page": 6
+    },
+    {
+      "headword": "involve",
+      "page": 6
+    },
+    {
+      "headword": "involved",
+      "page": 6
+    },
+    {
+      "headword": "iron",
+      "page": 6
+    },
+    {
+      "headword": "island",
+      "page": 6
+    },
+    {
+      "headword": "issue",
+      "page": 6
+    },
+    {
+      "headword": "IT",
+      "page": 6
+    },
+    {
+      "headword": "it",
+      "page": 6
+    },
+    {
+      "headword": "item",
+      "page": 6
+    },
+    {
+      "headword": "its",
+      "page": 6
+    },
+    {
+      "headword": "itself",
+      "page": 6
+    },
+    {
+      "headword": "jacket",
+      "page": 6
+    },
+    {
+      "headword": "jam",
+      "page": 6
+    },
+    {
+      "headword": "January",
+      "page": 6
+    },
+    {
+      "headword": "jazz",
+      "page": 6
+    },
+    {
+      "headword": "jeans",
+      "page": 6
+    },
+    {
+      "headword": "jewellery",
+      "page": 6
+    },
+    {
+      "headword": "job",
+      "page": 6
+    },
+    {
+      "headword": "join",
+      "page": 6
+    },
+    {
+      "headword": "joke",
+      "page": 6
+    },
+    {
+      "headword": "journal",
+      "page": 6
+    },
+    {
+      "headword": "journalist",
+      "page": 6
+    },
+    {
+      "headword": "journey",
+      "page": 6
+    },
+    {
+      "headword": "joy",
+      "page": 6
+    },
+    {
+      "headword": "judge",
+      "page": 6
+    },
+    {
+      "headword": "judgement",
+      "page": 6
+    },
+    {
+      "headword": "juice",
+      "page": 6
+    },
+    {
+      "headword": "July",
+      "page": 6
+    },
+    {
+      "headword": "jump",
+      "page": 6
+    },
+    {
+      "headword": "June",
+      "page": 6
+    },
+    {
+      "headword": "junior",
+      "page": 6
+    },
+    {
+      "headword": "just",
+      "page": 6
+    },
+    {
+      "headword": "justice",
+      "page": 6
+    },
+    {
+      "headword": "justify",
+      "page": 6
+    },
+    {
+      "headword": "keen",
+      "page": 6
+    },
+    {
+      "headword": "keep",
+      "page": 6
+    },
+    {
+      "headword": "key",
+      "page": 6
+    },
+    {
+      "headword": "keyboard",
+      "page": 6
+    },
+    {
+      "headword": "kick",
+      "page": 6
+    },
+    {
+      "headword": "kid",
+      "page": 6
+    },
+    {
+      "headword": "kill",
+      "page": 6
+    },
+    {
+      "headword": "killing",
+      "page": 6
+    },
+    {
+      "headword": "kilometre",
+      "page": 6
+    },
+    {
+      "headword": "kind (type)",
+      "page": 6
+    },
+    {
+      "headword": "kind (caring)",
+      "page": 6
+    },
+    {
+      "headword": "king",
+      "page": 6
+    },
+    {
+      "headword": "kiss",
+      "page": 6
+    },
+    {
+      "headword": "kitchen",
+      "page": 6
+    },
+    {
+      "headword": "knee",
+      "page": 6
+    },
+    {
+      "headword": "knife",
+      "page": 6
+    },
+    {
+      "headword": "knock",
+      "page": 6
+    },
+    {
+      "headword": "know",
+      "page": 6
+    },
+    {
+      "headword": "knowledge",
+      "page": 6
+    },
+    {
+      "headword": "lab",
+      "page": 6
+    },
+    {
+      "headword": "label",
+      "page": 6
+    },
+    {
+      "headword": "laboratory",
+      "page": 6
+    },
+    {
+      "headword": "labour",
+      "page": 6
+    },
+    {
+      "headword": "lack",
+      "page": 6
+    },
+    {
+      "headword": "lady",
+      "page": 6
+    },
+    {
+      "headword": "lake",
+      "page": 6
+    },
+    {
+      "headword": "lamp",
+      "page": 6
+    },
+    {
+      "headword": "land",
+      "page": 6
+    },
+    {
+      "headword": "landscape",
+      "page": 6
+    },
+    {
+      "headword": "language",
+      "page": 6
+    },
+    {
+      "headword": "laptop",
+      "page": 6
+    },
+    {
+      "headword": "large",
+      "page": 6
+    },
+    {
+      "headword": "largely",
+      "page": 6
+    },
+    {
+      "headword": "last1 (final)",
+      "page": 6
+    },
+    {
+      "headword": "last1 (taking time)",
+      "page": 6
+    },
+    {
+      "headword": "late",
+      "page": 6
+    },
+    {
+      "headword": "later",
+      "page": 6
+    },
+    {
+      "headword": "latest",
+      "page": 6
+    },
+    {
+      "headword": "laugh",
+      "page": 6
+    },
+    {
+      "headword": "laughter",
+      "page": 6
+    },
+    {
+      "headword": "launch",
+      "page": 6
+    },
+    {
+      "headword": "law",
+      "page": 6
+    },
+    {
+      "headword": "lawyer",
+      "page": 6
+    },
+    {
+      "headword": "lay",
+      "page": 6
+    },
+    {
+      "headword": "layer",
+      "page": 6
+    },
+    {
+      "headword": "lazy",
+      "page": 6
+    },
+    {
+      "headword": "lead1",
+      "page": 6
+    },
+    {
+      "headword": "leader",
+      "page": 6
+    },
+    {
+      "headword": "leadership",
+      "page": 6
+    },
+    {
+      "headword": "leading",
+      "page": 6
+    },
+    {
+      "headword": "leaf",
+      "page": 6
+    },
+    {
+      "headword": "league",
+      "page": 6
+    },
+    {
+      "headword": "lean",
+      "page": 6
+    },
+    {
+      "headword": "learn",
+      "page": 6
+    },
+    {
+      "headword": "learning",
+      "page": 6
+    },
+    {
+      "headword": "least",
+      "page": 6
+    },
+    {
+      "headword": "leather",
+      "page": 6
+    },
+    {
+      "headword": "leave",
+      "page": 6
+    },
+    {
+      "headword": "lecture",
+      "page": 6
+    },
+    {
+      "headword": "left",
+      "page": 6
+    },
+    {
+      "headword": "leg",
+      "page": 6
+    },
+    {
+      "headword": "legal",
+      "page": 6
+    },
+    {
+      "headword": "leisure",
+      "page": 6
+    },
+    {
+      "headword": "lemon",
+      "page": 6
+    },
+    {
+      "headword": "lend",
+      "page": 6
+    },
+    {
+      "headword": "length",
+      "page": 6
+    },
+    {
+      "headword": "less",
+      "page": 6
+    },
+    {
+      "headword": "lesson",
+      "page": 6
+    },
+    {
+      "headword": "let",
+      "page": 6
+    },
+    {
+      "headword": "letter",
+      "page": 6
+    },
+    {
+      "headword": "level",
+      "page": 6
+    },
+    {
+      "headword": "library",
+      "page": 6
+    },
+    {
+      "headword": "licence",
+      "page": 6
+    },
+    {
+      "headword": "lie1",
+      "page": 6
+    },
+    {
+      "headword": "lie2 (tell a lie)",
+      "page": 6
+    },
+    {
+      "headword": "life",
+      "page": 6
+    },
+    {
+      "headword": "lifestyle",
+      "page": 6
+    },
+    {
+      "headword": "lift",
+      "page": 6
+    },
+    {
+      "headword": "light (from the sun/a lamp)",
+      "page": 6
+    },
+    {
+      "headword": "light (not heavy)",
+      "page": 6
+    },
+    {
+      "headword": "like (similar)",
+      "page": 6
+    },
+    {
+      "headword": "like (find sb/sth pleasant)",
+      "page": 6
+    },
+    {
+      "headword": "likely",
+      "page": 6
+    },
+    {
+      "headword": "limit",
+      "page": 6
+    },
+    {
+      "headword": "limited",
+      "page": 6
+    },
+    {
+      "headword": "line",
+      "page": 6
+    },
+    {
+      "headword": "link",
+      "page": 6
+    },
+    {
+      "headword": "lion",
+      "page": 6
+    },
+    {
+      "headword": "lip",
+      "page": 6
+    },
+    {
+      "headword": "liquid",
+      "page": 6
+    },
+    {
+      "headword": "list",
+      "page": 6
+    },
+    {
+      "headword": "listen",
+      "page": 6
+    },
+    {
+      "headword": "listener",
+      "page": 6
+    },
+    {
+      "headword": "literature",
+      "page": 6
+    },
+    {
+      "headword": "little",
+      "page": 6
+    },
+    {
+      "headword": "live1",
+      "page": 6
+    },
+    {
+      "headword": "live2",
+      "page": 6
+    },
+    {
+      "headword": "lively",
+      "page": 6
+    },
+    {
+      "headword": "living",
+      "page": 6
+    },
+    {
+      "headword": "load",
+      "page": 6
+    },
+    {
+      "headword": "loan",
+      "page": 6
+    },
+    {
+      "headword": "local",
+      "page": 6
+    },
+    {
+      "headword": "locate",
+      "page": 6
+    },
+    {
+      "headword": "located",
+      "page": 6
+    },
+    {
+      "headword": "location",
+      "page": 6
+    },
+    {
+      "headword": "lock",
+      "page": 6
+    },
+    {
+      "headword": "logical",
+      "page": 6
+    },
+    {
+      "headword": "lonely",
+      "page": 6
+    },
+    {
+      "headword": "long1",
+      "page": 6
+    },
+    {
+      "headword": "long-term",
+      "page": 6
+    },
+    {
+      "headword": "look",
+      "page": 6
+    },
+    {
+      "headword": "loose",
+      "page": 6
+    },
+    {
+      "headword": "lord",
+      "page": 6
+    },
+    {
+      "headword": "lorry",
+      "page": 6
+    },
+    {
+      "headword": "lose",
+      "page": 6
+    },
+    {
+      "headword": "loss",
+      "page": 6
+    },
+    {
+      "headword": "lost",
+      "page": 6
+    },
+    {
+      "headword": "lot",
+      "page": 6
+    },
+    {
+      "headword": "loud",
+      "page": 6
+    },
+    {
+      "headword": "loudly",
+      "page": 6
+    },
+    {
+      "headword": "love",
+      "page": 6
+    },
+    {
+      "headword": "lovely",
+      "page": 6
+    },
+    {
+      "headword": "low",
+      "page": 6
+    },
+    {
+      "headword": "lower",
+      "page": 6
+    },
+    {
+      "headword": "luck",
+      "page": 6
+    },
+    {
+      "headword": "lucky",
+      "page": 6
+    },
+    {
+      "headword": "lunch",
+      "page": 6
+    },
+    {
+      "headword": "lung",
+      "page": 6
+    },
+    {
+      "headword": "luxury",
+      "page": 6
+    },
+    {
+      "headword": "machine",
+      "page": 6
+    },
+    {
+      "headword": "mad",
+      "page": 6
+    },
+    {
+      "headword": "magazine",
+      "page": 6
+    },
+    {
+      "headword": "magic",
+      "page": 6
+    },
+    {
+      "headword": "mail",
+      "page": 6
+    },
+    {
+      "headword": "main",
+      "page": 6
+    },
+    {
+      "headword": "mainly",
+      "page": 6
+    },
+    {
+      "headword": "maintain",
+      "page": 6
+    },
+    {
+      "headword": "major",
+      "page": 6
+    },
+    {
+      "headword": "majority",
+      "page": 6
+    },
+    {
+      "headword": "make",
+      "page": 6
+    },
+    {
+      "headword": "male",
+      "page": 6
+    },
+    {
+      "headword": "mall",
+      "page": 6
+    },
+    {
+      "headword": "man",
+      "page": 6
+    },
+    {
+      "headword": "manage",
+      "page": 6
+    },
+    {
+      "headword": "management",
+      "page": 6
+    },
+    {
+      "headword": "manager",
+      "page": 6
+    },
+    {
+      "headword": "manner",
+      "page": 6
+    },
+    {
+      "headword": "many",
+      "page": 6
+    },
+    {
+      "headword": "map",
+      "page": 6
+    },
+    {
+      "headword": "March",
+      "page": 6
+    },
+    {
+      "headword": "mark",
+      "page": 6
+    },
+    {
+      "headword": "market",
+      "page": 6
+    },
+    {
+      "headword": "marketing",
+      "page": 6
+    },
+    {
+      "headword": "marriage",
+      "page": 6
+    },
+    {
+      "headword": "married",
+      "page": 6
+    },
+    {
+      "headword": "marry",
+      "page": 6
+    },
+    {
+      "headword": "mass",
+      "page": 6
+    },
+    {
+      "headword": "massive",
+      "page": 6
+    },
+    {
+      "headword": "master",
+      "page": 6
+    },
+    {
+      "headword": "match (contest/correspond)",
+      "page": 6
+    },
+    {
+      "headword": "matching",
+      "page": 6
+    },
+    {
+      "headword": "material",
+      "page": 6
+    },
+    {
+      "headword": "mathematics",
+      "page": 6
+    },
+    {
+      "headword": "maths",
+      "page": 6
+    },
+    {
+      "headword": "matter",
+      "page": 6
+    },
+    {
+      "headword": "maximum",
+      "page": 6
+    },
+    {
+      "headword": "May",
+      "page": 6
+    },
+    {
+      "headword": "may",
+      "page": 6
+    },
+    {
+      "headword": "maybe",
+      "page": 6
+    },
+    {
+      "headword": "me",
+      "page": 6
+    },
+    {
+      "headword": "meal",
+      "page": 6
+    },
+    {
+      "headword": "mean",
+      "page": 6
+    },
+    {
+      "headword": "meaning",
+      "page": 6
+    },
+    {
+      "headword": "means",
+      "page": 6
+    },
+    {
+      "headword": "meanwhile",
+      "page": 6
+    },
+    {
+      "headword": "measure",
+      "page": 6
+    },
+    {
+      "headword": "measurement",
+      "page": 6
+    },
+    {
+      "headword": "meat",
+      "page": 6
+    },
+    {
+      "headword": "media",
+      "page": 6
+    },
+    {
+      "headword": "medical",
+      "page": 6
+    },
+    {
+      "headword": "medicine",
+      "page": 6
+    },
+    {
+      "headword": "medium",
+      "page": 6
+    },
+    {
+      "headword": "meet",
+      "page": 6
+    },
+    {
+      "headword": "meeting",
+      "page": 6
+    },
+    {
+      "headword": "melt",
+      "page": 6
+    },
+    {
+      "headword": "member",
+      "page": 6
+    },
+    {
+      "headword": "memory",
+      "page": 6
+    },
+    {
+      "headword": "mental",
+      "page": 6
+    },
+    {
+      "headword": "mention",
+      "page": 6
+    },
+    {
+      "headword": "menu",
+      "page": 6
+    },
+    {
+      "headword": "mess",
+      "page": 6
+    },
+    {
+      "headword": "message",
+      "page": 6
+    },
+    {
+      "headword": "metal",
+      "page": 6
+    },
+    {
+      "headword": "method",
+      "page": 6
+    },
+    {
+      "headword": "metre",
+      "page": 6
+    },
+    {
+      "headword": "middle",
+      "page": 6
+    },
+    {
+      "headword": "midnight",
+      "page": 6
+    },
+    {
+      "headword": "might",
+      "page": 6
+    },
+    {
+      "headword": "mild",
+      "page": 6
+    },
+    {
+      "headword": "mile",
+      "page": 6
+    },
+    {
+      "headword": "military",
+      "page": 6
+    },
+    {
+      "headword": "milk",
+      "page": 6
+    },
+    {
+      "headword": "million",
+      "page": 7
+    },
+    {
+      "headword": "mind",
+      "page": 7
+    },
+    {
+      "headword": "mine (belongs to me)",
+      "page": 7
+    },
+    {
+      "headword": "mine (hole in the ground)",
+      "page": 7
+    },
+    {
+      "headword": "mineral",
+      "page": 7
+    },
+    {
+      "headword": "minimum",
+      "page": 7
+    },
+    {
+      "headword": "minister",
+      "page": 7
+    },
+    {
+      "headword": "minor",
+      "page": 7
+    },
+    {
+      "headword": "minority",
+      "page": 7
+    },
+    {
+      "headword": "minute1",
+      "page": 7
+    },
+    {
+      "headword": "mirror",
+      "page": 7
+    },
+    {
+      "headword": "miss",
+      "page": 7
+    },
+    {
+      "headword": "missing",
+      "page": 7
+    },
+    {
+      "headword": "mission",
+      "page": 7
+    },
+    {
+      "headword": "mistake",
+      "page": 7
+    },
+    {
+      "headword": "mix",
+      "page": 7
+    },
+    {
+      "headword": "mixed",
+      "page": 7
+    },
+    {
+      "headword": "mixture",
+      "page": 7
+    },
+    {
+      "headword": "mobile",
+      "page": 7
+    },
+    {
+      "headword": "model",
+      "page": 7
+    },
+    {
+      "headword": "modern",
+      "page": 7
+    },
+    {
+      "headword": "modify",
+      "page": 7
+    },
+    {
+      "headword": "moment",
+      "page": 7
+    },
+    {
+      "headword": "Monday",
+      "page": 7
+    },
+    {
+      "headword": "money",
+      "page": 7
+    },
+    {
+      "headword": "monitor",
+      "page": 7
+    },
+    {
+      "headword": "monkey",
+      "page": 7
+    },
+    {
+      "headword": "month",
+      "page": 7
+    },
+    {
+      "headword": "mood",
+      "page": 7
+    },
+    {
+      "headword": "moon",
+      "page": 7
+    },
+    {
+      "headword": "moral",
+      "page": 7
+    },
+    {
+      "headword": "more",
+      "page": 7
+    },
+    {
+      "headword": "morning",
+      "page": 7
+    },
+    {
+      "headword": "most",
+      "page": 7
+    },
+    {
+      "headword": "mostly",
+      "page": 7
+    },
+    {
+      "headword": "mother",
+      "page": 7
+    },
+    {
+      "headword": "motor",
+      "page": 7
+    },
+    {
+      "headword": "motorcycle",
+      "page": 7
+    },
+    {
+      "headword": "mount",
+      "page": 7
+    },
+    {
+      "headword": "mountain",
+      "page": 7
+    },
+    {
+      "headword": "mouse",
+      "page": 7
+    },
+    {
+      "headword": "mouth",
+      "page": 7
+    },
+    {
+      "headword": "move",
+      "page": 7
+    },
+    {
+      "headword": "movement",
+      "page": 7
+    },
+    {
+      "headword": "movie",
+      "page": 7
+    },
+    {
+      "headword": "much",
+      "page": 7
+    },
+    {
+      "headword": "mud",
+      "page": 7
+    },
+    {
+      "headword": "multiple",
+      "page": 7
+    },
+    {
+      "headword": "multiply",
+      "page": 7
+    },
+    {
+      "headword": "mum",
+      "page": 7
+    },
+    {
+      "headword": "murder",
+      "page": 7
+    },
+    {
+      "headword": "muscle",
+      "page": 7
+    },
+    {
+      "headword": "museum",
+      "page": 7
+    },
+    {
+      "headword": "music",
+      "page": 7
+    },
+    {
+      "headword": "musical",
+      "page": 7
+    },
+    {
+      "headword": "musician",
+      "page": 7
+    },
+    {
+      "headword": "must",
+      "page": 7
+    },
+    {
+      "headword": "my",
+      "page": 7
+    },
+    {
+      "headword": "myself",
+      "page": 7
+    },
+    {
+      "headword": "mysterious",
+      "page": 7
+    },
+    {
+      "headword": "mystery",
+      "page": 7
+    },
+    {
+      "headword": "nail",
+      "page": 7
+    },
+    {
+      "headword": "name",
+      "page": 7
+    },
+    {
+      "headword": "narrative",
+      "page": 7
+    },
+    {
+      "headword": "narrow",
+      "page": 7
+    },
+    {
+      "headword": "nation",
+      "page": 7
+    },
+    {
+      "headword": "national",
+      "page": 7
+    },
+    {
+      "headword": "native",
+      "page": 7
+    },
+    {
+      "headword": "natural",
+      "page": 7
+    },
+    {
+      "headword": "naturally",
+      "page": 7
+    },
+    {
+      "headword": "nature",
+      "page": 7
+    },
+    {
+      "headword": "near",
+      "page": 7
+    },
+    {
+      "headword": "nearly",
+      "page": 7
+    },
+    {
+      "headword": "neat",
+      "page": 7
+    },
+    {
+      "headword": "necessarily",
+      "page": 7
+    },
+    {
+      "headword": "necessary",
+      "page": 7
+    },
+    {
+      "headword": "neck",
+      "page": 7
+    },
+    {
+      "headword": "need",
+      "page": 7
+    },
+    {
+      "headword": "needle",
+      "page": 7
+    },
+    {
+      "headword": "negative",
+      "page": 7
+    },
+    {
+      "headword": "neighbour",
+      "page": 7
+    },
+    {
+      "headword": "neighbourhood",
+      "page": 7
+    },
+    {
+      "headword": "neither",
+      "page": 7
+    },
+    {
+      "headword": "nerve",
+      "page": 7
+    },
+    {
+      "headword": "nervous",
+      "page": 7
+    },
+    {
+      "headword": "net",
+      "page": 7
+    },
+    {
+      "headword": "network",
+      "page": 7
+    },
+    {
+      "headword": "never",
+      "page": 7
+    },
+    {
+      "headword": "nevertheless",
+      "page": 7
+    },
+    {
+      "headword": "new",
+      "page": 7
+    },
+    {
+      "headword": "news",
+      "page": 7
+    },
+    {
+      "headword": "newspaper",
+      "page": 7
+    },
+    {
+      "headword": "next",
+      "page": 7
+    },
+    {
+      "headword": "next to",
+      "page": 7
+    },
+    {
+      "headword": "nice",
+      "page": 7
+    },
+    {
+      "headword": "night",
+      "page": 7
+    },
+    {
+      "headword": "nightmare",
+      "page": 7
+    },
+    {
+      "headword": "nine",
+      "page": 7
+    },
+    {
+      "headword": "nineteen",
+      "page": 7
+    },
+    {
+      "headword": "ninety",
+      "page": 7
+    },
+    {
+      "headword": "no",
+      "page": 7
+    },
+    {
+      "headword": "no one",
+      "page": 7
+    },
+    {
+      "headword": "nobody",
+      "page": 7
+    },
+    {
+      "headword": "noise",
+      "page": 7
+    },
+    {
+      "headword": "noisy",
+      "page": 7
+    },
+    {
+      "headword": "none",
+      "page": 7
+    },
+    {
+      "headword": "nor",
+      "page": 7
+    },
+    {
+      "headword": "normal",
+      "page": 7
+    },
+    {
+      "headword": "normally",
+      "page": 7
+    },
+    {
+      "headword": "north",
+      "page": 7
+    },
+    {
+      "headword": "northern",
+      "page": 7
+    },
+    {
+      "headword": "nose",
+      "page": 7
+    },
+    {
+      "headword": "not",
+      "page": 7
+    },
+    {
+      "headword": "note",
+      "page": 7
+    },
+    {
+      "headword": "nothing",
+      "page": 7
+    },
+    {
+      "headword": "notice",
+      "page": 7
+    },
+    {
+      "headword": "notion",
+      "page": 7
+    },
+    {
+      "headword": "novel",
+      "page": 7
+    },
+    {
+      "headword": "November",
+      "page": 7
+    },
+    {
+      "headword": "now",
+      "page": 7
+    },
+    {
+      "headword": "nowhere",
+      "page": 7
+    },
+    {
+      "headword": "nuclear",
+      "page": 7
+    },
+    {
+      "headword": "number",
+      "page": 7
+    },
+    {
+      "headword": "numerous",
+      "page": 7
+    },
+    {
+      "headword": "nurse",
+      "page": 7
+    },
+    {
+      "headword": "nut",
+      "page": 7
+    },
+    {
+      "headword": "obey",
+      "page": 7
+    },
+    {
+      "headword": "object",
+      "page": 7
+    },
+    {
+      "headword": "objective",
+      "page": 7
+    },
+    {
+      "headword": "obligation",
+      "page": 7
+    },
+    {
+      "headword": "observation",
+      "page": 7
+    },
+    {
+      "headword": "observe",
+      "page": 7
+    },
+    {
+      "headword": "obtain",
+      "page": 7
+    },
+    {
+      "headword": "obvious",
+      "page": 7
+    },
+    {
+      "headword": "obviously",
+      "page": 7
+    },
+    {
+      "headword": "occasion",
+      "page": 7
+    },
+    {
+      "headword": "occasionally",
+      "page": 7
+    },
+    {
+      "headword": "occur",
+      "page": 7
+    },
+    {
+      "headword": "ocean",
+      "page": 7
+    },
+    {
+      "headword": "o’clock",
+      "page": 7
+    },
+    {
+      "headword": "October",
+      "page": 7
+    },
+    {
+      "headword": "odd",
+      "page": 7
+    },
+    {
+      "headword": "of",
+      "page": 7
+    },
+    {
+      "headword": "off",
+      "page": 7
+    },
+    {
+      "headword": "offence",
+      "page": 7
+    },
+    {
+      "headword": "offend",
+      "page": 7
+    },
+    {
+      "headword": "offensive",
+      "page": 7
+    },
+    {
+      "headword": "offer",
+      "page": 7
+    },
+    {
+      "headword": "office",
+      "page": 7
+    },
+    {
+      "headword": "officer",
+      "page": 7
+    },
+    {
+      "headword": "official",
+      "page": 7
+    },
+    {
+      "headword": "often",
+      "page": 7
+    },
+    {
+      "headword": "oh",
+      "page": 7
+    },
+    {
+      "headword": "oil",
+      "page": 7
+    },
+    {
+      "headword": "OK",
+      "page": 7
+    },
+    {
+      "headword": "old",
+      "page": 7
+    },
+    {
+      "headword": "old-fashioned",
+      "page": 7
+    },
+    {
+      "headword": "on",
+      "page": 7
+    },
+    {
+      "headword": "once",
+      "page": 7
+    },
+    {
+      "headword": "one",
+      "page": 7
+    },
+    {
+      "headword": "onion",
+      "page": 7
+    },
+    {
+      "headword": "online",
+      "page": 7
+    },
+    {
+      "headword": "only",
+      "page": 7
+    },
+    {
+      "headword": "onto",
+      "page": 7
+    },
+    {
+      "headword": "open",
+      "page": 7
+    },
+    {
+      "headword": "opening",
+      "page": 7
+    },
+    {
+      "headword": "operate",
+      "page": 7
+    },
+    {
+      "headword": "operation",
+      "page": 7
+    },
+    {
+      "headword": "opinion",
+      "page": 7
+    },
+    {
+      "headword": "opponent",
+      "page": 7
+    },
+    {
+      "headword": "opportunity",
+      "page": 7
+    },
+    {
+      "headword": "oppose",
+      "page": 7
+    },
+    {
+      "headword": "opposed",
+      "page": 7
+    },
+    {
+      "headword": "opposite",
+      "page": 7
+    },
+    {
+      "headword": "opposition",
+      "page": 7
+    },
+    {
+      "headword": "option",
+      "page": 7
+    },
+    {
+      "headword": "or",
+      "page": 7
+    },
+    {
+      "headword": "orange",
+      "page": 7
+    },
+    {
+      "headword": "order",
+      "page": 7
+    },
+    {
+      "headword": "ordinary",
+      "page": 7
+    },
+    {
+      "headword": "organ",
+      "page": 7
+    },
+    {
+      "headword": "organization",
+      "page": 7
+    },
+    {
+      "headword": "organize",
+      "page": 7
+    },
+    {
+      "headword": "organized",
+      "page": 7
+    },
+    {
+      "headword": "organizer",
+      "page": 7
+    },
+    {
+      "headword": "origin",
+      "page": 7
+    },
+    {
+      "headword": "original",
+      "page": 7
+    },
+    {
+      "headword": "originally",
+      "page": 7
+    },
+    {
+      "headword": "other",
+      "page": 7
+    },
+    {
+      "headword": "otherwise",
+      "page": 7
+    },
+    {
+      "headword": "ought",
+      "page": 7
+    },
+    {
+      "headword": "our",
+      "page": 7
+    },
+    {
+      "headword": "ours",
+      "page": 7
+    },
+    {
+      "headword": "ourselves",
+      "page": 7
+    },
+    {
+      "headword": "out",
+      "page": 7
+    },
+    {
+      "headword": "outcome",
+      "page": 7
+    },
+    {
+      "headword": "outdoor",
+      "page": 7
+    },
+    {
+      "headword": "outdoors",
+      "page": 7
+    },
+    {
+      "headword": "outer",
+      "page": 7
+    },
+    {
+      "headword": "outline",
+      "page": 7
+    },
+    {
+      "headword": "outside",
+      "page": 7
+    },
+    {
+      "headword": "oven",
+      "page": 7
+    },
+    {
+      "headword": "over",
+      "page": 7
+    },
+    {
+      "headword": "overall",
+      "page": 7
+    },
+    {
+      "headword": "owe",
+      "page": 7
+    },
+    {
+      "headword": "own",
+      "page": 7
+    },
+    {
+      "headword": "owner",
+      "page": 7
+    },
+    {
+      "headword": "pace",
+      "page": 7
+    },
+    {
+      "headword": "pack",
+      "page": 7
+    },
+    {
+      "headword": "package",
+      "page": 7
+    },
+    {
+      "headword": "page",
+      "page": 7
+    },
+    {
+      "headword": "pain",
+      "page": 7
+    },
+    {
+      "headword": "painful",
+      "page": 7
+    },
+    {
+      "headword": "paint",
+      "page": 7
+    },
+    {
+      "headword": "painter",
+      "page": 7
+    },
+    {
+      "headword": "painting",
+      "page": 7
+    },
+    {
+      "headword": "pair",
+      "page": 7
+    },
+    {
+      "headword": "palace",
+      "page": 7
+    },
+    {
+      "headword": "pale",
+      "page": 7
+    },
+    {
+      "headword": "pan",
+      "page": 7
+    },
+    {
+      "headword": "panel",
+      "page": 7
+    },
+    {
+      "headword": "pants",
+      "page": 7
+    },
+    {
+      "headword": "paper",
+      "page": 7
+    },
+    {
+      "headword": "paragraph",
+      "page": 7
+    },
+    {
+      "headword": "parent",
+      "page": 7
+    },
+    {
+      "headword": "park",
+      "page": 7
+    },
+    {
+      "headword": "parking",
+      "page": 7
+    },
+    {
+      "headword": "parliament",
+      "page": 7
+    },
+    {
+      "headword": "part",
+      "page": 7
+    },
+    {
+      "headword": "participant",
+      "page": 7
+    },
+    {
+      "headword": "participate",
+      "page": 7
+    },
+    {
+      "headword": "particular",
+      "page": 7
+    },
+    {
+      "headword": "particularly",
+      "page": 7
+    },
+    {
+      "headword": "partly",
+      "page": 7
+    },
+    {
+      "headword": "partner",
+      "page": 7
+    },
+    {
+      "headword": "party",
+      "page": 7
+    },
+    {
+      "headword": "pass",
+      "page": 7
+    },
+    {
+      "headword": "passage",
+      "page": 7
+    },
+    {
+      "headword": "passenger",
+      "page": 7
+    },
+    {
+      "headword": "passion",
+      "page": 7
+    },
+    {
+      "headword": "passport",
+      "page": 7
+    },
+    {
+      "headword": "past",
+      "page": 7
+    },
+    {
+      "headword": "path",
+      "page": 7
+    },
+    {
+      "headword": "patient",
+      "page": 7
+    },
+    {
+      "headword": "pattern",
+      "page": 7
+    },
+    {
+      "headword": "pay",
+      "page": 7
+    },
+    {
+      "headword": "payment",
+      "page": 7
+    },
+    {
+      "headword": "peace",
+      "page": 7
+    },
+    {
+      "headword": "peaceful",
+      "page": 7
+    },
+    {
+      "headword": "pen",
+      "page": 7
+    },
+    {
+      "headword": "pencil",
+      "page": 7
+    },
+    {
+      "headword": "penny",
+      "page": 7
+    },
+    {
+      "headword": "pension1",
+      "page": 7
+    },
+    {
+      "headword": "people",
+      "page": 7
+    },
+    {
+      "headword": "pepper",
+      "page": 7
+    },
+    {
+      "headword": "per",
+      "page": 7
+    },
+    {
+      "headword": "per cent",
+      "page": 7
+    },
+    {
+      "headword": "percentage",
+      "page": 7
+    },
+    {
+      "headword": "perfect",
+      "page": 7
+    },
+    {
+      "headword": "perfectly",
+      "page": 7
+    },
+    {
+      "headword": "perform",
+      "page": 7
+    },
+    {
+      "headword": "performance",
+      "page": 7
+    },
+    {
+      "headword": "perhaps",
+      "page": 7
+    },
+    {
+      "headword": "period",
+      "page": 7
+    },
+    {
+      "headword": "permanent",
+      "page": 7
+    },
+    {
+      "headword": "permission",
+      "page": 7
+    },
+    {
+      "headword": "permit",
+      "page": 7
+    },
+    {
+      "headword": "person",
+      "page": 7
+    },
+    {
+      "headword": "personal",
+      "page": 7
+    },
+    {
+      "headword": "personality",
+      "page": 7
+    },
+    {
+      "headword": "personally",
+      "page": 7
+    },
+    {
+      "headword": "perspective",
+      "page": 7
+    },
+    {
+      "headword": "persuade",
+      "page": 7
+    },
+    {
+      "headword": "pet",
+      "page": 7
+    },
+    {
+      "headword": "petrol",
+      "page": 7
+    },
+    {
+      "headword": "phase",
+      "page": 7
+    },
+    {
+      "headword": "phenomenon",
+      "page": 7
+    },
+    {
+      "headword": "philosophy",
+      "page": 7
+    },
+    {
+      "headword": "phone",
+      "page": 7
+    },
+    {
+      "headword": "photo",
+      "page": 8
+    },
+    {
+      "headword": "photograph",
+      "page": 8
+    },
+    {
+      "headword": "photographer",
+      "page": 8
+    },
+    {
+      "headword": "photography",
+      "page": 8
+    },
+    {
+      "headword": "phrase",
+      "page": 8
+    },
+    {
+      "headword": "physical",
+      "page": 8
+    },
+    {
+      "headword": "physics",
+      "page": 8
+    },
+    {
+      "headword": "piano",
+      "page": 8
+    },
+    {
+      "headword": "pick",
+      "page": 8
+    },
+    {
+      "headword": "picture",
+      "page": 8
+    },
+    {
+      "headword": "piece",
+      "page": 8
+    },
+    {
+      "headword": "pig",
+      "page": 8
+    },
+    {
+      "headword": "pile",
+      "page": 8
+    },
+    {
+      "headword": "pilot",
+      "page": 8
+    },
+    {
+      "headword": "pin",
+      "page": 8
+    },
+    {
+      "headword": "pink",
+      "page": 8
+    },
+    {
+      "headword": "pipe",
+      "page": 8
+    },
+    {
+      "headword": "pitch",
+      "page": 8
+    },
+    {
+      "headword": "place",
+      "page": 8
+    },
+    {
+      "headword": "plain",
+      "page": 8
+    },
+    {
+      "headword": "plan",
+      "page": 8
+    },
+    {
+      "headword": "plane",
+      "page": 8
+    },
+    {
+      "headword": "planet",
+      "page": 8
+    },
+    {
+      "headword": "planning",
+      "page": 8
+    },
+    {
+      "headword": "plant",
+      "page": 8
+    },
+    {
+      "headword": "plastic",
+      "page": 8
+    },
+    {
+      "headword": "plate",
+      "page": 8
+    },
+    {
+      "headword": "platform",
+      "page": 8
+    },
+    {
+      "headword": "play",
+      "page": 8
+    },
+    {
+      "headword": "player",
+      "page": 8
+    },
+    {
+      "headword": "pleasant",
+      "page": 8
+    },
+    {
+      "headword": "please",
+      "page": 8
+    },
+    {
+      "headword": "pleased",
+      "page": 8
+    },
+    {
+      "headword": "pleasure",
+      "page": 8
+    },
+    {
+      "headword": "plenty",
+      "page": 8
+    },
+    {
+      "headword": "plot",
+      "page": 8
+    },
+    {
+      "headword": "plus1",
+      "page": 8
+    },
+    {
+      "headword": "pocket",
+      "page": 8
+    },
+    {
+      "headword": "poem",
+      "page": 8
+    },
+    {
+      "headword": "poet",
+      "page": 8
+    },
+    {
+      "headword": "poetry",
+      "page": 8
+    },
+    {
+      "headword": "point",
+      "page": 8
+    },
+    {
+      "headword": "pointed",
+      "page": 8
+    },
+    {
+      "headword": "poison",
+      "page": 8
+    },
+    {
+      "headword": "poisonous",
+      "page": 8
+    },
+    {
+      "headword": "police",
+      "page": 8
+    },
+    {
+      "headword": "policeman",
+      "page": 8
+    },
+    {
+      "headword": "policy",
+      "page": 8
+    },
+    {
+      "headword": "polite",
+      "page": 8
+    },
+    {
+      "headword": "political",
+      "page": 8
+    },
+    {
+      "headword": "politician",
+      "page": 8
+    },
+    {
+      "headword": "politics",
+      "page": 8
+    },
+    {
+      "headword": "pollution",
+      "page": 8
+    },
+    {
+      "headword": "pool",
+      "page": 8
+    },
+    {
+      "headword": "poor",
+      "page": 8
+    },
+    {
+      "headword": "pop",
+      "page": 8
+    },
+    {
+      "headword": "popular",
+      "page": 8
+    },
+    {
+      "headword": "popularity",
+      "page": 8
+    },
+    {
+      "headword": "population",
+      "page": 8
+    },
+    {
+      "headword": "port",
+      "page": 8
+    },
+    {
+      "headword": "portrait",
+      "page": 8
+    },
+    {
+      "headword": "pose",
+      "page": 8
+    },
+    {
+      "headword": "position",
+      "page": 8
+    },
+    {
+      "headword": "positive",
+      "page": 8
+    },
+    {
+      "headword": "possess",
+      "page": 8
+    },
+    {
+      "headword": "possession",
+      "page": 8
+    },
+    {
+      "headword": "possibility",
+      "page": 8
+    },
+    {
+      "headword": "possible",
+      "page": 8
+    },
+    {
+      "headword": "possibly",
+      "page": 8
+    },
+    {
+      "headword": "post",
+      "page": 8
+    },
+    {
+      "headword": "poster",
+      "page": 8
+    },
+    {
+      "headword": "pot",
+      "page": 8
+    },
+    {
+      "headword": "potato",
+      "page": 8
+    },
+    {
+      "headword": "potential",
+      "page": 8
+    },
+    {
+      "headword": "pound",
+      "page": 8
+    },
+    {
+      "headword": "pour",
+      "page": 8
+    },
+    {
+      "headword": "poverty",
+      "page": 8
+    },
+    {
+      "headword": "powder",
+      "page": 8
+    },
+    {
+      "headword": "power",
+      "page": 8
+    },
+    {
+      "headword": "powerful",
+      "page": 8
+    },
+    {
+      "headword": "practical",
+      "page": 8
+    },
+    {
+      "headword": "practice",
+      "page": 8
+    },
+    {
+      "headword": "practise",
+      "page": 8
+    },
+    {
+      "headword": "praise",
+      "page": 8
+    },
+    {
+      "headword": "pray",
+      "page": 8
+    },
+    {
+      "headword": "prayer",
+      "page": 8
+    },
+    {
+      "headword": "predict",
+      "page": 8
+    },
+    {
+      "headword": "prediction",
+      "page": 8
+    },
+    {
+      "headword": "prefer",
+      "page": 8
+    },
+    {
+      "headword": "pregnant",
+      "page": 8
+    },
+    {
+      "headword": "preparation",
+      "page": 8
+    },
+    {
+      "headword": "prepare",
+      "page": 8
+    },
+    {
+      "headword": "prepared",
+      "page": 8
+    },
+    {
+      "headword": "presence",
+      "page": 8
+    },
+    {
+      "headword": "present",
+      "page": 8
+    },
+    {
+      "headword": "presentation",
+      "page": 8
+    },
+    {
+      "headword": "preserve",
+      "page": 8
+    },
+    {
+      "headword": "president",
+      "page": 8
+    },
+    {
+      "headword": "press",
+      "page": 8
+    },
+    {
+      "headword": "pressure",
+      "page": 8
+    },
+    {
+      "headword": "pretend",
+      "page": 8
+    },
+    {
+      "headword": "pretty",
+      "page": 8
+    },
+    {
+      "headword": "prevent",
+      "page": 8
+    },
+    {
+      "headword": "previous",
+      "page": 8
+    },
+    {
+      "headword": "previously",
+      "page": 8
+    },
+    {
+      "headword": "price",
+      "page": 8
+    },
+    {
+      "headword": "priest",
+      "page": 8
+    },
+    {
+      "headword": "primary",
+      "page": 8
+    },
+    {
+      "headword": "prime",
+      "page": 8
+    },
+    {
+      "headword": "prince",
+      "page": 8
+    },
+    {
+      "headword": "princess",
+      "page": 8
+    },
+    {
+      "headword": "principle",
+      "page": 8
+    },
+    {
+      "headword": "print",
+      "page": 8
+    },
+    {
+      "headword": "printer",
+      "page": 8
+    },
+    {
+      "headword": "printing",
+      "page": 8
+    },
+    {
+      "headword": "priority",
+      "page": 8
+    },
+    {
+      "headword": "prison",
+      "page": 8
+    },
+    {
+      "headword": "prisoner",
+      "page": 8
+    },
+    {
+      "headword": "privacy",
+      "page": 8
+    },
+    {
+      "headword": "private",
+      "page": 8
+    },
+    {
+      "headword": "prize",
+      "page": 8
+    },
+    {
+      "headword": "probably",
+      "page": 8
+    },
+    {
+      "headword": "problem",
+      "page": 8
+    },
+    {
+      "headword": "procedure",
+      "page": 8
+    },
+    {
+      "headword": "process",
+      "page": 8
+    },
+    {
+      "headword": "produce",
+      "page": 8
+    },
+    {
+      "headword": "producer",
+      "page": 8
+    },
+    {
+      "headword": "product",
+      "page": 8
+    },
+    {
+      "headword": "production",
+      "page": 8
+    },
+    {
+      "headword": "profession",
+      "page": 8
+    },
+    {
+      "headword": "professional",
+      "page": 8
+    },
+    {
+      "headword": "professor",
+      "page": 8
+    },
+    {
+      "headword": "profile",
+      "page": 8
+    },
+    {
+      "headword": "profit",
+      "page": 8
+    },
+    {
+      "headword": "program",
+      "page": 8
+    },
+    {
+      "headword": "programme",
+      "page": 8
+    },
+    {
+      "headword": "progress",
+      "page": 8
+    },
+    {
+      "headword": "project",
+      "page": 8
+    },
+    {
+      "headword": "promise",
+      "page": 8
+    },
+    {
+      "headword": "promote",
+      "page": 8
+    },
+    {
+      "headword": "pronounce",
+      "page": 8
+    },
+    {
+      "headword": "proof",
+      "page": 8
+    },
+    {
+      "headword": "proper",
+      "page": 8
+    },
+    {
+      "headword": "properly",
+      "page": 8
+    },
+    {
+      "headword": "property",
+      "page": 8
+    },
+    {
+      "headword": "proposal",
+      "page": 8
+    },
+    {
+      "headword": "propose",
+      "page": 8
+    },
+    {
+      "headword": "prospect",
+      "page": 8
+    },
+    {
+      "headword": "protect",
+      "page": 8
+    },
+    {
+      "headword": "protection",
+      "page": 8
+    },
+    {
+      "headword": "protest",
+      "page": 8
+    },
+    {
+      "headword": "proud",
+      "page": 8
+    },
+    {
+      "headword": "prove",
+      "page": 8
+    },
+    {
+      "headword": "provide",
+      "page": 8
+    },
+    {
+      "headword": "psychologist",
+      "page": 8
+    },
+    {
+      "headword": "psychology",
+      "page": 8
+    },
+    {
+      "headword": "pub",
+      "page": 8
+    },
+    {
+      "headword": "public",
+      "page": 8
+    },
+    {
+      "headword": "publication",
+      "page": 8
+    },
+    {
+      "headword": "publish",
+      "page": 8
+    },
+    {
+      "headword": "pull",
+      "page": 8
+    },
+    {
+      "headword": "punish",
+      "page": 8
+    },
+    {
+      "headword": "punishment",
+      "page": 8
+    },
+    {
+      "headword": "pupil",
+      "page": 8
+    },
+    {
+      "headword": "purchase",
+      "page": 8
+    },
+    {
+      "headword": "pure",
+      "page": 8
+    },
+    {
+      "headword": "purple",
+      "page": 8
+    },
+    {
+      "headword": "purpose",
+      "page": 8
+    },
+    {
+      "headword": "pursue",
+      "page": 8
+    },
+    {
+      "headword": "push",
+      "page": 8
+    },
+    {
+      "headword": "put",
+      "page": 8
+    },
+    {
+      "headword": "qualification",
+      "page": 8
+    },
+    {
+      "headword": "qualified",
+      "page": 8
+    },
+    {
+      "headword": "qualify",
+      "page": 8
+    },
+    {
+      "headword": "quality",
+      "page": 8
+    },
+    {
+      "headword": "quantity",
+      "page": 8
+    },
+    {
+      "headword": "quarter",
+      "page": 8
+    },
+    {
+      "headword": "queen",
+      "page": 8
+    },
+    {
+      "headword": "question",
+      "page": 8
+    },
+    {
+      "headword": "queue",
+      "page": 8
+    },
+    {
+      "headword": "quick",
+      "page": 8
+    },
+    {
+      "headword": "quickly",
+      "page": 8
+    },
+    {
+      "headword": "quiet",
+      "page": 8
+    },
+    {
+      "headword": "quietly",
+      "page": 8
+    },
+    {
+      "headword": "quit",
+      "page": 8
+    },
+    {
+      "headword": "quite",
+      "page": 8
+    },
+    {
+      "headword": "quotation",
+      "page": 8
+    },
+    {
+      "headword": "quote",
+      "page": 8
+    },
+    {
+      "headword": "race (competition)",
+      "page": 8
+    },
+    {
+      "headword": "race (people)",
+      "page": 8
+    },
+    {
+      "headword": "racing",
+      "page": 8
+    },
+    {
+      "headword": "radio",
+      "page": 8
+    },
+    {
+      "headword": "railway",
+      "page": 8
+    },
+    {
+      "headword": "rain",
+      "page": 8
+    },
+    {
+      "headword": "raise",
+      "page": 8
+    },
+    {
+      "headword": "range",
+      "page": 8
+    },
+    {
+      "headword": "rank",
+      "page": 8
+    },
+    {
+      "headword": "rapid",
+      "page": 8
+    },
+    {
+      "headword": "rapidly",
+      "page": 8
+    },
+    {
+      "headword": "rare",
+      "page": 8
+    },
+    {
+      "headword": "rarely",
+      "page": 8
+    },
+    {
+      "headword": "rate",
+      "page": 8
+    },
+    {
+      "headword": "rather",
+      "page": 8
+    },
+    {
+      "headword": "raw",
+      "page": 8
+    },
+    {
+      "headword": "reach",
+      "page": 8
+    },
+    {
+      "headword": "react",
+      "page": 8
+    },
+    {
+      "headword": "reaction",
+      "page": 8
+    },
+    {
+      "headword": "read",
+      "page": 8
+    },
+    {
+      "headword": "reader",
+      "page": 8
+    },
+    {
+      "headword": "reading",
+      "page": 8
+    },
+    {
+      "headword": "ready",
+      "page": 8
+    },
+    {
+      "headword": "real",
+      "page": 8
+    },
+    {
+      "headword": "realistic",
+      "page": 8
+    },
+    {
+      "headword": "reality",
+      "page": 8
+    },
+    {
+      "headword": "realize",
+      "page": 8
+    },
+    {
+      "headword": "really",
+      "page": 8
+    },
+    {
+      "headword": "reason",
+      "page": 8
+    },
+    {
+      "headword": "reasonable",
+      "page": 8
+    },
+    {
+      "headword": "recall",
+      "page": 8
+    },
+    {
+      "headword": "receipt",
+      "page": 8
+    },
+    {
+      "headword": "receive",
+      "page": 8
+    },
+    {
+      "headword": "recent",
+      "page": 8
+    },
+    {
+      "headword": "recently",
+      "page": 8
+    },
+    {
+      "headword": "reception",
+      "page": 8
+    },
+    {
+      "headword": "recipe",
+      "page": 8
+    },
+    {
+      "headword": "recognize",
+      "page": 8
+    },
+    {
+      "headword": "recommend",
+      "page": 8
+    },
+    {
+      "headword": "recommendation",
+      "page": 8
+    },
+    {
+      "headword": "record",
+      "page": 8
+    },
+    {
+      "headword": "recording",
+      "page": 8
+    },
+    {
+      "headword": "recover",
+      "page": 8
+    },
+    {
+      "headword": "recycle",
+      "page": 8
+    },
+    {
+      "headword": "red",
+      "page": 8
+    },
+    {
+      "headword": "reduce",
+      "page": 8
+    },
+    {
+      "headword": "reduction",
+      "page": 8
+    },
+    {
+      "headword": "refer",
+      "page": 8
+    },
+    {
+      "headword": "reference",
+      "page": 8
+    },
+    {
+      "headword": "reflect",
+      "page": 8
+    },
+    {
+      "headword": "refuse1",
+      "page": 8
+    },
+    {
+      "headword": "regard",
+      "page": 8
+    },
+    {
+      "headword": "region",
+      "page": 8
+    },
+    {
+      "headword": "regional",
+      "page": 8
+    },
+    {
+      "headword": "register",
+      "page": 8
+    },
+    {
+      "headword": "regret",
+      "page": 8
+    },
+    {
+      "headword": "regular",
+      "page": 8
+    },
+    {
+      "headword": "regularly",
+      "page": 8
+    },
+    {
+      "headword": "regulation",
+      "page": 8
+    },
+    {
+      "headword": "reject",
+      "page": 8
+    },
+    {
+      "headword": "relate",
+      "page": 8
+    },
+    {
+      "headword": "related",
+      "page": 8
+    },
+    {
+      "headword": "relation",
+      "page": 8
+    },
+    {
+      "headword": "relationship",
+      "page": 8
+    },
+    {
+      "headword": "relative",
+      "page": 8
+    },
+    {
+      "headword": "relatively",
+      "page": 8
+    },
+    {
+      "headword": "relax",
+      "page": 8
+    },
+    {
+      "headword": "relaxed",
+      "page": 8
+    },
+    {
+      "headword": "relaxing",
+      "page": 8
+    },
+    {
+      "headword": "release",
+      "page": 8
+    },
+    {
+      "headword": "relevant",
+      "page": 8
+    },
+    {
+      "headword": "reliable",
+      "page": 8
+    },
+    {
+      "headword": "relief",
+      "page": 8
+    },
+    {
+      "headword": "religion",
+      "page": 8
+    },
+    {
+      "headword": "religious",
+      "page": 8
+    },
+    {
+      "headword": "rely",
+      "page": 8
+    },
+    {
+      "headword": "remain",
+      "page": 8
+    },
+    {
+      "headword": "remark",
+      "page": 8
+    },
+    {
+      "headword": "remember",
+      "page": 8
+    },
+    {
+      "headword": "remind",
+      "page": 8
+    },
+    {
+      "headword": "remote",
+      "page": 8
+    },
+    {
+      "headword": "remove",
+      "page": 8
+    },
+    {
+      "headword": "rent",
+      "page": 8
+    },
+    {
+      "headword": "repair",
+      "page": 8
+    },
+    {
+      "headword": "repeat",
+      "page": 8
+    },
+    {
+      "headword": "repeated",
+      "page": 8
+    },
+    {
+      "headword": "replace",
+      "page": 8
+    },
+    {
+      "headword": "reply",
+      "page": 8
+    },
+    {
+      "headword": "report",
+      "page": 8
+    },
+    {
+      "headword": "reporter",
+      "page": 8
+    },
+    {
+      "headword": "represent",
+      "page": 8
+    },
+    {
+      "headword": "representative",
+      "page": 8
+    },
+    {
+      "headword": "reputation",
+      "page": 9
+    },
+    {
+      "headword": "request",
+      "page": 9
+    },
+    {
+      "headword": "require",
+      "page": 9
+    },
+    {
+      "headword": "requirement",
+      "page": 9
+    },
+    {
+      "headword": "rescue",
+      "page": 9
+    },
+    {
+      "headword": "research",
+      "page": 9
+    },
+    {
+      "headword": "researcher",
+      "page": 9
+    },
+    {
+      "headword": "reservation",
+      "page": 9
+    },
+    {
+      "headword": "reserve",
+      "page": 9
+    },
+    {
+      "headword": "resident",
+      "page": 9
+    },
+    {
+      "headword": "resist",
+      "page": 9
+    },
+    {
+      "headword": "resolve",
+      "page": 9
+    },
+    {
+      "headword": "resort",
+      "page": 9
+    },
+    {
+      "headword": "resource",
+      "page": 9
+    },
+    {
+      "headword": "respect",
+      "page": 9
+    },
+    {
+      "headword": "respond",
+      "page": 9
+    },
+    {
+      "headword": "response",
+      "page": 9
+    },
+    {
+      "headword": "responsibility",
+      "page": 9
+    },
+    {
+      "headword": "responsible",
+      "page": 9
+    },
+    {
+      "headword": "rest (remaining part)",
+      "page": 9
+    },
+    {
+      "headword": "rest (sleep/relax)",
+      "page": 9
+    },
+    {
+      "headword": "restaurant",
+      "page": 9
+    },
+    {
+      "headword": "result",
+      "page": 9
+    },
+    {
+      "headword": "retain",
+      "page": 9
+    },
+    {
+      "headword": "retire",
+      "page": 9
+    },
+    {
+      "headword": "retired",
+      "page": 9
+    },
+    {
+      "headword": "return",
+      "page": 9
+    },
+    {
+      "headword": "reveal",
+      "page": 9
+    },
+    {
+      "headword": "review",
+      "page": 9
+    },
+    {
+      "headword": "revise",
+      "page": 9
+    },
+    {
+      "headword": "revolution",
+      "page": 9
+    },
+    {
+      "headword": "reward",
+      "page": 9
+    },
+    {
+      "headword": "rhythm",
+      "page": 9
+    },
+    {
+      "headword": "rice",
+      "page": 9
+    },
+    {
+      "headword": "rich",
+      "page": 9
+    },
+    {
+      "headword": "rid",
+      "page": 9
+    },
+    {
+      "headword": "ride",
+      "page": 9
+    },
+    {
+      "headword": "right",
+      "page": 9
+    },
+    {
+      "headword": "ring1",
+      "page": 9
+    },
+    {
+      "headword": "ring2",
+      "page": 9
+    },
+    {
+      "headword": "rise",
+      "page": 9
+    },
+    {
+      "headword": "risk",
+      "page": 9
+    },
+    {
+      "headword": "river",
+      "page": 9
+    },
+    {
+      "headword": "road",
+      "page": 9
+    },
+    {
+      "headword": "robot",
+      "page": 9
+    },
+    {
+      "headword": "rock (stone)",
+      "page": 9
+    },
+    {
+      "headword": "rock (music)",
+      "page": 9
+    },
+    {
+      "headword": "role",
+      "page": 9
+    },
+    {
+      "headword": "roll",
+      "page": 9
+    },
+    {
+      "headword": "romantic",
+      "page": 9
+    },
+    {
+      "headword": "roof",
+      "page": 9
+    },
+    {
+      "headword": "room",
+      "page": 9
+    },
+    {
+      "headword": "root",
+      "page": 9
+    },
+    {
+      "headword": "rope",
+      "page": 9
+    },
+    {
+      "headword": "rough",
+      "page": 9
+    },
+    {
+      "headword": "round",
+      "page": 9
+    },
+    {
+      "headword": "route",
+      "page": 9
+    },
+    {
+      "headword": "routine",
+      "page": 9
+    },
+    {
+      "headword": "row1",
+      "page": 9
+    },
+    {
+      "headword": "royal",
+      "page": 9
+    },
+    {
+      "headword": "rub",
+      "page": 9
+    },
+    {
+      "headword": "rubber",
+      "page": 9
+    },
+    {
+      "headword": "rubbish",
+      "page": 9
+    },
+    {
+      "headword": "rude",
+      "page": 9
+    },
+    {
+      "headword": "rugby",
+      "page": 9
+    },
+    {
+      "headword": "rule",
+      "page": 9
+    },
+    {
+      "headword": "run",
+      "page": 9
+    },
+    {
+      "headword": "runner",
+      "page": 9
+    },
+    {
+      "headword": "running",
+      "page": 9
+    },
+    {
+      "headword": "rural",
+      "page": 9
+    },
+    {
+      "headword": "rush",
+      "page": 9
+    },
+    {
+      "headword": "sad",
+      "page": 9
+    },
+    {
+      "headword": "sadly",
+      "page": 9
+    },
+    {
+      "headword": "safe",
+      "page": 9
+    },
+    {
+      "headword": "safety",
+      "page": 9
+    },
+    {
+      "headword": "sail",
+      "page": 9
+    },
+    {
+      "headword": "sailing",
+      "page": 9
+    },
+    {
+      "headword": "sailor",
+      "page": 9
+    },
+    {
+      "headword": "salad",
+      "page": 9
+    },
+    {
+      "headword": "salary",
+      "page": 9
+    },
+    {
+      "headword": "sale",
+      "page": 9
+    },
+    {
+      "headword": "salt",
+      "page": 9
+    },
+    {
+      "headword": "same",
+      "page": 9
+    },
+    {
+      "headword": "sample",
+      "page": 9
+    },
+    {
+      "headword": "sand",
+      "page": 9
+    },
+    {
+      "headword": "sandwich",
+      "page": 9
+    },
+    {
+      "headword": "satellite",
+      "page": 9
+    },
+    {
+      "headword": "satisfied",
+      "page": 9
+    },
+    {
+      "headword": "satisfy",
+      "page": 9
+    },
+    {
+      "headword": "Saturday",
+      "page": 9
+    },
+    {
+      "headword": "sauce",
+      "page": 9
+    },
+    {
+      "headword": "save",
+      "page": 9
+    },
+    {
+      "headword": "saving",
+      "page": 9
+    },
+    {
+      "headword": "say",
+      "page": 9
+    },
+    {
+      "headword": "scale",
+      "page": 9
+    },
+    {
+      "headword": "scan",
+      "page": 9
+    },
+    {
+      "headword": "scared",
+      "page": 9
+    },
+    {
+      "headword": "scary",
+      "page": 9
+    },
+    {
+      "headword": "scene",
+      "page": 9
+    },
+    {
+      "headword": "schedule",
+      "page": 9
+    },
+    {
+      "headword": "scheme",
+      "page": 9
+    },
+    {
+      "headword": "school",
+      "page": 9
+    },
+    {
+      "headword": "science",
+      "page": 9
+    },
+    {
+      "headword": "scientific",
+      "page": 9
+    },
+    {
+      "headword": "scientist",
+      "page": 9
+    },
+    {
+      "headword": "score",
+      "page": 9
+    },
+    {
+      "headword": "scream",
+      "page": 9
+    },
+    {
+      "headword": "screen",
+      "page": 9
+    },
+    {
+      "headword": "script",
+      "page": 9
+    },
+    {
+      "headword": "sculpture",
+      "page": 9
+    },
+    {
+      "headword": "sea",
+      "page": 9
+    },
+    {
+      "headword": "search",
+      "page": 9
+    },
+    {
+      "headword": "season",
+      "page": 9
+    },
+    {
+      "headword": "seat",
+      "page": 9
+    },
+    {
+      "headword": "second1 (next after the first)",
+      "page": 9
+    },
+    {
+      "headword": "second1 (unit of time)",
+      "page": 9
+    },
+    {
+      "headword": "secondary",
+      "page": 9
+    },
+    {
+      "headword": "secondly",
+      "page": 9
+    },
+    {
+      "headword": "secret",
+      "page": 9
+    },
+    {
+      "headword": "secretary",
+      "page": 9
+    },
+    {
+      "headword": "section",
+      "page": 9
+    },
+    {
+      "headword": "sector",
+      "page": 9
+    },
+    {
+      "headword": "secure",
+      "page": 9
+    },
+    {
+      "headword": "security",
+      "page": 9
+    },
+    {
+      "headword": "see",
+      "page": 9
+    },
+    {
+      "headword": "seed",
+      "page": 9
+    },
+    {
+      "headword": "seek",
+      "page": 9
+    },
+    {
+      "headword": "seem",
+      "page": 9
+    },
+    {
+      "headword": "select",
+      "page": 9
+    },
+    {
+      "headword": "selection",
+      "page": 9
+    },
+    {
+      "headword": "self",
+      "page": 9
+    },
+    {
+      "headword": "sell",
+      "page": 9
+    },
+    {
+      "headword": "send",
+      "page": 9
+    },
+    {
+      "headword": "senior",
+      "page": 9
+    },
+    {
+      "headword": "sense",
+      "page": 9
+    },
+    {
+      "headword": "sensible",
+      "page": 9
+    },
+    {
+      "headword": "sensitive",
+      "page": 9
+    },
+    {
+      "headword": "sentence",
+      "page": 9
+    },
+    {
+      "headword": "separate",
+      "page": 9
+    },
+    {
+      "headword": "September",
+      "page": 9
+    },
+    {
+      "headword": "sequence",
+      "page": 9
+    },
+    {
+      "headword": "series",
+      "page": 9
+    },
+    {
+      "headword": "serious",
+      "page": 9
+    },
+    {
+      "headword": "seriously",
+      "page": 9
+    },
+    {
+      "headword": "servant",
+      "page": 9
+    },
+    {
+      "headword": "serve",
+      "page": 9
+    },
+    {
+      "headword": "service",
+      "page": 9
+    },
+    {
+      "headword": "session",
+      "page": 9
+    },
+    {
+      "headword": "set (put)",
+      "page": 9
+    },
+    {
+      "headword": "set (group)",
+      "page": 9
+    },
+    {
+      "headword": "setting",
+      "page": 9
+    },
+    {
+      "headword": "settle",
+      "page": 9
+    },
+    {
+      "headword": "seven",
+      "page": 9
+    },
+    {
+      "headword": "seventeen",
+      "page": 9
+    },
+    {
+      "headword": "seventy",
+      "page": 9
+    },
+    {
+      "headword": "several",
+      "page": 9
+    },
+    {
+      "headword": "severe",
+      "page": 9
+    },
+    {
+      "headword": "sex",
+      "page": 9
+    },
+    {
+      "headword": "sexual",
+      "page": 9
+    },
+    {
+      "headword": "shade",
+      "page": 9
+    },
+    {
+      "headword": "shadow",
+      "page": 9
+    },
+    {
+      "headword": "shake",
+      "page": 9
+    },
+    {
+      "headword": "shall",
+      "page": 9
+    },
+    {
+      "headword": "shallow",
+      "page": 9
+    },
+    {
+      "headword": "shame",
+      "page": 9
+    },
+    {
+      "headword": "shape",
+      "page": 9
+    },
+    {
+      "headword": "share",
+      "page": 9
+    },
+    {
+      "headword": "sharp",
+      "page": 9
+    },
+    {
+      "headword": "she",
+      "page": 9
+    },
+    {
+      "headword": "sheep",
+      "page": 9
+    },
+    {
+      "headword": "sheet",
+      "page": 9
+    },
+    {
+      "headword": "shelf",
+      "page": 9
+    },
+    {
+      "headword": "shell",
+      "page": 9
+    },
+    {
+      "headword": "shelter",
+      "page": 9
+    },
+    {
+      "headword": "shift",
+      "page": 9
+    },
+    {
+      "headword": "shine",
+      "page": 9
+    },
+    {
+      "headword": "shiny",
+      "page": 9
+    },
+    {
+      "headword": "ship",
+      "page": 9
+    },
+    {
+      "headword": "shirt",
+      "page": 9
+    },
+    {
+      "headword": "shock",
+      "page": 9
+    },
+    {
+      "headword": "shocked",
+      "page": 9
+    },
+    {
+      "headword": "shoe",
+      "page": 9
+    },
+    {
+      "headword": "shoot",
+      "page": 9
+    },
+    {
+      "headword": "shooting",
+      "page": 9
+    },
+    {
+      "headword": "shop",
+      "page": 9
+    },
+    {
+      "headword": "shopping",
+      "page": 9
+    },
+    {
+      "headword": "short",
+      "page": 9
+    },
+    {
+      "headword": "shot",
+      "page": 9
+    },
+    {
+      "headword": "should",
+      "page": 9
+    },
+    {
+      "headword": "shoulder",
+      "page": 9
+    },
+    {
+      "headword": "shout",
+      "page": 9
+    },
+    {
+      "headword": "show",
+      "page": 9
+    },
+    {
+      "headword": "shower",
+      "page": 9
+    },
+    {
+      "headword": "shut",
+      "page": 9
+    },
+    {
+      "headword": "shy",
+      "page": 9
+    },
+    {
+      "headword": "sick",
+      "page": 9
+    },
+    {
+      "headword": "side",
+      "page": 9
+    },
+    {
+      "headword": "sight",
+      "page": 9
+    },
+    {
+      "headword": "sign",
+      "page": 9
+    },
+    {
+      "headword": "signal",
+      "page": 9
+    },
+    {
+      "headword": "significant",
+      "page": 9
+    },
+    {
+      "headword": "significantly",
+      "page": 9
+    },
+    {
+      "headword": "silence",
+      "page": 9
+    },
+    {
+      "headword": "silent",
+      "page": 9
+    },
+    {
+      "headword": "silk",
+      "page": 9
+    },
+    {
+      "headword": "silly",
+      "page": 9
+    },
+    {
+      "headword": "silver",
+      "page": 9
+    },
+    {
+      "headword": "similar",
+      "page": 9
+    },
+    {
+      "headword": "similarity",
+      "page": 9
+    },
+    {
+      "headword": "similarly",
+      "page": 9
+    },
+    {
+      "headword": "simple",
+      "page": 9
+    },
+    {
+      "headword": "simply",
+      "page": 9
+    },
+    {
+      "headword": "since",
+      "page": 9
+    },
+    {
+      "headword": "sincere",
+      "page": 9
+    },
+    {
+      "headword": "sing",
+      "page": 9
+    },
+    {
+      "headword": "singer",
+      "page": 9
+    },
+    {
+      "headword": "singing",
+      "page": 9
+    },
+    {
+      "headword": "single",
+      "page": 9
+    },
+    {
+      "headword": "sink",
+      "page": 9
+    },
+    {
+      "headword": "sir",
+      "page": 9
+    },
+    {
+      "headword": "sister",
+      "page": 9
+    },
+    {
+      "headword": "sit",
+      "page": 9
+    },
+    {
+      "headword": "site",
+      "page": 9
+    },
+    {
+      "headword": "situation",
+      "page": 9
+    },
+    {
+      "headword": "six",
+      "page": 9
+    },
+    {
+      "headword": "sixteen",
+      "page": 9
+    },
+    {
+      "headword": "sixty",
+      "page": 9
+    },
+    {
+      "headword": "size",
+      "page": 9
+    },
+    {
+      "headword": "ski",
+      "page": 9
+    },
+    {
+      "headword": "skiing",
+      "page": 9
+    },
+    {
+      "headword": "skill",
+      "page": 9
+    },
+    {
+      "headword": "skin",
+      "page": 9
+    },
+    {
+      "headword": "skirt",
+      "page": 9
+    },
+    {
+      "headword": "sky",
+      "page": 9
+    },
+    {
+      "headword": "slave",
+      "page": 9
+    },
+    {
+      "headword": "sleep",
+      "page": 9
+    },
+    {
+      "headword": "slice",
+      "page": 9
+    },
+    {
+      "headword": "slide",
+      "page": 9
+    },
+    {
+      "headword": "slight",
+      "page": 9
+    },
+    {
+      "headword": "slightly",
+      "page": 9
+    },
+    {
+      "headword": "slip",
+      "page": 9
+    },
+    {
+      "headword": "slope",
+      "page": 9
+    },
+    {
+      "headword": "slow",
+      "page": 9
+    },
+    {
+      "headword": "slowly",
+      "page": 9
+    },
+    {
+      "headword": "small",
+      "page": 9
+    },
+    {
+      "headword": "smart",
+      "page": 9
+    },
+    {
+      "headword": "smartphone",
+      "page": 9
+    },
+    {
+      "headword": "smell",
+      "page": 9
+    },
+    {
+      "headword": "smile",
+      "page": 9
+    },
+    {
+      "headword": "smoke",
+      "page": 9
+    },
+    {
+      "headword": "smoking",
+      "page": 9
+    },
+    {
+      "headword": "smooth",
+      "page": 9
+    },
+    {
+      "headword": "snake",
+      "page": 9
+    },
+    {
+      "headword": "snow",
+      "page": 9
+    },
+    {
+      "headword": "so",
+      "page": 9
+    },
+    {
+      "headword": "soap",
+      "page": 9
+    },
+    {
+      "headword": "soccer",
+      "page": 9
+    },
+    {
+      "headword": "social",
+      "page": 9
+    },
+    {
+      "headword": "society",
+      "page": 9
+    },
+    {
+      "headword": "sock",
+      "page": 9
+    },
+    {
+      "headword": "soft",
+      "page": 9
+    },
+    {
+      "headword": "software",
+      "page": 9
+    },
+    {
+      "headword": "soil",
+      "page": 9
+    },
+    {
+      "headword": "solar",
+      "page": 9
+    },
+    {
+      "headword": "soldier",
+      "page": 9
+    },
+    {
+      "headword": "solid",
+      "page": 9
+    },
+    {
+      "headword": "solution",
+      "page": 9
+    },
+    {
+      "headword": "solve",
+      "page": 9
+    },
+    {
+      "headword": "some",
+      "page": 9
+    },
+    {
+      "headword": "somebody",
+      "page": 9
+    },
+    {
+      "headword": "someone",
+      "page": 9
+    },
+    {
+      "headword": "something",
+      "page": 9
+    },
+    {
+      "headword": "sometimes",
+      "page": 9
+    },
+    {
+      "headword": "somewhat",
+      "page": 9
+    },
+    {
+      "headword": "somewhere",
+      "page": 9
+    },
+    {
+      "headword": "son",
+      "page": 9
+    },
+    {
+      "headword": "song",
+      "page": 9
+    },
+    {
+      "headword": "soon",
+      "page": 9
+    },
+    {
+      "headword": "sorry",
+      "page": 9
+    },
+    {
+      "headword": "sort",
+      "page": 10
+    },
+    {
+      "headword": "soul",
+      "page": 10
+    },
+    {
+      "headword": "sound",
+      "page": 10
+    },
+    {
+      "headword": "soup",
+      "page": 10
+    },
+    {
+      "headword": "source",
+      "page": 10
+    },
+    {
+      "headword": "south",
+      "page": 10
+    },
+    {
+      "headword": "southern",
+      "page": 10
+    },
+    {
+      "headword": "space",
+      "page": 10
+    },
+    {
+      "headword": "speak",
+      "page": 10
+    },
+    {
+      "headword": "speaker",
+      "page": 10
+    },
+    {
+      "headword": "special",
+      "page": 10
+    },
+    {
+      "headword": "specialist",
+      "page": 10
+    },
+    {
+      "headword": "species",
+      "page": 10
+    },
+    {
+      "headword": "specific",
+      "page": 10
+    },
+    {
+      "headword": "specifically",
+      "page": 10
+    },
+    {
+      "headword": "speech",
+      "page": 10
+    },
+    {
+      "headword": "speed",
+      "page": 10
+    },
+    {
+      "headword": "spell",
+      "page": 10
+    },
+    {
+      "headword": "spelling",
+      "page": 10
+    },
+    {
+      "headword": "spend",
+      "page": 10
+    },
+    {
+      "headword": "spending",
+      "page": 10
+    },
+    {
+      "headword": "spicy",
+      "page": 10
+    },
+    {
+      "headword": "spider",
+      "page": 10
+    },
+    {
+      "headword": "spirit",
+      "page": 10
+    },
+    {
+      "headword": "spiritual",
+      "page": 10
+    },
+    {
+      "headword": "split",
+      "page": 10
+    },
+    {
+      "headword": "spoken",
+      "page": 10
+    },
+    {
+      "headword": "sponsor",
+      "page": 10
+    },
+    {
+      "headword": "spoon",
+      "page": 10
+    },
+    {
+      "headword": "sport",
+      "page": 10
+    },
+    {
+      "headword": "spot",
+      "page": 10
+    },
+    {
+      "headword": "spread",
+      "page": 10
+    },
+    {
+      "headword": "spring",
+      "page": 10
+    },
+    {
+      "headword": "square",
+      "page": 10
+    },
+    {
+      "headword": "stable",
+      "page": 10
+    },
+    {
+      "headword": "stadium",
+      "page": 10
+    },
+    {
+      "headword": "staff",
+      "page": 10
+    },
+    {
+      "headword": "stage",
+      "page": 10
+    },
+    {
+      "headword": "stair",
+      "page": 10
+    },
+    {
+      "headword": "stamp",
+      "page": 10
+    },
+    {
+      "headword": "stand",
+      "page": 10
+    },
+    {
+      "headword": "standard",
+      "page": 10
+    },
+    {
+      "headword": "star",
+      "page": 10
+    },
+    {
+      "headword": "stare",
+      "page": 10
+    },
+    {
+      "headword": "start",
+      "page": 10
+    },
+    {
+      "headword": "state",
+      "page": 10
+    },
+    {
+      "headword": "statement",
+      "page": 10
+    },
+    {
+      "headword": "station",
+      "page": 10
+    },
+    {
+      "headword": "statistic",
+      "page": 10
+    },
+    {
+      "headword": "statue",
+      "page": 10
+    },
+    {
+      "headword": "status",
+      "page": 10
+    },
+    {
+      "headword": "stay",
+      "page": 10
+    },
+    {
+      "headword": "steady",
+      "page": 10
+    },
+    {
+      "headword": "steal",
+      "page": 10
+    },
+    {
+      "headword": "steel",
+      "page": 10
+    },
+    {
+      "headword": "steep",
+      "page": 10
+    },
+    {
+      "headword": "step",
+      "page": 10
+    },
+    {
+      "headword": "stick (push into/attach)",
+      "page": 10
+    },
+    {
+      "headword": "stick (piece of wood)",
+      "page": 10
+    },
+    {
+      "headword": "sticky",
+      "page": 10
+    },
+    {
+      "headword": "stiff",
+      "page": 10
+    },
+    {
+      "headword": "still",
+      "page": 10
+    },
+    {
+      "headword": "stock",
+      "page": 10
+    },
+    {
+      "headword": "stomach",
+      "page": 10
+    },
+    {
+      "headword": "stone",
+      "page": 10
+    },
+    {
+      "headword": "stop",
+      "page": 10
+    },
+    {
+      "headword": "store",
+      "page": 10
+    },
+    {
+      "headword": "storm",
+      "page": 10
+    },
+    {
+      "headword": "story",
+      "page": 10
+    },
+    {
+      "headword": "straight",
+      "page": 10
+    },
+    {
+      "headword": "strange",
+      "page": 10
+    },
+    {
+      "headword": "stranger",
+      "page": 10
+    },
+    {
+      "headword": "strategy",
+      "page": 10
+    },
+    {
+      "headword": "stream",
+      "page": 10
+    },
+    {
+      "headword": "street",
+      "page": 10
+    },
+    {
+      "headword": "strength",
+      "page": 10
+    },
+    {
+      "headword": "stress",
+      "page": 10
+    },
+    {
+      "headword": "stretch",
+      "page": 10
+    },
+    {
+      "headword": "strict",
+      "page": 10
+    },
+    {
+      "headword": "strike",
+      "page": 10
+    },
+    {
+      "headword": "string",
+      "page": 10
+    },
+    {
+      "headword": "strong",
+      "page": 10
+    },
+    {
+      "headword": "strongly",
+      "page": 10
+    },
+    {
+      "headword": "structure",
+      "page": 10
+    },
+    {
+      "headword": "struggle",
+      "page": 10
+    },
+    {
+      "headword": "student",
+      "page": 10
+    },
+    {
+      "headword": "studio",
+      "page": 10
+    },
+    {
+      "headword": "study",
+      "page": 10
+    },
+    {
+      "headword": "stuff",
+      "page": 10
+    },
+    {
+      "headword": "stupid",
+      "page": 10
+    },
+    {
+      "headword": "style",
+      "page": 10
+    },
+    {
+      "headword": "subject",
+      "page": 10
+    },
+    {
+      "headword": "submit",
+      "page": 10
+    },
+    {
+      "headword": "substance",
+      "page": 10
+    },
+    {
+      "headword": "succeed",
+      "page": 10
+    },
+    {
+      "headword": "success",
+      "page": 10
+    },
+    {
+      "headword": "successful",
+      "page": 10
+    },
+    {
+      "headword": "successfully",
+      "page": 10
+    },
+    {
+      "headword": "such",
+      "page": 10
+    },
+    {
+      "headword": "sudden",
+      "page": 10
+    },
+    {
+      "headword": "suddenly",
+      "page": 10
+    },
+    {
+      "headword": "suffer",
+      "page": 10
+    },
+    {
+      "headword": "sugar",
+      "page": 10
+    },
+    {
+      "headword": "suggest",
+      "page": 10
+    },
+    {
+      "headword": "suggestion",
+      "page": 10
+    },
+    {
+      "headword": "suit",
+      "page": 10
+    },
+    {
+      "headword": "suitable",
+      "page": 10
+    },
+    {
+      "headword": "sum",
+      "page": 10
+    },
+    {
+      "headword": "summarize",
+      "page": 10
+    },
+    {
+      "headword": "summary",
+      "page": 10
+    },
+    {
+      "headword": "summer",
+      "page": 10
+    },
+    {
+      "headword": "sun",
+      "page": 10
+    },
+    {
+      "headword": "Sunday",
+      "page": 10
+    },
+    {
+      "headword": "supermarket",
+      "page": 10
+    },
+    {
+      "headword": "supply",
+      "page": 10
+    },
+    {
+      "headword": "support",
+      "page": 10
+    },
+    {
+      "headword": "supporter",
+      "page": 10
+    },
+    {
+      "headword": "suppose",
+      "page": 10
+    },
+    {
+      "headword": "sure",
+      "page": 10
+    },
+    {
+      "headword": "surely",
+      "page": 10
+    },
+    {
+      "headword": "surface",
+      "page": 10
+    },
+    {
+      "headword": "surgery",
+      "page": 10
+    },
+    {
+      "headword": "surprise",
+      "page": 10
+    },
+    {
+      "headword": "surprised",
+      "page": 10
+    },
+    {
+      "headword": "surprising",
+      "page": 10
+    },
+    {
+      "headword": "surround",
+      "page": 10
+    },
+    {
+      "headword": "surrounding",
+      "page": 10
+    },
+    {
+      "headword": "survey",
+      "page": 10
+    },
+    {
+      "headword": "survive",
+      "page": 10
+    },
+    {
+      "headword": "suspect",
+      "page": 10
+    },
+    {
+      "headword": "swear",
+      "page": 10
+    },
+    {
+      "headword": "sweater",
+      "page": 10
+    },
+    {
+      "headword": "sweep",
+      "page": 10
+    },
+    {
+      "headword": "sweet",
+      "page": 10
+    },
+    {
+      "headword": "swim",
+      "page": 10
+    },
+    {
+      "headword": "swimming",
+      "page": 10
+    },
+    {
+      "headword": "switch",
+      "page": 10
+    },
+    {
+      "headword": "symbol",
+      "page": 10
+    },
+    {
+      "headword": "sympathy",
+      "page": 10
+    },
+    {
+      "headword": "symptom",
+      "page": 10
+    },
+    {
+      "headword": "system",
+      "page": 10
+    },
+    {
+      "headword": "table",
+      "page": 10
+    },
+    {
+      "headword": "tablet",
+      "page": 10
+    },
+    {
+      "headword": "tail",
+      "page": 10
+    },
+    {
+      "headword": "take",
+      "page": 10
+    },
+    {
+      "headword": "tale",
+      "page": 10
+    },
+    {
+      "headword": "talent",
+      "page": 10
+    },
+    {
+      "headword": "talented",
+      "page": 10
+    },
+    {
+      "headword": "talk",
+      "page": 10
+    },
+    {
+      "headword": "tall",
+      "page": 10
+    },
+    {
+      "headword": "tank",
+      "page": 10
+    },
+    {
+      "headword": "tape",
+      "page": 10
+    },
+    {
+      "headword": "target",
+      "page": 10
+    },
+    {
+      "headword": "task",
+      "page": 10
+    },
+    {
+      "headword": "taste",
+      "page": 10
+    },
+    {
+      "headword": "tax",
+      "page": 10
+    },
+    {
+      "headword": "taxi",
+      "page": 10
+    },
+    {
+      "headword": "tea",
+      "page": 10
+    },
+    {
+      "headword": "teach",
+      "page": 10
+    },
+    {
+      "headword": "teacher",
+      "page": 10
+    },
+    {
+      "headword": "teaching",
+      "page": 10
+    },
+    {
+      "headword": "team",
+      "page": 10
+    },
+    {
+      "headword": "tear1",
+      "page": 10
+    },
+    {
+      "headword": "tear2",
+      "page": 10
+    },
+    {
+      "headword": "technical",
+      "page": 10
+    },
+    {
+      "headword": "technique",
+      "page": 10
+    },
+    {
+      "headword": "technology",
+      "page": 10
+    },
+    {
+      "headword": "teenage",
+      "page": 10
+    },
+    {
+      "headword": "teenager",
+      "page": 10
+    },
+    {
+      "headword": "telephone",
+      "page": 10
+    },
+    {
+      "headword": "television",
+      "page": 10
+    },
+    {
+      "headword": "tell",
+      "page": 10
+    },
+    {
+      "headword": "temperature",
+      "page": 10
+    },
+    {
+      "headword": "temporary",
+      "page": 10
+    },
+    {
+      "headword": "ten",
+      "page": 10
+    },
+    {
+      "headword": "tend",
+      "page": 10
+    },
+    {
+      "headword": "tennis",
+      "page": 10
+    },
+    {
+      "headword": "tent",
+      "page": 10
+    },
+    {
+      "headword": "term",
+      "page": 10
+    },
+    {
+      "headword": "terrible",
+      "page": 10
+    },
+    {
+      "headword": "test",
+      "page": 10
+    },
+    {
+      "headword": "text",
+      "page": 10
+    },
+    {
+      "headword": "than",
+      "page": 10
+    },
+    {
+      "headword": "thank",
+      "page": 10
+    },
+    {
+      "headword": "thanks",
+      "page": 10
+    },
+    {
+      "headword": "that",
+      "page": 10
+    },
+    {
+      "headword": "the",
+      "page": 10
+    },
+    {
+      "headword": "theatre",
+      "page": 10
+    },
+    {
+      "headword": "their",
+      "page": 10
+    },
+    {
+      "headword": "theirs",
+      "page": 10
+    },
+    {
+      "headword": "them",
+      "page": 10
+    },
+    {
+      "headword": "theme",
+      "page": 10
+    },
+    {
+      "headword": "themselves",
+      "page": 10
+    },
+    {
+      "headword": "then",
+      "page": 10
+    },
+    {
+      "headword": "theory",
+      "page": 10
+    },
+    {
+      "headword": "therapy",
+      "page": 10
+    },
+    {
+      "headword": "there",
+      "page": 10
+    },
+    {
+      "headword": "therefore",
+      "page": 10
+    },
+    {
+      "headword": "they",
+      "page": 10
+    },
+    {
+      "headword": "thick",
+      "page": 10
+    },
+    {
+      "headword": "thief",
+      "page": 10
+    },
+    {
+      "headword": "thin",
+      "page": 10
+    },
+    {
+      "headword": "thing",
+      "page": 10
+    },
+    {
+      "headword": "think",
+      "page": 10
+    },
+    {
+      "headword": "thinking",
+      "page": 10
+    },
+    {
+      "headword": "third",
+      "page": 10
+    },
+    {
+      "headword": "thirsty",
+      "page": 10
+    },
+    {
+      "headword": "thirteen",
+      "page": 10
+    },
+    {
+      "headword": "thirty",
+      "page": 10
+    },
+    {
+      "headword": "this",
+      "page": 10
+    },
+    {
+      "headword": "though",
+      "page": 10
+    },
+    {
+      "headword": "thought",
+      "page": 10
+    },
+    {
+      "headword": "thousand",
+      "page": 10
+    },
+    {
+      "headword": "threat",
+      "page": 10
+    },
+    {
+      "headword": "threaten",
+      "page": 10
+    },
+    {
+      "headword": "three",
+      "page": 10
+    },
+    {
+      "headword": "throat",
+      "page": 10
+    },
+    {
+      "headword": "through",
+      "page": 10
+    },
+    {
+      "headword": "throughout",
+      "page": 10
+    },
+    {
+      "headword": "throw",
+      "page": 10
+    },
+    {
+      "headword": "Thursday",
+      "page": 10
+    },
+    {
+      "headword": "thus",
+      "page": 10
+    },
+    {
+      "headword": "ticket",
+      "page": 10
+    },
+    {
+      "headword": "tidy",
+      "page": 10
+    },
+    {
+      "headword": "tie",
+      "page": 10
+    },
+    {
+      "headword": "tight",
+      "page": 10
+    },
+    {
+      "headword": "till",
+      "page": 10
+    },
+    {
+      "headword": "time",
+      "page": 10
+    },
+    {
+      "headword": "tin",
+      "page": 10
+    },
+    {
+      "headword": "tiny",
+      "page": 10
+    },
+    {
+      "headword": "tip",
+      "page": 10
+    },
+    {
+      "headword": "tired",
+      "page": 10
+    },
+    {
+      "headword": "title",
+      "page": 10
+    },
+    {
+      "headword": "to",
+      "page": 10
+    },
+    {
+      "headword": "today",
+      "page": 10
+    },
+    {
+      "headword": "toe",
+      "page": 10
+    },
+    {
+      "headword": "together",
+      "page": 10
+    },
+    {
+      "headword": "toilet",
+      "page": 10
+    },
+    {
+      "headword": "tomato",
+      "page": 10
+    },
+    {
+      "headword": "tomorrow",
+      "page": 10
+    },
+    {
+      "headword": "tone",
+      "page": 10
+    },
+    {
+      "headword": "tongue",
+      "page": 10
+    },
+    {
+      "headword": "tonight",
+      "page": 10
+    },
+    {
+      "headword": "too",
+      "page": 10
+    },
+    {
+      "headword": "tool",
+      "page": 10
+    },
+    {
+      "headword": "tooth",
+      "page": 10
+    },
+    {
+      "headword": "top",
+      "page": 10
+    },
+    {
+      "headword": "topic",
+      "page": 10
+    },
+    {
+      "headword": "total",
+      "page": 10
+    },
+    {
+      "headword": "totally",
+      "page": 10
+    },
+    {
+      "headword": "touch",
+      "page": 10
+    },
+    {
+      "headword": "tough",
+      "page": 10
+    },
+    {
+      "headword": "tour",
+      "page": 10
+    },
+    {
+      "headword": "tourism",
+      "page": 10
+    },
+    {
+      "headword": "tourist",
+      "page": 10
+    },
+    {
+      "headword": "towards",
+      "page": 10
+    },
+    {
+      "headword": "towel",
+      "page": 10
+    },
+    {
+      "headword": "tower",
+      "page": 10
+    },
+    {
+      "headword": "town",
+      "page": 10
+    },
+    {
+      "headword": "toy",
+      "page": 10
+    },
+    {
+      "headword": "track",
+      "page": 10
+    },
+    {
+      "headword": "trade",
+      "page": 10
+    },
+    {
+      "headword": "tradition",
+      "page": 10
+    },
+    {
+      "headword": "traditional",
+      "page": 10
+    },
+    {
+      "headword": "traffic",
+      "page": 10
+    },
+    {
+      "headword": "train",
+      "page": 10
+    },
+    {
+      "headword": "trainer",
+      "page": 10
+    },
+    {
+      "headword": "training",
+      "page": 10
+    },
+    {
+      "headword": "transfer",
+      "page": 10
+    },
+    {
+      "headword": "transform",
+      "page": 10
+    },
+    {
+      "headword": "transition",
+      "page": 10
+    },
+    {
+      "headword": "translate",
+      "page": 10
+    },
+    {
+      "headword": "translation",
+      "page": 10
+    },
+    {
+      "headword": "transport",
+      "page": 10
+    },
+    {
+      "headword": "travel",
+      "page": 10
+    },
+    {
+      "headword": "traveller",
+      "page": 10
+    },
+    {
+      "headword": "treat",
+      "page": 10
+    },
+    {
+      "headword": "treatment",
+      "page": 10
+    },
+    {
+      "headword": "tree",
+      "page": 10
+    },
+    {
+      "headword": "trend",
+      "page": 10
+    },
+    {
+      "headword": "trial",
+      "page": 11
+    },
+    {
+      "headword": "trick",
+      "page": 11
+    },
+    {
+      "headword": "trip",
+      "page": 11
+    },
+    {
+      "headword": "tropical",
+      "page": 11
+    },
+    {
+      "headword": "trouble",
+      "page": 11
+    },
+    {
+      "headword": "trousers",
+      "page": 11
+    },
+    {
+      "headword": "truck",
+      "page": 11
+    },
+    {
+      "headword": "true",
+      "page": 11
+    },
+    {
+      "headword": "truly",
+      "page": 11
+    },
+    {
+      "headword": "trust",
+      "page": 11
+    },
+    {
+      "headword": "truth",
+      "page": 11
+    },
+    {
+      "headword": "try",
+      "page": 11
+    },
+    {
+      "headword": "T-shirt",
+      "page": 11
+    },
+    {
+      "headword": "tube",
+      "page": 11
+    },
+    {
+      "headword": "Tuesday",
+      "page": 11
+    },
+    {
+      "headword": "tune",
+      "page": 11
+    },
+    {
+      "headword": "tunnel",
+      "page": 11
+    },
+    {
+      "headword": "turn",
+      "page": 11
+    },
+    {
+      "headword": "TV",
+      "page": 11
+    },
+    {
+      "headword": "twelve",
+      "page": 11
+    },
+    {
+      "headword": "twenty",
+      "page": 11
+    },
+    {
+      "headword": "twice",
+      "page": 11
+    },
+    {
+      "headword": "twin",
+      "page": 11
+    },
+    {
+      "headword": "two",
+      "page": 11
+    },
+    {
+      "headword": "type",
+      "page": 11
+    },
+    {
+      "headword": "typical",
+      "page": 11
+    },
+    {
+      "headword": "typically",
+      "page": 11
+    },
+    {
+      "headword": "tyre",
+      "page": 11
+    },
+    {
+      "headword": "ugly",
+      "page": 11
+    },
+    {
+      "headword": "ultimately",
+      "page": 11
+    },
+    {
+      "headword": "umbrella",
+      "page": 11
+    },
+    {
+      "headword": "unable",
+      "page": 11
+    },
+    {
+      "headword": "uncle",
+      "page": 11
+    },
+    {
+      "headword": "uncomfortable",
+      "page": 11
+    },
+    {
+      "headword": "unconscious",
+      "page": 11
+    },
+    {
+      "headword": "under",
+      "page": 11
+    },
+    {
+      "headword": "underground",
+      "page": 11
+    },
+    {
+      "headword": "understand",
+      "page": 11
+    },
+    {
+      "headword": "understanding",
+      "page": 11
+    },
+    {
+      "headword": "underwear",
+      "page": 11
+    },
+    {
+      "headword": "unemployed",
+      "page": 11
+    },
+    {
+      "headword": "unemployment",
+      "page": 11
+    },
+    {
+      "headword": "unexpected",
+      "page": 11
+    },
+    {
+      "headword": "unfair",
+      "page": 11
+    },
+    {
+      "headword": "unfortunately",
+      "page": 11
+    },
+    {
+      "headword": "unhappy",
+      "page": 11
+    },
+    {
+      "headword": "uniform",
+      "page": 11
+    },
+    {
+      "headword": "union",
+      "page": 11
+    },
+    {
+      "headword": "unique",
+      "page": 11
+    },
+    {
+      "headword": "unit",
+      "page": 11
+    },
+    {
+      "headword": "united",
+      "page": 11
+    },
+    {
+      "headword": "universe",
+      "page": 11
+    },
+    {
+      "headword": "university",
+      "page": 11
+    },
+    {
+      "headword": "unknown",
+      "page": 11
+    },
+    {
+      "headword": "unless",
+      "page": 11
+    },
+    {
+      "headword": "unlike",
+      "page": 11
+    },
+    {
+      "headword": "unlikely",
+      "page": 11
+    },
+    {
+      "headword": "unnecessary",
+      "page": 11
+    },
+    {
+      "headword": "unpleasant",
+      "page": 11
+    },
+    {
+      "headword": "until",
+      "page": 11
+    },
+    {
+      "headword": "unusual",
+      "page": 11
+    },
+    {
+      "headword": "up",
+      "page": 11
+    },
+    {
+      "headword": "update",
+      "page": 11
+    },
+    {
+      "headword": "upon",
+      "page": 11
+    },
+    {
+      "headword": "upper",
+      "page": 11
+    },
+    {
+      "headword": "upset",
+      "page": 11
+    },
+    {
+      "headword": "upstairs",
+      "page": 11
+    },
+    {
+      "headword": "upwards",
+      "page": 11
+    },
+    {
+      "headword": "urban",
+      "page": 11
+    },
+    {
+      "headword": "urge",
+      "page": 11
+    },
+    {
+      "headword": "us",
+      "page": 11
+    },
+    {
+      "headword": "use",
+      "page": 11
+    },
+    {
+      "headword": "used1",
+      "page": 11
+    },
+    {
+      "headword": "used2",
+      "page": 11
+    },
+    {
+      "headword": "used to",
+      "page": 11
+    },
+    {
+      "headword": "useful",
+      "page": 11
+    },
+    {
+      "headword": "user",
+      "page": 11
+    },
+    {
+      "headword": "usual",
+      "page": 11
+    },
+    {
+      "headword": "usually",
+      "page": 11
+    },
+    {
+      "headword": "vacation",
+      "page": 11
+    },
+    {
+      "headword": "valley",
+      "page": 11
+    },
+    {
+      "headword": "valuable",
+      "page": 11
+    },
+    {
+      "headword": "value",
+      "page": 11
+    },
+    {
+      "headword": "van",
+      "page": 11
+    },
+    {
+      "headword": "variety",
+      "page": 11
+    },
+    {
+      "headword": "various",
+      "page": 11
+    },
+    {
+      "headword": "vary",
+      "page": 11
+    },
+    {
+      "headword": "vast",
+      "page": 11
+    },
+    {
+      "headword": "vegetable",
+      "page": 11
+    },
+    {
+      "headword": "vehicle",
+      "page": 11
+    },
+    {
+      "headword": "venue",
+      "page": 11
+    },
+    {
+      "headword": "version",
+      "page": 11
+    },
+    {
+      "headword": "very",
+      "page": 11
+    },
+    {
+      "headword": "via",
+      "page": 11
+    },
+    {
+      "headword": "victim",
+      "page": 11
+    },
+    {
+      "headword": "victory",
+      "page": 11
+    },
+    {
+      "headword": "video",
+      "page": 11
+    },
+    {
+      "headword": "view",
+      "page": 11
+    },
+    {
+      "headword": "viewer",
+      "page": 11
+    },
+    {
+      "headword": "village",
+      "page": 11
+    },
+    {
+      "headword": "violence",
+      "page": 11
+    },
+    {
+      "headword": "violent",
+      "page": 11
+    },
+    {
+      "headword": "virtual",
+      "page": 11
+    },
+    {
+      "headword": "virus",
+      "page": 11
+    },
+    {
+      "headword": "vision",
+      "page": 11
+    },
+    {
+      "headword": "visit",
+      "page": 11
+    },
+    {
+      "headword": "visitor",
+      "page": 11
+    },
+    {
+      "headword": "visual",
+      "page": 11
+    },
+    {
+      "headword": "vital",
+      "page": 11
+    },
+    {
+      "headword": "vitamin",
+      "page": 11
+    },
+    {
+      "headword": "voice",
+      "page": 11
+    },
+    {
+      "headword": "volume",
+      "page": 11
+    },
+    {
+      "headword": "volunteer",
+      "page": 11
+    },
+    {
+      "headword": "vote",
+      "page": 11
+    },
+    {
+      "headword": "wage",
+      "page": 11
+    },
+    {
+      "headword": "wait",
+      "page": 11
+    },
+    {
+      "headword": "waiter",
+      "page": 11
+    },
+    {
+      "headword": "wake",
+      "page": 11
+    },
+    {
+      "headword": "walk",
+      "page": 11
+    },
+    {
+      "headword": "wall",
+      "page": 11
+    },
+    {
+      "headword": "want",
+      "page": 11
+    },
+    {
+      "headword": "war",
+      "page": 11
+    },
+    {
+      "headword": "warm",
+      "page": 11
+    },
+    {
+      "headword": "warn",
+      "page": 11
+    },
+    {
+      "headword": "warning",
+      "page": 11
+    },
+    {
+      "headword": "wash",
+      "page": 11
+    },
+    {
+      "headword": "washing",
+      "page": 11
+    },
+    {
+      "headword": "waste",
+      "page": 11
+    },
+    {
+      "headword": "watch",
+      "page": 11
+    },
+    {
+      "headword": "water",
+      "page": 11
+    },
+    {
+      "headword": "wave",
+      "page": 11
+    },
+    {
+      "headword": "way",
+      "page": 11
+    },
+    {
+      "headword": "we",
+      "page": 11
+    },
+    {
+      "headword": "weak",
+      "page": 11
+    },
+    {
+      "headword": "weakness",
+      "page": 11
+    },
+    {
+      "headword": "wealth",
+      "page": 11
+    },
+    {
+      "headword": "wealthy",
+      "page": 11
+    },
+    {
+      "headword": "weapon",
+      "page": 11
+    },
+    {
+      "headword": "wear",
+      "page": 11
+    },
+    {
+      "headword": "weather",
+      "page": 11
+    },
+    {
+      "headword": "web",
+      "page": 11
+    },
+    {
+      "headword": "website",
+      "page": 11
+    },
+    {
+      "headword": "wedding",
+      "page": 11
+    },
+    {
+      "headword": "Wednesday",
+      "page": 11
+    },
+    {
+      "headword": "week",
+      "page": 11
+    },
+    {
+      "headword": "weekend",
+      "page": 11
+    },
+    {
+      "headword": "weigh",
+      "page": 11
+    },
+    {
+      "headword": "weight",
+      "page": 11
+    },
+    {
+      "headword": "welcome",
+      "page": 11
+    },
+    {
+      "headword": "well",
+      "page": 11
+    },
+    {
+      "headword": "west",
+      "page": 11
+    },
+    {
+      "headword": "western",
+      "page": 11
+    },
+    {
+      "headword": "wet",
+      "page": 11
+    },
+    {
+      "headword": "what",
+      "page": 11
+    },
+    {
+      "headword": "whatever",
+      "page": 11
+    },
+    {
+      "headword": "wheel",
+      "page": 11
+    },
+    {
+      "headword": "when",
+      "page": 11
+    },
+    {
+      "headword": "whenever",
+      "page": 11
+    },
+    {
+      "headword": "where",
+      "page": 11
+    },
+    {
+      "headword": "whereas",
+      "page": 11
+    },
+    {
+      "headword": "wherever",
+      "page": 11
+    },
+    {
+      "headword": "whether",
+      "page": 11
+    },
+    {
+      "headword": "which",
+      "page": 11
+    },
+    {
+      "headword": "while",
+      "page": 11
+    },
+    {
+      "headword": "whisper",
+      "page": 11
+    },
+    {
+      "headword": "white",
+      "page": 11
+    },
+    {
+      "headword": "who",
+      "page": 11
+    },
+    {
+      "headword": "whole",
+      "page": 11
+    },
+    {
+      "headword": "whom",
+      "page": 11
+    },
+    {
+      "headword": "whose",
+      "page": 11
+    },
+    {
+      "headword": "why",
+      "page": 11
+    },
+    {
+      "headword": "wide",
+      "page": 11
+    },
+    {
+      "headword": "widely",
+      "page": 11
+    },
+    {
+      "headword": "wife",
+      "page": 11
+    },
+    {
+      "headword": "wild",
+      "page": 11
+    },
+    {
+      "headword": "wildlife",
+      "page": 11
+    },
+    {
+      "headword": "will",
+      "page": 11
+    },
+    {
+      "headword": "willing",
+      "page": 11
+    },
+    {
+      "headword": "win",
+      "page": 11
+    },
+    {
+      "headword": "wind1",
+      "page": 11
+    },
+    {
+      "headword": "wind2",
+      "page": 11
+    },
+    {
+      "headword": "window",
+      "page": 11
+    },
+    {
+      "headword": "wine",
+      "page": 11
+    },
+    {
+      "headword": "wing",
+      "page": 11
+    },
+    {
+      "headword": "winner",
+      "page": 11
+    },
+    {
+      "headword": "winter",
+      "page": 11
+    },
+    {
+      "headword": "wire",
+      "page": 11
+    },
+    {
+      "headword": "wise",
+      "page": 11
+    },
+    {
+      "headword": "wish",
+      "page": 11
+    },
+    {
+      "headword": "with",
+      "page": 11
+    },
+    {
+      "headword": "within",
+      "page": 11
+    },
+    {
+      "headword": "without",
+      "page": 11
+    },
+    {
+      "headword": "witness",
+      "page": 11
+    },
+    {
+      "headword": "woman",
+      "page": 11
+    },
+    {
+      "headword": "wonder",
+      "page": 11
+    },
+    {
+      "headword": "wonderful",
+      "page": 11
+    },
+    {
+      "headword": "wood",
+      "page": 11
+    },
+    {
+      "headword": "wooden",
+      "page": 11
+    },
+    {
+      "headword": "wool",
+      "page": 11
+    },
+    {
+      "headword": "word",
+      "page": 11
+    },
+    {
+      "headword": "work",
+      "page": 11
+    },
+    {
+      "headword": "worker",
+      "page": 11
+    },
+    {
+      "headword": "working",
+      "page": 11
+    },
+    {
+      "headword": "world",
+      "page": 11
+    },
+    {
+      "headword": "worldwide",
+      "page": 11
+    },
+    {
+      "headword": "worried",
+      "page": 11
+    },
+    {
+      "headword": "worry",
+      "page": 11
+    },
+    {
+      "headword": "worse",
+      "page": 11
+    },
+    {
+      "headword": "worst",
+      "page": 11
+    },
+    {
+      "headword": "worth",
+      "page": 11
+    },
+    {
+      "headword": "would",
+      "page": 11
+    },
+    {
+      "headword": "wound",
+      "page": 11
+    },
+    {
+      "headword": "wow",
+      "page": 11
+    },
+    {
+      "headword": "wrap",
+      "page": 11
+    },
+    {
+      "headword": "write",
+      "page": 11
+    },
+    {
+      "headword": "writer",
+      "page": 11
+    },
+    {
+      "headword": "writing",
+      "page": 11
+    },
+    {
+      "headword": "written",
+      "page": 11
+    },
+    {
+      "headword": "wrong",
+      "page": 11
+    },
+    {
+      "headword": "yard",
+      "page": 11
+    },
+    {
+      "headword": "yeah",
+      "page": 11
+    },
+    {
+      "headword": "year",
+      "page": 11
+    },
+    {
+      "headword": "yellow",
+      "page": 11
+    },
+    {
+      "headword": "yes",
+      "page": 11
+    },
+    {
+      "headword": "yesterday",
+      "page": 11
+    },
+    {
+      "headword": "yet",
+      "page": 11
+    },
+    {
+      "headword": "you",
+      "page": 11
+    },
+    {
+      "headword": "young",
+      "page": 11
+    },
+    {
+      "headword": "your",
+      "page": 11
+    },
+    {
+      "headword": "yours",
+      "page": 11
+    },
+    {
+      "headword": "yourself",
+      "page": 11
+    },
+    {
+      "headword": "youth",
+      "page": 11
+    },
+    {
+      "headword": "zero",
+      "page": 11
+    },
+    {
+      "headword": "zone",
+      "page": 11
+    }
+  ]
+}
