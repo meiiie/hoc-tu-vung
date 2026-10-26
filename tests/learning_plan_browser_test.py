@@ -174,7 +174,14 @@ def main():
         result['pageErrors']=errors
         page.locator('#settings').click()
         page.on('dialog',lambda dialog:dialog.accept())
-        page.locator('#rst').click()
+        try:
+            page.locator('#rst').click()
+        except Exception:
+            print(json.dumps({'resetFailure': {'url': page.url, 'pageErrors': errors,
+                'sheet': page.locator('#sheet').inner_html(),
+                'viewport': page.evaluate('({width:innerWidth,height:innerHeight,scale:visualViewport.scale,scrollY})'),
+                'settings': page.locator('#settings').evaluate("e=>({html:e.outerHTML,rect:e.getBoundingClientRect().toJSON(),handler:String(e.onclick)})")}}, ensure_ascii=True))
+            raise
         assert page.evaluate('Object.keys(S.introductions).length===0 && S.studyDay===null && S.revlog.length===0 && Object.keys(S.srs).length===0')
         result['explicitReset']='reset clears schedule and word/direction history together in the isolated test profile'
         browser.close()
