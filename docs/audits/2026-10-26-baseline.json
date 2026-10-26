@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-26",
+  "timezone": "Asia/Saigon",
+  "repository": "https://github.com/meiiie/hoc-tu-vung",
+  "commit": "8953b394657555ee07dd5bb32f30823829330032",
+  "scope": "Preparation and audit only; no vocabulary imported.",
+  "content": {
+    "entries": 252,
+    "distinctDisplayLabels": 252,
+    "normalizedLabelsExcludingParentheticalSense": 250,
+    "normalizedAliasesSplittingComma": 251,
+    "lowestCefrCounts": {
+      "A1": 68,
+      "A2": 71,
+      "B1": 61,
+      "B2": 52,
+      "C1": 0
+    },
+    "multipleCefrMembershipCounts": {
+      "A1": 68,
+      "A2": 76,
+      "B1": 66,
+      "B2": 61,
+      "C1": 0
+    },
+    "completeCoreFields": 252,
+    "entriesWithTips": 115,
+    "ieltsTask1Entries": 37,
+    "days": 10,
+    "pronunciationUS": 252,
+    "pronunciationUK": 251,
+    "missingUK": [
+      {
+        "id": "p1-083",
+        "word": "alcoholic",
+        "fallback": "US"
+      }
+    ],
+    "audioFiles": 1008,
+    "missingAudio": 0,
+    "audioBytes": 14666688,
+    "projected5000AudioBytes": 291005714,
+    "projectionIsEstimate": true,
+    "clozeUnavailable": [
+      {
+        "id": "p1-238",
+        "word": "be",
+        "exampleForm": "are"
+      },
+      {
+        "id": "p1-247",
+        "word": "become",
+        "exampleForm": "became"
+      }
+    ],
+    "dataSha256": "e342bf10451e9735e0a09c924df7f0173800eee8b59aa2a1a99efe217ec28755"
+  },
+  "officialComparison": {
+    "officialSource": "https://www.oxfordlearnersdictionaries.com/wordlists/oxford3000-5000",
+    "sourceRows": 5975,
+    "distinctHeadwordLabels": 4957,
+    "appEntries": 252,
+    "existingAliases": 251,
+    "matchedHeadwordLabels": 251,
+    "unmatchedAppLabels": [],
+    "missingOfficialHeadwordLabels": 4706,
+    "missingSample": [
+      "abolish",
+      "abortion",
+      "absence",
+      "absent",
+      "absorb",
+      "abstract",
+      "absurd",
+      "abundance",
+      "abuse",
+      "academy",
+      "accelerate",
+      "accent",
+      "acceptance",
+      "accessible",
+      "accessory",
+      "accidentally",
+      "accommodate",
+      "accomplish",
+      "accomplishment",
+      "accordance",
+      "accordingly",
+      "accountability",
+      "accountable",
+      "accountant",
+      "accumulate",
+      "accumulation",
+      "accuracy",
+      "accurately",
+      "accusation",
+      "accused"
+    ],
+    "htmlSha256": "04bcd2b62b413eec54b7e744cc75dd0efcd2ade3ca1f9575a1808f05a6a9aded",
+    "caveat": "Counts are labels and HTML rows, not a certified Oxford headword/sense reconciliation."
+  },
+  "checks": {
+    "srs": {
+      "passed": 23,
+      "reference": "ts-fsrs@5.4.2"
+    },
+    "pron": {
+      "passed": 9,
+      "fixtureOnly": true
+    },
+    "mascot": {
+      "contrastPairsPassed": 108,
+      "availableStates": 21,
+      "requiredStatesPassed": true
+    },
+    "syntax": [
+      "app.js",
+      "sw.js"
+    ],
+    "browser": {
+      "boot": {
+        "words": 252,
+        "schema": 8,
+        "cards": 504,
+        "dailyLimit": 10
+      },
+      "review": {
+        "card": {
+          "state": "learn",
+          "step": 1,
+          "ef": 2.5,
+          "int": 0,
+          "due": 1793019710365,
+          "reps": 1,
+          "lapses": 0,
+          "last": 1793019110365,
+          "s": 2.3065,
+          "d": 2.11810397
+        },
+        "next": "p1-002",
+        "siblingBuried": true
+      },
+      "reloadRestoresReview": true,
+      "scheduledUndoRestoresCard": true,
+      "routes": {
+        "cards": "Chạm để lật. Vuốt phải nếu đã biết.\n0\n0\na, an\n/ə/\nindefinite article\na, an\n/ə/\nindefinite article\nA1",
+        "learn": "Từ này nghĩa là gì nhỉ?\n0/252\n\nCâu 1/7 · Trắc nghiệm \n· bước 1 trên 4\n\nĐỊNH NGHĨA\nkhông khí\nCHỌN ĐÁP",
+        "listen": "Nghe kỹ rồi gõ lại từ bạn nghe được.\n1/10\nChậm\nGợi ý\nTừ bạn nghe được\nKhông biết\nKiểm tra",
+        "match": "Sẵn sàng chưa?\n\nGhép 6 cặp từ tiếng Anh với nghĩa tiếng Việt nhanh nhất có thể. Ghép sai bị cộng 1 g",
+        "test": "20 câu · gõ từ, trắc nghiệm và đúng/sai\n\nCÂU 1/20 · GÕ TỪ TIẾNG ANH\nkiến trúc\nCÂU 2/20 · CHỌN NGHĨA ",
+        "list": "Tất cả\n252\nMới\n252\nĐang học\n0\nĐang ôn\n0\nThành thạo\n0\nHay quên\n0\nTạm ngưng / ẩn\n0\n\n252 từ\n\na, an /ə/ ",
+        "stats": "–\ntỉ lệ nhớ đúng khi ôn (30 ngày, 0 lượt)\n–\nkhả năng nhớ trung bình hiện tại\n0\nthẻ đến hạn hôm nay\n–",
+        "cram": "1/252\nalbum\n/ˈælbəm/\nn.\nalbum\n/ˈælbəm/\nn.\nB1\nalbum (ảnh, nhạc)\nVÍ DỤ\nThe band released a new album l",
+        "hard": "Chưa có từ khó nào.\n\nTừ bạn trả lời sai, hay quên khi ôn, hoặc gắn sao sẽ tự vào đây.\n\nTrang chủ",
+        "speak": "Nghe mẫu, rồi bấm micro và đọc to.\nTỪ 1 / 252\nah\n/\nɑː\n/\nexclam.\nA2\n\nà, a (thán từ)\n\nTừ trước\nTừ tiếp"
+      },
+      "searchWorks": true,
+      "practicePolicy": {
+        "successUnchanged": true,
+        "failureDueTomorrow": true,
+        "memoryUnchanged": true,
+        "missCounter": 0
+      },
+      "offlineCoreLoaded": true,
+      "migration": {
+        "schema": 8,
+        "cards": 40,
+        "allKept": true,
+        "hasEvidence": true
+      },
+      "syntheticScale": {
+        "entries": 5000,
+        "cards": 10000,
+        "rendered": 5000,
+        "listMs": 228,
+        "serializedBytes": 8420384,
+        "exceedsImportLimit": true,
+        "storageFits": false,
+        "storageError": "QuotaExceededError",
+        "syntheticOnly": true
+      },
+      "pageErrors": []
+    }
+  },
+  "limitations": [
+    "No real microphone or iPhone validation",
+    "No fresh ZIPA model inference; scorer fixtures only",
+    "No full linguistic review of existing or future content",
+    "Synthetic scale data was isolated and never added to application data",
+    "No production deployment or live production audit"
+  ]
+}

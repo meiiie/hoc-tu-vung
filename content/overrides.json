@@ -1,0 +1,116 @@
+{
+  "abandon": {
+    "reject": [
+      "Bộm (nhiếp ảnh)"
+    ]
+  },
+  "access": {
+    "tip": "Danh từ: access to something (quyền hoặc khả năng tiếp cận). Động từ: access something (truy cập), không thêm to."
+  },
+  "be": {
+    "forms": [
+      "am",
+      "is",
+      "are",
+      "was",
+      "were",
+      "been",
+      "being"
+    ]
+  },
+  "become": {
+    "forms": [
+      "became",
+      "become"
+    ]
+  },
+  "admit": {
+    "forms": [
+      "admitted"
+    ]
+  },
+  "ban": {
+    "forms": [
+      "banned"
+    ]
+  },
+  "mill": {
+    "reject": [
+      "Min (bằng 1 qoành 000 đô la)."
+    ]
+  },
+  "warrior": {
+    "reject": [
+      "Quân nhân, chiến sĩ; (thơ ca) chính phủ."
+    ]
+  },
+  "ai": {
+    "vi": "trí tuệ nhân tạo (AI)",
+    "reject": [
+      "Người nào."
+    ]
+  },
+  "blank": {
+    "tip": "Blank (tính từ) chỉ trạng thái để trống; blank (danh từ) là chỗ trống. Trong fill in the blanks, blanks là các chỗ cần điền.",
+    "reject": [
+      "Không vần.",
+      "Điểm giữa bia tập bắn; đích."
+    ]
+  },
+  "cd": {
+    "tip": "CD là viết tắt của compact disc, đọc từng chữ cái: C–D. Dạng số nhiều: CDs."
+  },
+  "chairman": {
+    "tip": "Số nhiều: chairmen. Tùy ngữ cảnh, dịch là chủ tịch hoặc chủ tọa. Chair và chairperson là các cách gọi không nhấn mạnh giới tính.",
+    "forms": [
+      "chairmen"
+    ],
+    "reject": [
+      "Người cho thuê ghế lăn; người đẩy ghế lăn.",
+      "Người khiêng kiệu."
+    ]
+  },
+  "disc": {
+    "tip": "Disc thường gặp trong tiếng Anh-Anh khi nói về đĩa hoặc vật hình đĩa. Disk là cách viết phổ biến trong tiếng Anh-Mỹ và khi nói về đĩa máy tính."
+  },
+  "dvd": {
+    "tip": "DVD đọc từng chữ cái: D–V–D. Dạng số nhiều: DVDs.",
+    "reject": [
+      "Từ viết tắt từ chữ đầu với cách đọc từng chữ cái của dissociated vertical deviation."
+    ]
+  },
+  "gentleman": {
+    "tip": "Số nhiều: gentlemen. Có thể dùng lịch sự để chỉ một người đàn ông, không nhất thiết nói về địa vị xã hội.",
+    "forms": [
+      "gentlemen"
+    ],
+    "reject": [
+      "Nhà vệ sinh đàn ông."
+    ]
+  },
+  "policeman": {
+    "tip": "Số nhiều: policemen. Police officer là cách gọi không nêu giới tính của cảnh sát.",
+    "forms": [
+      "policemen"
+    ]
+  },
+  "sculpture": {
+    "tip": "Sculpture không đếm được khi chỉ nghệ thuật điêu khắc; a sculpture là một tác phẩm điêu khắc.",
+    "pronunciation": {
+      "gb": {
+        "ipa": "/ˈskʌlptʃə/",
+        "source": "project transcription checked against https://dictionary.cambridge.org/dictionary/english/sculpture"
+      }
+    }
+  },
+  "stiff": {
+    "tip": "A stiff neck là cổ bị cứng, khó cử động; stiff competition là sự cạnh tranh gay gắt.",
+    "reject": [
+      "Lực lượng.",
+      "Cứng, nhắc, không tự nhiên."
+    ]
+  },
+  "tape": {
+    "tip": "Some tape thường là băng dính; a tape có thể là một cuộn băng ghi âm hoặc ghi hình. Ngữ cảnh giúp phân biệt."
+  }
+}

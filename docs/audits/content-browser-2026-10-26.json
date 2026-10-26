@@ -1,0 +1,34 @@
+{
+  "boot": {
+    "words": 4971,
+    "schema": 11,
+    "storage": "IndexedDB",
+    "oldNote": "Ghi chú cần giữ",
+    "oldReps": 7,
+    "pages": 20
+  },
+  "c1": {
+    "count": 1314,
+    "all": true
+  },
+  "dictionary": "search, pagination, extended meanings and source links passed",
+  "scheduledReview": "answer persisted",
+  "audioPlaybackMetadata": "UK/US word and example decode in browser",
+  "pdfAdditions": {
+    "words": 10,
+    "decodedAudio": 40,
+    "lastDaySize": 21,
+    "offlineAudio": 40
+  },
+  "largeProgress": "8 MB payload survives reload; original notes and cards retained",
+  "import": "8 MB backup imported; failed persistence leaves current progress unchanged",
+  "offline": {
+    "words": 4971,
+    "packs": 20,
+    "rangeStatus": 206,
+    "rangeBytes": 2,
+    "otherCache": true
+  },
+  "desktop": "paginated list opens full word details",
+  "pageErrors": []
+}

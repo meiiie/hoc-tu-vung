@@ -1,0 +1,20 @@
+{
+  "gb": {
+    "model": "en_GB-vctk-medium",
+    "sha256": "4e9fc85ab9009385319fc6bae7f55577f8a2d7ee77fd9159a5500eb6531f41e6",
+    "configSha256": "7f85e6391ed0f7f46e4abd19345929a16be931a0c9945086f96692dce2087fa8",
+    "speakerId": 107,
+    "speaker": "p225",
+    "datasetLicense": "CC BY 4.0",
+    "modelRepository": "https://huggingface.co/rhasspy/piper-voices"
+  },
+  "us": {
+    "model": "en_US-libritts_r-medium",
+    "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195",
+    "configSha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3",
+    "speakerId": 0,
+    "speaker": "3922",
+    "datasetLicense": "CC BY 4.0",
+    "modelRepository": "https://huggingface.co/rhasspy/piper-voices"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dumpSha256": "c3cea49225e0a8d601393807cb041af7eb394a25d008ae6b69db6bb829790d4a",
+  "entries": 15,
+  "matchedWords": [
+    "DVD",
+    "blank",
+    "chairman",
+    "disc",
+    "gentleman",
+    "policeman",
+    "sculpture",
+    "stiff",
+    "tape"
+  ],
+  "filter": "lang_code == en; requested 10 PDF additions only",
+  "notes": "CD has an original project editorial entry; frozen web snapshot and original Wiktionary projection are unchanged."
+}

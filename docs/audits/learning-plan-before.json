@@ -1,0 +1,13 @@
+{
+  "total": 4961,
+  "selected": 25,
+  "dayChips": 10,
+  "counts": {
+    "n": 50,
+    "l": 0,
+    "r": 0
+  },
+  "filter": {
+    "day": "day01"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "snapshot": "2026-10-26",
+  "files": {
+    "content/sources/oxford-20261026.json": {
+      "sha256": "12ace99f3190eecbec5d193419b827dd7d66324dc4f964cfe8e71b351ba09d90",
+      "bytes": 803699
+    },
+    "content/sources/viwiktionary-20261002.jsonl": {
+      "sha256": "e14dc2908002611e38900f2d1bd4034837959b837a0b23b99b48aca33ad14292",
+      "bytes": 6558399
+    },
+    "content/sources/britfone.csv": {
+      "sha256": "59f197e98520856d1cc88e380beb54e4314d8712efc4d588b6778819c502d920",
+      "bytes": 433285
+    },
+    "content/legacy-p1.json": {
+      "sha256": "e342bf10451e9735e0a09c924df7f0173800eee8b59aa2a1a99efe217ec28755",
+      "bytes": 87479
+    },
+    "data/pron.json": {
+      "sha256": "936304b3e67e0f0ae8a2108061cf12c9fd924eccd6203312dd7661691717bbed",
+      "bytes": 429232
+    },
+    "data/pron-uk.json": {
+      "sha256": "ce59bef43922794eb357f449bb702be6fcb5e781b32c447bcb5e45202111d574",
+      "bytes": 395110
+    },
+    "content/sources/learning-order-v1.json": {
+      "sha256": "03d94c306c1bbd7a252e8ebec54bb3e1403b2d753b4df0b38b990d371de2ae0b",
+      "bytes": 498501
+    },
+    "content/sources/oxford3000-pdf-20200706.json": {
+      "sha256": "f226c86e6165d478293dd588a6f18e834aa87d38ed3e3818de9c5eeb3791f4fa",
+      "bytes": 173166
+    },
+    "content/sources/oxford3000-pdf-additions-20261026.json": {
+      "sha256": "593d0914a0bd121acc8b75f419beb9cfa7103fb056dc6c59209a39631802aad2",
+      "bytes": 3106
+    },
+    "content/sources/viwiktionary-pdf-additions-20261002.jsonl": {
+      "sha256": "81586bafaf02014a90eb1f37363b3cf4f43cc266a8e7196a26d0a2482d1ef1bc",
+      "bytes": 13488
+    },
+    "content/sources/learning-order-v2.json": {
+      "sha256": "75fb0bb06427294d09306ed3acb75ac82f4d37dfff2f0e7c0d3aa96d4dc6fb40",
+      "bytes": 499619
+    }
+  },
+  "upstream": {
+    "oxford": "https://www.oxfordlearnersdictionaries.com/wordlists/oxford3000-5000",
+    "wiktionary": "https://kaikki.org/viwiktionary/rawdata.html",
+    "britfone": "https://github.com/JoseLlarena/Britfone/tree/1062be14adc96c358f2087ac5449d72130c7a6f4",
+    "cmudict": "https://github.com/cmusphinx/cmudict",
+    "piper": "https://github.com/OHF-Voice/piper1-gpl",
+    "wordfreq": "https://github.com/rspeer/wordfreq"
+  },
+  "notes": [
+    "Oxford snapshot is reference metadata, not a license grant.",
+    "CMUdict package 1.1.3; Britfone 3.0.1.",
+    "Audio model/config hashes are in content/sources/voices.json."
+  ]
+}
